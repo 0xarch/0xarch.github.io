@@ -31,7 +31,7 @@ a{
 }
 body>header{
     position:sticky;
-    height:2em;
+    height:3em;
     margin:0;
     width:100vw;
     left:0;top:0;
@@ -45,10 +45,15 @@ body>footer{
     width:100vw;
     display:none;
 }
-
 data>p>code{
     position: relative;
     display:block;
+}
+.fa{
+    color: #4a4a4a;
+}
+.fa:hover{
+    color:#1c9df7;
 }
 
 /* --- MODULE STYLE --- */
@@ -93,8 +98,9 @@ a.tocs:hover{
     top:3rem;
     width:50rem;
     height:50rem;
-    z-index:10;
-    display:none;
+    z-index:-1;
+    opacity: 0;
+    transition: all .3s ease-in-out;
 }
 #search-container-top{
     display:inline-block;
@@ -135,14 +141,15 @@ data_cc_search>*>font{
 }
 #column-left{
     position: sticky;
-    width:17rem;
-    padding:3px 1rem;
+    width:20rem;
+    padding:0 .5rem;
+    margin:5px;
     top:3rem;
 }
 #column-right{
     display:block;
     margin:5px;
-    padding:0 1rem;
+    padding:0 .5rem;
     width:40rem;
     min-height:25rem;
 }
@@ -227,6 +234,7 @@ header a:hover{
 .inline-tag>.tags{
     color:#a9a9a9;
     margin-left:.5em;
+    display: inline;
 }
 .inline-tag>.tags::before{
     content:'#';

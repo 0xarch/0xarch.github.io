@@ -9,6 +9,7 @@ function resize(){
         document.querySelector("#column-right").style.fontSize="1.75rem";
         document.querySelector("#column-right").style.width="85vw";
         document.querySelector("#column-left").style.width="85vw";
+        document.querySelector("#column-left>#data_toc").style.display="none";
         document.querySelector("#search-container").style.fontSize="1.3em";
     }
 }
@@ -19,7 +20,9 @@ function render_scroll(id){
 // --- MODULE SEARCH ---
 var searchIsClosed=false;
 function toggleSearch(){
-    document.querySelector("#search-container").style.display=searchIsClosed?"block":"none";
+    //document.querySelector("#search-container").style.display=searchIsClosed?"block":"none";
+    document.querySelector("#search-container").style.opacity=searchIsClosed?"1":"0";
+    document.querySelector("#search-container").style.zIndex=searchIsClosed?"10":"-1";
     searchIsClosed=searchIsClosed?false:true;
 }
 function search(){

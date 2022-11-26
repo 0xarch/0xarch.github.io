@@ -17,11 +17,10 @@ function generate_all(){
     var tags_all=new Array();
     var categories_all=new Array();
     var posts_all=new Array();
+    var posts_info={};
     // --- GET ALL COUNTS ---
     var globalCountInformation=new Array(0,0,0);
     dir.forEach((filename)=>{
-
-        globalCountInformation[0]++;
 
         var filedir = path.join(config.srcdir+"/post/", filename);
 
@@ -43,6 +42,10 @@ function generate_all(){
 
         posts_all.push(new Array(filename.replace(/\.md/,""),passage_pub));
 
+        posts_info[data_information[0]]={data_information,_tags,_categories};
+
+        globalCountInformation[0]++;
+
     });
     globalCountInformation[1]=categories_all.length;
     globalCountInformation[2]=tags_all.length;
@@ -51,7 +54,6 @@ function generate_all(){
     /* here , the Array has 3 element:
      * [0] for passage , [1] for category , [2] for tag
      */
-
 
     dir.forEach(function(filename) {
         // --- VARIABLE DEFINE ---
@@ -71,7 +73,7 @@ function generate_all(){
         var cc_block='<div class="cc">'+
         '<i class="fa fa-creative-commons"></i> Creative Commons'+
         '</div>';
-
+        
         data_toWrite.querySelector("data").innerHTML=data_transformed+cc_block;
 
         // --- TAG TRANSFORM ---
@@ -227,6 +229,8 @@ function generate_all(){
     }
 
     // --- TAGS & CATEGORIES PAGE ---
+    var _tl=tags_all.length,_cl=categories_all.length;
+
     var DOM_TAGS=new JSDOM(tmplt).window.document;
 
     var DOM_CATEGORIES=new JSDOM(tmplt).window.document;
@@ -234,13 +238,31 @@ function generate_all(){
     // *** TAGS
     sg.sg(DOM_TAGS,posts_all,config,tags_all,categories_all);
 
-    sg.ig(DOM_TAGS,config,globalCountInformation,("Tags","B","GG"));
+    sg.ig(DOM_TAGS,config,globalCountInformation,new Array("Tags","B","GG"));
 
-    for(var b=0,l=tags_all.length;b<l;b++){
+    for(var b=0;b<_tl;b++){
 
-        var appends="<a href='"+tags_all[b]+"' class='tag-and-category-page-tag-and-category'>"+tags_all[b]+"</a>\n";
-
+        var appends="<a href='"+tags_all[b]+"' class='tag-and-category-page-tag-and-category'>"
+        +tags_all[b]+"</a>\n";
+        fs.mkdirSync(config.pubdir+"/tags/"+tags_all[b],{recursive:true},()=>{});
         DOM_TAGS.querySelector("data").innerHTML=DOM_TAGS.querySelector("data").innerHTML+appends;
+    }
+
+    for(var b=0;b<_tl;b++){
+        var dom_this=new JSDOM(tmplt).window.document;
+        sg.sg(dom_this,posts_all,config,tags_all,categories_all);
+        sg.ig(dom_this,config,globalCountInformation,new Array(tags_all[b],"B","GG"));
+        var appends="<a href='"+tags_all[b]+"' class='tag-and-category-page-tag-and-category'>"
+        +tags_all[b]+"</a><hr/>\n";
+        for(var a=0,l=posts_all.length;a<l;a++){
+            if(posts_info[posts_all[a][0]]._tags.includes(tags_all[b])){
+                appends=appends+"<a href='"+posts_all[a][1]+"'>"+posts_all[a][0]+"</a>";
+            }
+        }
+        dom_this.querySelector("data").innerHTML=dom_this.querySelector("data").innerHTML+appends;
+
+        var data_toWrite="<!DOCTYPE html>\n<head>"+dom_this.head.innerHTML+"</head>\n<body>"+dom_this.body.innerHTML+"</body>";
+        fs.writeFile(config.pubdir+"/tags/"+tags_all[b]+"/index.html",data_toWrite,()=>{});
     }
 
 
@@ -255,13 +277,30 @@ function generate_all(){
     // *** CATEGORIES
     sg.sg(DOM_CATEGORIES,posts_all,config,tags_all,categories_all);
 
-    sg.ig(DOM_CATEGORIES,config,globalCountInformation,("Categories","B","GG"));
+    sg.ig(DOM_CATEGORIES,config,globalCountInformation,new Array("Categories","B","GG"));
 
-    for(var b=0,l=categories_all.length;b<l;b++){
+    for(var b=0;b<_cl;b++){
 
         var appends="<a href='"+categories_all[b]+"' class='tag-and-category-page-tag-and-category'>"+categories_all[b]+"</a>\n";
-
+        fs.mkdirSync(config.pubdir+"/categories/"+categories_all[b],{recursive:true},()=>{});
         DOM_CATEGORIES.querySelector("data").innerHTML=DOM_CATEGORIES.querySelector("data").innerHTML+appends;
+    }
+
+    for(var b=0;b<_cl;b++){
+        var dom_this=new JSDOM(tmplt).window.document;
+        sg.sg(dom_this,posts_all,config,tags_all,categories_all);
+        sg.ig(dom_this,config,globalCountInformation,new Array(categories_all[b],"B","GG"));
+        var appends="<a href='"+categories_all[b]+"' class='tag-and-category-page-tag-and-category'>"
+        +categories_all[b]+"</a><hr/>\n";
+        for(var a=0,l=posts_all.length;a<l;a++){
+            if(posts_info[posts_all[a][0]]._categories.includes(categories_all[b])){
+                appends=appends+"<a href='"+posts_all[a][1]+"'>"+posts_all[a][0]+"</a>";
+            }
+        }
+        dom_this.querySelector("data").innerHTML=dom_this.querySelector("data").innerHTML+appends;
+
+        var data_toWrite="<!DOCTYPE html>\n<head>"+dom_this.head.innerHTML+"</head>\n<body>"+dom_this.body.innerHTML+"</body>";
+        fs.writeFile(config.pubdir+"/categories/"+categories_all[b]+"/index.html",data_toWrite,()=>{});
     }
 
     DOM_CATEGORIES.querySelector("#main-intro").innerHTML="";
@@ -285,22 +324,9 @@ switch(args[0]){
         generate_all();
         break;
     case "i":
-        fs.rmdirSync(config.pubdir,{recursive:true});
+        fs.rmSync(config.pubdir,{recursive:true});
         fs.mkdirSync(config.pubdir,{recursive:true});
         fs.copyFileSync("_library/hl.css",config.pubdir+"/hl.css");
         fs.copyFileSync("_library/hl.min.js",config.pubdir+"/hl.min.js");
-        break;
-    case "ga":
-        generate.generate_all(filePath);
-        var dir=fs.readdirSync(config.dirs.funcDir);
-        dir.forEach(function(filename) {
-            var filedir = path.join(config.dirs.funcDir, filename);
-            generate.genfunc(filedir);
-        });
-        break;
-    case "new":
-        var date=new Date().toISOString().slice(0,10);
-        var fill="!!!TITLE \n!!!DATE "+date+"\n!!!TAG ";
-        fs.writeFile(config.dirs.blogDir+args[1]+".mdp",fill,function(){});
         break;
 }

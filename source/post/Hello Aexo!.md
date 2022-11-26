@@ -1,8 +1,8 @@
 ---
 title: Hello Aexo!
 date: 2022-11-24
-tag: Aexo
-category: Aexos
+tag: Aexo Blog
+category: AexoBlogSystem
 ---
 114514
 
