@@ -6,6 +6,9 @@
 .level{
     padding:3px;
 }
+.shadow-global{
+    box-shadow:0px 0px 15rem 1rem black;
+}
 
 /* --- ELEMENT STYLES --*/
 @font-face {
@@ -16,6 +19,7 @@
 }
 body{
     margin:0;
+    font-size:1rem;
     color:#4a4a4a;
 }
 a{
@@ -41,15 +45,7 @@ body>footer{
     width:100vw;
     display:none;
 }
-header>*{
-    margin:3px;
-}
-header a{
-    color:#4a4a4a;
-}
-header a:hover{
-    color:#69b4f2;
-}
+
 data>p>code{
     position: relative;
     display:block;
@@ -90,6 +86,42 @@ a.tocs:focus{
 a.tocs:hover{
     background:#ddd;
 }
+/*** SEARCH ***/
+#search-container{
+    position: fixed;
+    left:calc(50vw - 25rem);
+    top:3rem;
+    width:50rem;
+    height:50rem;
+    z-index:10;
+}
+#search-container-top{
+    display:inline-block;
+    width:95%;
+    padding:3px;
+    margin:3px;
+}
+#search-container-top>*{
+    margin:3px;
+    padding:3px;
+}
+#in-menu-search-input{
+    border:none;
+}
+data_cc_search>*>font{
+    font-weight:bold;
+}
+.in-search-item{
+    display:block;
+    color:#4a4a4a;
+}
+
+/* --- TAG AND CATEGORY PAGE --- */
+.tag-and-category-page-tag-and-category{
+    display:block;
+    color:#4a4a4a;
+    margin:1rem;
+}
 
 /* --- MAIN FRAME DISPLAY --- */
 .container{
@@ -103,14 +135,15 @@ a.tocs:hover{
 #column-left{
     position: sticky;
     width:17rem;
-    padding:0 1rem;
+    padding:3px 1rem;
     top:3rem;
 }
 #column-right{
     display:block;
     margin:5px;
-    padding:1rem;
+    padding:0 1rem;
     width:40rem;
+    min-height:25rem;
 }
 #column-right a:not(.read-more){
     color:#1c9df7;
@@ -119,7 +152,7 @@ a.tocs:hover{
     margin:5px;
 }
 .index-post{
-    margin-bottom:1em;
+    margin-bottom:1rem;
 }
 .read-more{
     color:#4a4a4a;
@@ -142,6 +175,21 @@ a.tocs:hover{
     background:#eee;
     color:#4a4a4a;
 }
+
+/* NAGV BAR */
+.navbar-items{
+    margin:4px;
+}
+header>*{
+    margin:3px;
+}
+header a{
+    color:#4a4a4a;
+}
+header a:hover{
+    color:#69b4f2;
+}
+
 
 /* FLEX SHORT DEFINE */
 .flex,.flex-column,.flex-row{
@@ -204,5 +252,5 @@ a.tocs:hover{
     border-radius:15em;
     background:#59a4e2;
     color:#eee;
-    height:1.5rem;
+    padding:5px;
 }

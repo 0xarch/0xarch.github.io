@@ -15,31 +15,48 @@ function generate_all(){
     // --- ARRAY DEFINE --- MOST IMPORTANT -> SAVING DATA
     var dataAndInformation_all=new Array();
     var tags_all=new Array();
-    var category_all=new Array();
+    var categories_all=new Array();
+    var posts_all=new Array();
     // --- GET ALL COUNTS ---
     var globalCountInformation=new Array(0,0,0);
     dir.forEach((filename)=>{
+
         globalCountInformation[0]++;
+
         var filedir = path.join(config.srcdir+"/post/", filename);
+
         var data_got=fs.readFileSync(filedir).toString();
+
         var data_information=sg.gpd(data_got);
+
         var _tags=data_information[2].split(" ");
+
         var _categories=data_information[3].split(" ");
+
         tags_all=tags_all.concat(_tags);
-        category_all=category_all.concat(_categories);
+
+        categories_all=categories_all.concat(_categories);
+
+        var time=data_information[1].split("-");
+
+        var passage_pub="/archives/"+time[0]+"/"+time[1]+"/"+time[2]+"/"+filename.replace(/\.md/,".html");
+
+        posts_all.push(new Array(filename.replace(/\.md/,""),passage_pub));
+
     });
-    globalCountInformation[1]=category_all.length;
+    globalCountInformation[1]=categories_all.length;
     globalCountInformation[2]=tags_all.length;
-    console.log("Tags ",tags_all,"\n","Categories ",category_all);
+    console.log("Tags ",tags_all,"\n","Categories ",categories_all);
     console.log("Count Information ",globalCountInformation);
     /* here , the Array has 3 element:
      * [0] for passage , [1] for category , [2] for tag
      */
 
+
     dir.forEach(function(filename) {
         // --- VARIABLE DEFINE ---
         var DOM_THIS=new JSDOM(tmplt);
-        
+
         var filedir = path.join(config.srcdir+"/post/", filename);
 
         var data_got=fs.readFileSync(filedir).toString();
@@ -70,6 +87,7 @@ function generate_all(){
 
         }
 
+
         // --- CATEGORY TRANSFORM ---
         var _categories=data_information[3].split(" ");
 
@@ -82,6 +100,7 @@ function generate_all(){
             catg_slctr.forEach((el)=>{el.innerHTML=el.innerHTML+appends});
 
         }
+
 
         // --- GENERATE TOC ---
         var _tocs=sg.tc(data_toWrite);
@@ -99,6 +118,7 @@ function generate_all(){
             tocs_slctr.innerHTML=tocs_slctr.innerHTML+appends;
         }
 
+
         // --- SINGLE DATA INSERT ---
         data_toWrite.querySelector("data_category").innerHTML=data_information[3];
 
@@ -107,6 +127,10 @@ function generate_all(){
         data_toWrite.querySelector("data_title").innerHTML=data_information[0];
 
         sg.ig(data_toWrite,config,globalCountInformation,data_information);
+
+        // --- SEARCH ITEM INSERT ---
+        sg.sg(data_toWrite,posts_all,config,tags_all,categories_all);
+
 
         // --- SAVE FILE & PUSH DATA ---
         var time=data_information[1].split("-");
@@ -125,15 +149,24 @@ function generate_all(){
 
         dataAndInformation_all.push(dataAndInformation_This);
     });
+
     // --- VARIABLE DEFINE FOR INDEX ---
     var DOM_INDEX=new JSDOM(tmplt).window.document;
+
     sg.ig(DOM_INDEX,config,globalCountInformation,new Array("I","B","GG"));
+
     var DOM_INDEX_DATA=DOM_INDEX.querySelector("data");
+
     DOM_INDEX.querySelector("#main-intro").style.display="none";
+
     DOM_INDEX.querySelector("#data_toc").style.display="none";
-    DOM_INDEX.querySelector("#column-right").style.boxShadow="none !important";
+
+    DOM_INDEX.querySelector("#explorer").style.boxShadow="none !important";
+
     DOM_INDEX.querySelector("#column-right").style.padding="0";
+
     DOM_INDEX.querySelector("#column-right").style.margin="0";
+
     // --- INDEX BUILD ---
     for (var z=0;z<dataAndInformation_all.length;z++){
         var data_less=dataAndInformation_all[z][0].replace(/<\!\-\-more\-\->[\s\S]*/,"");
@@ -149,31 +182,96 @@ function generate_all(){
         '</div>';
         DOM_INDEX_DATA.innerHTML=appends+DOM_INDEX_DATA.innerHTML;
     }
+    sg.sg(DOM_INDEX,posts_all,config,tags_all,categories_all);
+
     var index_toWrite="<!DOCTYPE html>\n<head>"+DOM_INDEX.head.innerHTML+"</head>\n<body>"+DOM_INDEX.body.innerHTML+"</body>";
     fs.writeFileSync(config.pubdir+"/index.html",index_toWrite);
 
     // --- SPECIALS ---
     var specials=config.specials;
     for(var r=0,l=specials.length;r<l;r++){
+
         var filedir=config.srcdir+"/"+specials[r]+"/index.md";
+
         var DOM_THIS=new JSDOM(tmplt);
+
         var data_got=fs.readFileSync(filedir).toString();
+
         var data_transformed=marked.parse(data_got.replace(/\-\-\-[\s\S]*\-\-\-\n/,"\n"));
+
         var data_information=sg.gpd(data_got);
+
         var data_toWrite= DOM_THIS.window.document;
+
         data_toWrite.querySelector("data_category").innerHTML=data_information[3];
+
         data_toWrite.querySelector("data_date").innerHTML=data_information[1];
+
         data_toWrite.querySelector("data_title").innerHTML=data_information[0];
+
         sg.ig(data_toWrite,config,globalCountInformation,data_information);
+
         var cc_block='<div class="cc">'+
         '<i class="fa fa-creative-commons"></i> Creative Commons'+
         '</div>';
+
         data_toWrite.querySelector("data").innerHTML=data_transformed+cc_block;
+
         data_toWrite="<!DOCTYPE html>\n<head>"+data_toWrite.head.innerHTML+"</head>\n<body>"+data_toWrite.body.innerHTML+"</body>";
+
         var passage_dir=config.pubdir+"/"+specials[r];
+
         fs.mkdirSync(passage_dir,{recursive:true});
+
         fs.writeFile(passage_dir+"/index.html",data_toWrite,(err)=>{if(err)throw err;});
     }
+
+    // --- TAGS & CATEGORIES PAGE ---
+    var DOM_TAGS=new JSDOM(tmplt).window.document;
+
+    var DOM_CATEGORIES=new JSDOM(tmplt).window.document;
+
+    // *** TAGS
+    sg.sg(DOM_TAGS,posts_all,config,tags_all,categories_all);
+
+    sg.ig(DOM_TAGS,config,globalCountInformation,("Tags","B","GG"));
+
+    for(var b=0,l=tags_all.length;b<l;b++){
+
+        var appends="<a href='"+tags_all[b]+"' class='tag-and-category-page-tag-and-category'>"+tags_all[b]+"</a>\n";
+
+        DOM_TAGS.querySelector("data").innerHTML=DOM_TAGS.querySelector("data").innerHTML+appends;
+    }
+
+
+    DOM_TAGS.querySelector("#main-intro").innerHTML="";
+
+    var data_tag_toWrite="<!DOCTYPE html>\n<head>"+DOM_TAGS.head.innerHTML+"</head>\n<body>"+DOM_TAGS.body.innerHTML+"</body>";
+
+    fs.mkdirSync(config.pubdir+"/tags/",{recursive:true});
+
+    fs.writeFile(config.pubdir+"/tags/index.html",data_tag_toWrite,(err)=>{if(err)throw err;});
+
+    // *** CATEGORIES
+    sg.sg(DOM_CATEGORIES,posts_all,config,tags_all,categories_all);
+
+    sg.ig(DOM_CATEGORIES,config,globalCountInformation,("Categories","B","GG"));
+
+    for(var b=0,l=categories_all.length;b<l;b++){
+
+        var appends="<a href='"+categories_all[b]+"' class='tag-and-category-page-tag-and-category'>"+categories_all[b]+"</a>\n";
+
+        DOM_CATEGORIES.querySelector("data").innerHTML=DOM_CATEGORIES.querySelector("data").innerHTML+appends;
+    }
+
+    DOM_CATEGORIES.querySelector("#main-intro").innerHTML="";
+
+    var data_catg_toWrite="<!DOCTYPE html>\n<head>"+DOM_CATEGORIES.head.innerHTML+"</head>\n<body>"+DOM_CATEGORIES.body.innerHTML+"</body>";
+
+    fs.mkdirSync(config.pubdir+"/categories/",{recursive:true});
+
+    fs.writeFile(config.pubdir+"/categories/index.html",data_catg_toWrite,(err)=>{if(err)throw err;});
+
 
     // --- COPY THEME FILES ---
     fs.copyFileSync("_themes/"+config.theme+"/main.css",config.pubdir+"/main.css");

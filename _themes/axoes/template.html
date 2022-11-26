@@ -11,11 +11,32 @@
     </head>
     <body>
         <header class="level-no-padding">
-            <a href="/">Architude</a>
+            <a href="/" class="navbar-items">Architude</a>
             <div id="navbar-itembar"></div>
-            <a id="navbar-info" href="/about"><i class="fa fa-info-circle"></i></a>
-            <div id="navbar-search"><i class="fa fa-search"></i></div>
+            <a id="navbar-info" class="navbar-items" href="/about"><i class="fa fa-info-circle"></i></a>
+            <div id="navbar-search" class="navbar-items" onclick="toggleSearch()"><i class="fa fa-search"></i></div>
         </header>
+        <div id="search-container" class="level shadow-global">
+            <div id="search-container-top" class="level">
+                <input class="level" id="in-menu-search-input" oninput="search()"/>
+                <i class="fa fa-search" id="in-menu-search" onclick="search()"></i>
+            </div>
+            <i class="fa fa-close bar-right" onclick="toggleSearch()"></i><br/>
+            <data_cc_search>
+                <data_cs_post class="be-filted">
+                    <font>POSTS<hr></font>
+                </data_cs_post><br/>
+                <data_cs_page class="be-filted">
+                    <font>PAGES<hr></font>
+                </data_cs_page><br/>
+                <data_cs_tag class="be-filted">
+                    <font>TAGS<hr></font>
+                </data_cs_tag><br/>
+                <data_cs_category class="be-filted">
+                    <font>CATEGORIES<hr></font>
+                </data_cs_category><br/>
+            </data_cc_search>
+        </div>
         <section>
             <div class="container" id="container" onresize="resize()">
                 <div id="column-left" class="flex-column">
@@ -42,8 +63,8 @@
                     <div id="data_toc" class="columns flex-column flex-center level toc">
                     </div>
                 </div>
-                <div id="column-right" class="level">
-                    <div id="explorer" class="columns">
+                <div id="column-right" class="">
+                    <div id="explorer" class="columns level">
                     <div id="main-intro">
                         <div id="main-intro-top">
                             <data_title></data_title>&nbsp
