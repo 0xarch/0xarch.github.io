@@ -48,18 +48,18 @@ function generate_all(){
 
         // --- TAG TRANSFORM ---
         var _tags=data_information[2].split(" ");
-        tag_slctr=data_toWrite.querySelector("data_tag");
+        tag_slctr=data_toWrite.querySelectorAll("data_tag");
         for(var z=0;z<_tags.length;z++){
             var appends="\n<p class='tags'><font class='tags-name'>"+_tags[z]+"</font></p>";
-            tag_slctr.innerHTML=tag_slctr.innerHTML+appends;
+            tag_slctr.forEach((el)=>{el.innerHTML=el.innerHTML+appends});
         }
 
         // --- CATEGORY TRANSFORM ---
         var _categories=data_information[3].split(" ");
-        catg_slctr=data_toWrite.querySelector("data_category");
+        catg_slctr=data_toWrite.querySelectorAll("data_category");
         for(var y=0;y<_categories.length;y++){
-            var appends="\n<p class='tags'><font class='tags-name'>"+_categories[z]+"</font></p>";
-            catg_slctr.innerHTML=catg_slctr.innerHTML+appends;
+            var appends="\n<p class='categories'><font class='categories'>"+_categories[y]+"</font></p>";
+            catg_slctr.forEach((el)=>{el.innerHTML=el.innerHTML+appends});
         }
 
         // --- SINGLE DATA INSERT ---
@@ -70,6 +70,8 @@ function generate_all(){
         data_toWrite.querySelector("data_p_count_passage").innerHTML=globalCountInformation[0];
         data_toWrite.querySelector("data_p_count_category").innerHTML=globalCountInformation[1];
         data_toWrite.querySelector("data_p_count_tag").innerHTML=globalCountInformation[2];
+
+        sg.ig(data_toWrite,config);
 
         var time=data_information[1].split("-");
         var passage_dir=config.pubdir+"/archives/"+time[0]+"/"+time[1]+"/"+time[2];
@@ -82,6 +84,7 @@ function generate_all(){
     });
     // --- VARIABLE DEFINE FOR INDEX ---
     var DOM_INDEX=new JSDOM(tmplt).window.document;
+    sg.ig(DOM_INDEX,config);
     var DOM_INDEX_DATA=DOM_INDEX.querySelector("data");
     DOM_INDEX.querySelector("data_p_count_passage").innerHTML=globalCountInformation[0];
     DOM_INDEX.querySelector("data_p_count_category").innerHTML=globalCountInformation[1];

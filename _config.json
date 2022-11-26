@@ -1,5 +1,9 @@
 {
     "theme":"axoes",
     "srcdir":"source",
-    "pubdir":"public"
+    "pubdir":"public",
+    "name":"0xarch",
+    "discription":"We won't be disturbed!",
+    "location":"Cloud 114514 , Xvd",
+    "avatar":"https://i.postimg.cc/8cS0wT2c/avatar.jpg"
 }

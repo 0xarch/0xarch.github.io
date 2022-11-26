@@ -18,11 +18,12 @@
         <section>
             <div class="container" id="container" onresize="resize()">
                 
-                <div id="column-left" class="columns">
+                <div id="column-left" class="columns flex-column">
                     <div id="intro-card" class="columns flex-column flex-center level">
-                        <font>0xarch</font><br/>
-                        <font>We won't be disturbed!</font><br/>
-                        <font><i class="fa fa-map-marker"></i>Cloud 114514 , Xvd</font>
+                        <img id="data_c_avatar"/>
+                        <font><data_c_name></data_c_name></font><br/>
+                        <font><data_c_discription></data_c_discription></font><br/>
+                        <font><i class="fa fa-map-marker"></i> <data_c_location></data_c_location></font>
                         <div id="intro-card-inner-count" class="flex-row">
                             <p>
                                 文章<br/>
@@ -41,7 +42,7 @@
                         <a id="followme" class="a_rendered_button">Follow Me</a>
                         <div id="intro-card-inner-blogInfo" class="flex-column">
                             <div class="flex-row">
-                                <data_tag></data_tag>
+                                <data_tag class="gInfo-tag"></data_tag>
                             </div>
                             <p>
                                 分类 <data_category></data_category>
@@ -51,8 +52,11 @@
                 </div>
                 <div id="column-right" class="columns level">
                     <div id="main-intro">
-                        <data_title></data_title>&nbsp
-                        发布于 <data_date></data_date>
+                        <div id="main-intro-top">
+                            <data_title></data_title>&nbsp
+                            发布于 <data_date></data_date>
+                            <data_category></data_category>
+                        </div><data_tag class="inline-tag"></data_tag>
                     </div>
                     <data></data>
                 </div>
@@ -61,6 +65,8 @@
         <footer class="level-no-padding">
             2022 Aexo
         </footer>
-        <script>document.querySelectorAll("p code,pre code").forEach((el)=>hljs.highlightElement(el));resize()</script>
+        <script>
+            hljs.highlightAll();
+        </script>
     </body>
 </html>

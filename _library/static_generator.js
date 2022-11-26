@@ -19,7 +19,14 @@ function unique(arr){
     }
     return hash;
   }
+function intro_generate(dom,config){
+    dom.querySelector("data_c_name").innerHTML=config.name;
+    dom.querySelector("data_c_discription").innerHTML=config.discription;
+    dom.querySelector("data_c_location").innerHTML=config.location;
+    dom.querySelector("#data_c_avatar").setAttribute('src',config.avatar);
+}
 
 exports.dg=(t,d,a,b,c)=>data_generate(t,d,a,b,c);
 exports.uq=(a)=>unique(a);
 exports.gpd=(d)=>get_post_data(d);
+exports.ig=(d,c)=>intro_generate(d,c);
