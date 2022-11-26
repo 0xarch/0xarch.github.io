@@ -52,7 +52,11 @@ data>p>code{
     margin:5px;
     
 }
-#intro-card-inner-count>*{
+#intro-card-inner-count>p{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     margin:5px;
 }
 
