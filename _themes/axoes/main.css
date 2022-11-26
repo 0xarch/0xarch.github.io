@@ -27,7 +27,6 @@ a{
 }
 *{
     font-family: "df";
-    transition: all .1s ease-in-out;
 }
 body>header{
     position:sticky;

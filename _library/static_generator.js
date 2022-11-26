@@ -42,7 +42,7 @@ function search_generatae(dom,posts_all,config,tags_all,categories_all){
 
         for(var a=0,l=config.specials.length;a<l;a++){
 
-            var appends="<a href='"+config.pubdir+"/"+config.specials[a]+"' class='in-search-item'>"+config.specials[a]+"</a>";
+            var appends="<a href='/"+config.specials[a]+"' class='in-search-item'>"+config.specials[a]+"</a>";
             dom_cs_page.innerHTML=dom_cs_page.innerHTML+appends;
         }
 
@@ -50,7 +50,7 @@ function search_generatae(dom,posts_all,config,tags_all,categories_all){
 
         for(var a=0,l=tags_all.length;a<l;a++){
 
-            var appends="<a href='"+tags_all[a]+"' class='in-search-item'>"+tags_all[a]+"</a>\n";
+            var appends="<a href='/tags/"+tags_all[a]+"' class='in-search-item'>"+tags_all[a]+"</a>\n";
             dom_cs_tag.innerHTML=dom_cs_tag.innerHTML+appends;
         }
 
@@ -58,7 +58,7 @@ function search_generatae(dom,posts_all,config,tags_all,categories_all){
 
         for(var a=0,l=categories_all.length;a<l;a++){
 
-            var appends="<a href='"+categories_all[a]+"' class='in-search-item'>"+categories_all[a]+"</a>\n";
+            var appends="<a href='/categories/"+categories_all[a]+"' class='in-search-item'>"+categories_all[a]+"</a>\n";
             dom_cs_catg.innerHTML=dom_cs_catg.innerHTML+appends;
         }
 }
