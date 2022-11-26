@@ -19,7 +19,7 @@ function unique(arr){
     }
     return hash;
   }
-function intro_generate(dom,config,gcl){
+function intro_generate(dom,config,gcl,dal){
     dom.querySelector("data_p_count_passage").innerHTML=gcl[0];
     dom.querySelector("data_p_count_category").innerHTML=gcl[1];
     dom.querySelector("data_p_count_tag").innerHTML=gcl[2];
@@ -27,6 +27,7 @@ function intro_generate(dom,config,gcl){
     dom.querySelector("data_c_discription").innerHTML=config.discription;
     dom.querySelector("data_c_location").innerHTML=config.location;
     dom.querySelector("#data_c_avatar").setAttribute('src',config.avatar);
+    dom.querySelector("title").innerHTML=dal[0]+dom.querySelector("title").innerHTML;
 }
 function toc_finder(data_dom){
     var hash=new Array();
@@ -39,5 +40,5 @@ function toc_finder(data_dom){
 exports.dg=(t,d,a,b,c)=>data_generate(t,d,a,b,c);
 exports.uq=(a)=>unique(a);
 exports.gpd=(d)=>get_post_data(d);
-exports.ig=(d,c,g)=>intro_generate(d,c,g);
+exports.ig=(d,c,g,dd)=>intro_generate(d,c,g,dd);
 exports.tc=(dd)=>toc_finder(dd);

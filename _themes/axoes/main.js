@@ -8,6 +8,7 @@ function resize(){
         document.querySelector("#column-left").style.fontSize="1.75rem";
         document.querySelector("#column-right").style.fontSize="1.75rem";
         document.querySelectorAll("#column-left>*").forEach((el)=>{el.style.width="85vw"});
+        document.querySelector("#column-right").style.width="85vw";
     }else{
         container.style.flexDirection="row";
         container.style.alignItems="flex-start";
@@ -16,4 +17,4 @@ function resize(){
 function render_scroll(id){
     document.querySelector(id).scrollIntoView(true);
 }
-window.onload=()=>{resize();}
+window.onload=()=>{resize();hljs.highlightAll();}

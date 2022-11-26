@@ -5,6 +5,7 @@ var marked=require("marked");
 var jsdom=require("jsdom");
 var config=JSON.parse(fs.readFileSync("_config.json").toString());
 var tmplt=fs.readFileSync("_themes/"+config.theme+"/template.html").toString();
+var cjs=require("./_themes/"+config.theme+"/custom.js");
 
 const {JSDOM}=jsdom;
 const DOM=new JSDOM(tmplt);
@@ -38,62 +39,101 @@ function generate_all(){
     dir.forEach(function(filename) {
         // --- VARIABLE DEFINE ---
         var DOM_THIS=new JSDOM(tmplt);
+        
         var filedir = path.join(config.srcdir+"/post/", filename);
+
         var data_got=fs.readFileSync(filedir).toString();
+
         var data_transformed=marked.parse(data_got.replace(/\-\-\-[\s\S]*\-\-\-\n/,"\n"));
+
         var data_information=sg.gpd(data_got);
+
         var data_toWrite= DOM_THIS.window.document; // - SHORT LINK FOR DOM.document
-        data_toWrite.querySelector("data").innerHTML=data_transformed;
-        console.log("Generating Information about "+filename);
+
+        // --- DATA & CC INSERT ---
+        var cc_block='<div class="cc">'+
+        '<i class="fa fa-creative-commons"></i> Creative Commons'+
+        '</div>';
+
+        data_toWrite.querySelector("data").innerHTML=data_transformed+cc_block;
 
         // --- TAG TRANSFORM ---
         var _tags=data_information[2].split(" ");
+
         tag_slctr=data_toWrite.querySelectorAll("data_tag");
+
         for(var z=0;z<_tags.length;z++){
+
             var appends="\n<p class='tags'><font class='tags-name'>"+_tags[z]+"</font></p>";
+
             tag_slctr.forEach((el)=>{el.innerHTML=el.innerHTML+appends});
+
         }
 
         // --- CATEGORY TRANSFORM ---
         var _categories=data_information[3].split(" ");
+
         catg_slctr=data_toWrite.querySelectorAll("data_category");
+
         for(var y=0;y<_categories.length;y++){
+
             var appends="\n<p class='categories'><font class='categories'>"+_categories[y]+"</font></p>";
+
             catg_slctr.forEach((el)=>{el.innerHTML=el.innerHTML+appends});
+
         }
 
         // --- GENERATE TOC ---
         var _tocs=sg.tc(data_toWrite);
+
         tocs_slctr=data_toWrite.querySelector("#data_toc");
+
         for(var w=0;w<_tocs.length;w++){
+
             var raw_toc=_tocs[w].replace(/ /g,"-").toLowerCase();
+
             raw_toc=raw_toc.replace(/[\/,\+]/g,"");
+
             var appends="\n<a class='tocs' id='con_"+_tocs[w]+"' href='#"+raw_toc+"'>"+_tocs[w]+"</a><br/>";
+
             tocs_slctr.innerHTML=tocs_slctr.innerHTML+appends;
         }
 
         // --- SINGLE DATA INSERT ---
         data_toWrite.querySelector("data_category").innerHTML=data_information[3];
-        data_toWrite.querySelector("data_date").innerHTML=data_information[1];
-        data_toWrite.querySelector("data_title").innerHTML=data_information[0];
-        sg.ig(data_toWrite,config,globalCountInformation);
 
+        data_toWrite.querySelector("data_date").innerHTML=data_information[1];
+
+        data_toWrite.querySelector("data_title").innerHTML=data_information[0];
+
+        sg.ig(data_toWrite,config,globalCountInformation,data_information);
+
+        // --- SAVE FILE & PUSH DATA ---
         var time=data_information[1].split("-");
+
         var passage_dir=config.pubdir+"/archives/"+time[0]+"/"+time[1]+"/"+time[2];
+
         var passage_pub="/archives/"+time[0]+"/"+time[1]+"/"+time[2]+"/"+filename.replace(/\.md/,".html");
-        fs.mkdirSync(passage_dir,{recursive:true});
+
         data_toWrite="<!DOCTYPE html>\n<head>"+data_toWrite.head.innerHTML+"</head>\n<body>"+data_toWrite.body.innerHTML+"</body>";
+
+        fs.mkdirSync(passage_dir,{recursive:true});
+
         fs.writeFile(passage_dir+"/"+filename.replace(/\.md/,".html"),data_toWrite,(err)=>{if(err)throw err;});
+
         var dataAndInformation_This=new Array(data_transformed,data_information,passage_pub);
+
         dataAndInformation_all.push(dataAndInformation_This);
     });
     // --- VARIABLE DEFINE FOR INDEX ---
     var DOM_INDEX=new JSDOM(tmplt).window.document;
-    sg.ig(DOM_INDEX,config,globalCountInformation);
+    sg.ig(DOM_INDEX,config,globalCountInformation,new Array("I","B","GG"));
     var DOM_INDEX_DATA=DOM_INDEX.querySelector("data");
     DOM_INDEX.querySelector("#main-intro").style.display="none";
     DOM_INDEX.querySelector("#data_toc").style.display="none";
     DOM_INDEX.querySelector("#column-right").style.boxShadow="none !important";
+    DOM_INDEX.querySelector("#column-right").style.padding="0";
+    DOM_INDEX.querySelector("#column-right").style.margin="0";
     // --- INDEX BUILD ---
     for (var z=0;z<dataAndInformation_all.length;z++){
         var data_less=dataAndInformation_all[z][0].replace(/<\!\-\-more\-\->[\s\S]*/,"");
@@ -111,6 +151,29 @@ function generate_all(){
     }
     var index_toWrite="<!DOCTYPE html>\n<head>"+DOM_INDEX.head.innerHTML+"</head>\n<body>"+DOM_INDEX.body.innerHTML+"</body>";
     fs.writeFileSync(config.pubdir+"/index.html",index_toWrite);
+
+    // --- SPECIALS ---
+    var specials=config.specials;
+    for(var r=0,l=specials.length;r<l;r++){
+        var filedir=config.srcdir+"/"+specials[r]+"/index.md";
+        var DOM_THIS=new JSDOM(tmplt);
+        var data_got=fs.readFileSync(filedir).toString();
+        var data_transformed=marked.parse(data_got.replace(/\-\-\-[\s\S]*\-\-\-\n/,"\n"));
+        var data_information=sg.gpd(data_got);
+        var data_toWrite= DOM_THIS.window.document;
+        data_toWrite.querySelector("data_category").innerHTML=data_information[3];
+        data_toWrite.querySelector("data_date").innerHTML=data_information[1];
+        data_toWrite.querySelector("data_title").innerHTML=data_information[0];
+        sg.ig(data_toWrite,config,globalCountInformation,data_information);
+        var cc_block='<div class="cc">'+
+        '<i class="fa fa-creative-commons"></i> Creative Commons'+
+        '</div>';
+        data_toWrite.querySelector("data").innerHTML=data_transformed+cc_block;
+        data_toWrite="<!DOCTYPE html>\n<head>"+data_toWrite.head.innerHTML+"</head>\n<body>"+data_toWrite.body.innerHTML+"</body>";
+        var passage_dir=config.pubdir+"/"+specials[r];
+        fs.mkdirSync(passage_dir,{recursive:true});
+        fs.writeFile(passage_dir+"/index.html",data_toWrite,(err)=>{if(err)throw err;});
+    }
 
     // --- COPY THEME FILES ---
     fs.copyFileSync("_themes/"+config.theme+"/main.css",config.pubdir+"/main.css");
