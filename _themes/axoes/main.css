@@ -68,6 +68,16 @@ data>p>code{
     object-fit: cover;
     border-radius: 100%;
 }
+/*** TOC ***/
+a.tocs{
+    background:#eee;
+}
+a.tocs:focus{
+    background:#69b4f26f;
+}
+a.tocs:hover{
+    background:#ddd;
+}
 
 /* --- MAIN FRAME DISPLAY --- */
 .container{
@@ -78,7 +88,6 @@ data>p>code{
     justify-content: center;
     max-width: 85vw;
 }
-
 #column-left{
     position: sticky;
     top:3em;

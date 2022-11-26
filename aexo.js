@@ -68,7 +68,7 @@ function generate_all(){
         for(var w=0;w<_tocs.length;w++){
             var raw_toc=_tocs[w].replace(/ /g,"-").toLowerCase();
             raw_toc=raw_toc.replace(/[\/,\+]/g,"");
-            var appends="\n<a class='tocs' id='con_"+_tocs[w]+"' onclick=\"render_scroll('#"+raw_toc+"')\">"+_tocs[w]+"</a><br/>";
+            var appends="\n<a class='tocs' id='con_"+_tocs[w]+"' href='#"+raw_toc+"'>"+_tocs[w]+"</a><br/>";
             tocs_slctr.innerHTML=tocs_slctr.innerHTML+appends;
         }
 
