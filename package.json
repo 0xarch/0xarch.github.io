@@ -1,0 +1,10 @@
+{
+	"name":"aexo",
+	"version":"1.0.0",
+	"private":true,
+	"dependencies":{
+		"marked":"4.1.1",
+		"jsdom":"20.0.3",
+		"path":"0.12.7"
+	}
+}

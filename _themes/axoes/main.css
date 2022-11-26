@@ -1,0 +1,124 @@
+.level,.level-no-padding{
+    box-shadow:0px 0px 2px 0px #4a4a4a;
+    border-radius: 2px;
+    background:#fff;
+}
+.level{
+    padding:3px;
+}
+
+/* --- ELEMENT STYLES --*/
+@font-face {
+    font-family: "df";
+    src: url("https://cdn.jsdelivr.net/npm/futura-font@1.0.0/FuturaBT-Medium.woff") format("woff");
+    font-weight:normal;
+    font-size:medium;
+}
+body{
+    margin:0;
+    color:#4a4a4a;
+}
+a{
+    text-decoration: none;
+}
+*{
+    font-family: "df";
+    transition: all .3s ease-in-out;
+}
+body>header{
+    position:sticky;
+    height:2em;
+    margin:0;
+    width:100vw;
+    left:0;top:0;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+body>footer{
+    position: sticky;
+    bottom:0;
+    left:0;right:0;
+}
+header>*{
+    margin:3px;
+}
+
+data>p>code{
+    position: relative;
+    display:block;
+}
+#intro-card>*{
+    margin:5px;
+    
+}
+#intro-card-inner-count>*{
+    margin:5px;
+}
+
+/* --- MAIN FRAME DISPLAY --- */
+.container{
+    margin:15px auto;
+    display:flex;
+    flex-direction:row;
+    align-items: flex-start;
+    justify-content: center;
+    max-width: 80vw;
+}
+
+#column-left{
+    position: sticky;
+    top:3em;
+    min-width:15em;
+}
+#column-right{
+    display:block;
+}
+.columns{
+    margin:5px;
+}
+.index-post{
+    margin-bottom:1em;
+}
+
+/* FLEX SHORT DEFINE */
+.flex,.flex-column,.flex-row{
+    display:flex;
+}
+.flex-center{
+    align-items: center;
+    justify-content: center;
+}
+.flex-column{
+    flex-direction: column;
+}
+.flex-row{
+    flex-direction: row;
+}
+
+/* --- TAGS --- */
+.tags{
+    border-radius:5px;
+    box-shadow:0px 0px 1px black;
+    background-color: #59a4e2;
+}
+.tags>.tags-name{
+    margin: 2px;
+    color:#eee;
+}
+.tags>.tags-count{
+    background-color:#eee;
+    border-radius: 0px 5px 5px 0px;
+    color:#4a4a4a;
+    letter-spacing: 3px;
+}
+
+/* --- FOLLOW BUTTON ---*/
+.a_rendered_button{
+    text-align: center;
+    width:85%;
+    text-decoration: none;
+    border-radius:15em;
+    background:#59a4e2;
+    color:#eee;
+}
