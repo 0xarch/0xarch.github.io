@@ -244,24 +244,35 @@ function generate_all(){
 
         var appends="<a href='"+tags_all[b]+"' class='tag-and-category-page-tag-and-category'>"
         +tags_all[b]+"</a>\n";
+        
         fs.mkdirSync(config.pubdir+"/tags/"+tags_all[b],{recursive:true},()=>{});
+        
         DOM_TAGS.querySelector("data").innerHTML=DOM_TAGS.querySelector("data").innerHTML+appends;
     }
 
     for(var b=0;b<_tl;b++){
         var dom_this=new JSDOM(tmplt).window.document;
+        
         sg.sg(dom_this,posts_all,config,tags_all,categories_all);
+        
         sg.ig(dom_this,config,globalCountInformation,new Array(tags_all[b],"B","GG"));
+        
         var appends="<a href='"+tags_all[b]+"' class='tag-and-category-page-tag-and-category'>"
         +tags_all[b]+"</a><hr/>\n";
+        
         for(var a=0,l=posts_all.length;a<l;a++){
+        
             if(posts_info[posts_all[a][0]]._tags.includes(tags_all[b])){
+        
                 appends=appends+"<a href='"+posts_all[a][1]+"'>"+posts_all[a][0]+"</a>";
+         
             }
         }
+        
         dom_this.querySelector("data").innerHTML=dom_this.querySelector("data").innerHTML+appends;
 
         var data_toWrite="<!DOCTYPE html>\n<head>"+dom_this.head.innerHTML+"</head>\n<body>"+dom_this.body.innerHTML+"</body>";
+        
         fs.writeFile(config.pubdir+"/tags/"+tags_all[b]+"/index.html",data_toWrite,()=>{});
     }
 
@@ -282,24 +293,34 @@ function generate_all(){
     for(var b=0;b<_cl;b++){
 
         var appends="<a href='"+categories_all[b]+"' class='tag-and-category-page-tag-and-category'>"+categories_all[b]+"</a>\n";
+        
         fs.mkdirSync(config.pubdir+"/categories/"+categories_all[b],{recursive:true},()=>{});
+        
         DOM_CATEGORIES.querySelector("data").innerHTML=DOM_CATEGORIES.querySelector("data").innerHTML+appends;
     }
 
     for(var b=0;b<_cl;b++){
         var dom_this=new JSDOM(tmplt).window.document;
+
         sg.sg(dom_this,posts_all,config,tags_all,categories_all);
+
         sg.ig(dom_this,config,globalCountInformation,new Array(categories_all[b],"B","GG"));
+
         var appends="<a href='"+categories_all[b]+"' class='tag-and-category-page-tag-and-category'>"
         +categories_all[b]+"</a><hr/>\n";
+
         for(var a=0,l=posts_all.length;a<l;a++){
+
             if(posts_info[posts_all[a][0]]._categories.includes(categories_all[b])){
+
                 appends=appends+"<a href='"+posts_all[a][1]+"'>"+posts_all[a][0]+"</a>";
+                
             }
         }
         dom_this.querySelector("data").innerHTML=dom_this.querySelector("data").innerHTML+appends;
 
         var data_toWrite="<!DOCTYPE html>\n<head>"+dom_this.head.innerHTML+"</head>\n<body>"+dom_this.body.innerHTML+"</body>";
+        
         fs.writeFile(config.pubdir+"/categories/"+categories_all[b]+"/index.html",data_toWrite,()=>{});
     }
 
@@ -314,6 +335,7 @@ function generate_all(){
 
     // --- COPY THEME FILES ---
     fs.copyFileSync("_themes/"+config.theme+"/main.css",config.pubdir+"/main.css");
+    
     fs.copyFileSync("_themes/"+config.theme+"/main.js",config.pubdir+"/main.js");
 }
 
