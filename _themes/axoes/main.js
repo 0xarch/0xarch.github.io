@@ -13,4 +13,7 @@ function resize(){
         container.style.alignItems="flex-start";
     }
 }
+function render_scroll(id){
+    document.querySelector(id).scrollIntoView(true);
+}
 window.onload=()=>{resize();}

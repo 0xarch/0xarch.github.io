@@ -62,16 +62,21 @@ function generate_all(){
             catg_slctr.forEach((el)=>{el.innerHTML=el.innerHTML+appends});
         }
 
+        // --- GENERATE TOC ---
+        var _tocs=sg.tc(data_toWrite);
+        tocs_slctr=data_toWrite.querySelector("#data_toc");
+        for(var w=0;w<_tocs.length;w++){
+            var raw_toc=_tocs[w].replace(/ /g,"-").toLowerCase();
+            raw_toc=raw_toc.replace(/[\/,\+]/g,"");
+            var appends="\n<a class='tocs' id='con_"+_tocs[w]+"' onclick=\"render_scroll('#"+raw_toc+"')\">"+_tocs[w]+"</a><br/>";
+            tocs_slctr.innerHTML=tocs_slctr.innerHTML+appends;
+        }
+
         // --- SINGLE DATA INSERT ---
         data_toWrite.querySelector("data_category").innerHTML=data_information[3];
         data_toWrite.querySelector("data_date").innerHTML=data_information[1];
         data_toWrite.querySelector("data_title").innerHTML=data_information[0];
-
-        data_toWrite.querySelector("data_p_count_passage").innerHTML=globalCountInformation[0];
-        data_toWrite.querySelector("data_p_count_category").innerHTML=globalCountInformation[1];
-        data_toWrite.querySelector("data_p_count_tag").innerHTML=globalCountInformation[2];
-
-        sg.ig(data_toWrite,config);
+        sg.ig(data_toWrite,config,globalCountInformation);
 
         var time=data_information[1].split("-");
         var passage_dir=config.pubdir+"/archives/"+time[0]+"/"+time[1]+"/"+time[2];
@@ -84,12 +89,10 @@ function generate_all(){
     });
     // --- VARIABLE DEFINE FOR INDEX ---
     var DOM_INDEX=new JSDOM(tmplt).window.document;
-    sg.ig(DOM_INDEX,config);
+    sg.ig(DOM_INDEX,config,globalCountInformation);
     var DOM_INDEX_DATA=DOM_INDEX.querySelector("data");
-    DOM_INDEX.querySelector("data_p_count_passage").innerHTML=globalCountInformation[0];
-    DOM_INDEX.querySelector("data_p_count_category").innerHTML=globalCountInformation[1];
-    DOM_INDEX.querySelector("data_p_count_tag").innerHTML=globalCountInformation[2];
     DOM_INDEX.querySelector("#main-intro").style.display="none";
+    DOM_INDEX.querySelector("#data_toc").style.display="none";
     DOM_INDEX.querySelector("#column-right").style.boxShadow="none !important";
     // --- INDEX BUILD ---
     for (var z=0;z<dataAndInformation_all.length;z++){
@@ -108,6 +111,8 @@ function generate_all(){
     }
     var index_toWrite="<!DOCTYPE html>\n<head>"+DOM_INDEX.head.innerHTML+"</head>\n<body>"+DOM_INDEX.body.innerHTML+"</body>";
     fs.writeFileSync(config.pubdir+"/index.html",index_toWrite);
+
+    // --- COPY THEME FILES ---
     fs.copyFileSync("_themes/"+config.theme+"/main.css",config.pubdir+"/main.css");
     fs.copyFileSync("_themes/"+config.theme+"/main.js",config.pubdir+"/main.js");
 }

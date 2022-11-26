@@ -19,14 +19,25 @@ function unique(arr){
     }
     return hash;
   }
-function intro_generate(dom,config){
+function intro_generate(dom,config,gcl){
+    dom.querySelector("data_p_count_passage").innerHTML=gcl[0];
+    dom.querySelector("data_p_count_category").innerHTML=gcl[1];
+    dom.querySelector("data_p_count_tag").innerHTML=gcl[2];
     dom.querySelector("data_c_name").innerHTML=config.name;
     dom.querySelector("data_c_discription").innerHTML=config.discription;
     dom.querySelector("data_c_location").innerHTML=config.location;
     dom.querySelector("#data_c_avatar").setAttribute('src',config.avatar);
 }
+function toc_finder(data_dom){
+    var hash=new Array();
+    data_dom.querySelectorAll("h2").forEach((el)=>{
+        hash.push(el.innerHTML);
+    });
+    return hash;
+}
 
 exports.dg=(t,d,a,b,c)=>data_generate(t,d,a,b,c);
 exports.uq=(a)=>unique(a);
 exports.gpd=(d)=>get_post_data(d);
-exports.ig=(d,c)=>intro_generate(d,c);
+exports.ig=(d,c,g)=>intro_generate(d,c,g);
+exports.tc=(dd)=>toc_finder(dd);
