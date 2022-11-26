@@ -151,6 +151,8 @@ data_cc_search>*>font{
     margin:5px;
     padding:0 .5rem;
     width:40rem;
+}
+#explorer{
     min-height:25rem;
 }
 #column-right a:not(.read-more){

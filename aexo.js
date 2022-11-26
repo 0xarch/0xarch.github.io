@@ -268,6 +268,7 @@ function generate_all(){
          
             }
         }
+        dom_this.querySelector("#main-intro").style.display="none";
         
         dom_this.querySelector("data").innerHTML=dom_this.querySelector("data").innerHTML+appends;
 
@@ -317,6 +318,8 @@ function generate_all(){
                 
             }
         }
+        dom_this.querySelector("#main-intro").style.display="none";
+
         dom_this.querySelector("data").innerHTML=dom_this.querySelector("data").innerHTML+appends;
 
         var data_toWrite="<!DOCTYPE html>\n<head>"+dom_this.head.innerHTML+"</head>\n<body>"+dom_this.body.innerHTML+"</body>";
