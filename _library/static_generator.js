@@ -71,7 +71,7 @@ function toc_finder(data_dom){
 }
 function element_override(data_dom,toc,mainShadow,padmag,intro){
     if(!toc){
-        data_dom.querySelector("#data_toc").style.display="none";
+        data_dom.querySelector("#data_toc").remove();
     }
     if(!mainShadow){
         data_dom.querySelector("#explorer").style.boxShadow="none !important";
@@ -81,7 +81,7 @@ function element_override(data_dom,toc,mainShadow,padmag,intro){
         data_dom.querySelector("#column-right").style.margin="0";
     }
     if(!intro){
-        data_dom.querySelector("#main-intro").style.display="none";
+        data_dom.querySelector("#main-intro").remove();
     }
 
 }

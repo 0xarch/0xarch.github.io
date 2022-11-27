@@ -16,7 +16,7 @@ var Dir=fs.readdirSync(config.srcdir+"/post/");
  * [0] for passage/post , [1] for category , [2] for tag , [3] for time
  */
 var globalCountInformation=new Array(0,0,0);
-var globalPassageInformation=new Array(new Array(),new Array(),new Array(),new Array());
+var globalPassageInformation=new Array(new Array(),new Array(),new Array(),new Array()); // [0] is an Array [Name,Location]
 var dataAndInformation_all=new Array();
 
 /* Special array for each passage
@@ -135,7 +135,7 @@ function generate_all(){
 
         data_toWrite.querySelector("data_title").innerHTML=data_information[0];
 
-        sg.ig(data_toWrite,config,globalCountInformation[2],data_information);
+        sg.ig(data_toWrite,config,globalCountInformation,data_information);
 
         // --- SEARCH ITEM INSERT ---
         sg.sg(data_toWrite,gpi[0],config,gpi[2],gpi[1]);
@@ -163,7 +163,7 @@ function generate_all(){
     var DOM_INDEX=new JSDOM(tmplt).window.document;
     var DOM_INDEX_DATA=DOM_INDEX.querySelector("data");
 
-    sg.sg(DOM_INDEX,gpi[0],config,gp[2],gp[1]);
+    sg.sg(DOM_INDEX,gpi[0],config,gpi[2],gpi[1]);
     sg.ig(DOM_INDEX,config,gci,new Array("I","B","GG"));
     sg.eo(DOM_INDEX,false,false,false,false);
 
@@ -198,7 +198,7 @@ function generate_all(){
         var data_toWrite= DOM_THIS.window.document;
         sg.sg(data_toWrite,gpi[0],config,gpi[2],gpi[1]);
         sg.ig(data_toWrite,config,globalCountInformation,data_information);
-        sg.eo(data_toWrite,false,true,true,false);
+        sg.eo(data_toWrite,false,true,true,true);
         data_toWrite.querySelector("data_category").innerHTML=data_information[3];
         data_toWrite.querySelector("data_date").innerHTML=data_information[1];
         data_toWrite.querySelector("data_title").innerHTML=data_information[0];
@@ -236,92 +236,77 @@ function generate_all(){
 
     // *** TAGS
     for(var b=0;b<_tl;b++){
-
         var appends="<a href='"+gpi[2][b]+"' class='tag-and-category-page-tag-and-category'>"
         +gpi[2][b]+"</a>\n";
-        
         fs.mkdirSync(config.pubdir+"/tags/"+gpi[2][b],{recursive:true},()=>{});
-        
         DOM_TAGS.querySelector("data").innerHTML=DOM_TAGS.querySelector("data").innerHTML+appends;
     }
-
     for(var b=0;b<_tl;b++){
         var dom_this=new JSDOM(tmplt).window.document;
-        
         sg.sg(dom_this,gpi[0],config,gpi[2],gpi[1]);
-        
         sg.ig(dom_this,config,globalCountInformation,new Array(gpi[2][b],"B","GG"));
-        
+        sg.eo(dom_this,false,true,true,false);
         var appends="<a href='"+gpi[2][b]+"' class='tag-and-category-page-tag-and-category'>"
         +gpi[2][b]+"</a><hr/>\n";
-        
         for(var a=0,l=gpi[0].length;a<l;a++){
-        
             if(posts_info[gpi[0][a][0]]._tags.includes(gpi[2][b])){
-        
                 appends=appends+"<a href='"+gpi[0][a][1]+"'>"+gpi[0][a][0]+"</a>";
-         
             }
         }
-        dom_this.querySelector("#main-intro").style.display="none";
-        
         dom_this.querySelector("data").innerHTML=dom_this.querySelector("data").innerHTML+appends;
-
         var data_toWrite="<!DOCTYPE html>\n<head>"+dom_this.head.innerHTML+"</head>\n<body>"+dom_this.body.innerHTML+"</body>";
-        
         fs.writeFile(config.pubdir+"/tags/"+gpi[2][b]+"/index.html",data_toWrite,()=>{});
     }
-
-
     var data_tag_toWrite="<!DOCTYPE html>\n<head>"+DOM_TAGS.head.innerHTML+"</head>\n<body>"+DOM_TAGS.body.innerHTML+"</body>";
 
     fs.mkdirSync(config.pubdir+"/tags/",{recursive:true});
-
     fs.writeFile(config.pubdir+"/tags/index.html",data_tag_toWrite,(err)=>{if(err)throw err;});
 
     // *** CATEGORIES
     for(var b=0;b<_cl;b++){
-
         var appends="<a href='"+gpi[1][b]+"' class='tag-and-category-page-tag-and-category'>"+gpi[1][b]+"</a>\n";
-        
         fs.mkdirSync(config.pubdir+"/categories/"+gpi[1][b],{recursive:true},()=>{});
-        
         DOM_CATEGORIES.querySelector("data").innerHTML=DOM_CATEGORIES.querySelector("data").innerHTML+appends;
     }
-
     for(var b=0;b<_cl;b++){
         var dom_this=new JSDOM(tmplt).window.document;
-
         sg.sg(dom_this,gpi[0],config,gpi[2],gpi[1]);
-
         sg.ig(dom_this,config,globalCountInformation,new Array(gpi[1][b],"B","GG"));
-
+        sg.eo(dom_this,false,true,true,false);
         var appends="<a href='"+gpi[1][b]+"' class='tag-and-category-page-tag-and-category'>"
         +gpi[1][b]+"</a><hr/>\n";
-
         for(var a=0,l=gpi[0].length;a<l;a++){
-
             if(posts_info[gpi[0][a][0]]._categories.includes(gpi[1][b])){
-
                 appends=appends+"<a href='"+gpi[0][a][1]+"'>"+gpi[0][a][0]+"</a>";
-                
             }
         }
-
         dom_this.querySelector("data").innerHTML=dom_this.querySelector("data").innerHTML+appends;
-
         var data_toWrite="<!DOCTYPE html>\n<head>"+dom_this.head.innerHTML+"</head>\n<body>"+dom_this.body.innerHTML+"</body>";
-        
         fs.writeFile(config.pubdir+"/categories/"+gpi[1][b]+"/index.html",data_toWrite,()=>{});
     }
-
-    DOM_CATEGORIES.querySelector("#main-intro").innerHTML="";
-
     var data_catg_toWrite="<!DOCTYPE html>\n<head>"+DOM_CATEGORIES.head.innerHTML+"</head>\n<body>"+DOM_CATEGORIES.body.innerHTML+"</body>";
 
     fs.mkdirSync(config.pubdir+"/categories/",{recursive:true});
-
     fs.writeFile(config.pubdir+"/categories/index.html",data_catg_toWrite,(err)=>{if(err)throw err;});
+
+    // *** ARCHIVES
+    for(var b=0;b<_al;b++){
+        var appends="<h3>"+gpi[3][b]+"</h3><div id='D"+gpi[3][b].replace(/\-/g,"")+"'></div>\n";
+        DOM_ARCHIVES.querySelector("data").innerHTML=DOM_ARCHIVES.querySelector("data").innerHTML+appends;
+    }
+    for(var b=0;b<_al;b++){
+        var appends="<hr/>\n";
+        for(var a=0,l=gpi[0].length;a<l;a++){
+            if(posts_info[gpi[0][a][0]].data_information[1].includes(gpi[3][b])){
+                appends=appends+"<a href='"+gpi[0][b][1]+"'>"+gpi[0][b][0]+"</a>";
+            }
+        }
+        DOM_ARCHIVES.querySelector("#D"+gpi[3][b].replace(/\-/g,"")).innerHTML=DOM_ARCHIVES.querySelector("#D"+gpi[3][b].replace(/\-/g,"")).innerHTML+appends;
+    }
+    var data_arcv_toWrite="<!DOCTYPE html>\n<head>"+DOM_ARCHIVES.head.innerHTML+"</head>\n<body>"+DOM_ARCHIVES.body.innerHTML+"</body>";
+
+    fs.mkdirSync(config.pubdir+"/archives/",{recursive:true});
+    fs.writeFile(config.pubdir+"/archives/index.html",data_arcv_toWrite,(err)=>{if(err)throw err;});
 
 
     // --- COPY THEME FILES ---
