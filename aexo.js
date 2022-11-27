@@ -8,53 +8,60 @@ var tmplt=fs.readFileSync("_themes/"+config.theme+"/template.html").toString();
 var cjs=require("./_themes/"+config.theme+"/custom.js");
 
 const {JSDOM}=jsdom;
-const DOM=new JSDOM(tmplt);
+
+var Dir=fs.readdirSync(config.srcdir+"/post/");
+// --- ARRAY DEFINE --- MOST IMPORTANT -> SAVING DATA
+
+/* Data-saving array :
+ * [0] for passage/post , [1] for category , [2] for tag , [3] for time
+ */
+var globalCountInformation=new Array(0,0,0);
+var globalPassageInformation=new Array(new Array(),new Array(),new Array(),new Array());
+var dataAndInformation_all=new Array();
+
+/* Special array for each passage
+ * [0] for data & information [title,date,tag,category]
+ * [1] for tag
+ * [2] for category
+ */
+var posts_info={};
+
+// --- GET ALL COUNTS ---
+Dir.forEach((filename)=>{
+
+    var filedir = path.join(config.srcdir+"/post/", filename);
+
+    var data_got=fs.readFileSync(filedir).toString();
+
+    var data_information=sg.gpd(data_got); // [0] for title , [1] for date , [2] for tag , [3] for category
+
+    var _date=data_information[1];
+    var _categories=data_information[3].split(" ");
+    var _tags=data_information[2].split(" ");
+
+    globalPassageInformation[1]=globalPassageInformation[1].concat(_categories);
+    globalPassageInformation[2]=globalPassageInformation[2].concat(_tags);
+    globalPassageInformation[3]=globalPassageInformation[3].concat(_date);
+
+    var time=data_information[1].split("-");
+
+    var passage_pub="/archives/"+time[0]+"/"+time[1]+"/"+time[2]+"/"+filename.replace(/\.md/,".html");
+
+    globalPassageInformation[0].push(new Array(filename.replace(/\.md/,""),passage_pub));
+
+    posts_info[data_information[0]]={data_information,_tags,_categories};
+
+});
+globalCountInformation[0]=globalPassageInformation[0].length;
+globalCountInformation[1]=globalPassageInformation[1].length;
+globalCountInformation[2]=globalPassageInformation[2].length;
+console.log("Tags ",globalPassageInformation[2],"\n","Categories ",globalPassageInformation[1]);
+console.log("Count Information ",globalCountInformation);
+var gci=globalCountInformation,
+gpi=globalPassageInformation; // --- SHORT VARAIBLE
 
 function generate_all(){
     var dir=fs.readdirSync(config.srcdir+"/post/");
-    // --- ARRAY DEFINE --- MOST IMPORTANT -> SAVING DATA
-    var dataAndInformation_all=new Array();
-    var tags_all=new Array();
-    var categories_all=new Array();
-    var posts_all=new Array();
-    var posts_info={};
-    // --- GET ALL COUNTS ---
-    var globalCountInformation=new Array(0,0,0);
-    dir.forEach((filename)=>{
-
-        var filedir = path.join(config.srcdir+"/post/", filename);
-
-        var data_got=fs.readFileSync(filedir).toString();
-
-        var data_information=sg.gpd(data_got);
-
-        var _tags=data_information[2].split(" ");
-
-        var _categories=data_information[3].split(" ");
-
-        tags_all=tags_all.concat(_tags);
-
-        categories_all=categories_all.concat(_categories);
-
-        var time=data_information[1].split("-");
-
-        var passage_pub="/archives/"+time[0]+"/"+time[1]+"/"+time[2]+"/"+filename.replace(/\.md/,".html");
-
-        posts_all.push(new Array(filename.replace(/\.md/,""),passage_pub));
-
-        posts_info[data_information[0]]={data_information,_tags,_categories};
-
-        globalCountInformation[0]++;
-
-    });
-    globalCountInformation[1]=categories_all.length;
-    globalCountInformation[2]=tags_all.length;
-    console.log("Tags ",tags_all,"\n","Categories ",categories_all);
-    console.log("Count Information ",globalCountInformation);
-    /* here , the Array has 3 element:
-     * [0] for passage , [1] for category , [2] for tag
-     */
-
     dir.forEach(function(filename) {
         // --- VARIABLE DEFINE ---
         var DOM_THIS=new JSDOM(tmplt);
@@ -115,7 +122,7 @@ function generate_all(){
 
             raw_toc=raw_toc.replace(/[\/,\+]/g,"");
 
-            var appends="\n<a class='tocs' id='con_"+_tocs[w]+"' href='#"+raw_toc+"'>"+_tocs[w]+"</a><br/>";
+            var appends="\n<a class='tocs' id='con_"+_tocs[w]+"' href='#"+raw_toc+"' onclick='toggleHeader(false)'>"+_tocs[w]+"</a><br/>";
 
             tocs_slctr.innerHTML=tocs_slctr.innerHTML+appends;
         }
@@ -128,10 +135,10 @@ function generate_all(){
 
         data_toWrite.querySelector("data_title").innerHTML=data_information[0];
 
-        sg.ig(data_toWrite,config,globalCountInformation,data_information);
+        sg.ig(data_toWrite,config,globalCountInformation[2],data_information);
 
         // --- SEARCH ITEM INSERT ---
-        sg.sg(data_toWrite,posts_all,config,tags_all,categories_all);
+        sg.sg(data_toWrite,gpi[0],config,gpi[2],gpi[1]);
 
 
         // --- SAVE FILE & PUSH DATA ---
@@ -154,20 +161,11 @@ function generate_all(){
 
     // --- VARIABLE DEFINE FOR INDEX ---
     var DOM_INDEX=new JSDOM(tmplt).window.document;
-
-    sg.ig(DOM_INDEX,config,globalCountInformation,new Array("I","B","GG"));
-
     var DOM_INDEX_DATA=DOM_INDEX.querySelector("data");
 
-    DOM_INDEX.querySelector("#main-intro").style.display="none";
-
-    DOM_INDEX.querySelector("#data_toc").style.display="none";
-
-    DOM_INDEX.querySelector("#explorer").style.boxShadow="none !important";
-
-    DOM_INDEX.querySelector("#column-right").style.padding="0";
-
-    DOM_INDEX.querySelector("#column-right").style.margin="0";
+    sg.sg(DOM_INDEX,gpi[0],config,gp[2],gp[1]);
+    sg.ig(DOM_INDEX,config,gci,new Array("I","B","GG"));
+    sg.eo(DOM_INDEX,false,false,false,false);
 
     // --- INDEX BUILD ---
     for (var z=0;z<dataAndInformation_all.length;z++){
@@ -184,7 +182,7 @@ function generate_all(){
         '</div>';
         DOM_INDEX_DATA.innerHTML=appends+DOM_INDEX_DATA.innerHTML;
     }
-    sg.sg(DOM_INDEX,posts_all,config,tags_all,categories_all);
+    
 
     var index_toWrite="<!DOCTYPE html>\n<head>"+DOM_INDEX.head.innerHTML+"</head>\n<body>"+DOM_INDEX.body.innerHTML+"</body>";
     fs.writeFileSync(config.pubdir+"/index.html",index_toWrite);
@@ -192,60 +190,57 @@ function generate_all(){
     // --- SPECIALS ---
     var specials=config.specials;
     for(var r=0,l=specials.length;r<l;r++){
-
         var filedir=config.srcdir+"/"+specials[r]+"/index.md";
-
         var DOM_THIS=new JSDOM(tmplt);
-
         var data_got=fs.readFileSync(filedir).toString();
-
         var data_transformed=marked.parse(data_got.replace(/\-\-\-[\s\S]*\-\-\-\n/,"\n"));
-
         var data_information=sg.gpd(data_got);
-
         var data_toWrite= DOM_THIS.window.document;
-
-        data_toWrite.querySelector("data_category").innerHTML=data_information[3];
-
-        data_toWrite.querySelector("data_date").innerHTML=data_information[1];
-
-        data_toWrite.querySelector("data_title").innerHTML=data_information[0];
-
+        sg.sg(data_toWrite,gpi[0],config,gpi[2],gpi[1]);
         sg.ig(data_toWrite,config,globalCountInformation,data_information);
-
+        sg.eo(data_toWrite,false,true,true,false);
+        data_toWrite.querySelector("data_category").innerHTML=data_information[3];
+        data_toWrite.querySelector("data_date").innerHTML=data_information[1];
+        data_toWrite.querySelector("data_title").innerHTML=data_information[0];
         var cc_block='<div class="cc">'+
         '<i class="fa fa-creative-commons"></i> Creative Commons'+
         '</div>';
-
         data_toWrite.querySelector("data").innerHTML=data_transformed+cc_block;
-
         data_toWrite="<!DOCTYPE html>\n<head>"+data_toWrite.head.innerHTML+"</head>\n<body>"+data_toWrite.body.innerHTML+"</body>";
-
         var passage_dir=config.pubdir+"/"+specials[r];
 
         fs.mkdirSync(passage_dir,{recursive:true});
-
         fs.writeFile(passage_dir+"/index.html",data_toWrite,(err)=>{if(err)throw err;});
     }
 
-    // --- TAGS & CATEGORIES PAGE ---
-    var _tl=tags_all.length,_cl=categories_all.length;
+    // --- TAGS & CATEGORIES & ARCHIVES PAGE ---
+    var _tl=gpi[2].length,
+    _cl=gpi[1].length,
+    _al=gpi[0].length;
 
     var DOM_TAGS=new JSDOM(tmplt).window.document;
-
     var DOM_CATEGORIES=new JSDOM(tmplt).window.document;
+    var DOM_ARCHIVES=new JSDOM(tmplt).window.document;
+
+    sg.sg(DOM_TAGS,gpi[0],config,gpi[2],gpi[1]);
+    sg.sg(DOM_CATEGORIES,gpi[0],config,gpi[2],gpi[1]);
+    sg.sg(DOM_ARCHIVES,gpi[0],config,gpi[2],gpi[1]);
+    
+    sg.ig(DOM_TAGS,config,globalCountInformation,new Array("Tags","B","GG"));
+    sg.ig(DOM_CATEGORIES,config,globalCountInformation,new Array("Tags","B","GG"));
+    sg.ig(DOM_ARCHIVES,config,globalCountInformation,new Array("Tags","B","GG"));
+
+    sg.eo(DOM_TAGS,false,true,true,false);
+    sg.eo(DOM_CATEGORIES,false,true,true,false);
+    sg.eo(DOM_ARCHIVES,false,true,true,false);
 
     // *** TAGS
-    sg.sg(DOM_TAGS,posts_all,config,tags_all,categories_all);
-
-    sg.ig(DOM_TAGS,config,globalCountInformation,new Array("Tags","B","GG"));
-
     for(var b=0;b<_tl;b++){
 
-        var appends="<a href='"+tags_all[b]+"' class='tag-and-category-page-tag-and-category'>"
-        +tags_all[b]+"</a>\n";
+        var appends="<a href='"+gpi[2][b]+"' class='tag-and-category-page-tag-and-category'>"
+        +gpi[2][b]+"</a>\n";
         
-        fs.mkdirSync(config.pubdir+"/tags/"+tags_all[b],{recursive:true},()=>{});
+        fs.mkdirSync(config.pubdir+"/tags/"+gpi[2][b],{recursive:true},()=>{});
         
         DOM_TAGS.querySelector("data").innerHTML=DOM_TAGS.querySelector("data").innerHTML+appends;
     }
@@ -253,18 +248,18 @@ function generate_all(){
     for(var b=0;b<_tl;b++){
         var dom_this=new JSDOM(tmplt).window.document;
         
-        sg.sg(dom_this,posts_all,config,tags_all,categories_all);
+        sg.sg(dom_this,gpi[0],config,gpi[2],gpi[1]);
         
-        sg.ig(dom_this,config,globalCountInformation,new Array(tags_all[b],"B","GG"));
+        sg.ig(dom_this,config,globalCountInformation,new Array(gpi[2][b],"B","GG"));
         
-        var appends="<a href='"+tags_all[b]+"' class='tag-and-category-page-tag-and-category'>"
-        +tags_all[b]+"</a><hr/>\n";
+        var appends="<a href='"+gpi[2][b]+"' class='tag-and-category-page-tag-and-category'>"
+        +gpi[2][b]+"</a><hr/>\n";
         
-        for(var a=0,l=posts_all.length;a<l;a++){
+        for(var a=0,l=gpi[0].length;a<l;a++){
         
-            if(posts_info[posts_all[a][0]]._tags.includes(tags_all[b])){
+            if(posts_info[gpi[0][a][0]]._tags.includes(gpi[2][b])){
         
-                appends=appends+"<a href='"+posts_all[a][1]+"'>"+posts_all[a][0]+"</a>";
+                appends=appends+"<a href='"+gpi[0][a][1]+"'>"+gpi[0][a][0]+"</a>";
          
             }
         }
@@ -274,11 +269,9 @@ function generate_all(){
 
         var data_toWrite="<!DOCTYPE html>\n<head>"+dom_this.head.innerHTML+"</head>\n<body>"+dom_this.body.innerHTML+"</body>";
         
-        fs.writeFile(config.pubdir+"/tags/"+tags_all[b]+"/index.html",data_toWrite,()=>{});
+        fs.writeFile(config.pubdir+"/tags/"+gpi[2][b]+"/index.html",data_toWrite,()=>{});
     }
 
-
-    DOM_TAGS.querySelector("#main-intro").innerHTML="";
 
     var data_tag_toWrite="<!DOCTYPE html>\n<head>"+DOM_TAGS.head.innerHTML+"</head>\n<body>"+DOM_TAGS.body.innerHTML+"</body>";
 
@@ -287,15 +280,11 @@ function generate_all(){
     fs.writeFile(config.pubdir+"/tags/index.html",data_tag_toWrite,(err)=>{if(err)throw err;});
 
     // *** CATEGORIES
-    sg.sg(DOM_CATEGORIES,posts_all,config,tags_all,categories_all);
-
-    sg.ig(DOM_CATEGORIES,config,globalCountInformation,new Array("Categories","B","GG"));
-
     for(var b=0;b<_cl;b++){
 
-        var appends="<a href='"+categories_all[b]+"' class='tag-and-category-page-tag-and-category'>"+categories_all[b]+"</a>\n";
+        var appends="<a href='"+gpi[1][b]+"' class='tag-and-category-page-tag-and-category'>"+gpi[1][b]+"</a>\n";
         
-        fs.mkdirSync(config.pubdir+"/categories/"+categories_all[b],{recursive:true},()=>{});
+        fs.mkdirSync(config.pubdir+"/categories/"+gpi[1][b],{recursive:true},()=>{});
         
         DOM_CATEGORIES.querySelector("data").innerHTML=DOM_CATEGORIES.querySelector("data").innerHTML+appends;
     }
@@ -303,28 +292,27 @@ function generate_all(){
     for(var b=0;b<_cl;b++){
         var dom_this=new JSDOM(tmplt).window.document;
 
-        sg.sg(dom_this,posts_all,config,tags_all,categories_all);
+        sg.sg(dom_this,gpi[0],config,gpi[2],gpi[1]);
 
-        sg.ig(dom_this,config,globalCountInformation,new Array(categories_all[b],"B","GG"));
+        sg.ig(dom_this,config,globalCountInformation,new Array(gpi[1][b],"B","GG"));
 
-        var appends="<a href='"+categories_all[b]+"' class='tag-and-category-page-tag-and-category'>"
-        +categories_all[b]+"</a><hr/>\n";
+        var appends="<a href='"+gpi[1][b]+"' class='tag-and-category-page-tag-and-category'>"
+        +gpi[1][b]+"</a><hr/>\n";
 
-        for(var a=0,l=posts_all.length;a<l;a++){
+        for(var a=0,l=gpi[0].length;a<l;a++){
 
-            if(posts_info[posts_all[a][0]]._categories.includes(categories_all[b])){
+            if(posts_info[gpi[0][a][0]]._categories.includes(gpi[1][b])){
 
-                appends=appends+"<a href='"+posts_all[a][1]+"'>"+posts_all[a][0]+"</a>";
+                appends=appends+"<a href='"+gpi[0][a][1]+"'>"+gpi[0][a][0]+"</a>";
                 
             }
         }
-        dom_this.querySelector("#main-intro").style.display="none";
 
         dom_this.querySelector("data").innerHTML=dom_this.querySelector("data").innerHTML+appends;
 
         var data_toWrite="<!DOCTYPE html>\n<head>"+dom_this.head.innerHTML+"</head>\n<body>"+dom_this.body.innerHTML+"</body>";
         
-        fs.writeFile(config.pubdir+"/categories/"+categories_all[b]+"/index.html",data_toWrite,()=>{});
+        fs.writeFile(config.pubdir+"/categories/"+gpi[1][b]+"/index.html",data_toWrite,()=>{});
     }
 
     DOM_CATEGORIES.querySelector("#main-intro").innerHTML="";

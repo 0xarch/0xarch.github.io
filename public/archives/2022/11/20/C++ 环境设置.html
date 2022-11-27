@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<head>
+        <meta charset="utf-8">
+        <title>C++ 环境设置 - Aexo</title>
+        <script src="/main.js"></script>
+        <script src="/hl.min.js"></script>
+        <link rel="stylesheet" href="/main.css">
+        <link rel="stylesheet" href="/hl.css">
+        <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
+    </head>
+<body>
+        <header class="level-no-padding">
+            <a href="/" class="navbar-items">Architude</a>
+            <div id="navbar-itembar">
+                <a href="/archives/" class="navbar-items">Archives</a>
+                <a href="/tags/" class="navbar-items">Tags</a>
+                <a href="/categories/" class="navbar-items">Categories</a>
+            </div>
+            <a id="navbar-info" class="navbar-items" href="/about"><i class="fa fa-info-circle"></i></a>
+            <div id="navbar-search" class="navbar-items" onclick="toggleSearch()"><i class="fa fa-search"></i></div>
+        </header>
+        <div id="search-container" class="level shadow-global">
+            <div id="search-container-top" class="level">
+                <input class="level" id="in-menu-search-input" oninput="search()">
+                <i class="fa fa-search" id="in-menu-search" onclick="search()"></i>
+            </div>
+            <i class="fa fa-close bar-right" onclick="toggleSearch()"></i><br>
+            <data_cc_search>
+                <data_cs_post class="be-filted">
+                    <font>POSTS<hr></font>
+                <a href="/archives/2022/11/20/C++ 环境设置.html" class="in-search-item">C++ 环境设置</a>
+<a href="/archives/2022/11/24/Hello Aexo!.html" class="in-search-item">Hello Aexo!</a>
+</data_cs_post><br>
+                <data_cs_page class="be-filted">
+                    <font>PAGES<hr></font>
+                <a href="/about" class="in-search-item">about</a></data_cs_page><br>
+                <data_cs_tag class="be-filted">
+                    <font>TAGS<hr></font>
+                <a href="/tags/C++" class="in-search-item">C++</a>
+<a href="/tags/Aexo" class="in-search-item">Aexo</a>
+<a href="/tags/Blog" class="in-search-item">Blog</a>
+</data_cs_tag><br>
+                <data_cs_category class="be-filted">
+                    <font>CATEGORIES<hr></font>
+                <a href="/categories/C++" class="in-search-item">C++</a>
+<a href="/categories/AexoBlogSystem" class="in-search-item">AexoBlogSystem</a>
+</data_cs_category><br>
+            </data_cc_search>
+        </div>
+        <section onclick="close_search()">
+            <div class="container" id="container" onresize="resize()">
+                <div id="column-left" class="flex-column">
+                    <div id="intro-card" class="columns flex-column flex-center level">
+                        <img id="data_c_avatar" src="https://i.postimg.cc/8cS0wT2c/avatar.jpg">
+                        <font><data_c_name>0xarch</data_c_name></font>
+                        <font><data_c_discription>We won't be disturbed!</data_c_discription></font>
+                        <font><i class="fa fa-map-marker"></i> <data_c_location>Cloud 114514 , Xvd</data_c_location></font>
+                        <div id="intro-card-inner-count" class="flex-row">
+                            <p>
+                                文章<data_p_count_passage>undefined</data_p_count_passage>
+                            </p>
+                            <p>
+                                分类<data_p_count_category>undefined</data_p_count_category>
+                            </p>
+                            <p>
+                                标签<data_p_count_tag>undefined</data_p_count_tag>
+                            </p>
+                        </div>
+                        <a id="followme" class="a_rendered_button">Follow Me</a>
+                        <div id="intro-card-inner-blogInfo" class="flex-column">
+                        </div>
+                    </div>
+                    <div id="data_toc" class="columns flex-column flex-center level toc">
+                    
+<a class="tocs" id="con_本地环境设置" href="#本地环境设置" onclick="toggleHeader(false)">本地环境设置</a><br>
+<a class="tocs" id="con_文本编辑器" href="#文本编辑器" onclick="toggleHeader(false)">文本编辑器</a><br>
+<a class="tocs" id="con_C++ 编译器" href="#c-编译器" onclick="toggleHeader(false)">C++ 编译器</a><br>
+<a class="tocs" id="con_安装 GNU 的 C/C++ 编译器" href="#安装-gnu-的-cc-编译器" onclick="toggleHeader(false)">安装 GNU 的 C/C++ 编译器</a><br>
+<a class="tocs" id="con_GNU/GCC 编译" href="#gnugcc-编译" onclick="toggleHeader(false)">GNU/GCC 编译</a><br>
+<a class="tocs" id="con_g++ 常用命令选项" href="#g-常用命令选项" onclick="toggleHeader(false)">g++ 常用命令选项</a><br></div>
+                </div>
+                <div id="column-right" class="">
+                    <div id="explorer" class="columns level">
+                    <div id="main-intro">
+                        <div id="main-intro-top">
+                            <data_title>C++ 环境设置</data_title>&nbsp;
+                            发布于 <data_date>2022-11-20</data_date>
+                            <data_category>C++</data_category>
+                        </div><data_tag class="inline-tag">
+<p class="tags"><font class="tags-name">C++</font></p></data_tag>
+                    </div>
+                    <data><h2 id="本地环境设置">本地环境设置</h2>
+<p>如果您想要设置 C++ 语言环境，您需要确保电脑上有以下两款可用的软件，<strong>文本编辑器和 C++ 编译器</strong>。</p>
+<!--more-->
+<h2 id="文本编辑器">文本编辑器</h2>
+<p>这将用于输入您的程序。文本编辑器包括 <strong>Windows Notepad</strong>、<strong>OS Edit command</strong>、<strong>Brief</strong>、<strong>Epsilon</strong>、<strong>EMACS</strong> 和 <strong>vim/vi</strong> 等。</p>
+<p>文本编辑器的名称和版本在不同的操作系统上可能会有所不同。例如，Notepad 通常用于 Windows 操作系统上，vim/vi 可用于 Windows 和 Linux/UNIX 操作系统上。</p>
+<p>通过编辑器创建的文件通常称为源文件，源文件包含程序源代码。C++ 程序的源文件通常使用扩展名 .cpp、.cp 。</p>
+<p>在开始编程之前，请确保您有一个文本编辑器，且有足够的经验来编写一个计算机程序，然后把它保存在一个文件中，编译并执行它。</p>
+<h2 id="c-编译器">C++ 编译器</h2>
+<p>写在源文件中的源代码是人类可读的源。它需要"编译"，转为机器语言，这样 CPU 可以按给定指令执行程序。</p>
+<p>C++ 编译器用于把源代码编译成最终的可执行程序。</p>
+<p>大多数的 C++ 编译器并不在乎源文件的扩展名，但是如果您未指定扩展名，则默认使用 .cpp。</p>
+<p>最常用的免费可用的编译器是 GNU 的 C/C++ 编译器，如果您使用的是 HP 或 Solaris，则可以使用各自操作系统上的编译器。</p>
+<p>以下部分将指导您如何在不同的操作系统上安装 GNU 的 C/C++ 编译器。这里同时提到 C/C++，主要是因为 GNU 的 gcc 编译器适合于 C 和 C++ 编程语言。</p>
+<h2 id="安装-gnu-的-cc-编译器">安装 GNU 的 C/C++ 编译器</h2>
+<h3 id="unixlinux-上的安装">UNIX/Linux 上的安装</h3>
+<p>如果您使用的是 Linux 或 UNIX，请在命令行使用下面的命令来检查您的系统上是否安装了 GCC：</p>
+<pre><code class="language-sh">g++ -v
+</code></pre>
+<p>如果您的计算机上已经安装了 GNU 编译器，则会显示如下消息：</p>
+<pre><code class="language-sh">Using built-in specs.
+Target: i386-redhat-linux
+Configured with: ../configure --prefix=/usr .......
+Thread model: posix
+gcc version 4.1.2 20080704 (Red Hat 4.1.2-46)
+</code></pre>
+<p>如果未安装 GCC，那么请按照 <a href="http://gcc.gnu.org/install/">http://gcc.gnu.org/install/</a> 上的详细说明安装 GCC。</p>
+<h3 id="mac-os-x-上的安装">Mac OS X 上的安装</h3>
+<p>如果您使用的是 Mac OS X，最快捷的获取 GCC 的方法是从苹果的网站上下载 <strong>Xcode</strong> 开发环境，并按照安装说明进行安装。一旦安装上 Xcode，您就能使用 GNU 编译器。</p>
+<p>Xcode 目前可从 <a href="https://developer.apple.com/download">https://developer.apple.com/download</a> 上下载，需要使用 apple ID 登录 。</p>
+<h3 id="windows-上的安装">Windows 上的安装</h3>
+<p>为了在 Windows 上安装 GCC，您需要安装 <strong>MinGW</strong>。为了安装 MinGW，请访问 MinGW 的主页 mingw-w64.org，进入 MinGW 下载页面，下载最新版本的 MinGW 安装程序，命名格式为 MinGW-&lt;version&gt;.exe。</p>
+<p>当安装 MinGW 时，您至少要安装 gcc-core、gcc-g++、binutils 和 MinGW runtime，但是一般情况下都会安装更多其他的项。</p>
+<p>添加您安装的 MinGW 的 bin 子目录到您的 PATH 环境变量中，这样您就可以在命令行中通过简单的名称来指定这些工具。</p>
+<p>当完成安装时，您可以从 Windows 命令行上运行 gcc、g++、ar、ranlib、dlltool 和其他一些 GNU 工具。</p>
+<h2 id="gnugcc-编译">GNU/GCC 编译</h2>
+<p>g++ 应用说明</p>
+<p>程序 g++ 是将 gcc 默认语言设为 C++ 的一个特殊的版本，链接时它自动使用 C++ 标准库而不用 C 标准库。通过遵循源码的命名规范并指定对应库的名字，用 gcc 来编译链接 C++ 程序是可行的，如下例所示：</p>
+<pre><code class="language-sh">gcc main.cpp -lstdc++ -o main
+</code></pre>
+<p>下面是一个保存在文件 helloworld.cpp 中一个简单的 C++ 程序的代码：</p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+using namespace std;
+int main()
+{
+    cout &lt;&lt; "Hello, world!" &lt;&lt; endl;
+    return 0;
+}
+</code></pre>
+<p>最简单的编译方式：</p>
+<pre><code class="language-sh">g++ helloworld.cpp
+</code></pre>
+<p>由于命令行中未指定可执行程序的文件名，编译器采用默认的 a.out。程序可以这样来运行：</p>
+<pre><code class="language-sh">./a.out
+&gt;&gt;&gt; Hello, world!
+</code></pre>
+<p>通常我们使用 -o 选项指定可执行程序的文件名，以下实例生成一个 helloworld 的可执行文件：</p>
+<pre><code class="language-sh">g++ helloworld.cpp -o helloworld
+</code></pre>
+<p>执行 helloworld:</p>
+<pre><code class="language-sh">./helloworld
+&gt;&gt;&gt; Hello, world!
+</code></pre>
+<p>如果是多个 C++ 代码文件，如 runoob1.cpp、runoob2.cpp，编译命令如下：</p>
+<pre><code>g++ runoob1.cpp runoob2.cpp -o runoob
+</code></pre>
+<p>生成一个 runoob 可执行文件。</p>
+<p>g++ 有些系统默认是使用 C++98，我们可以指定使用 C++11 来编译 main.cpp 文件：</p>
+<pre><code>g++ -g -Wall -std=c++11 main.cpp
+</code></pre>
+<h2 id="g-常用命令选项">g++ 常用命令选项</h2>
+<table>
+<thead>
+<tr>
+<th>选项</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-ansi</td>
+<td>只支持 ANSI 标准的 C 语法。这一选项将禁止 GNU C 的某些特色， 例如 asm 或 typeof 关键词。</td>
+</tr>
+<tr>
+<td>-c</td>
+<td>只编译并生成目标文件。</td>
+</tr>
+<tr>
+<td>-DMACRO</td>
+<td>以字符串"1"定义 MACRO 宏。</td>
+</tr>
+<tr>
+<td>-DMACRO=DEFN</td>
+<td>以字符串"DEFN"定义 MACRO 宏。</td>
+</tr>
+<tr>
+<td>-E</td>
+<td>只运行 C 预编译器。</td>
+</tr>
+<tr>
+<td>-g</td>
+<td>生成调试信息。GNU 调试器可利用该信息。</td>
+</tr>
+<tr>
+<td>-IDIRECTORY</td>
+<td>指定额外的头文件搜索路径DIRECTORY。</td>
+</tr>
+<tr>
+<td>-LDIRECTORY</td>
+<td>指定额外的函数库搜索路径DIRECTORY。</td>
+</tr>
+<tr>
+<td>-lLIBRARY</td>
+<td>连接时搜索指定的函数库LIBRARY。</td>
+</tr>
+<tr>
+<td>-m486</td>
+<td>针对 486 进行代码优化。</td>
+</tr>
+<tr>
+<td>-o	FILE</td>
+<td>生成指定的输出文件。用在生成可执行文件时。</td>
+</tr>
+<tr>
+<td>-O0</td>
+<td>不进行优化处理。</td>
+</tr>
+<tr>
+<td>-O</td>
+<td>或 -O1 优化生成代码。</td>
+</tr>
+<tr>
+<td>-O2</td>
+<td>进一步优化。</td>
+</tr>
+<tr>
+<td>-O3</td>
+<td>比 -O2 更进一步优化，包括 inline 函数。</td>
+</tr>
+<tr>
+<td>-shared</td>
+<td>生成共享目标文件。通常用在建立共享库时。</td>
+</tr>
+<tr>
+<td>-static</td>
+<td>禁止使用共享连接。</td>
+</tr>
+<tr>
+<td>-UMACRO</td>
+<td>取消对 MACRO 宏的定义。</td>
+</tr>
+<tr>
+<td>-w</td>
+<td>不生成任何警告信息。</td>
+</tr>
+<tr>
+<td>-Wall</td>
+<td>生成所有警告信息。</td>
+</tr>
+</tbody></table>
+<div class="cc"><i class="fa fa-creative-commons"></i> Creative Commons</div></data>
+                    
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer class="level-no-padding">
+            2022 Aexo
+        </footer>
+    
+</body>

@@ -69,10 +69,69 @@ function toc_finder(data_dom){
     });
     return hash;
 }
+function element_override(data_dom,toc,mainShadow,padmag,intro){
+    if(!toc){
+        data_dom.querySelector("#data_toc").style.display="none";
+    }
+    if(!mainShadow){
+        data_dom.querySelector("#explorer").style.boxShadow="none !important";
+    }
+    if(!padmag){
+        data_dom.querySelector("#column-right").style.padding="0";
+        data_dom.querySelector("#column-right").style.margin="0";
+    }
+    if(!intro){
+        data_dom.querySelector("#main-intro").style.display="none";
+    }
 
+}
+
+// --- SHORT NAME EXPORT ---
 exports.dg=(t,d,a,b,c)=>data_generate(t,d,a,b,c);
 exports.uq=(a)=>unique(a);
 exports.gpd=(d)=>get_post_data(d);
 exports.ig=(d,c,g,dd)=>intro_generate(d,c,g,dd);
 exports.sg=(d,pa,c,t,cg)=>search_generatae(d,pa,c,t,cg);
 exports.tc=(dd)=>toc_finder(dd);
+exports.eo=(dd,t,m,pm,i)=>element_override(dd,t,m,pm,i);
+
+// --- *** LOOK AT HERE
+
+// --- BASE NAME WITH DOCUMENT ---
+
+/* Data Generate
+ * Arguments:
+ * 1 template : Template DOM
+ * 2 data : Post/Page Data
+ * 3 Arg1 : Unused
+ * 4 Arg2 : Unused
+ * 5 Arg3 : Unused
+ * <RETURN ON THE ARG:template>
+ */
+exports.data_generate=(template,data,arg1,arg2,arg3)=>data_generate(template,data,arg1,arg2,arg3);
+/* Unique
+ * Arguments:
+ * 1 array : Array
+ * <RETURN WTIH AN ARRAY>
+ */
+exports.unique=(arr)=>unique(arr);
+/* Get Post's Data
+ * Arguments:
+ * 1 Data : Raw Data From data_got
+ * <RETURN WITH AN ARRAY>
+ */
+exports.get_post_data=(data)=>get_post_data(data);
+exports.ig=(d,c,g,dd)=>intro_generate(d,c,g,dd);
+exports.sg=(d,pa,c,t,cg)=>search_generatae(d,pa,c,t,cg);
+exports.tc=(dd)=>toc_finder(dd);
+/* Element Style Override
+ * Arguments:
+ * 1 Data DOM : DOM
+ * 2 Toc : With Toc (False for hide)
+ * 3 Main's Shadow : Main Wrapper With Shadow (False for no shadow)
+ * 4 Padding & Margin : Main Wrapper With Padding & Margin (False for no padding & margin)
+ * 5 Main Passage Intro : Main Wrapper With a Introduction For Post Containing (False for no introduction)
+ * <RETURN ON THE ARG:data_dom>
+ */
+exports.element_override=(data_dom,toc,main_s_shadow,padding_and_margin,main_intro)=>
+    element_override(data_dom,toc,main_s_shadow,padding_and_margin,main_intro);
