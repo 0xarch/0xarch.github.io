@@ -144,17 +144,18 @@ function generate_all(){
         // --- SAVE FILE & PUSH DATA ---
         var time=data_information[1].split("-");
 
-        var passage_dir=config.pubdir+"/archives/"+time[0]+"/"+time[1]+"/"+time[2];
-
-        var passage_pub="/archives/"+time[0]+"/"+time[1]+"/"+time[2]+"/"+filename.replace(/\.md/,".html");
+        var passage_sever_dir="/archives/"+time[0]+"/"+time[1]+"/"+time[2]+"/"+filename.replace(/\.md/,"");
+        var passage_dir=config.pubdir+passage_sever_dir;
+        
+        var passage_pub=passage_dir+"/index.html";
 
         data_toWrite="<!DOCTYPE html>\n<head>"+data_toWrite.head.innerHTML+"</head>\n<body>"+data_toWrite.body.innerHTML+"</body>";
 
         fs.mkdirSync(passage_dir,{recursive:true});
 
-        fs.writeFile(passage_dir+"/"+filename.replace(/\.md/,".html"),data_toWrite,(err)=>{if(err)throw err;});
+        fs.writeFile(passage_pub,data_toWrite,(err)=>{if(err)throw err;});
 
-        var dataAndInformation_This=new Array(data_transformed,data_information,passage_pub);
+        var dataAndInformation_This=new Array(data_transformed,data_information,passage_sever_dir);
 
         dataAndInformation_all.push(dataAndInformation_This);
     });
@@ -228,19 +229,21 @@ function generate_all(){
     
     sg.ig(DOM_TAGS,config,globalCountInformation,new Array("Tags","B","GG"));
     sg.ig(DOM_CATEGORIES,config,globalCountInformation,new Array("Tags","B","GG"));
-    sg.ig(DOM_ARCHIVES,config,globalCountInformation,new Array("Tags","B","GG"));
+    sg.ig(DOM_ARCHIVES,config,globalCountInformation,new Array("Archives","B","GG"));
 
     sg.eo(DOM_TAGS,false,true,true,false);
     sg.eo(DOM_CATEGORIES,false,true,true,false);
     sg.eo(DOM_ARCHIVES,false,true,true,false);
 
     // *** TAGS
+    var appends="<h3 class='sp'>TAGS</h3><hr>";
     for(var b=0;b<_tl;b++){
-        var appends="<a href='"+gpi[2][b]+"' class='tag-and-category-page-tag-and-category'>"
+        appends=appends+"<a href='"+gpi[2][b]+"' class='tag-and-category-page-tag-and-category'>"
         +gpi[2][b]+"</a>\n";
         fs.mkdirSync(config.pubdir+"/tags/"+gpi[2][b],{recursive:true},()=>{});
-        DOM_TAGS.querySelector("data").innerHTML=DOM_TAGS.querySelector("data").innerHTML+appends;
+        
     }
+    DOM_TAGS.querySelector("data").innerHTML=appends;
     for(var b=0;b<_tl;b++){
         var dom_this=new JSDOM(tmplt).window.document;
         sg.sg(dom_this,gpi[0],config,gpi[2],gpi[1]);
@@ -263,11 +266,12 @@ function generate_all(){
     fs.writeFile(config.pubdir+"/tags/index.html",data_tag_toWrite,(err)=>{if(err)throw err;});
 
     // *** CATEGORIES
+    var appends="<h3 class='sp'>CATEGORIES</h3><hr>";
     for(var b=0;b<_cl;b++){
-        var appends="<a href='"+gpi[1][b]+"' class='tag-and-category-page-tag-and-category'>"+gpi[1][b]+"</a>\n";
+        appends=appends+"<a href='"+gpi[1][b]+"' class='tag-and-category-page-tag-and-category'>"+gpi[1][b]+"</a>\n";
         fs.mkdirSync(config.pubdir+"/categories/"+gpi[1][b],{recursive:true},()=>{});
-        DOM_CATEGORIES.querySelector("data").innerHTML=DOM_CATEGORIES.querySelector("data").innerHTML+appends;
     }
+    DOM_CATEGORIES.querySelector("data").innerHTML=appends;
     for(var b=0;b<_cl;b++){
         var dom_this=new JSDOM(tmplt).window.document;
         sg.sg(dom_this,gpi[0],config,gpi[2],gpi[1]);
@@ -290,10 +294,11 @@ function generate_all(){
     fs.writeFile(config.pubdir+"/categories/index.html",data_catg_toWrite,(err)=>{if(err)throw err;});
 
     // *** ARCHIVES
+    var appends_date="";
     for(var b=0;b<_al;b++){
-        var appends="<h3>"+gpi[3][b]+"</h3><div id='D"+gpi[3][b].replace(/\-/g,"")+"'></div>\n";
-        DOM_ARCHIVES.querySelector("data").innerHTML=DOM_ARCHIVES.querySelector("data").innerHTML+appends;
+        appends_date=appends_date+"<h3 class='sp'>"+gpi[3][b]+"</h3><div id='D"+gpi[3][b].replace(/\-/g,"")+"'></div>\n";
     }
+    DOM_ARCHIVES.querySelector("data").innerHTML=appends_date;
     for(var b=0;b<_al;b++){
         var appends="<hr/>\n";
         for(var a=0,l=gpi[0].length;a<l;a++){
@@ -311,7 +316,6 @@ function generate_all(){
 
     // --- COPY THEME FILES ---
     fs.copyFileSync("_themes/"+config.theme+"/main.css",config.pubdir+"/main.css");
-    
     fs.copyFileSync("_themes/"+config.theme+"/main.js",config.pubdir+"/main.js");
 }
 

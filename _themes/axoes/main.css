@@ -133,6 +133,9 @@ data_cc_search>*>font{
     color:#4a4a4a;
     margin:1rem;
 }
+h3.sp{
+    margin:.5em;
+}
 
 /* --- MAIN FRAME DISPLAY --- */
 .container{
