@@ -9,59 +9,51 @@ var cjs=require("./_themes/"+config.theme+"/custom.js");
 
 const {JSDOM}=jsdom;
 
-var Dir=fs.readdirSync(config.srcdir+"/post/");
-// --- ARRAY DEFINE --- MOST IMPORTANT -> SAVING DATA
 
-/* Data-saving array :
- * [0] for passage/post , [1] for category , [2] for tag , [3] for time
- */
-var globalCountInformation=new Array(0,0,0);
-var globalPassageInformation=new Array(new Array(),new Array(),new Array(),new Array()); // [0] is an Array [Name,Location]
-var dataAndInformation_all=new Array();
-
-/* Special array for each passage
- * [0] for data & information [title,date,tag,category]
- * [1] for tag
- * [2] for category
- */
-var posts_info={};
-
-// --- GET ALL COUNTS ---
-Dir.forEach((filename)=>{
-
-    var filedir = path.join(config.srcdir+"/post/", filename);
-
-    var data_got=fs.readFileSync(filedir).toString();
-
-    var data_information=sg.gpd(data_got); // [0] for title , [1] for date , [2] for tag , [3] for category
-
-    var _date=data_information[1];
-    var _categories=data_information[3].split(" ");
-    var _tags=data_information[2].split(" ");
-
-    globalPassageInformation[1]=globalPassageInformation[1].concat(_categories);
-    globalPassageInformation[2]=globalPassageInformation[2].concat(_tags);
-    globalPassageInformation[3]=globalPassageInformation[3].concat(_date);
-
-    var time=data_information[1].split("-");
-
-    var passage_pub="/archives/"+time[0]+"/"+time[1]+"/"+time[2]+"/"+filename.replace(/\.md/,".html");
-
-    globalPassageInformation[0].push(new Array(filename.replace(/\.md/,""),passage_pub));
-
-    posts_info[data_information[0]]={data_information,_tags,_categories};
-
-});
-globalCountInformation[0]=globalPassageInformation[0].length;
-globalCountInformation[1]=globalPassageInformation[1].length;
-globalCountInformation[2]=globalPassageInformation[2].length;
-console.log("Tags ",globalPassageInformation[2],"\n","Categories ",globalPassageInformation[1]);
-console.log("Count Information ",globalCountInformation);
-var gci=globalCountInformation,
-gpi=globalPassageInformation; // --- SHORT VARAIBLE
 
 function generate_all(){
+    var Dir=fs.readdirSync(config.srcdir+"/post/");
+    // --- ARRAY DEFINE --- MOST IMPORTANT -> SAVING DATA
+
+    /* Data-saving array :
+    * [0] for passage/post , [1] for category , [2] for tag , [3] for time
+    */
+    var globalCountInformation=new Array(0,0,0);
+    var globalPassageInformation=new Array(new Array(),new Array(),new Array(),new Array()); // [0] is an Array [Name,Location]
+    var dataAndInformation_all=new Array();
+
+    /* Special array for each passage
+    * [0] for data & information [title,date,tag,category]
+    * [1] for tag
+    * [2] for category
+    */
+    var posts_info={};
+
+    // --- GET ALL COUNTS ---
+    Dir.forEach((filename)=>{
+        var filedir = path.join(config.srcdir+"/post/", filename);
+        var data_got=fs.readFileSync(filedir).toString();
+        var data_information=sg.gpd(data_got); // [0] for title , [1] for date , [2] for tag , [3] for category
+        var _date=data_information[1];
+        var _categories=data_information[3].split(" ");
+        var _tags=data_information[2].split(" ");
+        globalPassageInformation[1]=globalPassageInformation[1].concat(_categories);
+        globalPassageInformation[2]=globalPassageInformation[2].concat(_tags);
+        globalPassageInformation[3]=globalPassageInformation[3].concat(_date);
+        var time=data_information[1].split("-");
+        var passage_pub="/archives/"+time[0]+"/"+time[1]+"/"+time[2]+"/"+filename.replace(/\.md/,".html");
+        globalPassageInformation[0].push(new Array(filename.replace(/\.md/,""),passage_pub));
+        posts_info[data_information[0]]={data_information,_tags,_categories};
+    });
+    globalCountInformation[0]=globalPassageInformation[0].length;
+    globalCountInformation[1]=globalPassageInformation[1].length;
+    globalCountInformation[2]=globalPassageInformation[2].length;
+    console.log("Tags ",globalPassageInformation[2],"\n","Categories ",globalPassageInformation[1]);
+    console.log("Count Information ",globalCountInformation);
+    var gci=globalCountInformation,
+    gpi=globalPassageInformation; // --- SHORT VARAIBLE
     var dir=fs.readdirSync(config.srcdir+"/post/");
+
     dir.forEach(function(filename) {
         // --- VARIABLE DEFINE ---
         var DOM_THIS=new JSDOM(tmplt);
@@ -70,7 +62,7 @@ function generate_all(){
 
         var data_got=fs.readFileSync(filedir).toString();
 
-        var data_transformed=marked.parse(data_got.replace(/\-\-\-[\s\S]*\-\-\-\n/,"\n"));
+        var data_transformed=sg.mp(marked.parse(data_got.replace(/\-\-\-[\s\S]*\-\-\-\n/,"\n")));
 
         var data_information=sg.gpd(data_got);
 
@@ -331,4 +323,12 @@ switch(args[0]){
         fs.copyFileSync("_library/hl.css",config.pubdir+"/hl.css");
         fs.copyFileSync("_library/hl.min.js",config.pubdir+"/hl.min.js");
         break;
+    case "n":
+	var _name=args[1];
+    var _template=fs.readFileSync("_themes/"+config.theme+"/template.md").toString();
+    var _Date=new Date();
+    var _date=_Date.getFullYear()+"-"+(_Date.getMonth()+1)+"-"+_Date.getDate();
+    var _data_toWrite=_template.replace(/{title}/g,_name).replace(/{date}/g,_date);
+	fs.writeFileSync(config.srcdir+"/post/"+_name+".md",_data_toWrite);
+	break;
 }

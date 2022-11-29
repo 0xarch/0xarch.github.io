@@ -85,7 +85,15 @@ function element_override(data_dom,toc,mainShadow,padmag,intro){
     }
 
 }
-
+function markarch_parse(data){
+    var ret=data;
+    ret=ret.replace(/\$([^\$]*)\$/g,"<p class='fcs'>$1</p>");
+    ret=ret.replace(/{{([^\|,^}]*)\|([^\|,^}]*)\|([^},^\|]*)}}/g,"<span class='layer_text'><font class='_top'>$1</font><font class='_seperate'>$2</font><font class='_bottom'>$3</font></span>");
+    ret=ret.replace(/{{([^\|]*)\|([^},^{]*)}}/g,"<span class='layer_text'><font class='_top two'>$1</font><font class='_seperate two'>$2</font></span>");
+    ret=ret.replace(/\_([1-9])/g,"<sub>$1</sub>").replace(/\^([1-9])/g,"<sup>$1</sup>");
+    ret=ret.replace(/\:up/g,"↑").replace(/\:down/g,"↓");
+    return ret;
+}
 // --- SHORT NAME EXPORT ---
 exports.dg=(t,d,a,b,c)=>data_generate(t,d,a,b,c);
 exports.uq=(a)=>unique(a);
@@ -94,6 +102,7 @@ exports.ig=(d,c,g,dd)=>intro_generate(d,c,g,dd);
 exports.sg=(d,pa,c,t,cg)=>search_generatae(d,pa,c,t,cg);
 exports.tc=(dd)=>toc_finder(dd);
 exports.eo=(dd,t,m,pm,i)=>element_override(dd,t,m,pm,i);
+exports.mp=(d)=>markarch_parse(d);
 
 // --- *** LOOK AT HERE
 
@@ -121,7 +130,15 @@ exports.unique=(arr)=>unique(arr);
  * <RETURN WITH AN ARRAY>
  */
 exports.get_post_data=(data)=>get_post_data(data);
-exports.ig=(d,c,g,dd)=>intro_generate(d,c,g,dd);
+/* Generate Introduction for DOM
+ * Arguments:
+ * 1 DOM : Page DOM
+ * 2 Configuration
+ * 3 Global Count Information : globalCountInformation
+ * 4 All Data and Information : dataAndInformationAll
+ * <RETURN ON THE ARG:dom>
+ */
+exports.intro_generate=(dom,config,gcl,dal)=>intro_generate(dom,config,gcl,dal);
 exports.sg=(d,pa,c,t,cg)=>search_generatae(d,pa,c,t,cg);
 exports.tc=(dd)=>toc_finder(dd);
 /* Element Style Override
