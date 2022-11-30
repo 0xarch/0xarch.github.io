@@ -87,11 +87,16 @@ function element_override(data_dom,toc,mainShadow,padmag,intro){
 }
 function markarch_parse(data){
     var ret=data;
+    ret=ret.replace(/\\\:/g,"<!uf3A!>");
     ret=ret.replace(/\$([^\$]*)\$/g,"<p class='fcs'>$1</p>");
     ret=ret.replace(/{{([^\|,^}]*)\|([^\|,^}]*)\|([^},^\|]*)}}/g,"<span class='layer_text'><font class='_top'>$1</font><font class='_seperate'>$2</font><font class='_bottom'>$3</font></span>");
     ret=ret.replace(/{{([^\|]*)\|([^},^{]*)}}/g,"<span class='layer_text'><font class='_top two'>$1</font><font class='_seperate two'>$2</font></span>");
     ret=ret.replace(/\_([1-9])/g,"<sub>$1</sub>").replace(/\^([1-9])/g,"<sup>$1</sup>");
     ret=ret.replace(/\:up/g,"↑").replace(/\:down/g,"↓");
+    ret=ret.replace(/\:heat/g,"△").replace(/\:to/g,"→");
+    ret=ret.replace(/\:dot/g,"•").replace(/\:reverse/g,"⇋");
+    ret=ret.replace(/\:fire/g,"点燃");
+    ret=ret.replace(/<\!uf3A\!>/g,":");
     return ret;
 }
 // --- SHORT NAME EXPORT ---

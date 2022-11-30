@@ -241,11 +241,10 @@ function generate_all(){
         sg.sg(dom_this,gpi[0],config,gpi[2],gpi[1]);
         sg.ig(dom_this,config,globalCountInformation,new Array(gpi[2][b],"B","GG"));
         sg.eo(dom_this,false,true,true,false);
-        var appends="<a href='"+gpi[2][b]+"' class='tag-and-category-page-tag-and-category'>"
-        +gpi[2][b]+"</a><hr/>\n";
+        var appends="<h3 class='sp'>TAG:"+gpi[2][b]+"</h3><hr/>";
         for(var a=0,l=gpi[0].length;a<l;a++){
             if(posts_info[gpi[0][a][0]]._tags.includes(gpi[2][b])){
-                appends=appends+"<a href='"+gpi[0][a][1]+"'>"+gpi[0][a][0]+"</a>";
+                appends=appends+"<a href='"+gpi[0][a][1]+"' class='tag-and-category-page-tag-and-category'>"+gpi[0][a][0]+"</a>";
             }
         }
         dom_this.querySelector("data").innerHTML=dom_this.querySelector("data").innerHTML+appends;
@@ -269,11 +268,10 @@ function generate_all(){
         sg.sg(dom_this,gpi[0],config,gpi[2],gpi[1]);
         sg.ig(dom_this,config,globalCountInformation,new Array(gpi[1][b],"B","GG"));
         sg.eo(dom_this,false,true,true,false);
-        var appends="<a href='"+gpi[1][b]+"' class='tag-and-category-page-tag-and-category'>"
-        +gpi[1][b]+"</a><hr/>\n";
+        var appends="<h3 class='sp'>CATEGORY:"+gpi[1][b]+"</h3><hr/>";
         for(var a=0,l=gpi[0].length;a<l;a++){
             if(posts_info[gpi[0][a][0]]._categories.includes(gpi[1][b])){
-                appends=appends+"<a href='"+gpi[0][a][1]+"'>"+gpi[0][a][0]+"</a>";
+                appends=appends+"<a href='"+gpi[0][a][1]+"' class='tag-and-category-page-tag-and-category'>"+gpi[0][a][0]+"</a>";
             }
         }
         dom_this.querySelector("data").innerHTML=dom_this.querySelector("data").innerHTML+appends;
@@ -295,7 +293,7 @@ function generate_all(){
         var appends="<hr/>\n";
         for(var a=0,l=gpi[0].length;a<l;a++){
             if(posts_info[gpi[0][a][0]].data_information[1].includes(gpi[3][b])){
-                appends=appends+"<a href='"+gpi[0][b][1]+"'>"+gpi[0][b][0]+"</a>";
+                appends=appends+"<a href='"+gpi[0][b][1]+"' class='tag-and-category-page-tag-and-category'>"+gpi[0][b][0]+"</a>";
             }
         }
         DOM_ARCHIVES.querySelector("#D"+gpi[3][b].replace(/\-/g,"")).innerHTML=DOM_ARCHIVES.querySelector("#D"+gpi[3][b].replace(/\-/g,"")).innerHTML+appends;
