@@ -8,7 +8,8 @@ function get_post_data(data){
     var date=information[0].match(/date\:([^\n]*)/);date=date[0].replace(/date\: ?/,"");
     var tag=information[0].match(/tag\:([^\n]*)/);tag=tag[0].replace(/tag\: ?/,"");
     var category=information[0].match(/category\:([^\n]*)/);category=category[0].replace(/category\: ?/,"");
-    return Array(title,date,tag,category);
+    var extension=information[0].match(/extension\:([^\n]*)/);extension=extension[0].replace(/extension\: ?/,"");
+    return Array(title,date,tag,category,extension);
 }
 function unique(arr){
     var hash=[];
@@ -29,7 +30,7 @@ function intro_generate(dom,config,gcl,dal){
     dom.querySelector("#data_c_avatar").setAttribute('src',config.avatar);
     dom.querySelector("title").innerHTML=dal[0]+dom.querySelector("title").innerHTML;
 }
-function search_generatae(dom,posts_all,config,tags_all,categories_all){
+function search_generate(dom,posts_all,config,tags_all,categories_all){
     var dom_cs_post=dom.querySelector("data_cs_post");
         for(var a=0,l=posts_all.length;a<l;a++){
 
@@ -70,7 +71,22 @@ function toc_finder(data_dom){
     return hash;
 }
 function element_override(data_dom,toc,mainShadow,padmag,intro){
-    if(!toc){
+    if(toc){
+        var _tocs=toc_finder(data_dom);
+
+        tocs_slctr=data_dom.querySelector("#data_toc");
+
+        for(var w=0;w<_tocs.length;w++){
+
+            var raw_toc=_tocs[w].replace(/ /g,"-").toLowerCase();
+
+            raw_toc=raw_toc.replace(/[\/,\+]/g,"");
+
+            var appends="\n<a class='tocs' id='con_"+_tocs[w]+"' href='#"+raw_toc+"' onclick='toggleHeader(false)'>"+_tocs[w]+"</a><br/>";
+
+            tocs_slctr.innerHTML=tocs_slctr.innerHTML+appends;
+        }
+    }else{
         data_dom.querySelector("#data_toc").remove();
     }
     if(!mainShadow){
@@ -85,29 +101,43 @@ function element_override(data_dom,toc,mainShadow,padmag,intro){
     }
 
 }
-function markarch_parse(data){
+function markarch_parse_chemistry(data){
     var ret=data;
-    ret=ret.replace(/\\\:/g,"<!uf3A!>");
+    ret=ascII_transform("to",ret);
     ret=ret.replace(/\$([^\$]*)\$/g,"<p class='fcs'>$1</p>");
-    ret=ret.replace(/{{([^\|,^}]*)\|([^\|,^}]*)\|([^},^\|]*)}}/g,"<span class='layer_text'><font class='_top'>$1</font><font class='_seperate'>$2</font><font class='_bottom'>$3</font></span>");
-    ret=ret.replace(/{{([^\|]*)\|([^},^{]*)}}/g,"<span class='layer_text'><font class='_top two'>$1</font><font class='_seperate two'>$2</font></span>");
-    ret=ret.replace(/\_([1-9])/g,"<sub>$1</sub>").replace(/\^([1-9])/g,"<sup>$1</sup>");
+    ret=ret.replace(/\{\{([^\|,^\}]*)\|([^\|,^\}]*)\|([^\},^\|]*)\}\}/g,"<span class='layer_text'><font class='_top'>$1</font><font class='_seperate'>$2</font><font class='_bottom'>$3</font></span>");
+    ret=ret.replace(/\{\{([^\|]*)\|([^\},^\{]*)\}\}/g,"<span class='layer_text'><font class='_top two'>$1</font><font class='_seperate two'>$2</font></span>");
+    ret=ret.replace(/\_([1-9|\+|\-]{1,})/g,"<sub>$1</sub>").replace(/\^([1-9|\+|\-]{1,})/g,"<sup>$1</sup>");
     ret=ret.replace(/\:up/g,"↑").replace(/\:down/g,"↓");
     ret=ret.replace(/\:heat/g,"△").replace(/\:to/g,"→");
     ret=ret.replace(/\:dot/g,"•").replace(/\:reverse/g,"⇋");
     ret=ret.replace(/\:fire/g,"点燃");
-    ret=ret.replace(/<\!uf3A\!>/g,":");
+    ret=ascII_transform("back",ret);
     return ret;
+}
+function ascII_transform(type,data){
+    var ret=data;
+    //console.log(ret);
+    switch(type){
+        case "to":
+            ret=ret.replace(/\\\:/g,"<!uf3A!>").replace(/\\\$/g,"<!uf36!>").replace(/\\\{/g,"<!uf7B!>").replace(/\\\}/g,"<!uf7D!>");
+            ret=ret.replace(/\\\^/g,"<!uf5E!>").replace(/\\\_/g,"<!uf5F!>").replace(/\\\|/g,"<!uf7C!>");
+            return ret;
+        case "back":
+            ret=ret.replace(/<\!uf3A\!>/g,":").replace(/<\!uf36\!>/g,"$").replace(/<\!uf7B\!>/g,"{").replace(/<\!uf7D\!>/g,"}");
+            ret=ret.replace(/<\!uf5E\!>/g,"^").replace(/<\!uf5F\!>/g,"_").replace(/<\!uf7C\!>/g,"|");
+            return ret;
+    }
 }
 // --- SHORT NAME EXPORT ---
 exports.dg=(t,d,a,b,c)=>data_generate(t,d,a,b,c);
 exports.uq=(a)=>unique(a);
 exports.gpd=(d)=>get_post_data(d);
 exports.ig=(d,c,g,dd)=>intro_generate(d,c,g,dd);
-exports.sg=(d,pa,c,t,cg)=>search_generatae(d,pa,c,t,cg);
+exports.sg=(d,pa,c,t,cg)=>search_generate(d,pa,c,t,cg);
 exports.tc=(dd)=>toc_finder(dd);
 exports.eo=(dd,t,m,pm,i)=>element_override(dd,t,m,pm,i);
-exports.mp=(d)=>markarch_parse(d);
+exports.mp_chemistry=(d)=>markarch_parse_chemistry(d);
 
 // --- *** LOOK AT HERE
 
@@ -144,7 +174,15 @@ exports.get_post_data=(data)=>get_post_data(data);
  * <RETURN ON THE ARG:dom>
  */
 exports.intro_generate=(dom,config,gcl,dal)=>intro_generate(dom,config,gcl,dal);
-exports.sg=(d,pa,c,t,cg)=>search_generatae(d,pa,c,t,cg);
+/* Generate Search Plugin for DOM
+ * Arguments:
+ * 1 DOM: Page DOM
+ * 2 Posts Information : posts_all
+ * 3 Configuration
+ * 4 Tags
+ * 5 Categories
+ */
+exports.search_generate=(d,pa,c,t,cg)=>search_generate(d,pa,c,t,cg);
 exports.tc=(dd)=>toc_finder(dd);
 /* Element Style Override
  * Arguments:

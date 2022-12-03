@@ -16,7 +16,7 @@ function generate_all(){
     // --- ARRAY DEFINE --- MOST IMPORTANT -> SAVING DATA
 
     /* Data-saving array :
-    * [0] for passage/post , [1] for category , [2] for tag , [3] for time
+    * [0] for passage/post , [1] for category , [2] for tag , [3] for time [4] for extension
     */
     var globalCountInformation=new Array(0,0,0);
     var globalPassageInformation=new Array(new Array(),new Array(),new Array(),new Array()); // [0] is an Array [Name,Location]
@@ -35,15 +35,16 @@ function generate_all(){
         var data_got=fs.readFileSync(filedir).toString();
         var data_information=sg.gpd(data_got); // [0] for title , [1] for date , [2] for tag , [3] for category
         var _date=data_information[1];
-        var _categories=data_information[3].split(" ");
         var _tags=data_information[2].split(" ");
+        var _categories=data_information[3].split(" ");
+        var _extensions=data_information[4].split(" ");
         globalPassageInformation[1]=globalPassageInformation[1].concat(_categories);
         globalPassageInformation[2]=globalPassageInformation[2].concat(_tags);
         globalPassageInformation[3]=globalPassageInformation[3].concat(_date);
         var time=data_information[1].split("-");
         var passage_pub="/archives/"+time[0]+"/"+time[1]+"/"+time[2]+"/"+filename.replace(/\.md/,".html");
         globalPassageInformation[0].push(new Array(filename.replace(/\.md/,""),passage_pub));
-        posts_info[data_information[0]]={data_information,_tags,_categories};
+        posts_info[data_information[0]]={data_information,_tags,_categories,_extensions};
     });
     globalCountInformation[0]=globalPassageInformation[0].length;
     globalCountInformation[1]=globalPassageInformation[1].length;
@@ -62,9 +63,16 @@ function generate_all(){
 
         var data_got=fs.readFileSync(filedir).toString();
 
-        var data_transformed=sg.mp(marked.parse(data_got.replace(/\-\-\-[\s\S]*\-\-\-\n/,"\n")));
-
         var data_information=sg.gpd(data_got);
+
+        var data_transformed=data_got.replace(/\-\-\-[\s\S]*\-\-\-\n/,"\n");
+
+        console.log(data_information[4]);
+
+        if(data_information[4].includes("basic"))data_transformed=marked.parse(data_transformed);
+        if(data_information[4].includes("chemistry"))data_transformed=sg.mp_chemistry(data_transformed);
+        
+        
 
         var data_toWrite= DOM_THIS.window.document; // - SHORT LINK FOR DOM.document
 
@@ -104,7 +112,7 @@ function generate_all(){
 
 
         // --- GENERATE TOC ---
-        var _tocs=sg.tc(data_toWrite);
+        /*var _tocs=sg.tc(data_toWrite);
 
         tocs_slctr=data_toWrite.querySelector("#data_toc");
 
@@ -117,7 +125,7 @@ function generate_all(){
             var appends="\n<a class='tocs' id='con_"+_tocs[w]+"' href='#"+raw_toc+"' onclick='toggleHeader(false)'>"+_tocs[w]+"</a><br/>";
 
             tocs_slctr.innerHTML=tocs_slctr.innerHTML+appends;
-        }
+        }*/
 
 
         // --- SINGLE DATA INSERT ---
@@ -131,6 +139,8 @@ function generate_all(){
 
         // --- SEARCH ITEM INSERT ---
         sg.sg(data_toWrite,gpi[0],config,gpi[2],gpi[1]);
+
+        sg.eo(data_toWrite,true,true,true,true);
 
 
         // --- SAVE FILE & PUSH DATA ---
@@ -191,7 +201,6 @@ function generate_all(){
         var data_toWrite= DOM_THIS.window.document;
         sg.sg(data_toWrite,gpi[0],config,gpi[2],gpi[1]);
         sg.ig(data_toWrite,config,globalCountInformation,data_information);
-        sg.eo(data_toWrite,false,true,true,true);
         data_toWrite.querySelector("data_category").innerHTML=data_information[3];
         data_toWrite.querySelector("data_date").innerHTML=data_information[1];
         data_toWrite.querySelector("data_title").innerHTML=data_information[0];
@@ -199,6 +208,7 @@ function generate_all(){
         '<i class="fa fa-creative-commons"></i> Creative Commons'+
         '</div>';
         data_toWrite.querySelector("data").innerHTML=data_transformed+cc_block;
+        sg.eo(data_toWrite,true,true,true,true);
         data_toWrite="<!DOCTYPE html>\n<head>"+data_toWrite.head.innerHTML+"</head>\n<body>"+data_toWrite.body.innerHTML+"</body>";
         var passage_dir=config.pubdir+"/"+specials[r];
 

@@ -3,6 +3,7 @@ title: C++ 环境设置
 date: 2022-11-20
 tag: C++
 category: C++
+extension: basic
 ---
 ## 本地环境设置
 
