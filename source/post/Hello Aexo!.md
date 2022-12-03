@@ -45,7 +45,7 @@ Markarch 是 Aexo 的拓展插件
 
 使用\^\[number\|plus\(+\)/minus\(-\)\]定义上标
 
-使用\\{{condition\|type\|condition\\}}定义一个变换
+使用\{{condition\|type\|condition\}}定义一个变换
 
 使用\\\:代表一个普通的半角冒号
 

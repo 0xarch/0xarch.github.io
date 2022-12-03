@@ -42,7 +42,7 @@ function generate_all(){
         globalPassageInformation[2]=globalPassageInformation[2].concat(_tags);
         globalPassageInformation[3]=globalPassageInformation[3].concat(_date);
         var time=data_information[1].split("-");
-        var passage_pub="/archives/"+time[0]+"/"+time[1]+"/"+time[2]+"/"+filename.replace(/\.md/,".html");
+        var passage_pub="/archives/"+time[0]+"/"+time[1]+"/"+time[2]+"/"+filename.replace(/\.md/,"/");
         globalPassageInformation[0].push(new Array(filename.replace(/\.md/,""),passage_pub));
         posts_info[data_information[0]]={data_information,_tags,_categories,_extensions};
     });
@@ -67,7 +67,6 @@ function generate_all(){
 
         var data_transformed=data_got.replace(/\-\-\-[\s\S]*\-\-\-\n/,"\n");
 
-        console.log(data_information[4]);
 
         if(data_information[4].includes("basic"))data_transformed=marked.parse(data_transformed);
         if(data_information[4].includes("chemistry"))data_transformed=sg.mp_chemistry(data_transformed);
@@ -196,8 +195,10 @@ function generate_all(){
         var filedir=config.srcdir+"/"+specials[r]+"/index.md";
         var DOM_THIS=new JSDOM(tmplt);
         var data_got=fs.readFileSync(filedir).toString();
-        var data_transformed=marked.parse(data_got.replace(/\-\-\-[\s\S]*\-\-\-\n/,"\n"));
         var data_information=sg.gpd(data_got);
+        var data_transformed=data_got.replace(/\-\-\-[\s\S]*\-\-\-\n/,"\n");
+        if(data_information[4].includes("basic"))data_transformed=marked.parse(data_transformed);
+        if(data_information[4].includes("chemistry"))data_transformed=sg.mp_chemistry(data_transformed);
         var data_toWrite= DOM_THIS.window.document;
         sg.sg(data_toWrite,gpi[0],config,gpi[2],gpi[1]);
         sg.ig(data_toWrite,config,globalCountInformation,data_information);
