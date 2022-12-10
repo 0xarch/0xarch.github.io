@@ -76,9 +76,7 @@ function generate_all(){
         var data_toWrite= DOM_THIS.window.document; // - SHORT LINK FOR DOM.document
 
         // --- DATA & CC INSERT ---
-        var cc_block='<div class="cc">'+
-        '<i class="fa fa-creative-commons"></i> Creative Commons'+
-        '</div>';
+        var cc_block=sg.ccg(config);
         
         data_toWrite.querySelector("data").innerHTML=data_transformed+cc_block;
 

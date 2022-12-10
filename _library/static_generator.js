@@ -101,6 +101,14 @@ function element_override(data_dom,toc,mainShadow,padmag,intro){
     }
 
 }
+function creative_common_generate(conf){
+    var type=conf.creativecommon;
+    var global='<div class="cc">'+
+    '<i class="fa fa-creative-commons"></i> Creative Commons '+
+    type+
+    '</div>';
+    return global;
+}
 function markarch_parse_chemistry(data){
     var ret=data;
     ret=ascII_transform("to",ret);
@@ -112,6 +120,12 @@ function markarch_parse_chemistry(data){
     ret=ret.replace(/\:heat/g,"△").replace(/\:to/g,"→");
     ret=ret.replace(/\:dot/g,"•").replace(/\:reverse/g,"⇋");
     ret=ret.replace(/\:fire/g,"点燃");
+    ret=ascII_transform("back",ret);
+    return ret;
+}
+function markarch_parse_hylarAlphabet(data){
+    var ret=data;
+    ret=ascII_transform("to",ret);
     ret=ascII_transform("back",ret);
     return ret;
 }
@@ -137,6 +151,7 @@ exports.ig=(d,c,g,dd)=>intro_generate(d,c,g,dd);
 exports.sg=(d,pa,c,t,cg)=>search_generate(d,pa,c,t,cg);
 exports.tc=(dd)=>toc_finder(dd);
 exports.eo=(dd,t,m,pm,i)=>element_override(dd,t,m,pm,i);
+exports.ccg=(c)=>creative_common_generate(c);
 exports.mp_chemistry=(d)=>markarch_parse_chemistry(d);
 
 // --- *** LOOK AT HERE

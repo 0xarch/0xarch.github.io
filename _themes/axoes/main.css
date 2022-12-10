@@ -191,6 +191,8 @@ h3.sp{
     padding:.5rem;
     background:#eee;
     color:#4a4a4a;
+    margin:.1em;
+    border-radius: .3em;
 }
 
 /* NAGV BAR */
@@ -283,16 +285,18 @@ header a:hover{
     min-width:2.5em;
 }
 .fcs>.layer_text>._top{
-    font-size:.5em;
+    font-size:.9em;
 }
 .fcs>.layer_text>._bottom{
-    font-size:.5em;
-}
-.fcs>.layer_text>.two{
-    font-size:.6em;
+    font-size:.9em;
 }
 
 .fcs>.layer_text>._seperate{
     font-size:inherit;
-    transform:scaleX(3);
+    transform:scaleX(4);
+    height:.5em;
+}
+.fcs>.layer_text>._seperate.two{
+    top:-.3em;
+    position: relative;
 }
