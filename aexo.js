@@ -333,11 +333,11 @@ switch(args[0]){
         fs.copyFileSync("_library/hl.min.js",config.pubdir+"/hl.min.js");
         break;
     case "n":
-	var _name=args[1];
-    var _template=fs.readFileSync("_themes/"+config.theme+"/template.md").toString();
-    var _Date=new Date();
-    var _date=_Date.getFullYear()+"-"+(_Date.getMonth()+1)+"-"+_Date.getDate();
-    var _data_toWrite=_template.replace(/{title}/g,_name).replace(/{date}/g,_date);
-	fs.writeFileSync(config.srcdir+"/post/"+_name+".md",_data_toWrite);
+        var _name=args[1];
+        var _template=fs.readFileSync("_themes/"+config.theme+"/template.md").toString();
+        var _Date=new Date();
+        var _date=_Date.getFullYear()+"-"+(_Date.getMonth()+1)+"-"+_Date.getDate();
+        var _data_toWrite=_template.replace(/{title}/g,_name).replace(/{date}/g,_date);
+        fs.writeFileSync(config.srcdir+"/post/"+_name+".md",_data_toWrite);
 	break;
 }
