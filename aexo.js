@@ -2,6 +2,7 @@ var fs=require("fs");
 var path=require("path");
 var sg=require("./_library/static_generator.js");
 var marked=require("marked");
+var uglify=require("uglify-js");
 var jsdom=require("jsdom");
 var config=JSON.parse(fs.readFileSync("_config.json").toString());
 var tmplt=fs.readFileSync("_themes/"+config.theme+"/template.html").toString();
@@ -314,8 +315,11 @@ function generate_all(){
 
 
     // --- COPY THEME FILES ---
+    var _mjs=fs.readFileSync("_themes/"+config.theme+"/main.js").toString();
+    console.log(JSON.stringify(uglify.minify(_mjs).code));
+    fs.writeFile(config.pubdir+"/main.js",JSON.stringify(uglify.minify(_mjs).code),{},(err)=>{if(err)throw err});
     fs.copyFileSync("_themes/"+config.theme+"/main.css",config.pubdir+"/main.css");
-    fs.copyFileSync("_themes/"+config.theme+"/main.js",config.pubdir+"/main.js");
+
 }
 
 
@@ -337,5 +341,5 @@ switch(args[0]){
         var _date=_Date.getFullYear()+"-"+(_Date.getMonth()+1)+"-"+_Date.getDate();
         var _data_toWrite=_template.replace(/{title}/g,_name).replace(/{date}/g,_date);
         fs.writeFileSync(config.srcdir+"/post/"+_name+".md",_data_toWrite);
-	break;
+	    break;
 }

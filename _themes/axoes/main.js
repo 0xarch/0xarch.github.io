@@ -1,6 +1,5 @@
 
 function resize(){
-    console.log(1);
     if(screen.width<screen.height){
         container.style.flexDirection="column-reverse";
         container.style.alignItems="center";

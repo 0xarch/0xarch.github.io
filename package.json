@@ -1,10 +1,11 @@
 {
-	"name":"aexo",
-	"version":"1.0.0",
-	"private":true,
-	"dependencies":{
-		"marked":"4.1.1",
-		"jsdom":"20.0.3",
-		"path":"0.12.7"
+	"name": "aexo",
+	"version": "1.0.0",
+	"private": true,
+	"dependencies": {
+		"jsdom": "^20.0.3",
+		"marked": "^4.1.1",
+		"path": "^0.12.7",
+		"uglify-js": "^3.17.4"
 	}
 }
