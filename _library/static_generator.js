@@ -27,6 +27,7 @@ function intro_generate(dom,config,gcl,dal){
     dom.querySelector("data_c_name").innerHTML=config.name;
     dom.querySelector("data_c_discription").innerHTML=config.discription;
     dom.querySelector("data_c_location").innerHTML=config.location;
+    dom.querySelector("#followme").href=config.follow;
     dom.querySelector("#data_c_avatar").setAttribute('src',config.avatar);
     dom.querySelector("title").innerHTML=dal[0]+dom.querySelector("title").innerHTML;
 }

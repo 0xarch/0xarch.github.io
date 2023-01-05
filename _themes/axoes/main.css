@@ -1,10 +1,13 @@
-.level,.level-no-padding{
+.level,.level-no-padding,.level-no-shadow{
     box-shadow:0px 0px 4px 0px #a9a9a9;
     border-radius: 8px;
     background:#fff;
 }
-.level{
+.level,.level-no-shadow{
     padding:3px;
+}
+.level-no-shadow{
+    box-shadow:none;
 }
 .shadow-global{
     box-shadow:0px 0px 15rem 1rem black;
@@ -115,6 +118,7 @@ a.tocs:hover{
 }
 #in-menu-search-input{
     border:none;
+    min-width:30em;
 }
 data_cc_search>*>font{
     font-weight:bold;

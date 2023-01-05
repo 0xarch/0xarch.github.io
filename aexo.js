@@ -315,11 +315,8 @@ function generate_all(){
 
 
     // --- COPY THEME FILES ---
-    var _mjs=fs.readFileSync("_themes/"+config.theme+"/main.js").toString();
-    console.log(JSON.stringify(uglify.minify(_mjs).code));
-    fs.writeFile(config.pubdir+"/main.js",JSON.stringify(uglify.minify(_mjs).code),{},(err)=>{if(err)throw err});
-    fs.copyFileSync("_themes/"+config.theme+"/main.css",config.pubdir+"/main.css");
-
+    fs.copyFile("_themes/"+config.theme+"/main.css",config.pubdir+"/main.css",()=>{});
+    fs.copyFile("_themes/"+config.theme+"/main.js",config.pubdir+"/main.js",()=>{});
 }
 
 
