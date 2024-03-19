@@ -1,0 +1,120 @@
+:root {
+    --card-radius: .675rem;
+    --brand-color: #3273dc;
+    --brand-color-25: #3273dc44;
+    --brand-color-50: #3273dc88;
+    --brand-color-75: #3273dccc;
+}
+
+@media (prefers-color-scheme:light) {
+    :root {
+        --bg: #f7f7f7;
+        --text-background: #fff;
+        --text-background-25: #fff4;
+        --text-background-50: #fff8;
+        --text-background-75: #fffc;
+        --text-foreground: #4a4a4a;
+        --text-foreground-25: #4a4a4a4f;
+        --text-foreground-50: #4a4a4a8f;
+        --text-foreground-75: #4a4a4acf;
+        --code-bg: #eff0fa;
+        --card-box-shadow-hover: 0px 3px 8px 6px rgba(7, 17, 27, 0.15);
+        --shadow-1: #0000000d;
+        --shadow-2: #00000021;
+        --bg-filter: blur(100px) saturate(80%) brightness(120%);
+    }
+}
+
+@media (prefers-color-scheme:dark) {
+    :root {
+        --bg: #000;
+        --text-background: #141414;
+        --text-background-25: #1414144f;
+        --text-background-50: #1414148f;
+        --text-background-75: #141414cf;
+        --text-foreground: #fff;
+        --text-foreground-25: #fff4;
+        --text-foreground-50: #fff8;
+        --text-foreground-75: #fffc;
+        --code-bg: #151515;
+        --card-box-shadow-hover: 0px 3px 8px 6px rgba(67, 77, 87, 0.2);
+        --shadow-1: #ffffff0d;
+        --shadow-2: #ffffff21;
+        --bg-filter: blur(100px) saturate(60%) brightness(60%);
+    }
+}
+
+.ta-c{text-align:center}
+.flex {display:flex}
+.column{flex-direction:column}
+.row {flex-direction:row}
+.alc{align-items:center}
+.jcc{justify-content:center}
+.jc-se{justify-content:space-evenly}
+.fgap{gap:.75rem}
+.round-all,.RowList,.Button{border-radius:var(--card-radius)}
+.nowrap{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.bg-filter{backdrop-filter:var(--bg-filter)}
+
+html{overflow:scroll;font-size:14px;text-rendering:optimizeLegibility}
+body:not(.new){min-height:100%;margin:0;padding:0;display:flex;flex-direction:column;align-items:center;color:var(--text-foreground);background:var(--bg);font-size:1em;font-weight:400;line-height:1.5;font-family:Ubuntu,Roboto,'Open Sans','Microsoft YaHei',sans-serif;overflow-x:unset}
+*{position:relative;box-sizing:border-box}
+a{-webkit-tap-highlight-color:transparent;user-select:none;text-decoration:none;color:inherit}
+::selection{background-color:var(--brand-color-25);color:var(--brand-color)}
+.onbrand:hover,.go-link:hover{color:var(--brand-color)}
+.topbar-container{width:100%;z-index:100;box-shadow:0px 4px 10px var(--shadow-1);background:var(--text-background)}
+.topbar{margin:0 auto;width:fit-content;display:flex;align-items:center}
+.topbar>.brand{padding:.5rem;min-height:24px}
+.go-link{padding:.75rem;transition:color .2s ease-in-out}
+.logo{font-size:1.75rem;font-weight:bolder}
+
+#main{padding:3rem 1.5rem;min-height:calc(100vh - 13rem)}
+.sidebar-l,.sidebar-r{top:.75rem;padding-top:.75rem;align-self:flex-start}.sidebar-l{order:1}.sidebar-r{order:3}.content{order:2}
+
+.heading,.Heading,.Card>header{font-size:1.5rem;margin:.45rem;font-weight:600;cursor:default;display:block}
+
+footer{
+    width: 100%;
+    height: 5rem;
+    box-shadow: 0px -4px 10px var(--shadow-1);
+    background: var(--text-background);
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+}
+footer>*{margin:.25rem}
+.arrow{padding:.25rem;font-weight:600}
+.RowList{box-shadow:0 4px 10px var(--shadow-1), 0 0 1px var(--shadow-2);background-color:#8f8f8f08;overflow:hidden}
+.RowList>hr{width:100%;opacity:.03;margin:0}
+.RowList>hr:last-child{display:none}
+
+.Row{
+    display: block;
+    padding: .75rem;
+    text-decoration: none;
+    background: transparent;
+    transition: background .1s ease-in-out;
+}
+.Row:hover{background:var(--text-background)}
+
+.Grid{
+    display: grid;
+    margin: 1.5rem 0;
+    gap: 1.5rem;
+    grid-template-columns: var(--i);
+    --card-m: 0;
+}
+
+.Button{
+    background: var(--brand-color);
+    color: #fff;
+    padding: .25rem;
+    min-height: 2.5rem;
+    max-width: 50vw;
+    margin: .15rem;
+    transition: background .15s ease-in-out;
+}
+.Button:not(.disabled):hover{background:var(--brand-color-75)}
+.Button.disabled{background:#8884;color:#fffa}
+
+.intro{color:var(--secondary-color)}

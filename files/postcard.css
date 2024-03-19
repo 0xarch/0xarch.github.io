@@ -1,0 +1,17 @@
+.readmore{
+    padding: .45rem;
+    background-color: #8881;
+    text-decoration: none;
+    transition: color .15s ease-in-out;
+    width: fit-content;
+}
+.readmore:hover{
+    color:var(--brand-color)
+}
+span.p8{
+    margin: 4px;
+    padding: 2px;
+}
+.less{
+    margin: .5rem;
+}

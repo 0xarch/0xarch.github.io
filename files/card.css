@@ -1,0 +1,92 @@
+.card,.Card {
+    color: var(--text-foreground);
+    padding: .15rem;
+    border-radius: 1rem;
+    text-decoration: none;
+    box-shadow: 0 4px 10px var(--shadow-1), 0 0 1px var(--shadow-2);
+    background: var(--text-background);
+}
+
+.card.p8,.Card.p8{
+    padding: .5rem;
+}
+
+:is(.card,.Card).foot-navigator {
+    display: flex;
+    overflow: hidden;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.foot-navigator>a{
+    padding: 1rem;
+    margin: .45rem;
+}
+
+:is(.card,.Card)>:is(.inner,.container,.grid){
+    padding: .625rem;
+    width: 100%;
+}
+
+:is(.card,.Card)>.inner{
+    display: flex;
+}
+
+:is(.card,.Card)>.grid{
+    display: grid;
+    grid-template-columns: var(--i);
+}
+
+:is(.card,.Card)+:is(.card,.Card) {
+    margin-top: 1.5rem;
+}
+
+.Grid>:is(.card,.Card)+:is(.card,.Card){
+    margin-top: var(--card-m);
+}
+
+.AlertCard{
+    color: var(--text-foreground);
+    box-shadow: 0 0 50rem 20rem #0005;
+    background: var(--text-background);
+    border-radius: 1rem;
+    text-decoration: none;
+    position: fixed;
+    min-height: 30vh;
+    z-index: 1002;
+    display: none;
+    top: 15%;
+    border: none;
+    padding: 0;
+    overflow: hidden;
+    width: 40%;
+}
+
+.AlertCard[open]{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.AlertCard>.Bottom{
+    overflow: hidden;
+    width: 100%;
+    min-height: max(3.5vh,3.5rem);
+}
+
+.AlertCard>.Bottom>*{
+    min-height: max(3.5vh,3.5rem);
+}
+
+.Card.-Type-{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    padding: .5rem;
+}
+
+.Card.-Type->.Heading{
+    grid-column-start:1;
+    grid-column-end: 3;
+}

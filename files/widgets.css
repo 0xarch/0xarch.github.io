@@ -1,0 +1,104 @@
+hr {
+    width: 80%;
+    opacity: .05;
+    border-color: var(--text-foreground);
+}
+:is(button,a[\@as=button],.button),
+:is(button,a[\@as=button],.button) *{
+    user-select: none;
+}
+#url,#searchUrl{
+    display: none;
+}
+code.hljs {
+    border-radius: .75rem;
+    margin: .75rem;
+}
+code, code.hljs {
+    font-family: 'monospace';
+    background-color: var(--code-bg);
+}
+.p8{
+    padding: .75rem;
+}
+.f1{
+    flex: 1;
+}
+table {
+    text-align: center;
+}
+.f_eaj{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.avatar{
+    max-width: min(50%,50vw);
+    object-fit: fill;
+    display:block;
+    border-radius: 999px;
+}
+.avatarText{
+    width: 6rem;
+    height: 6rem;
+    font-size: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color);
+    border-radius: 3rem;
+    border: .25rem solid var(--bolor);
+    background: var(--bolor);
+    overflow: hidden;
+}
+.logo-of-theme{
+    --r: 1.75rem;
+    height: calc(2*var(--r));
+    width: calc(1.73205081*var(--r));
+    overflow: hidden;
+    background: var(--brand-color);
+    clip-path: polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%, 0 25%);
+}
+.logo-of-theme::after{
+    content: 'ARCH';
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+#searchPanel .--C{
+    background-color: crimson;
+    color: #fff;
+}
+
+#searchPanel .--S{
+    border-radius: 0 .5rem .5rem 0;
+    padding: .75rem;
+    margin: 0;
+}
+
+#searchPanel input{
+    border-radius: .5rem 0 0 .5rem;
+}
+
+#searchPanel .--P{
+    margin: 1rem;
+    width: 80%;
+    min-height: 5rem;
+}
+
+input{
+    padding: .35rem;
+    border-radius: .5rem;
+    outline: none;
+    border: 1px solid var(--brand-color-50);
+}
+
+input:focus{
+    border: 1px solid var(--brand-color);
+}
