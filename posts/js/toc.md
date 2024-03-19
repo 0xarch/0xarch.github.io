@@ -8,8 +8,6 @@ highlight: true
 
 简单的JS滚动目录(动态高亮)的实现.
 
-DEMO: PC端查看该文章.
-
 兼容性未测试!
 
 <!--more-->
@@ -17,7 +15,7 @@ DEMO: PC端查看该文章.
 ## JavaScript
 
 ### 参数
-markdown_content: 文章容器
+markdown_content: 文章容器(Node)
 
 ### 需要更改的地方
 `#toc`: 挂载目录的容器

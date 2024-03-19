@@ -1,10 +1,8 @@
 ---
-title: 关于我
-date: 2023-04-21
-category: About
+title: ABOUT
+date: 2024-01-01
 old: true
 ---
-<!--more-->
 
 # 0xarch.github.io
 
@@ -14,5 +12,5 @@ old: true
 
 我的项目：
 
-[MEUI(DEPRECATED)](https://github.com/0xarch/meui)  
-[Nexo](https://github.com/0xarch/nexo)
+[Nexo](//github.com/0xarch/nexo)
+[Wark](//github.com/0xarch/Wark)
