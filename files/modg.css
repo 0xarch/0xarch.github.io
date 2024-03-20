@@ -10,8 +10,6 @@ body{background:#000!important}.fit{width:fit-content}
 footer a{color:inherit;text-decoration:none}
 footer ul{list-style:none;padding:0;margin:0}
 footer ul>li{padding:4px}
-/*footer>section.fl{justify-content: space-around}
-footer>section.fl>div{display:flex;flex-direction:column;align-items:center}*/
 @media(max-width:700px){header.top>div{padding:0!important}header.top>div>nav{margin:auto}header.top>div>nav li>a{margin-inline:0!important}header.top>div .logo{display:none}}
 .logo-of-theme{height:32px;width:80px;background:#824626;color:#fff}
 .logo-of-theme::after{content:'!WACAL~';font-size:16px}
@@ -37,3 +35,4 @@ body.colorful header.top{background:#fff0;position:absolute}
 body.colorful :is(#intro,.intro){color:#111;background:linear-gradient(35deg,var(--color1),var(--color2));width:100%;box-sizing:border-box}
 body.colorful header.top>div a{color:#111}
 body.colorful header.top>div nav>ul>li a:hover{background:#fff3}
+*{-webkit-tap-highlight-color:#0000}
