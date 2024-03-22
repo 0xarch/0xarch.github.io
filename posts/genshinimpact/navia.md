@@ -1,8 +1,8 @@
 ---
 title: 原神:娜维娅理论值计算
 date: 2024-01-01
-category: GenshinImpact
-tags: GenshinImpact
+category: 原神
+tags: 原神 miHoYo
 top: false
 imageUrl: https://patchwiki.biligame.com/images/ys/a/ad/jez0piggyfkes3s4kgqyz8ddbslrjuk.png
 ---
