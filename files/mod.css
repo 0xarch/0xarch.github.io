@@ -57,7 +57,7 @@
 .bg-filter{backdrop-filter:var(--bg-filter)}
 
 html{overflow:scroll;font-size:14px;text-rendering:optimizeLegibility}
-body:not(.new){min-height:100%;margin:0;padding:0;display:flex;flex-direction:column;align-items:center;color:var(--text-foreground);background:var(--bg);font-size:1em;font-weight:400;line-height:1.5;font-family:Ubuntu,Roboto,'Open Sans','Microsoft YaHei',sans-serif;overflow-x:unset}
+body{min-height:100%;margin:0;padding:0;display: flex;flex-direction: column;align-items: center;color:var(--text-foreground);background:var(--bg);font-size:1em;font-weight:400;line-height:1.5;font-family:Ubuntu,Roboto,'Open Sans','Microsoft YaHei',sans-serif}
 *{position:relative;box-sizing:border-box}
 a{-webkit-tap-highlight-color:transparent;user-select:none;text-decoration:none;color:inherit}
 ::selection{background-color:var(--brand-color-25);color:var(--brand-color)}
@@ -116,5 +116,3 @@ footer>*{margin:.25rem}
 }
 .Button:not(.disabled):hover{background:var(--brand-color-75)}
 .Button.disabled{background:#8884;color:#fffa}
-
-.intro{color:var(--secondary-color)}
