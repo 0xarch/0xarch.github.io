@@ -7,18 +7,19 @@
 <item>
 <title>Arch Linux 包收集</title>
 <link>https://0xarch.github.io/read/17dzbQXJjaExpbnV45YyF5pS26ZuG/</link>
-<guid isPermaLink="false">ID2</guid>
+<guid isPermaLink="false">ID3</guid>
 <description>收集我迄今为止安装过的 Arch Linux 包。
 此篇仅用于记录和备忘，请酌情参考。</description>
-<pubDate>Wed Mar 27 2024 20:26:06 GMT+0800 (中国标准时间)</pubDate>
+<pubDate>Thu Mar 28 2024 14:28:37 GMT+0800 (中国标准时间)</pubDate>
 </item>,<item>
-<title>Nexo Beta 1.0.3</title>
-<link>https://0xarch.github.io/read/17dz3TmV4b0JldGExMDM=/</link>
+<title>Nexo Beta 1.0.3~1.1.0</title>
+<link>https://0xarch.github.io/read/17dz3TmV4b0JldGExMDMxMTA=/</link>
 <guid isPermaLink="false">ID10</guid>
 <description>
-Nexo Beta 1.0.3 (Nexo n2.2.5-1) CHANGELOG 注解 , 以及 1.0.4 (n2.2.5-2 ~ n2.2.6) 规划
+Nexo Beta 1.0.3 (Nexo n2.2.5-1) CHANGELOG 注解 , <del>以及 1.0.4 (n2.2.5-2 ~ n2.2.6) 规划。</del>  
+由于更新巨大，Nexo直接从 1.0.4 跳到 1.1.0，主题作者请注意文档。
 </description>
-<pubDate>Tue Mar 19 2024 22:55:38 GMT+0800 (中国标准时间)</pubDate>
+<pubDate>Thu Mar 28 2024 14:47:17 GMT+0800 (中国标准时间)</pubDate>
 </item>,<item>
 <title>金句(2024.03.12)</title>
 <link>https://0xarch.github.io/read/17dyw6YeR5Y+lMjAyNDAzMTI=/</link>
@@ -26,7 +27,7 @@ Nexo Beta 1.0.3 (Nexo n2.2.5-1) CHANGELOG 注解 , 以及 1.0.4 (n2.2.5-2 ~ n2.2
 <description>
 世界金句收集（2024年3月12日编），素材来源于现实或网络，不定期分裂。
 </description>
-<pubDate>Tue Mar 19 2024 17:21:21 GMT+0800 (中国标准时间)</pubDate>
+<pubDate>Thu Mar 28 2024 14:47:43 GMT+0800 (中国标准时间)</pubDate>
 </item>,<item>
 <title>WebJS - 滚动目录实现</title>
 <link>https://0xarch.github.io/read/4c76V2ViSlPmu5rliqjnm67lvZXlrp7njrA=/</link>
@@ -65,9 +66,10 @@ Nexo Beta 1.0.3 (Nexo n2.2.5-1) CHANGELOG 注解 , 以及 1.0.4 (n2.2.5-2 ~ n2.2
 <link>https://0xarch.github.io/read/17dwgTGludXjkuItHaXTphY3nva4=/</link>
 <guid isPermaLink="false">ID7</guid>
 <description>
-Linux 下使用 Git 和 Github 连接的基本配置，包括账户、SSH等
+Linux 下使用 Git 和 Github 连接的基本配置，包括账户、SSH等。
+本文为 [Git 常用命令大全] 的子集。
 </description>
-<pubDate>Tue Mar 19 2024 17:21:21 GMT+0800 (中国标准时间)</pubDate>
+<pubDate>Thu Mar 28 2024 14:31:02 GMT+0800 (中国标准时间)</pubDate>
 </item>,<item>
 <title>原神:娜维娅理论值计算</title>
 <link>https://0xarch.github.io/read/4c6j5Y6f56We5aic57u05aiF55CG6K665YC86K6h566X/</link>
