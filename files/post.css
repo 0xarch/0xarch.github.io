@@ -61,7 +61,7 @@ blockquote>p{
     margin: .25rem;
 }
 #markdown_fillContent p img{
-    width: 100%;
+    max-width: 100%;
 }
 code.hljs{
     background:#242424;color:#eee;border-radius:12px;
