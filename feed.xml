@@ -15,11 +15,11 @@ _Update: The GitHub page for xz has been suspended._
 <pubDate>Tue Apr 02 2024 14:17:39 GMT+0800 (中国标准时间)</pubDate>
 </item><item>
 <title>Arch Linux 包收集</title>
-<link>https://0xarch.github.io/read/17dzbYXJjaC1wYWNrYWdlLWNvbGxlY3QubWQ=/</link>
-<guid isPermaLink="false">ID3</guid>
+<link>https://0xarch.github.io/read/17dzbbGludXgvYXJjaC1wYWNrYWdlLWNvbGxlY3QubWQ=/</link>
+<guid isPermaLink="false">ID5</guid>
 <description>收集我迄今为止安装过的 Arch Linux 包。
 此篇仅用于记录和备忘，请酌情参考。</description>
-<pubDate>Thu Mar 28 2024 15:20:39 GMT+0800 (中国标准时间)</pubDate>
+<pubDate>Tue Apr 02 2024 14:51:12 GMT+0800 (中国标准时间)</pubDate>
 </item><item>
 <title>Nexo Beta 1.0.3~1.1.0</title>
 <link>https://0xarch.github.io/read/17dz3bmV4by9uMjI1Lm1k/</link>
@@ -28,7 +28,7 @@ _Update: The GitHub page for xz has been suspended._
 Nexo Beta 1.0.3 (Nexo n2.2.5-1) CHANGELOG 注解 , <del>以及 1.0.4 (n2.2.5-2 ~ n2.2.6) 规划。</del>  
 由于更新巨大，Nexo直接从 1.0.4 跳到 2.3.0，主题作者请注意文档。
 </description>
-<pubDate>Thu Mar 28 2024 16:33:26 GMT+0800 (中国标准时间)</pubDate>
+<pubDate>Tue Apr 02 2024 14:48:05 GMT+0800 (中国标准时间)</pubDate>
 </item><item>
 <title>金句(2024.03.12)</title>
 <link>https://0xarch.github.io/read/17dywLWdvbGQtc2VudGVuY2VzLzIwMjQwMzEyLm1k/</link>
@@ -36,23 +36,23 @@ Nexo Beta 1.0.3 (Nexo n2.2.5-1) CHANGELOG 注解 , <del>以及 1.0.4 (n2.2.5-2 ~
 <description>
 世界金句收集（2024年3月12日编），素材来源于现实或网络，不定期分裂。
 </description>
-<pubDate>Thu Mar 28 2024 14:47:43 GMT+0800 (中国标准时间)</pubDate>
+<pubDate>Tue Apr 02 2024 14:48:50 GMT+0800 (中国标准时间)</pubDate>
 </item><item>
 <title>WebJS - 滚动目录实现</title>
 <link>https://0xarch.github.io/read/4c76anMvdG9jLm1k/</link>
-<guid isPermaLink="false">ID5</guid>
+<guid isPermaLink="false">ID4</guid>
 <description>
 简单的JS滚动目录(动态高亮)的实现.
 
 兼容性未测试!
 </description>
-<pubDate>Tue Mar 19 2024 22:27:45 GMT+0800 (中国标准时间)</pubDate>
+<pubDate>Tue Apr 02 2024 14:48:23 GMT+0800 (中国标准时间)</pubDate>
 </item><item>
 <title>Git 常用命令大全</title>
 <link>https://0xarch.github.io/read/4c76bGludXgvZ2l0Y29tbWFuZHMubWQ=/</link>
 <guid isPermaLink="false">ID6</guid>
 <description>作者没有为这篇文章写前言。  分类：Git  标签：Git</description>
-<pubDate>Tue Mar 19 2024 17:21:21 GMT+0800 (中国标准时间)</pubDate>
+<pubDate>Tue Apr 02 2024 14:48:31 GMT+0800 (中国标准时间)</pubDate>
 </item><item>
 <title>Nexo 2.1.0 发布了</title>
 <link>https://0xarch.github.io/read/17dwjbmV4by9uMjEwLm1k/</link>
@@ -60,7 +60,7 @@ Nexo Beta 1.0.3 (Nexo n2.2.5-1) CHANGELOG 注解 , <del>以及 1.0.4 (n2.2.5-2 ~
 <description>
 前前后后抽了大概3天的时间，提前把充满垃圾的2.0.x时代结束掉，开始2.1.x的新屎山时代。这篇主要是CHANGELOG
 </description>
-<pubDate>Tue Mar 19 2024 17:21:21 GMT+0800 (中国标准时间)</pubDate>
+<pubDate>Tue Apr 02 2024 14:48:03 GMT+0800 (中国标准时间)</pubDate>
 </item><item>
 <title>What is Nexo</title>
 <link>https://0xarch.github.io/read/17dwibmV4by9uMjAzLm1k/</link>
@@ -69,7 +69,7 @@ Nexo Beta 1.0.3 (Nexo n2.2.5-1) CHANGELOG 注解 , <del>以及 1.0.4 (n2.2.5-2 ~
 不知不觉 Nexo 这个小项目都跟到 2.0.3 了，时间过得是真快啊。
 这篇主要是说说 Nexo 的发展。
 </description>
-<pubDate>Tue Mar 19 2024 17:21:21 GMT+0800 (中国标准时间)</pubDate>
+<pubDate>Tue Apr 02 2024 14:47:59 GMT+0800 (中国标准时间)</pubDate>
 </item><item>
 <title>Linux下Git配置</title>
 <link>https://0xarch.github.io/read/17dwgbGludXgvZ2l0Y29uZmlnLm1k/</link>
@@ -78,16 +78,16 @@ Nexo Beta 1.0.3 (Nexo n2.2.5-1) CHANGELOG 注解 , <del>以及 1.0.4 (n2.2.5-2 ~
 Linux 下使用 Git 和 Github 连接的基本配置，包括账户、SSH等。
 本文为 [Git 常用命令大全] 的子集。
 </description>
-<pubDate>Thu Mar 28 2024 14:31:02 GMT+0800 (中国标准时间)</pubDate>
+<pubDate>Tue Apr 02 2024 14:48:34 GMT+0800 (中国标准时间)</pubDate>
 </item><item>
 <title>原神:娜维娅理论值计算</title>
 <link>https://0xarch.github.io/read/4c6jZ2Vuc2hpbmltcGFjdC9uYXZpYS5tZA==/</link>
-<guid isPermaLink="false">ID4</guid>
+<guid isPermaLink="false">ID3</guid>
 <description>
 
 群里流传的娜维娅一个e1万倍率属实没绷住,那简单计算一下这个1万怎么出来的.
 </description>
-<pubDate>Fri Mar 22 2024 16:50:47 GMT+0800 (中国标准时间)</pubDate>
+<pubDate>Tue Apr 02 2024 14:48:44 GMT+0800 (中国标准时间)</pubDate>
 </item>
 </channel>
 </rss>
