@@ -1,27 +1,34 @@
-body{--block-backgroundp-color:var(--block-background-color);background:#000!important}
+:root { --Cbrand: #54a3d8;
+    --Cdisplay: #232629 ; --Cbg: #eff0f1 }
+@media(prefers-color-scheme:dark){
+    :root { --Cdisplay: #fcfcfc; --Cbg: #1b1e20 }
+}
+@media(max-width:700px){.nomobile{display:none}}
+@media(min-width:701px){.onmobile{display:none}}
+@media(min-width:576px){:root{--Wcon:540px}}
+@media(min-width:768px){:root{--Wcon:720px}}
+@media(min-width:992px){:root{--Wcon:960px}}
+@media(min-width:1200px){:root{--Wcon:1140px}}
+@media(min-width:1400px){:root{--Wcon:1320px}}
+body{ background: var(--Cbg); color: var(--Cdisplay);
+    margin: 0 }
+html::-webkit-scrollbar{display: none}
+html { scrollbar-width: none }
+hr { opacity: .5; border-bottom-width: 0px }
+.Nls { list-style: none }
 .alc,.jcc,.fl,.eaj{display: flex}.alc,.eaj{align-items: center}
 .jcc,.eaj{justify-content: center}.nowrap{text-overflow:ellipsis;overflow:hidden;white-space:nowrap}
 .tac{text-align:center}.col{flex-direction:column}
 .jcsa{justify-content:space-around}.jcsb{justify-content:space-between}
 .intro,#intro{color:var(--secondary-color)}
 :root[ismobile=true] .nomobile{display:none}.fit{width:fit-content}
-.intro,#intro,footer{margin:0!important}
-#content{background:var(--background-color);padding:60px 0 70px}
-footer a{color:inherit;text-decoration:none}
-footer ul{list-style:none;padding:0;margin:0}
-footer ul>li{padding:4px}
-.special h2{margin-top:0;margin-bottom:16px}
-@media(max-width:700px){header.top>div{padding:0!important}header.top>div>nav{margin:auto}header.top>div>nav li>a{margin-inline:0!important}header.top>div .logo{display:none}}
-.logo-of-theme{height:32px;width:80px;background:#824626;color:#fff}
-.logo-of-theme::after{content:'!WACAL~';font-size:16px}
+.logo-of-theme{height:32px;width:80px;background:var(--Cbrand);color:#fff}
+.logo-of-theme::after{content:'simplus';font-size:16px}
 #url,#searchUrl{display:none}
 .clist{padding:20px}
 .clist hr{visibility:hidden}
 .meta>*{margin:4px}.less{margin:12px 0}
 .m0{margin:0}.p0{padding:0}.p8{padding:12px}
-.mark>b{color:var(--i)!important}
-ul.intros>li{max-width:100vw}
-#intro h1,#intro .h1{margin:0 0 20px;font-size:45px;font-weight:800;hyphens:auto;word-wrap:break-word}
 .footnavi,.pagination{cursor:default;padding-top:2rem}
 .footnavi>a{width:40px;height:40px;margin:4px;border-radius:7px}
 .footnavi>a,.logo-of-theme{display:flex;align-items:center;justify-content:center}
@@ -32,9 +39,36 @@ ul.intros>li{max-width:100vw}
 .pagination .arrow {color:#555;position:absolute}
 .pagination .left{left:0}
 .pagination .right{right:0}
-body.colorful header.top{background:#fff0;position:absolute}
-body.colorful :is(#intro,.intro){color:#111;background:linear-gradient(35deg,var(--color1),var(--color2));width:100%;box-sizing:border-box}
-body.colorful :is(#intro,.intro) .h1{mix-blend-mode:overlay}
-body.colorful header.top>div a{color:#111}
-body.colorful header.top>div nav>ul>li a:hover{background:#fff3}
+.pagination .nowrap{ max-width: 50% }
+.pagination .top { position: relative; top: -1.5em }
 *{-webkit-tap-highlight-color:#0000}
+.navbar{ display: flex; border-bottom: 2px solid var(--Cbrand);
+    min-height: 48px }
+.navbar :is(.logo,details>*) { height: 48px }
+.navbar>.logo { position: absolute; display: flex;
+    align-items: center; color: #fff;
+    font-size: 24px; padding: 0 8px }
+.navbar>details { margin-left: auto }
+.navbar>details>.con>a{ padding: 8px;
+    color: var(--Cdisplay); text-decoration: none }
+.navbar summary{ list-style: none; top: 0;
+    right: 0; margin-left: auto }
+.navbar>details>.con { top: 0; right: 48px;
+    align-items: center; display: flex }
+.navbar>details>* { width: fit-content }
+.navbar>.logo, .navbar summary { background: var(--Cbrand) }
+@media(min-width:701px){.navbar>details[open]>summary{display:none}}
+.uWcon{ max-width: var(--Wcon); margin-left: auto; margin-right: auto }
+.cLinks { display: flex; flex-wrap: wrap }
+.cLinks a { display: block }
+.cLinks>nav { flex: 1 0 0%; padding: 8px }
+.cPostCon,.cSortCon { list-style: none; padding:0 }
+.cSortCon>a { display: inline-block }
+a { text-decoration: none; color: var(--Cbrand) }
+
+/* FIX */
+footer { background: #0000 !important; color: var(--Cdisplay)}
+.h1 { display: block; font-size: 2em; margin-block-start: .67em;
+    margin-block-end: .67em; margin-inline-start: 0;
+    margin-inline-end: 0; font-weight: bold;
+    unicode-bidi: isolate }
