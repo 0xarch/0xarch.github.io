@@ -1,0 +1,65 @@
+.KNavigationBar {
+    border-bottom: 2px solid var(--Cbrand);
+    min-height: 48px
+}
+
+.KNavigationBar>.kLogo {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    font-size: 24px;
+    padding: 0 8px;
+    background: var(--Cbrand);
+    height: 48px
+}
+
+.KNavigationBar>.kCon {
+    width: fit-content;
+    overflow: hidden;
+    transition: height .2s ease-in-out;
+    margin-left: auto;
+}
+
+.KNavigationBar>.kCon>a {
+    padding: 12px 8px;
+    color: var(--Cdisplay);
+    height: 48px;
+    box-sizing: border-box;
+    display: inline-block;
+}
+
+.KNavigationBar>.kToggle {
+    padding: 0;
+    height: 48px;
+    margin-left: auto;
+    border: none;
+    display: none;
+}
+
+.KNavigationBar.short>.kToggle {
+    display: block;
+}
+
+.KNavigationBar.enough>.kToggle {
+    display: none
+}
+
+.KNavigationBar.short>.kCon {
+    margin-left: 0;
+    height: var(--expanded-height);
+    display: block;
+}
+
+.KNavigationBar.enough>.kCon {
+    margin-left: auto;
+    height: 48px
+}
+
+.KNavigationBar.collapsed>.kCon {
+    height: 0
+}
+
+.KNavigationBar.short>.kCon>a {
+    display: block
+}

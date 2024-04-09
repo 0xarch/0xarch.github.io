@@ -1,0 +1,4 @@
+.KFooter { color: var(--Cdisplay) }
+.KFooter>.kLinks { display: flex; flex-wrap: wrap }
+.KFooter>.kLinks>nav { flex: 1 0 0%; padding: 8px }
+.KFooter>.kLinks>nav>* { display: block; text-wrap: nowrap }

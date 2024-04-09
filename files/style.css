@@ -29,45 +29,11 @@ hr { opacity: .5; border-bottom-width: 0px }
 .clist hr{visibility:hidden}
 .meta>*{margin:4px}.less{margin:12px 0}
 .m0{margin:0}.p0{padding:0}.p8{padding:12px}
-.pagination{border-top:.5px solid #e5e5e5;font-family:sans-serif;position:relative;text-align:center}
-@media(prefers-color-scheme:dark){.pagination{border-top-color:#FFFFFF50}.pagination .arrow{color:#fff}}
-.pagination .arrow {color:#555;position:absolute}
-.pagination .left{left:0}
-.pagination .right{right:0}
-.pagination .nowrap{ max-width: 50% }
-.pagination .top { position: relative; top: -1.5em }
 *{-webkit-tap-highlight-color:#0000}
-#NAV_ROOT{ border-bottom: 2px solid var(--Cbrand);
-    min-height: 48px }
-#NAV_LOGO,#NAV_BAR_TOGGLE { height: 48px }
-#NAV_LOGO { position: absolute; display: flex;
-    align-items: center; color: #fff;
-    font-size: 24px; padding: 0 8px;
-    background: var(--Cbrand) }
-#NAV_BAR_CON { display: flex; width: fit-content;
-    overflow: hidden; transition: height .2s ease-in-out }
-#NAV_BAR_CON>a{ padding: 8px; color: var(--Cdisplay) }
-#NAV_BAR_TOGGLE{ padding: 0;
-    margin-left: auto; border: none;
-    display: block }
-#NAV_ROOT.enough>#NAV_BAR_TOGGLE{ display: none }
-#NAV_ROOT.enough>#NAV_BAR_CON { width: fit-content; 
-    margin-left: auto }
-#NAV_ROOT.short>#NAV_BAR_CON>a { display: block }
-#NAV_ROOT.enough>#NAV_BAR_CON {
-    align-items: center;
-    height: 48px;
-}
-#NAV_ROOT.short>#NAV_BAR_CON{
-    flex-direction: column;
-    justify-content: center;
-    height: var(--expanded-height);
-}
-#NAV_ROOT.collapsed>#NAV_BAR_CON { height: 0 }
 .uWcon{ max-width: var(--Wcon); padding: 0 8px;
     margin-left: auto; margin-right: auto }
 .cLinks { display: flex; flex-wrap: wrap }
-.cLinks a { display: block }
+.cLinks a { display: block; text-wrap: nowrap }
 .cLinks>nav { flex: 1 0 0%; padding: 8px }
 .cLinks h3 { text-wrap: nowrap }
 .cPostCon,.cSortCon { list-style: none; padding:0 }
@@ -75,7 +41,6 @@ hr { opacity: .5; border-bottom-width: 0px }
 a { text-decoration: none; color: var(--Cbrand) }
 
 /* FIX */
-footer { background: #0000 !important; color: var(--Cdisplay)}
 .h1 { display: block; font-size: 2em; margin-block-start: .67em;
     margin-block-end: .67em; margin-inline-start: 0;
     margin-inline-end: 0; font-weight: bold;

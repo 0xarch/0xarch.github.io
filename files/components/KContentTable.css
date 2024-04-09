@@ -1,0 +1,50 @@
+.KContentTable{
+    position: fixed;
+    bottom: 8px;
+    left: 8px;
+}
+.KContentTable>*{
+    box-shadow: 0px 4px 10px #0004;
+    background: var(--Cbg);
+    border-radius: 5px;
+}
+.KContentTable>.kTOC{
+    margin: 0;
+    list-style: none;
+    display: none;
+    padding: 8px;
+    border: 1px solid transparent;
+}
+.KContentTable>.kButton{
+    width:3em;height:3em;border:none;
+    box-shadow: 0px 4px 10px #0004;
+    background: var(--Cbg);
+    color: var(--Cdisplay);
+}
+.KContentTable>.kTOC>li{
+    cursor: pointer;
+    padding: 0.125rem 0.25rem;
+    transition: color .2s ease-in-out;
+}
+.KContentTable>.kTOC>.li-1{
+    font-size: larger;
+}
+.KContentTable>.kTOC>.li-2{
+    font-size: large;
+    padding-left: 0.5rem;
+}
+.KContentTable>.kTOC>.li-3{
+    padding-left: 0.75rem;
+}
+.KContentTable>.kTOC>.li-4{
+    padding-left: 1rem;
+}
+.KContentTable>.kTOC>.li-5{
+    padding-left: 1.25rem;
+}
+.KContentTable>.kTOC>.li-6{
+    padding-left: 1.5rem;
+}
+.KContentTable>.kTOC>li.active{
+    color: var(--Cbrand);
+}

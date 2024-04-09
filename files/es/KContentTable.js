@@ -1,15 +1,7 @@
-let toc,opened=true;
-document.addEventListener('DOMContentLoaded', () => {
-    toc = document.querySelector("#toc")
-    let md_content = document.getElementById('markdown_fillContent')
-    if(!_M_){TOC(md_content);Q(D,'.fix.toc-con-button>button').onclick=()=>{
-        toc.style.display=opened?'block':'none';
-        opened=!opened;
-    }}
-})
+let toc, opened = true;
 
-function TOC(markdown_content) {
-    if(!toc) return;
+const TOC = (markdown_content) => {
+    if (!toc) return;
     let tocList = markdown_content.querySelectorAll("h1, h2, h3, h4, h5, h6");
     let liList = [];
     tocList.forEach((v) => {
@@ -57,3 +49,12 @@ function TOC(markdown_content) {
     });
     update();
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    toc = document.querySelector('.KContentTable>.kTOC')
+    let md_content = document.getElementById('markdown_fillContent')
+    /*if(!_M_){*/TOC(md_content); document.querySelector('.KContentTable>.kButton').onclick = () => {
+        toc.style.display = opened ? 'block' : 'none';
+        opened = !opened;
+    }/*}*/
+})
