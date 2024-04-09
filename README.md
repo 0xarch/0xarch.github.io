@@ -1,0 +1,20 @@
+## BIRW
+
+**THIS IS A REPOSITORY OF MY PERSONAL BLOG.**
+**DO NOT FORK THIS REPOSITORY.**
+
+## UD TIY ew ubrwewarws ub
+Generator: [Fewu](//github.com/0xarch/fewu)
+
+Theme: [simplus](//github.com/0xarch/simplus)
+
+Becoming a pesky fly: ~~New Issue~~
+
+## xibrXR NW
+SEE THE LINKS ON THE FOOTER OF MY PAGE.  
+
+## URGWEA
+THE FILES ON MY LOCAL MACHINE ARE NOT MANUALLY PUT IN THIS REPOSITORY, HOWERVER YOU CAN GET SOME OF THEM HERE.  
+> FOR POSTS, SEE posts DIRECTORY
+
+IM USING **ARCH LINUX** FOR PAGE GENERATING.

@@ -35,6 +35,7 @@
     margin-left: auto;
     border: none;
     display: none;
+    background: #0000;
 }
 
 .KNavigationBar.short>.kToggle {

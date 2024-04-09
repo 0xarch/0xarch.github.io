@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded',()=>{
     const NAVIGATION_LOGO_WIDTH = NAV_ROOT.querySelector('.kLogo').clientWidth;
     const NAVIGATION_WIDTH = NAV_BAR_CON.clientWidth;
     (()=>{
-        let expandedHeight = NAV_BAR_CON.childElementCount*40 + 'px';
+        let expandedHeight = NAV_BAR_CON.childElementCount*48 + 'px';
         NAV_BAR_CON.style.setProperty('--expanded-height',expandedHeight);
     })()
     const NavBarIntelliJudge = () => {
@@ -22,5 +22,4 @@ document.addEventListener('DOMContentLoaded',()=>{
         NAV_ROOT.classList.toggle('collapsed');
     });
     NavBarIntelliJudge();
-    NAV_ROOT.classList.add('-Ready-');
 })
