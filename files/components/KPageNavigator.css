@@ -1,5 +1,5 @@
 .KPageNavigator { display: flex; list-style: none;
-    width: fit-content; margin: auto }
+    width: fit-content; margin: auto; padding: 0 }
 .KPageNavigator>li { border: 1px solid #8888;
     border-left-width: 0 }
 .KPageNavigator>:first-child{ border-top-left-radius: 8px;
