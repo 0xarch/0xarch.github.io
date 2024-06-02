@@ -45,3 +45,5 @@ a { text-decoration: none; color: var(--Cbrand) }
     margin-block-end: .67em; margin-inline-start: 0;
     margin-inline-end: 0; font-weight: bold;
     unicode-bidi: isolate }
+
+@media(prefers-color-scheme:dark){.hljs{background: #232629;color:#f3f3f3}}
