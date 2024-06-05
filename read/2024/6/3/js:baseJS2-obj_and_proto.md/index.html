@@ -7,7 +7,113 @@
 }
 </style><link rel="icon" href="/files/icon.svg"/><meta charset="utf-8"/><meta name="viewport" content="width:device-width,initial-scale=1.0"/><meta name="author" content="0xarch"/><meta name="description" content="JavaScript 基础 第二篇：面向对象概述。
 包含内容：对象和原型链。
-转载总结自 MDN。"/><meta name="keywords" content="Web Node.js JavaScript"/><meta http-equiv="content-language" content="zh-CN"/><link rel="stylesheet" href="/files/style.css"/><link rel="stylesheet" href="/files/components/KContentTable.css"/><script src="/files/es/KContentTable.js"></script><link rel="stylesheet" href="/files/components/KFooter.css"/><link rel="stylesheet" href="/files/components/KNextPage.css"/><link rel="stylesheet" href="/files/components/KNavigationBar.css"/><script src="/files/es/KNavigationBar.js"></script><title>JS基础II:对象和原型 :: 文章</title></head><body class="colorful" OCP="OVERRIDE" style="--color1:#1c6ae4;--color2:#c8fd68"><header class="KNavigationBar"><a class="kLogo" href="/">0xarch's Blogs</a><button class="kToggle"><svg viewBox="0 0 48 48" fill="none" height="48" stroke="currentColor" stroke-width="2" width="48" xmlns="http://www.w3.org/2000/svg"><path d="M12,14h24M12,24h24M12,34h24"></path></svg></button><div class="kCon"><a href="/">首页</a><a href="/archive/1">归档</a><a href="/category/1">分类</a><a href="/tag/1">标签</a><a href="/about/">关于</a><a href="/status/">状态 </a><a href="/tools/">工具</a></div></header><div class="PageLabel uWcon"><br/><b class="meta"><date>2024年6月3日星期一</date><span>Web</span><span>530字</span></b></div><main class="uWcon"><section><h2>前言</h2><p>JavaScript 基础 第二篇：面向对象概述。 包含内容：对象和原型链。 转载总结自 MDN。</p></section><article id="markdown_fillContent"><h1 id="js基础ii对象和原型">JS基础II:对象和原型</h1><h2 id="对象和原型链">对象和原型链</h2><p>JavaScript 只有一种结构：对象。每个对象都有一个私有属性指向另一个名为原型（prototype）的对象。原型对象也有一个自己的原型，层层向上直到一个对象的原型为 null。根据定义，null 没有原型，并作为这个原型链中的最后一个环节。可以改变原型链中的任何成员，甚至可以在运行时换出原型。</p><h3 id="属性继承">属性继承</h3><p>JavaScript 对象是动态的属性（指其自有属性）<strong>包</strong>。JavaScript 对象有一个指向一个原型对象的链。当试图访问一个对象的属性时，它不仅仅在该对象上搜寻，还会搜寻该对象的原型，以及原型的原型，依次层层向上搜索，直到找到一个名字匹配的属性或到达原型链的末尾。</p><h3 id="构造函数">构造函数</h3><p>如果一组属性应该出现在每一个实例上，那我们就可以重用它们——尤其是对于方法。</p><pre><code class="language-js">const boxes = [
+转载总结自 MDN。"/><meta name="keywords" content="Web Node.js JavaScript"/><meta http-equiv="content-language" content="zh-CN"/><link rel="stylesheet" href="/files/style.css"/><link rel="stylesheet" href="/files/components/KContentTable.css"/><script src="/files/es/KContentTable.js"></script><link rel="stylesheet" href="/files/components/KFooter.css"/><link rel="stylesheet" href="/files/components/KNextPage.css"/><link rel="stylesheet" href="/files/components/KNavigationBar.css"/><script src="/files/es/KNavigationBar.js"></script><title>JS基础II:对象和原型 :: 文章</title></head><body class="colorful" OCP="OVERRIDE" style="--color1:#1c6ae4;--color2:#c8fd68"><header class="KNavigationBar"><a class="kLogo" href="/">0xarch's Blogs</a><button class="kToggle"><svg viewBox="0 0 48 48" fill="none" height="48" stroke="currentColor" stroke-width="2" width="48" xmlns="http://www.w3.org/2000/svg"><path d="M12,14h24M12,24h24M12,34h24"></path></svg></button><div class="kCon"><a href="/">首页</a><a href="/archive/1">归档</a><a href="/category/1">分类</a><a href="/tag/1">标签</a><a href="/about/">关于</a><a href="/status/">状态 </a><a href="/tools/">工具</a></div></header><div class="PageLabel uWcon"><br/><b class="meta"><date>2024年6月3日星期一</date><span>Web</span><span>2724字</span></b></div><main class="uWcon"><section><h2>前言</h2><p>JavaScript 基础 第二篇：面向对象概述。 包含内容：对象和原型链。 转载总结自 MDN。</p></section><article id="markdown_fillContent"><h1 id="js基础ii对象和原型">JS基础II:对象和原型</h1><h2 id="对象">对象</h2><p>在 JavaScript 中，大多数事物都是对象，从作为核心功能的字符串和数组，到建立在 JavaScript 之上的浏览器 API 。你甚至可以自己创建对象，将相关的函数和变量高效地封装打包成便捷的数据容器。</p><p>简而言之，对象是一个包含相关数据和方法的集合（通常由一些变量和函数组成，我们称之为对象里面的属性和方法）。</p><h3 id="面向对象基础">面向对象基础</h3><p><strong><a href="https://developer.mozilla.org/zh-CN/docs/Learn/JavaScript/Objects/Basics">此片段来自 MDN</a></strong></p><p>首先，将 <a href="https://github.com/mdn/learning-area/blob/main/javascript/oojs/introduction/oojs.html">oojs.html</a> 文件复制到本地，文件的元素非常少——仅一个供我们编写源代码的 <code>&lt;script&gt;</code> 标签。我们将在此基础上研究对象基础语法。在使用此示例时，你应该打开<strong>开发者工具 JavaScript 控制台</strong>，并准备键入一些命令。</p><p>如同 JavaScript 中的很多东西一样，创建一个对象通常先定义并初始化变量。尝试在你的文件中输入以下 JavaScript 代码，保存并刷新页面：</p><pre><code class="language-js">const person = {};
+</code></pre><p>打开你的浏览器的 JavaScript 控制台输入 <code>person</code>，然后按下 Enter/Return，你可能会得到以下结果中的一种：</p><pre><code class="language-js">[object Object]
+Object { }
+{ }
+</code></pre><p>恭喜，你刚创建了你的第一个对象。干的漂亮！但这是一个空对象，所以我们做不了很多事情。让我们像这样更新文件中的 JavaScript 对象：</p><pre><code class="language-js">const person = {
+  name: [&quot;Bob&quot;, &quot;Smith&quot;],
+  age: 32,
+  bio: function () {
+    console.log(`${this.name[0]} ${this.name[1]} 现在 ${this.age} 岁了。`);
+  },
+  introduceSelf: function () {
+    console.log(`你好！我是 ${this.name[0]}。`);
+  },
+};
+</code></pre><p>保存并刷新后，尝试在你的浏览器开发者工具的 JavaScript 控制台输入以下内容：</p><pre><code class="language-js">person.name;
+person.name[0];
+person.age;
+person.bio();
+// &quot;Bob Smith 现在 32 岁了。&quot;
+person.introduceSelf();
+// &quot;你好！我是 Bob。&quot;
+</code></pre><p>现在，你的对象拥有了一些数据和功能，你现在可以通过简单的语法访问它们了！</p><p>所以发生了什么？一个对象由许多的成员组成，每一个成员都拥有一个名字（如 <code>name</code>、<code>age</code>）和一个值（如 [<code>&#39;Bob&#39;</code>, <code>&#39;Smith&#39;</code>]、<code>32</code>）。每一组名字/值必须由逗号分隔开，并且名字和值之间由冒号分隔，语法规则如下所示：</p><pre><code class="language-js">const objectName = {
+  member1Name: member1Value,
+  member2Name: member2Value,
+  member3Name: member3Value,
+};
+</code></pre><p>对象成员的值可以是任意的，<code>person</code> 对象里包含了：一个数字、一个数组，以及两个函数。前两项是数据项，被称为对象的属性，后两项是允许对象对该数据进行某些操作的函数，称为对象的方法。</p><p>当对象的成员是函数时，语法会更简单。我们可以写 <code>bio()</code> 来代替 <code>bio: function()</code>。像这样：</p><pre><code class="language-js">const person = {
+  name: [&quot;Bob&quot;, &quot;Smith&quot;],
+  age: 32,
+  bio() {
+    console.log(`${this.name[0]} ${this.name[1]} 现在 ${this.age} 岁了。`);
+  },
+  introduceSelf() {
+    console.log(`你好！我是 ${this.name[0]}。`);
+  },
+};
+</code></pre><p>一个如上所示的对象被称之为对象字面量（object literal）——手动的写出对象的内容来创建一个对象。不同于从类<strong>实例化</strong>一个对象，我们会在后面学习这种方式。</p><p>当你想要传输一系列结构化的相关的数据项（例如，服务器发起请求以存储一些数据到数据库）时，常见的方式是使用字面量来创建一个对象。发送一个对象要比分别发送这些数据更有效率，当你使用名字标识这些数据时，它比数组更容易使用。</p><h4 id="点表示法">点表示法</h4><p>在上面的例子中，你使用了点表示法（dot notation）来访问对象的属性和方法。对象的名字表现为一个<strong>命名空间</strong>（namespace）。当你想访问对象内部的属性或方法时，命名空间必须写在第一位。然后输入一个点，紧接着是你想要访问的目标——可以是简单属性的名字，或者是数组属性的一个子元素，又或者是对象的方法调用。如下所示：</p><pre><code class="language-js">person.age;
+person.bio();
+</code></pre><h4 id="括号表示法">括号表示法</h4><p>另外一种访问对象属性的方式是使用括号表示法（bracket notation）。</p><pre><code class="language-js">person.age;
+person.name.first;
+</code></pre><p>可以使用如下所示的括号表示法替代：</p><pre><code class="language-js">person[&quot;age&quot;];
+person[&quot;name&quot;][&quot;first&quot;];
+</code></pre><p>这看起来很像访问一个数组的元素，并且基本上是相同的——使用关联了值的名称，而不是索引来选择元素。因此对象有时被称为<strong>关联数组</strong>——对象将字符串映射到值，而数组将数字映射到值。</p><p>点表示法通常优于括号表示法，因为它更简洁且更易于阅读。然而，在某些情况下你必须使用括号。例如，如果对象属性名称保存在变量中，则不能使用点表示法访问该值，但可以使用括号表示法访问该值。</p><p>在下面的示例中，<code>logProperty()</code> 函数可以使用 <code>person[propertyName]</code> 来检索 <code>propertyName</code> 中指定的属性的值。</p><pre><code class="language-js">const person = {
+  name: [&quot;Bob&quot;, &quot;Smith&quot;],
+  age: 32,
+};
+
+function logProperty(propertyName) {
+  console.log(person[propertyName]);
+}
+
+logProperty(&quot;name&quot;);
+// [&quot;Bob&quot;, &quot;Smith&quot;]
+logProperty(&quot;age&quot;);
+// 32
+</code></pre><h4 id="子命名空间">子命名空间</h4><p>可以用一个对象来做另一个对象成员的值。例如将 <code>name</code> 成员，从</p><pre><code class="language-js">const person = {
+  name: [&quot;Bob&quot;, &quot;Smith&quot;],
+};
+</code></pre><p>改成</p><pre><code class="language-js">const person = {
+  name: {
+    first: &quot;Bob&quot;,
+    last: &quot;Smith&quot;,
+  },
+  // …
+};
+</code></pre><p>需要访问这些属性，只需要链式的再使用一次点/括号表示法，像这样：</p><pre><code class="language-js">person.name.first;
+person[&#39;name&#39;][&#39;last&#39;];
+person.name[&#39;last&#39;]; // same as above
+</code></pre><h4 id="设置对象成员">设置对象成员</h4><p>目前我们仅仅看到了如何查询（或获取）对象成员，而你也可以通过声明设置（更新）对象成员的值（使用点表示法或括号表示法），像这样：</p><pre><code class="language-js">person.age = 45;
+person[&quot;name&quot;][&quot;last&quot;] = &quot;Cratchit&quot;;
+</code></pre><p>尝试输入以上代码，然后再查看这些成员是否已经被改变了。</p><p>设置成员并不意味着你只能更新已经存在的属性的值和方法，你也可以创建新的成员。在 JS 控制台中尝试以下代码：</p><pre><code class="language-js">person[&quot;eyes&quot;] = &quot;hazel&quot;;
+person.farewell = function () {
+  console.log(&quot;再见！&quot;);
+};
+</code></pre><p>现在你可以测试你新创建的成员</p><pre><code class="language-js">person[&quot;eyes&quot;];
+person.farewell();
+// &quot;再见！&quot;
+</code></pre><p>括号表示法一个有用的地方是它不仅可以动态的去设置对象成员的值，还可以动态的去设置成员的名字。 假设我们想让用户能够通过在两个文本输入框中键入成员名称和值，在他们的人员数据中存储自定义的值类型。 我们可以像这样获取这些值：</p><pre><code class="language-js">const myDataName = nameInput.value;
+const myDataValue = nameValue.value;
+</code></pre><p>我们可以像这样把这个新的成员的名字和值加到 person 对象中：</p><pre><code class="language-js">person[myDataName] = myDataValue;
+</code></pre><p>为了测试它，尝试在你的代码里添加以下几行，就在 <code>person</code> 对象的右花括号的下面：</p><pre><code class="language-js">const myDataName = &quot;height&quot;;
+const myDataValue = &quot;1.75m&quot;;
+person[myDataName] = myDataValue;
+</code></pre><p>现在，保存并刷新页面，在输入框里输入以下代码：</p><pre><code class="language-js">person.height;
+</code></pre><p>这是使用点表示法无法做到的，点表示法只能接受字面量的成员的名字，不接受表示名称的变量。</p><h3 id="this">this</h3><p>关键字 <code>this</code> 指向了当前代码运行时的对象。</p><p>当你只需要创建一个对象字面量时，<code>this</code> 就不是那么有用。但是如果你创建多个对象时，<code>this</code> 可以让你对每一个创建的对象都使用相同的方法定义。</p><p>让我们用两个简单的 person 对象来说明：</p><pre><code class="language-js">const person1 = {
+  name: &quot;Chris&quot;,
+  introduceSelf() {
+    console.log(`你好！我是 ${this.name}。`);
+  },
+};
+
+const person2 = {
+  name: &quot;Deepti&quot;,
+  introduceSelf() {
+    console.log(`你好！我是 ${this.name}。`);
+  },
+};
+</code></pre><p>在本例中，尽管两个实例的方法代码完全相同，但 <code>person1.introduceSelf()</code> 输出“你好！我是 Chris。”，而 <code>person2.introduceSelf()</code> 输出“你好！我是 Deepti”。当你手工编写对象字面量时，这并不是很有用，但是当我们开始使用<a href="#%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0">构造函数</a>从单个对象定义创建多个对象时，这将是必不可少的。</p><h2 id="原型链">原型链</h2><p>原型是 JavaScript 对象相互继承特性的机制。</p><p>JavaScript 对象都有一个私有属性指向另一个名为原型（prototype）的对象。 原型对象也有一个自己的原型，层层向上直到一个对象的原型为 null。 根据定义，null 没有原型，并作为这个原型链中的最后一个环节。 可以改变原型链中的任何成员，甚至可以在运行时换出原型。</p><h3 id="属性继承">属性继承</h3><p>JavaScript 对象是动态的属性（指其自有属性）<strong>包</strong>。JavaScript 对象有一个指向一个原型对象的链。当试图访问一个对象的属性时，它不仅仅在该对象上搜寻，还会搜寻该对象的原型，以及原型的原型，依次层层向上搜索，直到找到一个名字匹配的属性或到达原型链的末尾。</p><h3 id="属性遮蔽">属性遮蔽</h3><p>如果你在一个对象中定义了一个属性，而在该对象的原型中定义了一个同名的属性，会发生什么？</p><pre><code class="language-js">const myDate = new Date(1995, 11, 17);
+
+console.log(myDate.getYear()); // 95
+
+myDate.getYear = function () {
+  console.log(&quot;别的东西！&quot;);
+};
+
+myDate.getYear(); // &#39;别的东西！&#39;
+</code></pre><p>鉴于对原型链的描述，这应该是可以预测的。当我们调用 <code>getYear()</code> 时，浏览器首先在 <code>myDate</code> 中寻找具有该名称的属性，如果 <code>myDate</code> 没有定义该属性，才检查原型。因此，当我们给 <code>myDate</code> 添加 <code>getYear()</code> 时，就会调用 <code>myDate</code> 中的版本。</p><p>这叫做属性的“遮蔽”。</p><h3 id="构造函数">构造函数</h3><p>使用对象字面量在只需要创建一个对象时是可以的，但如果你需要创建多个对象，如前面章节所示，它们就不够用了。 我们必须为每个创建的对象编写相同的代码，如果我们想要更改对象的某些属性，比如添加一个 height 属性，那么我们必须手动更新每个对象。</p><p>如果一组属性应该出现在每一个实例上，那我们就可以重用它们——尤其是对于方法。</p><pre><code class="language-js">const boxes = [
   { value: 1, getValue() { return this.value; } },
   { value: 2, getValue() { return this.value; } },
   { value: 3, getValue() { return this.value; } },
@@ -23,7 +129,7 @@ const boxes = [
   { value: 2, __proto__: boxPrototype },
   { value: 3, __proto__: boxPrototype },
 ];
-</code></pre><p>使用构造函数简化代码：</p><pre><code class="language-js">// 一个构造函数
+</code></pre><blockquote><p>指向对象原型的属性并不是 prototype。它的名字不是标准的，但实际上所有浏览器都使用 <strong>proto</strong>。访问对象原型的标准方法是 Object.getPrototypeOf()。</p></blockquote><p>使用构造函数简化代码：</p><pre><code class="language-js">// 一个构造函数
 function Box(value) {
   this.value = value;
 }
