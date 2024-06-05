@@ -5,21 +5,29 @@
 <link>https://0xarch.github.io/</link>
 <description></description>
 <item>
+<title>JS基础IV:循环控制</title>
+<link>https://0xarch.github.io//read/2024/6/5/js:baseJS4-loop_statement.md/</link>
+<guid isPermaLink="false">ID10</guid>
+<description>JavaScript 基础 第四篇：循环控制。  
+包含内容：循环控制。
+转载总结自 MDN。</description>
+<pubDate>Wed Jun 05 2024 17:05:14 GMT+0800 (中国标准时间)</pubDate>
+</item><item>
 <title>JavaScript 基础</title>
 <link>https://0xarch.github.io//read/2024/6/3/js:baseJS1-nav_and_basic.md/</link>
 <guid isPermaLink="false">ID7</guid>
 <description>本文写于2024年6月。旨在帮助新手进行简单快速的JavaScript 入门。  
 转载并总结自 MDN。  
 本篇包含：函数调用、变量声明的简易阐述。</description>
-<pubDate>Wed Jun 05 2024 00:33:21 GMT+0800 (中国标准时间)</pubDate>
+<pubDate>Wed Jun 05 2024 16:56:27 GMT+0800 (中国标准时间)</pubDate>
 </item><item>
-<title>JS基础III:基本逻辑语句</title>
-<link>https://0xarch.github.io//read/2024/6/3/js:baseJS3-logic.md/</link>
+<title>JS基础III:条件分支</title>
+<link>https://0xarch.github.io//read/2024/6/3/js:baseJS3-branch_statement.md/</link>
 <guid isPermaLink="false">ID9</guid>
-<description>JavaScript 基础 第三篇：逻辑语句概述。  
+<description>JavaScript 基础 第三篇：条件和分支。  
 包含内容：条件和分支。  
 转载总结自 MDN。</description>
-<pubDate>Mon Jun 03 2024 12:05:34 GMT+0800 (中国标准时间)</pubDate>
+<pubDate>Wed Jun 05 2024 17:04:26 GMT+0800 (中国标准时间)</pubDate>
 </item><item>
 <title>JS基础II:对象和原型</title>
 <link>https://0xarch.github.io//read/2024/6/3/js:baseJS2-obj_and_proto.md/</link>
@@ -39,13 +47,13 @@
 </item><item>
 <title>崩铁：黄泉简评</title>
 <link>https://0xarch.github.io//read/2024/4/7/mihoyo.sr:黄泉简评.md/</link>
-<guid isPermaLink="false">ID14</guid>
+<guid isPermaLink="false">ID15</guid>
 <description>80抽黄泉，米哈游你***</description>
 <pubDate>Tue Apr 09 2024 18:07:11 GMT+0800 (中国标准时间)</pubDate>
 </item><item>
 <title>[转载] Everything I Know About the Xz Backdoor</title>
 <link>https://0xarch.github.io//read/2024/3/29/reprint-xz-backdoor.md/</link>
-<guid isPermaLink="false">ID16</guid>
+<guid isPermaLink="false">ID17</guid>
 <description>_Please note: This is being updated in real time. The intent is to make sense of lots of simultaneous discoveries regarding this backdoor. last updated: 10:30 PM EST_
 
 _Update: The GitHub page for xz has been suspended._
@@ -54,7 +62,7 @@ _Update: The GitHub page for xz has been suspended._
 </item><item>
 <title>Arch Linux 包收集</title>
 <link>https://0xarch.github.io//read/2024/3/27/linux:arch-package-collect.md/</link>
-<guid isPermaLink="false">ID11</guid>
+<guid isPermaLink="false">ID12</guid>
 <description>收集我迄今为止安装过的 Arch Linux 包。
 此篇仅用于记录和备忘，请酌情参考。</description>
 <pubDate>Wed Jun 05 2024 01:51:00 GMT+0800 (中国标准时间)</pubDate>
@@ -78,7 +86,7 @@ Nexo Beta 1.0.3 (Nexo n2.2.5-1) CHANGELOG 注解 , <del>以及 1.0.4 (n2.2.5-2 ~
 </item><item>
 <title>WebJS - 滚动目录实现</title>
 <link>https://0xarch.github.io//read/2024/3/4/js:toc.md/</link>
-<guid isPermaLink="false">ID10</guid>
+<guid isPermaLink="false">ID11</guid>
 <description>
 简单的JS滚动目录(动态高亮)的实现.
 
@@ -88,7 +96,7 @@ Nexo Beta 1.0.3 (Nexo n2.2.5-1) CHANGELOG 注解 , <del>以及 1.0.4 (n2.2.5-2 ~
 </item><item>
 <title>Git 常用命令大全</title>
 <link>https://0xarch.github.io//read/2024/3/4/linux:gitcommands.md/</link>
-<guid isPermaLink="false">ID12</guid>
+<guid isPermaLink="false">ID13</guid>
 <description>作者没有为这篇文章写前言。  分类：Git  标签：Git</description>
 <pubDate>Tue Apr 02 2024 14:48:31 GMT+0800 (中国标准时间)</pubDate>
 </item><item>
@@ -111,7 +119,7 @@ Nexo Beta 1.0.3 (Nexo n2.2.5-1) CHANGELOG 注解 , <del>以及 1.0.4 (n2.2.5-2 ~
 </item><item>
 <title>Linux下Git配置</title>
 <link>https://0xarch.github.io//read/2024/2/24/linux:gitconfig.md/</link>
-<guid isPermaLink="false">ID13</guid>
+<guid isPermaLink="false">ID14</guid>
 <description>
 Linux 下使用 Git 和 Github 连接的基本配置，包括账户、SSH等。
 本文为 [Git 常用命令大全] 的子集。
@@ -120,7 +128,7 @@ Linux 下使用 Git 和 Github 连接的基本配置，包括账户、SSH等。
 </item><item>
 <title>原神:娜维娅理论值计算</title>
 <link>https://0xarch.github.io//read/2024/1/1/mihoyo.ys:navia.md/</link>
-<guid isPermaLink="false">ID15</guid>
+<guid isPermaLink="false">ID16</guid>
 <description>群里流传的娜维娅一个e1万倍率属实没绷住,那简单计算一下这个1万怎么出来的.</description>
 <pubDate>Wed Jun 05 2024 01:50:20 GMT+0800 (中国标准时间)</pubDate>
 </item>
