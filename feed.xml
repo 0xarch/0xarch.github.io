@@ -5,13 +5,13 @@
 <link>https://0xarch.github.io/</link>
 <description></description>
 <item>
-<title>JS基础IV:循环控制</title>
-<link>https://0xarch.github.io//read/2024/6/5/js:baseJS4-loop_statement.md/</link>
+<title>JS基础IV:循环和迭代</title>
+<link>https://0xarch.github.io//read/2024/6/5/js:baseJS4-loop_and_iter.md/</link>
 <guid isPermaLink="false">ID10</guid>
-<description>JavaScript 基础 第四篇：循环控制。  
-包含内容：循环控制。
+<description>JavaScript 基础 第四篇：循环和迭代。  
+包含内容：循环控制与迭代器。
 转载总结自 MDN。</description>
-<pubDate>Wed Jun 05 2024 17:05:14 GMT+0800 (中国标准时间)</pubDate>
+<pubDate>Thu Jun 06 2024 22:26:58 GMT+0800 (中国标准时间)</pubDate>
 </item><item>
 <title>JavaScript 基础</title>
 <link>https://0xarch.github.io//read/2024/6/3/js:baseJS1-nav_and_basic.md/</link>
