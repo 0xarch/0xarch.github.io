@@ -1,20 +1,17 @@
-## BIRW
+## Note
 
 **THIS IS A REPOSITORY OF MY PERSONAL BLOG.**
 **DO NOT FORK THIS REPOSITORY.**
 
-## UD TIY ew ubrwewarws ub
+## IF You're interested in
 Generator: [Fewu](//github.com/0xarch/fewu)
 
 Theme: [simplus](//github.com/0xarch/simplus)
 
 Becoming a pesky fly: ~~New Issue~~
 
-## xibrXR NW
-SEE THE LINKS ON THE FOOTER OF MY PAGE.  
+## Contact me
+See the links on footer in my page.
 
-## URGWEA
-THE FILES ON MY LOCAL MACHINE ARE NOT MANUALLY PUT IN THIS REPOSITORY, HOWERVER YOU CAN GET SOME OF THEM HERE.  
-> FOR POSTS, SEE posts DIRECTORY
-
-IM USING **ARCH LINUX** FOR PAGE GENERATING.
+## Others
+Some files (on my local machine) are not manually put in this repository, however you can have some here.
