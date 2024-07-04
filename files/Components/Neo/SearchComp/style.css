@@ -16,18 +16,29 @@
 
 .Neo.SearchComp_Panel {
     position: fixed;
-    min-height: 240px;
+    min-height: 0px;
+    max-height: 0%;
+    padding: 0px;
     min-width: 50%;
+    max-width: 90%;
+    top: 64px;
     border-radius: 24px;
     border: none;
     box-shadow: 0px 2px 80px 0px #222,inset 0px 0px 4px #8888;
+    transition: min-height .25s, padding .25s, max-height .25s;
+    display: block;
+    overflow: hidden;
+    z-index: 1199;
 }
 
-.Neo.SearchComp_Panel .--P {
-    padding-bottom: 40px;
+.Neo.SearchComp_Panel[open] {
+    min-height: 240px;
+    padding: revert;
+    max-height: 80%;
+    overflow: auto;
 }
 
-.Neo.SearchComp_Panel .--C {
+.Neo.SearchComp_Panel :is(.--C,.--S) {
     margin-left: auto;
     cursor: pointer;
     height: 24px;
@@ -37,9 +48,18 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    background: transparent;
+    transition: background .25s, color .25s;
 }
 
-.Neo.Neo.SearchComp_Panel .--C:hover {
+.Neo.SearchComp_Panel .--S {
+    width: fit-content;
+    padding: 4px;
+    border-radius: 8px;
+    margin-left: 8px;
+}
+
+.Neo.Neo.SearchComp_Panel :is(.--C,.--S):hover {
     background: var(--Cbrand);
     color: #fff;
 }

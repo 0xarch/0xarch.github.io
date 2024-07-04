@@ -2,3 +2,8 @@
 .Neo.Footer>.kLinks { display: flex; flex-wrap: wrap }
 .Neo.Footer>.kLinks>nav { flex: 1 0 0%; padding: 8px }
 .Neo.Footer>.kLinks>nav>* { display: block; text-wrap: nowrap }
+:root.Android .Neo.Footer {
+    background: #45455a;
+    color: #e2e0fb;
+    border-radius: 1.5em 1.5em 0 0;
+}
