@@ -36,6 +36,7 @@
     border: none;
     display: none;
     background: #0000;
+    color: var(--Cdisplay);
 }
 
 .KNavigationBar.short>.kToggle {
