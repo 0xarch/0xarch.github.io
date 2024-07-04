@@ -1,0 +1,4 @@
+.Neo.Footer { color: var(--Cdisplay) }
+.Neo.Footer>.kLinks { display: flex; flex-wrap: wrap }
+.Neo.Footer>.kLinks>nav { flex: 1 0 0%; padding: 8px }
+.Neo.Footer>.kLinks>nav>* { display: block; text-wrap: nowrap }
