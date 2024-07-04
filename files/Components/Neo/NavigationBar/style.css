@@ -1,9 +1,13 @@
-.KNavigationBar {
+.Neo.NavigationBar {
     border-bottom: 2px solid var(--Cbrand);
     min-height: 48px
 }
 
-.KNavigationBar>.kLogo {
+.Neo.NavigationBar.--transparent {
+    border-bottom-color: transparent;
+}
+
+.Neo.NavigationBar>.kLogo {
     position: absolute;
     display: flex;
     align-items: center;
@@ -14,14 +18,19 @@
     height: 48px
 }
 
-.KNavigationBar>.kCon {
+.Neo.NavigationBar.--transparent > .kLogo {
+    background: transparent;
+    color: var(--fColor);
+}
+
+.Neo.NavigationBar>.kCon {
     width: fit-content;
     overflow: hidden;
     transition: height .2s ease-in-out;
     margin-left: auto;
 }
 
-.KNavigationBar>.kCon>a {
+.Neo.NavigationBar>.kCon>a {
     padding: 12px 8px;
     color: var(--Cdisplay);
     height: 48px;
@@ -29,38 +38,39 @@
     display: inline-block;
 }
 
-.KNavigationBar>.kToggle {
-    padding: 0;
+.Neo.NavigationBar>.toggle {
+    padding: 0px;
     height: 48px;
+    width: 48px;
     margin-left: auto;
-    border: none;
     display: none;
-    background: #0000;
+    border: none;
+    color: var(--Cdisplay);
 }
 
-.KNavigationBar.short>.kToggle {
+.Neo.NavigationBar.short>.toggle {
     display: block;
 }
 
-.KNavigationBar.enough>.kToggle {
+.Neo.NavigationBar.enough>.toggle {
     display: none
 }
 
-.KNavigationBar.short>.kCon {
+.Neo.NavigationBar.short>.kCon {
     margin-left: 0;
     height: var(--expanded-height);
     display: block;
 }
 
-.KNavigationBar.enough>.kCon {
+.Neo.NavigationBar.enough>.kCon {
     margin-left: auto;
     height: 48px
 }
 
-.KNavigationBar.collapsed>.kCon {
+.Neo.NavigationBar.collapsed>.kCon {
     height: 0
 }
 
-.KNavigationBar.short>.kCon>a {
+.Neo.NavigationBar.short>.kCon>a {
     display: block
 }

@@ -1,0 +1,11 @@
+.Neo.SearchComp {
+    display: inline;
+}
+
+.Neo.SearchComp .openPanel {
+    padding: 12px 8px;
+    color: var(--Cdisplay);
+    height: 48px;
+    box-sizing: border-box;
+    display: inline-block;
+}

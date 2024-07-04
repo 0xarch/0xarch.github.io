@@ -1,0 +1,51 @@
+.Neo.SearchComp {
+    display: inline;
+}
+
+.Neo.SearchComp .openPanel {
+    padding: 12px 8px;
+    color: var(--Cdisplay);
+    height: 48px;
+    box-sizing: border-box;
+    display: inline-block;
+}
+
+.Neo.SearchComp_Panel {
+    position: fixed;
+    min-height: 240px;
+    min-width: 50%;
+    border-radius: 24px;
+    border: none;
+    box-shadow: 0px 2px 80px 0px #222,inset 0px 0px 4px #8888;
+}
+
+.Neo.SearchComp_Panel .--P {
+    padding-bottom: 40px;
+}
+
+/* .Neo.SearchComp_Panel .--C {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    border-radius: 999px;
+    background-color: var(--Cbrand);
+    padding: 8px;
+    color: #fff;
+} */
+
+.Neo.SearchComp_Panel .--C {
+    margin-left: auto;
+    cursor: pointer;
+    height: 24px;
+    width: 24px;
+    font-size: 20px;
+    border-radius: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Neo.Neo.SearchComp_Panel .--C:hover {
+    background: var(--Cbrand);
+    color: #fff;
+}
