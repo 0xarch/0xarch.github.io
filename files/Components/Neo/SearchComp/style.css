@@ -2,6 +2,10 @@
     display: inline;
 }
 
+.Neo.SearchComp .URL{
+    display: none;
+}
+
 .Neo.SearchComp .openPanel {
     padding: 12px 8px;
     color: var(--Cdisplay);
@@ -22,16 +26,6 @@
 .Neo.SearchComp_Panel .--P {
     padding-bottom: 40px;
 }
-
-/* .Neo.SearchComp_Panel .--C {
-    position: absolute;
-    bottom: 10px;
-    left: 10px;
-    border-radius: 999px;
-    background-color: var(--Cbrand);
-    padding: 8px;
-    color: #fff;
-} */
 
 .Neo.SearchComp_Panel .--C {
     margin-left: auto;
