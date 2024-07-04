@@ -31,3 +31,7 @@ fs-apple {
     border-radius: var(--w);
     background-color: red;
 }
+
+button[data-is_button]{
+    border: none;
+}
