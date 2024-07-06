@@ -1,0 +1,14 @@
+.Neo.PageNavigator { list-style: none; padding: 0;
+    width: fit-content; margin: auto }
+.Neo.PageNavigator>li { border: 1px solid #8888;
+    border-left-width: 0; display: inline-block }
+.Neo.PageNavigator>:first-child{ border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    border-left-width: 1px }
+.Neo.PageNavigator>:last-child{ border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px }
+.Neo.PageNavigator>li>a { display: block;
+    padding: 8px 12px }
+.Neo.PageNavigator>li.now {
+    background-color: var(--Cbrand) }
+.Neo.PageNavigator>li.now>a { color: #fff }

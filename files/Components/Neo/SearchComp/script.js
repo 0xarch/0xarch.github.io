@@ -1,30 +1,38 @@
 const D=document,Q=(v,s)=>v.querySelector(s);
 function Search() {
-    let q = Q(D, '.Neo.SearchComp'), 
-        p = Q(D, '.Neo.SearchComp_Panel'), 
-        t,
-        c = Q(p, '.--P'), 
-        i = Q(p, '.--I'); 
-    Q(p, '.--C').onclick = () => p.open = false; 
-    Q(p, '.--S').onclick = async () => { 
+    let q = document.querySelector('.Neo.SearchComp'), 
+        p = document.querySelector('.Neo.SearchComp_Panel'), 
+        dataTable,
+        c = p.querySelector('.--P'), 
+        inputNode = p.querySelector('.--I'); 
+    p.querySelector('.--C').onclick = () => p.open = false; 
+    let queryResult = async () => { 
         let r = new Map; 
         c.innerHTML = ''; 
-        let iv = i.value; 
+        let iv = inputNode.value; 
         if (!iv) return;
         iv = iv.toLowerCase();
-        if(!t){
-            let fetched = await((await fetch(Q(q,'.URL').innerHTML)).text());
-            t = JSON.parse(fetched);
-            t.forEach(v=> v.content = v.content.toString().toLowerCase())
+        if(!dataTable){
+            let fetched = await((await fetch(q.querySelector('.URL').innerHTML)).text());
+            dataTable = JSON.parse(fetched);
+            dataTable.forEach(v=> v.content = v.content.toString().toLowerCase())
         }
-        t.forEach(v => {
+        dataTable.forEach(v => {
             if(v.content.includes(iv)){
                 r.set(v.atitle,v.href);
             }
         });
         for (let [k, v] of r) 
-            c.innerHTML += `<a href="${v}" class='Row'>${k}</a><hr>`; 
-    }; 
+            c.innerHTML += `<a href="${v}">${k}</a><hr>`; 
+    };
+    p.querySelector('.--S').onclick = queryResult;
+    let ticking = false;
+    inputNode.addEventListener('keyup',async ()=>{
+        if(ticking) return;
+        ticking = true;
+        await queryResult();
+        ticking = false;
+    });
     p.open = false; 
     Q(q, '.openPanel').onclick = () => p.open = true
 }

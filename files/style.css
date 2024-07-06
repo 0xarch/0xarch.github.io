@@ -24,7 +24,6 @@ hr { opacity: .5; border-bottom-width: 0px }
 :root[ismobile=true] .nomobile{display:none}.fit{width:fit-content}
 .logo-of-theme{height:32px;width:80px;background:var(--Cbrand);color:#fff}
 .logo-of-theme::after{content:'simplus';font-size:16px}
-#url,#searchUrl{display:none}
 .clist{padding:20px}
 .clist hr{visibility:hidden}
 .meta>*{margin:4px}.less{margin:12px 0}
