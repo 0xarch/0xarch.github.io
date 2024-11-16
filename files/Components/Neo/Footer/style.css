@@ -1,9 +1,16 @@
-.Neo.Footer { color: var(--Cdisplay) }
+.Neo.Footer { 
+    color: var(--Cdisplay);
+    position: relative;
+    margin-top: 64px;
+}
 .Neo.Footer>.kLinks { display: flex; flex-wrap: wrap }
 .Neo.Footer>.kLinks>nav { flex: 1 0 0%; padding: 8px }
 .Neo.Footer>.kLinks>nav>* { display: block; text-wrap: nowrap }
-:root.Android .Neo.Footer {
-    background: #45455a;
-    color: #e2e0fb;
-    border-radius: 1.5em 1.5em 0 0;
+.Neo.Footer::before {
+    content: '';
+    border-top: 1px dashed #ffffff26;
+    top: -32px;
+    width: 70%;
+    left: 15%;
+    position: absolute;
 }

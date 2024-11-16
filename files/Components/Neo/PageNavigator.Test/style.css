@@ -1,0 +1,39 @@
+.Neo.PageNavigator {
+    --Cbrand: #63b3ff;
+    color-scheme: light dark;
+    margin: auto;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.Neo.PageNavigator>a {
+    display: flex;
+    height: 44px;
+    width: 44px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    background: light-dark(white, #181e24);
+    color: var(--Cbrand);
+    cursor: pointer;
+    font-weight:900;
+}
+
+.Neo.PageNavigator>a.now {
+    background-color: var(--Cbrand);
+    color: var(--Cdisplay);
+}
+
+.Neo.PageNavigator>a.next::before {
+    content: '→';
+}
+
+.Neo.PageNavigator>a.prev::before {
+    content: '←';
+}
+
+.Neo.PageNavigator>a:not([href]):not(.now) {
+    color: light-dark(#0000001a, #ffffff1a);
+}

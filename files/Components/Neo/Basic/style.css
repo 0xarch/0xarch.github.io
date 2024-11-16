@@ -1,0 +1,55 @@
+:root {
+    color-scheme: light dark;
+    --hue: 250;
+    --Cbrand: light-dark(oklch(.7 .14 var(--hue)), oklch(.75 .14 var(--hue)));
+    --Cdisplay: light-dark(#000000bf, #ffffffbf);
+    --Cbg: light-dark(oklch(.95 .01 var(--hue)), oklch(.16 .014 var(--hue)));
+}
+/* :root { --Cbrand: #63b3ff;
+    --Cdisplay: #232629 ; --Cbg: #eff0f1 } */
+/* @media(prefers-color-scheme:dark){
+    :root { --Cdisplay: #e8e9ea; --Cbg: #090e13 }
+} */
+@media(max-width:700px){.nomobile{display:none}}
+@media(min-width:701px){.onmobile{display:none}}
+@media(min-width:576px){:root{--Wcon:540px}}
+@media(min-width:768px){:root{--Wcon:720px}}
+@media(min-width:992px){:root{--Wcon:960px}}
+@media(min-width:1200px){:root{--Wcon:1140px}}
+@media(min-width:1400px){:root{--Wcon:1320px}}
+body{ background: var(--Cbg); color: var(--Cdisplay);
+    margin: 0 }
+html::-webkit-scrollbar{display: none}
+html { scrollbar-width: none }
+hr { opacity: .5; border-bottom-width: 0px }
+.Nls { list-style: none }
+.alc,.jcc,.fl,.eaj{display: flex}.alc,.eaj{align-items: center}
+.jcc,.eaj{justify-content: center}.nowrap{text-overflow:ellipsis;overflow:hidden;white-space:nowrap}
+.tac{text-align:center}.col{flex-direction:column}
+.jcsa{justify-content:space-around}.jcsb{justify-content:space-between}
+.intro,#intro{color:var(--secondary-color)}
+:root[ismobile=true] .nomobile{display:none}.fit{width:fit-content}
+.logo-of-theme{height:32px;width:80px;background:var(--Cbrand);color:#fff}
+.logo-of-theme::after{content:'simplus';font-size:16px}
+.clist{padding:20px}
+.clist hr{visibility:hidden}
+.meta>*{margin:4px}.less{margin:12px 0}
+.m0{margin:0}.p0{padding:0}.p8{padding:12px}
+*{-webkit-tap-highlight-color:#0000}
+.uWcon{ max-width: var(--Wcon); padding: 0 8px;
+    margin-left: auto; margin-right: auto }
+.cLinks { display: flex; flex-wrap: wrap }
+.cLinks a { display: block; text-wrap: nowrap }
+.cLinks>nav { flex: 1 0 0%; padding: 8px }
+.cLinks h3 { text-wrap: nowrap }
+.cPostCon,.cSortCon { list-style: none; padding:0 }
+.cSortCon>a { display: inline-block }
+a { text-decoration: none; color: var(--Cbrand) }
+
+/* FIX */
+.h1 { display: block; font-size: 2em; margin-block-start: .67em;
+    margin-block-end: .67em; margin-inline-start: 0;
+    margin-inline-end: 0; font-weight: bold;
+    unicode-bidi: isolate }
+
+@media(prefers-color-scheme:dark){.hljs{background: #232629;color:#f3f3f3}}

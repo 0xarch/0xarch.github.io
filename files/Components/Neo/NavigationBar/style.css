@@ -7,20 +7,14 @@
     background-color: #0000;
     border-bottom: 2px solid var(--Cbrand);
     backdrop-filter: blur(10px);
-    transition-property: min-height/*, top, margin-left, margin-right, border-radius, box-shadow, background-color,*/ border-bottom-color;
+    transition-property: min-height, border-bottom;
     transition-duration: .25s;
     transition-timing-function: ease-in-out;
 }
 
 .Neo.NavigationBar.float {
     --Height: 48px;
-    /* top: 8px; */
-    /* margin-left: 8px; */
-    /* margin-right: 8px; */
-    /* border-radius: 8px; */
-    /* box-shadow: 0px 0px 8px #0004; */
-    background-color: light-dark(#fffd, #111d);
-    border-bottom-color: transparent;
+    border-bottom: none;
 }
 
 .Neo.NavigationBar.--transparent {
@@ -49,7 +43,7 @@
 
 .Neo.NavigationBar.--transparent>.kLogo {
     background: transparent;
-    color: var(--fColor);
+    color: var(--Cbrand);
 }
 
 .Neo.NavigationBar>.kCon {

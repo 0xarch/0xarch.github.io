@@ -1,0 +1,49 @@
+@media screen and (min-width: 1088px){
+    #main{
+        max-width: 960px;
+    }
+}
+@media screen and (min-width: 1280px){
+    #main{
+        max-width: 1152px;
+    }
+}
+@media screen and (min-width: 1472px){
+    #main{
+        max-width: 1344px;
+    }
+}
+@media screen and (max-width: 768px){
+    #main{
+        padding: 1.5rem 1rem !important;
+        width: 100%;
+    }
+    .nomobile{
+        display: none !important;
+    }
+    .Grid.-NoMob{
+        display: block;
+        --card-m: 1.5rem;
+    }
+}
+@media screen and (min-width: 768px), print {
+    #main{
+        display: flex;
+        width: 100%;
+    }
+    .sidebar-l,.sidebar-r{
+        padding: .75rem;
+        position: sticky;
+        width: 33.34%;
+    }
+    .content{
+        padding: .75rem;
+        width: 66.67%;
+    }
+    #main.multi>.content {
+        width: 50%;
+    }
+    #main.multi>:is(.sidebar-l, .sidebar-r) {
+        width: 25%;
+    }
+}
