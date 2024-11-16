@@ -1,0 +1,9 @@
+ms-textarea textarea {
+    border: none;
+    box-shadow: 0px 2px 6px #0004;
+    border-radius: .5em;
+    font-size: 20px;
+    resize: none;
+    min-height: 3em;
+    margin: .75em;
+}

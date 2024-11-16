@@ -1,0 +1,31 @@
+/* 
+MSOver Button CSS
+*/
+ms-button {
+    font-family: sans-serif;
+    background: var(--Color_Widget-Background);
+    color: var(--Color_Widget-Text);
+    text-decoration: none;
+    font-size: 16px;
+    padding: .75em;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: .7em;
+    /* box-shadow: 0px 0px 6px var(--Color_Widget-Shadow-Small); */
+}
+
+ms-button:hover {
+    /* background: var(--Color_Widget-Background-Hover); */
+    filter: var(--Filter_Widget-Hover);
+}
+
+ms-button[rounded\!] {
+    border-radius: 10em;
+    /* box-shadow: none; */
+}
+
+ms-button[enabled\!] {
+    background: var(--Color_Widget-Background-Accent);
+    color: var(--Color_Widget-Text-Accent);
+}

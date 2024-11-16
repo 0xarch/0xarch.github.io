@@ -1,0 +1,53 @@
+body {
+
+    
+    --Color_Root-Background-Light: #fefefe;
+    --Color_Root-Background-Dark: #242424;
+    --Color_Widget-Background-Light: #e5e5e5;
+    --Color_Widget-Background-Dark: #363636;
+    --Color_Widget-Background-Hover-Light: #efefef;
+    --Color_Widget-Background-Hover-Dark: #424242;
+
+    --Color_Widget-Text-Light: #000;
+    --Color_Widget-Text-Dark: #fff;
+
+    --Color_Widget-Shadow-Small: #0004;
+
+    --Global_Color-Accent: #3273d2;
+    --Color_Widget-Text-Accent: #fff;
+    --Color_Widget-Background-Accent: var(--Global_Color-Accent);
+
+    --Filter_Widget-Hover-Dark: brightness(120%);
+    --Filter_Widget-Hover-Light: brightness(90%);
+}
+
+body {
+    margin: 0;
+}
+
+ms-root {
+    --Color_Widget-Background: var(--Color_Widget-Background-Dark);
+    --Color_Widget-Background-Accent: var(--Global_Color-Accent);
+    --Color_Widget-Background-Hover: var(--Color_Widget-Background-Hover-Dark);
+    --Color_Root-Background: var(--Color_Root-Background-Dark);
+
+    --Color_Widget-Text: var(--Color_Widget-Text-Dark);
+
+    --Filter_Widget-Hover: var(--Filter_Widget-Hover-Dark);
+}
+
+ms-document {
+    background: var(--Color_Root-Background);
+}
+
+@media (prefers-color-scheme: light) {
+    ms-root {
+        --Color_Widget-Background: var(--Color_Widget-Background-Light);
+        --Color_Widget-Background-Hover: var(--Color_Widget-Background-Hover-Light);
+        --Color_Root-Background: var(--Color_Root-Background-Light);
+
+        --Color_Widget-Text: var(--Color_Widget-Text-Light);
+
+        --Filter_Widget-Hover: var(--Filter_Widget-Hover-Light);
+    }
+}

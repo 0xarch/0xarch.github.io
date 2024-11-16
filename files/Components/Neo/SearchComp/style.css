@@ -1,5 +1,6 @@
 .Neo.SearchComp {
-    display: inline;
+    display: inline-flex;
+    align-items: center;
 }
 
 .Neo.SearchComp .URL{
@@ -7,11 +8,22 @@
 }
 
 .Neo.SearchComp .openPanel {
-    padding: 12px 8px;
+    padding: 10px 14px;
     color: var(--Cdisplay);
-    height: 48px;
+    background: transparent;
+    /* height: 48px; */
     box-sizing: border-box;
     display: inline-block;
+    cursor: pointer;
+    user-select: none;
+    border-radius: 8px;
+    transition: color .25s ease-in-out, background .25s ease-in-out;
+}
+
+.Neo.SearchComp .openPanel:hover {
+    background-color: #000;
+    color: #fff;
+
 }
 
 .Neo.SearchComp_Panel {
