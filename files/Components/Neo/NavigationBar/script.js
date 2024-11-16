@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let ticking = false;
 
     function NavFloatToggle(scrollPos) {
-        if(scrollPos >= 48) {
+        if(scrollPos >= 96) {
             NAV_ROOT.classList.add('float');
         } else {
             NAV_ROOT.classList.remove('float');
