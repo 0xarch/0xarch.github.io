@@ -1,15 +1,16 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css");
 :root {
     color-scheme: light dark;
     --hue: 250;
     --Cbrand: light-dark(oklch(.7 .14 var(--hue)), oklch(.75 .14 var(--hue)));
     --Cdisplay: light-dark(#000000bf, #ffffffbf);
     --Cbg: light-dark(oklch(.95 .01 var(--hue)), oklch(.16 .014 var(--hue)));
+    --Ccard-bg: light-dark(white, oklch(.23 .015 var(--hue)));
+    --Cbtn-plain-bg-hover: light-dark(oklch(.95 .025 var(--hue)), oklch(.3 .035 var(--hue)));
+    --Cbtn-content: light-dark(oklch(.55 .12 var(--hue)), oklch(.75 .1 var(--hue)));
+    --Cbtn-regular-bg: light-dark(oklch(.95 .025 var(--hue)), oklch(.33 .035 var(--hue)));
+    --Cbtn-regular-bg-hover: light-dark(oklch(.9 .05 var(--hue)), oklch(.38 .04 var(--hue)));;
 }
-/* :root { --Cbrand: #63b3ff;
-    --Cdisplay: #232629 ; --Cbg: #eff0f1 } */
-/* @media(prefers-color-scheme:dark){
-    :root { --Cdisplay: #e8e9ea; --Cbg: #090e13 }
-} */
 @media(max-width:700px){.nomobile{display:none}}
 @media(min-width:701px){.onmobile{display:none}}
 @media(min-width:576px){:root{--Wcon:540px}}
@@ -53,3 +54,7 @@ a { text-decoration: none; color: var(--Cbrand) }
     unicode-bidi: isolate }
 
 @media(prefers-color-scheme:dark){.hljs{background: #232629;color:#f3f3f3}}
+
+.Neo.PostCard .cover{
+    opacity: 0;
+}

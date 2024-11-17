@@ -1,0 +1,215 @@
+.Neo.PostCard {
+    padding: 1rem;
+    border-radius: 1rem;
+    background-color: var(--Ccard-bg);
+    display: flex;
+    max-height: 15rem;
+}
+
+.Neo.PostCard>.contentBox {
+    width: 61.8%;
+    padding: .75rem 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: .75rem;
+    box-sizing: border-box;
+}
+
+.Neo.PostCard>.contentBox>.title {
+    text-wrap: balance;
+}
+
+.Neo.PostCard>.contentBox>.title>a {
+    color: var(--Cdisplay);
+    transition: color .25s ease-in-out;
+}
+
+.Neo.PostCard>.contentBox>.title:hover>a {
+    color: var(--Cbrand);
+}
+
+.Neo.PostCard>.contentBox>.title>a>h2 {
+    margin: 0;
+    font-size: 1.875rem;
+}
+
+.Neo.PostCard>.contentBox>.meta {
+    display: flex;
+    color: light-dark(#00000080, #ffffff80);
+    font-weight: 900;
+    overflow: hidden;
+    width: 100%;
+    text-wrap: nowrap;
+    position: relative;
+}
+
+.Neo.PostCard>.contentBox>.meta::before {
+    pointer-events: none;
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background:linear-gradient(90deg,transparent calc(100% - 1rem), var(--Ccard-bg));
+}
+
+.Neo.PostCard>.contentBox>.meta>:is(.tag,.category,.pubDate) {
+    display: flex;
+    align-items: center;
+}
+
+.Neo.PostCard>.contentBox>.meta>:is(.tag,.category)>a {
+    cursor: pointer;
+    display: block;
+    padding: .375rem;
+    border-radius: .375rem;
+    color: light-dark(#00000080, #ffffff80);
+    background-color: transparent;
+    transition: background-color .25s ease-in-out,
+                color .25s ease-in-out;
+}
+
+.Neo.PostCard>.contentBox>.meta>:is(.tag,.category)>a:hover {
+    color: var(--Cbrand);
+    background-color: var(--Cbtn-plain-bg-hover);
+}
+
+.Neo.PostCard>.contentBox>.meta>:is(.tag,.category)>.hr {
+    display: block;
+    width: 0;
+    padding: 0 .15rem;
+    position: relative;
+}
+
+.Neo.PostCard>.contentBox>.meta>:is(.tag,.category)>.hr::before {
+    content: '/';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 400;
+}
+
+.Neo.PostCard>.contentBox>.foreword {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.Neo.PostCard>.contentBox>.length {
+    display: flex;
+    color: light-dark(#00000080, #ffffff80);
+    font-weight: 900;
+}
+
+.Neo.PostCard>.contentBox>.length>.hr {
+    display: block;
+    width: 0;
+    padding: 0 .75rem;
+    position: relative;
+}
+
+.Neo.PostCard>.contentBox>.length>.hr::before {
+    content: '|';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 400;
+}
+
+.Neo.PostCard .iconed::before {
+    content: '';
+    font-family: "Font Awesome 6 Free";
+    display: inline-flex;
+    width: 2rem;
+    height: 2rem;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    border-radius: .5rem;
+    background-color: var(--Cbtn-regular-bg);
+    color: var(--Cbtn-content);
+    /* margin-right: .5rem; */
+}
+
+.Neo.PostCard .iconed.pubDate::before {
+    content: '\f133';
+    margin-right: .5rem;
+}
+
+.Neo.PostCard .iconed.category::before {
+    content: '\f02d';
+    margin-right: .125rem;
+}
+
+.Neo.PostCard .iconed.tag::before {
+    content: '\f02b';
+    margin-right: .125rem;
+}
+
+
+.Neo.PostCard>.readMore {
+    width: calc((100% - 61.8%) * .28);
+    position: relative;
+    overflow: hidden;
+    border-radius: .75rem;
+    margin-left: auto;
+}
+
+.Neo.PostCard>.readMore.image {
+    width: calc(100% - 61.8%);
+    display: flex;
+    justify-content: center;
+}
+
+
+.Neo.PostCard>.readMore>.cover {
+    opacity: 1;
+    position: absolute;
+    pointer-events: none;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--Cbtn-regular-bg);
+    color: var(--Cbtn-content);
+    transition: background-color .25s ease-in-out;
+}
+
+.Neo.PostCard>.readMore:hover>.cover {
+    background-color: var(--Cbtn-regular-bg-hover);
+}
+
+.Neo.PostCard>.readMore.image>.cover {
+    opacity: 0;
+    background-color: #0004;
+    color: #fff;
+    transition: opacity .25s ease-in-out;
+}
+
+.Neo.PostCard>.readMore.image:hover>.cover {
+    opacity: 1;
+}
+
+.Neo.PostCard>.readMore>.cover>svg {
+    height: 2rem;
+}
+
+.Neo.PostCard>.readMore.image>.button {
+    height: 100%;
+}
+
+.Neo.PostCard>.readMore.image img {
+    object-fit: cover;
+    object-position: center;
+    min-width: 100%;
+    height: 100%;
+}

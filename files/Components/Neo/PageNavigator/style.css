@@ -1,14 +1,39 @@
-.Neo.PageNavigator { list-style: none; padding: 0;
-    width: fit-content; margin: auto }
-.Neo.PageNavigator>li { border: 1px solid #8888;
-    border-left-width: 0; display: inline-block }
-.Neo.PageNavigator>:first-child{ border-top-left-radius: 8px;
-    border-bottom-left-radius: 8px;
-    border-left-width: 1px }
-.Neo.PageNavigator>:last-child{ border-top-right-radius: 8px;
-    border-bottom-right-radius: 8px }
-.Neo.PageNavigator>li>a { display: block;
-    padding: 8px 12px }
-.Neo.PageNavigator>li.now {
-    background-color: var(--Cbrand) }
-.Neo.PageNavigator>li.now>a { color: #fff }
+.Neo.PageNavigator {
+    --Cbrand: #63b3ff;
+    color-scheme: light dark;
+    margin: auto;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.Neo.PageNavigator>a {
+    display: flex;
+    height: 44px;
+    width: 44px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    background: light-dark(white, #181e24);
+    color: var(--Cbrand);
+    cursor: pointer;
+    font-weight:900;
+}
+
+.Neo.PageNavigator>a.now {
+    background-color: var(--Cbrand);
+    color: var(--Cdisplay);
+}
+
+.Neo.PageNavigator>a.next::before {
+    content: '→';
+}
+
+.Neo.PageNavigator>a.prev::before {
+    content: '←';
+}
+
+.Neo.PageNavigator>a:not([href]):not(.now) {
+    color: light-dark(#0000001a, #ffffff1a);
+}

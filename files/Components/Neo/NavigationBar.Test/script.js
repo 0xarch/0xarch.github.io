@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let ticking = false;
 
     function NavFloatToggle(scrollPos) {
-        if(scrollPos >= 48) {
+        if(scrollPos >= 240 && scrollPos > lastKnownScrollPosition) {
             NAV_ROOT.classList.add('float');
         } else {
             NAV_ROOT.classList.remove('float');
@@ -34,8 +34,8 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!ticking) {
             window.requestAnimationFrame(() => {
                 if(window.scrollY != lastKnownScrollPosition) {
+                    NavFloatToggle(window.scrollY);
                     lastKnownScrollPosition = window.scrollY;
-                    NavFloatToggle(lastKnownScrollPosition);
                 }
                 ticking = false;
             });

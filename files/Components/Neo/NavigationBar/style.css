@@ -1,45 +1,58 @@
+@keyframes navigationbar-fin {
+    from {
+        opacity: 0;
+        top: -200px;
+    }
+    to {
+        opacity: 1;
+        top: 0px;
+    }
+}
+
 .Neo.NavigationBar {
-    --Height: 64px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    --Height: 4.5rem;
     color-scheme: light dark;
     min-height: var(--Height);
     position: sticky;
     top: 0px;
-    background-color: #0000;
-    border-bottom: 2px solid var(--Cbrand);
+    background-color: var(--Ccard-bg);
     backdrop-filter: blur(10px);
-    transition-property: min-height, border-bottom;
-    transition-duration: .25s;
-    transition-timing-function: ease-in-out;
+    transition-property: height, top, color, background-color;
+    transition-duration: .15s;
+    transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+    border-radius: 0 0 1rem 1rem;
+    box-sizing: border-box;
+    z-index: 1100;
+}
+
+.Neo.NavigationBar.anim {
+    animation-name: navigationbar-fin;
+    animation-duration: .25s;
+}
+
+.Neo.NavigationBar.enough {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    width: calc(100% - 2rem);
 }
 
 .Neo.NavigationBar.float {
-    --Height: 48px;
-    border-bottom: none;
-}
-
-.Neo.NavigationBar.--transparent {
-    border-bottom-color: transparent;
-}
-
-.Neo.NavigationBar.--transparent.float {
-    background-color: transparent;
+    top: calc(0rem - var(--Height));
 }
 
 .Neo.NavigationBar>.kLogo {
-    position: absolute;
+    width: fit-content;
     display: flex;
     align-items: center;
-    color: #fff;
     font-size: 24px;
     padding: 0 8px;
-    background: var(--Cbrand);
-    height: var(--Height);
-    transition: /*border-radius .25s ease-in-out,*/ height .25s ease-in-out;
+    font-weight: 900;
+    color: var(--Cbrand);
 }
-/* 
-.Neo.NavigationBar.float>.kLogo {
-    border-radius: 8px 0 0 8px;
-} */
 
 .Neo.NavigationBar.--transparent>.kLogo {
     background: transparent;
@@ -50,7 +63,6 @@
     width: fit-content;
     overflow: hidden;
     transition: height .2s ease-in-out;
-    margin-left: auto;
     display: flex;
     align-items: center;
 }
@@ -58,9 +70,7 @@
 .Neo.NavigationBar>.kCon>a {
     padding: 12px 8px;
     color: var(--Cdisplay);
-    /* height: var(--Height); */
     box-sizing: border-box;
-    display: inline-flex;
     align-items: center;
     position: relative;
 }
@@ -73,7 +83,7 @@
     left: 50%;
     right: 50%;
     /* background: var(--Cdisplay); */
-    background: light-dark(#000,#fff);
+    background: light-dark(#000, #fff);
     transition: left .25s ease-in-out, right .25s ease-in-out;
 }
 
@@ -109,9 +119,7 @@
 }
 
 .Neo.NavigationBar.enough>.kCon {
-    margin-left: auto;
     height: var(--Height);
-    margin-right: 12px;
 }
 
 .Neo.NavigationBar.collapsed>.kCon {
@@ -122,4 +130,9 @@
     display: block;
     height: 48px;
     text-align: center;
+}
+
+.Neo.NavigationBar.short>.kLogo {
+    position: absolute;
+    height: var(--Height);
 }
