@@ -63,6 +63,12 @@ main.withSide {
     gap: 1rem;
 }
 
+.withSide>.mainCon {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
 @media(min-width: 1024px) {
     main.withSide {
         flex-direction: row;
