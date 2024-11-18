@@ -6,6 +6,11 @@ h5 { font-size:1.5em }
 h6 { font-size:1.4em }
 h1,h2,h3,h4,h5,h6 { margin: .5em 0 }
 img { max-width: 100% }
+pre code.hljs {
+    transition-property: padding, background-color, color;
+    transition-duration: .25s;
+    transition-timing-function: ease-in-out;
+}
 blockquote{
     margin: 4px;
     border-left: .15rem solid var(--Cbrand);

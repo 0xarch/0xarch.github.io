@@ -225,9 +225,12 @@ function DoOthers(){
         el.classList.remove('smooth-navigated');
     })
     // highlight
-    if(window.hljs){
-        hljs.highlightAll();
-    }
+    setTimeout(()=>{
+        if(window.hljs){
+            hljs.highlightAll();
+        }
+    },500);
+    // animation
     document.body.classList.add('main-anim');
     setTimeout(()=>{
         document.body.classList.remove('main-anim');
