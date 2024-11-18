@@ -84,6 +84,7 @@ main.withSide {
     padding: 1rem;
     border-radius: 1rem;
     background: var(--Ccard-bg);
+    box-sizing: border-box;
 }
 
 .Neo.PostCard .cover{
