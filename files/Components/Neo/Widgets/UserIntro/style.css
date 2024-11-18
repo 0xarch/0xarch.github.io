@@ -72,6 +72,11 @@
     transition: background-color .25s ease-in-out;
 }
 
+.Neo.NeoWidget.UserIntro .socialLinks .link i {
+    font-family: "Font Awesome 6 Brands";
+    font-style: normal;
+}
+
 .Neo.NeoWidget.UserIntro .socialLinks .link:hover {
     background-color: var(--Cbtn-regular-bg-hover);
 }

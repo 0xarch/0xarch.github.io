@@ -128,9 +128,7 @@
     font-weight: 400;
 }
 
-.Neo.PostCard .iconed::before {
-    content: '';
-    font-family: "Font Awesome 6 Free";
+.Neo.PostCard .iconed>i.icon {
     display: inline-flex;
     width: 2rem;
     height: 2rem;
@@ -140,22 +138,11 @@
     border-radius: .5rem;
     background-color: var(--Cbtn-regular-bg);
     color: var(--Cbtn-content);
-    /* margin-right: .5rem; */
 }
 
-.Neo.PostCard .iconed.pubDate::before {
-    content: '\f133';
-    margin-right: .5rem;
-}
-
-.Neo.PostCard .iconed.category::before {
-    content: '\f02d';
-    margin-right: .125rem;
-}
-
-.Neo.PostCard .iconed.tag::before {
-    content: '\f02b';
-    margin-right: .125rem;
+.Neo.PostCard .iconed>i.icon>svg {
+    width: 1rem;
+    height: 1rem;
 }
 
 .Neo.PostCard>.readMore {
