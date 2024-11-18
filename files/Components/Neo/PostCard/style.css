@@ -52,6 +52,10 @@
     background:linear-gradient(90deg,transparent calc(100% - 1rem), var(--Ccard-bg));
 }
 
+.Neo.PostCard>.contentBox>.meta>.pubDate {
+    margin-left: 0;
+}
+
 .Neo.PostCard>.contentBox>.meta>:is(.tag,.category,.pubDate) {
     display: flex;
     align-items: center;
