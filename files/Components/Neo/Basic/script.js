@@ -158,8 +158,8 @@
             });
             unusedNodes.forEach(el => el.remove());
             // process body
-            document.body.classList.remove('being-replaced');
             document.body.classList.add('not-ready');
+            document.body.classList.remove('being-replaced');
             document.body.innerHTML = newDocument.body.innerHTML;
             document.body.classList.remove('not-ready');
             // scroll pos
