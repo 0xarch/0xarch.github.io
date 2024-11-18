@@ -174,9 +174,13 @@
 function DoOthers(){
     document.body.classList.remove('main-anim-finished');
     // TOC
-    if(window.___KContentTable){
-        ___KContentTable();
-    }
+    (async ()=>{
+        import('../../../es/KContentTable.js');
+        setTimeout(()=>{
+            console.log('GENERATING TABLE');
+            ___KContentTable();
+        },1);
+    })();
     // NavigationBar
     const NAV_ROOT = document.querySelector('.Neo.NavigationBar');
     const NAV_BAR_TOGGLE = NAV_ROOT.querySelector('.toggle');

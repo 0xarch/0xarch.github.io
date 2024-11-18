@@ -14,11 +14,16 @@
 }
 
 .Neo.PostCard>.contentBox {
+    width: 100%;
     padding: .75rem 1.25rem;
     display: flex;
     flex-direction: column;
     gap: .75rem;
     box-sizing: border-box;
+}
+
+.Neo.PostCard.image>.contentBox {
+    width: 72%;
 }
 
 .Neo.PostCard>.contentBox>.title>a {
@@ -167,7 +172,7 @@
     margin-left: auto;
 }
 
-.Neo.PostCard>.readMore.image {
+.Neo.PostCard.image>.readMore {
     width: 28%;
     display: flex;
     justify-content: center;
@@ -192,14 +197,14 @@
     background-color: var(--Cbtn-regular-bg-hover);
 }
 
-.Neo.PostCard>.readMore.image>.cover {
+.Neo.PostCard.image>.readMore>.cover {
     opacity: 0;
     background-color: #0004;
     color: #fff;
     transition: opacity .25s ease-in-out;
 }
 
-.Neo.PostCard>.readMore.image:hover>.cover {
+.Neo.PostCard.image>.readMore:hover>.cover {
     opacity: 1;
 }
 
@@ -207,11 +212,11 @@
     height: 2rem;
 }
 
-.Neo.PostCard>.readMore.image>.button {
+.Neo.PostCard.image>.readMore>.button {
     height: 100%;
 }
 
-.Neo.PostCard>.readMore.image img {
+.Neo.PostCard.image>.readMore img {
     object-fit: cover;
     object-position: center;
     min-width: 100%;
