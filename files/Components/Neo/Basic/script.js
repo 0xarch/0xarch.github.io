@@ -23,7 +23,11 @@
     const DOMParserI = new DOMParser();
     window.Reload = {
         goTo: async function (url) {
+            if(url != window.location.href)
+                document.body.classList.add('being-replaced');
+            let least_timer = new Promise(resolve => setTimeout(resolve, 251));
             let content = await (await fetch(url)).text();
+            await least_timer;
             let newDocument = DOMParserI.parseFromString(content, 'text/html');
             // set url
             window.history.pushState('', '', url);
@@ -154,6 +158,7 @@
             });
             unusedNodes.forEach(el => el.remove());
             // process body
+            document.body.classList.remove('being-replaced');
             document.body.classList.add('not-ready');
             document.body.innerHTML = newDocument.body.innerHTML;
             document.body.classList.remove('not-ready');

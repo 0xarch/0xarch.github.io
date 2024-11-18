@@ -10,6 +10,9 @@ pre code.hljs {
     transition-property: padding, background-color, color;
     transition-duration: .25s;
     transition-timing-function: ease-in-out;
+    box-sizing: border-box;
+    max-width: 100%;
+    overflow-x: auto;
 }
 blockquote{
     margin: 4px;

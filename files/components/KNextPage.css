@@ -1,9 +1,17 @@
 .KNextPage { font-family: sans-serif; min-height: 3em;
     position: relative; text-align: center }
-.KNextPage .arrow { color: #555; position: absolute;
+.KNextPage .arrow { color: light-dark(#555,#fff); position: absolute;
     top: 1.5em }
 .KNextPage .left { left: 0 }
 .KNextPage .right { right: 0 }
-.KNextPage .nowrap { max-width: 50% }
-@media(prefers-color-scheme:dark){
-    .KNextPage .arrow{color:#fff}}
+.KNextPage .nowrap { max-width: 49.9% }
+.KNextPage>.top {
+    position: absolute;
+    display: block;
+    text-align: center;
+    width: 100%;
+}
+.KNextPage {
+    max-width: var(--Wpage-width);
+    margin: 0 auto;
+}
