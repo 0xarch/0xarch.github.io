@@ -14,9 +14,14 @@ blockquote{
     padding: .75rem;
 }
 .uWcon {
+    opacity: 0;
     position: relative;
     animation-name: post-fin;
-    animation-duration: .45s;
+    animation-duration: .55s;
+}
+
+body.main-anim-finished .uWcon {
+    opacity: 1;
 }
 
 @keyframes post-fin {

@@ -18,8 +18,6 @@
     window.onpopstate = function(){
         if(___usedLocation.includes(window.location.href)){
             window.Reload.goTo(window.location.href);
-        } else {
-            // window.refr
         }
     };
     const DOMParserI = new DOMParser();
@@ -156,17 +154,20 @@
             });
             unusedNodes.forEach(el => el.remove());
             // process body
-            document.body = newDocument.body;
+            document.body.classList.add('not-ready');
+            document.body.innerHTML = newDocument.body.innerHTML;
+            document.body.classList.remove('not-ready');
             // scroll pos
+            DoOthers();
             setTimeout(()=>{
                 window.scrollTo(0,0);
             },0);
-            DoOthers();
         }
     };
 })(window, void 0);
 
 function DoOthers(){
+    document.body.classList.remove('main-anim-finished');
     // TOC
     if(window.___KContentTable){
         ___KContentTable();
@@ -227,8 +228,16 @@ function DoOthers(){
     if(window.hljs){
         hljs.highlightAll();
     }
+    document.body.classList.add('main-anim');
+    setTimeout(()=>{
+        document.body.classList.remove('main-anim');
+        document.body.classList.add('main-anim-finished');
+    },500);
 }
 document.addEventListener('DOMContentLoaded', () => {
+    setTimeout(()=>{
+        window.scrollTo(0,0);
+    },0);
     DoOthers();
     const NAV_ROOT = document.querySelector('.Neo.NavigationBar');
     NAV_ROOT.classList.add('anim');

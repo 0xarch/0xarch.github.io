@@ -6,17 +6,17 @@
     max-height: 15rem;
 }
 
+:root[ismobile=true] .Neo.PostCard{
+    flex-direction: column-reverse;
+    max-height: 35rem;
+}
+
 .Neo.PostCard>.contentBox {
-    width: 61.8%;
     padding: .75rem 1.25rem;
     display: flex;
     flex-direction: column;
     gap: .75rem;
     box-sizing: border-box;
-}
-
-.Neo.PostCard>.contentBox>.title {
-    text-wrap: balance;
 }
 
 .Neo.PostCard>.contentBox>.title>a {
@@ -154,9 +154,9 @@
     margin-right: .125rem;
 }
 
-
 .Neo.PostCard>.readMore {
-    width: calc((100% - 61.8%) * .28);
+    min-width: 3.25rem;
+    width: 3.25rem;
     position: relative;
     overflow: hidden;
     border-radius: .75rem;
@@ -164,7 +164,7 @@
 }
 
 .Neo.PostCard>.readMore.image {
-    width: calc(100% - 61.8%);
+    width: 28%;
     display: flex;
     justify-content: center;
 }

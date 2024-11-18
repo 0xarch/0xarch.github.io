@@ -6,9 +6,9 @@
 ## IF You're interested in
 Generator: [Fewu](//github.com/0xarch/fewu)
 
-Theme: [simplus](//github.com/0xarch/simplus)
+Theme: Neo. I'm still developing. DO NOT TRY TO USE (//github.com/0xarch/fewu-theme-neo), I HAVE NOT PUSH THOSE COMPONENTS YET!
 
-Becoming a pesky fly: ~~New Issue~~
+~~Becoming a pesky fly: New Issue~~
 
 ## Contact me
 See the links on footer in my page.

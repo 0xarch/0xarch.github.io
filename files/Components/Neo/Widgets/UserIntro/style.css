@@ -1,0 +1,77 @@
+.Neo.NeoWidget.UserIntro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Neo.NeoWidget.UserIntro .avatar {
+    width: 15.5rem;
+    height: 15.5rem;
+    object-fit: cover;
+    object-position: center;
+    border-radius: .75rem;
+}
+
+.Neo.NeoWidget.UserIntro .userName {
+    position: relative;
+    display: block;
+    text-align: center;
+    margin: .75rem;
+    margin-bottom: 2rem;
+    cursor: pointer;
+    width: fit-content;
+}
+
+.Neo.NeoWidget.UserIntro .userName a {
+    transition: color .25s ease-in-out;
+    color: var(--Cdisplay);
+}
+
+
+.Neo.NeoWidget.UserIntro .userName:hover a {
+    color: var(--Cbrand);
+}
+
+.Neo.NeoWidget.UserIntro .userName::after {
+    content: '';
+    position: absolute;
+    top: calc(100% + .5rem);
+    height: .25rem;
+    left: calc(50% - .5rem);
+    width: 1rem;
+    background-color: var(--Cbrand);
+    border-radius: 1rem;
+    pointer-events: none;
+    transition-property: left, width;
+    transition-duration: .25s;
+    transition-timing-function: ease-in-out;
+}
+
+.Neo.NeoWidget.UserIntro .userName:hover::after {
+    left: calc(50% - 1rem);
+    width: 2rem;
+}
+
+.Neo.NeoWidget.UserIntro .socialLinks {
+    display: flex;
+    align-items: center;
+    margin: 1rem;
+    gap: 1rem;
+}
+
+.Neo.NeoWidget.UserIntro .socialLinks .link {
+    height: 2.5rem;
+    width: 2.5rem;
+    font-size: 1.5rem;
+    border-radius: .75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--Cbtn-content);
+    background-color: var(--Cbtn-regular-bg);
+    transition: background-color .25s ease-in-out;
+}
+
+.Neo.NeoWidget.UserIntro .socialLinks .link:hover {
+    background-color: var(--Cbtn-regular-bg-hover);
+}

@@ -25,6 +25,8 @@
     border-radius: 0 0 1rem 1rem;
     box-sizing: border-box;
     z-index: 1100;
+    width: var(--Wpage-width);
+    margin: 0 1rem;
 }
 
 .Neo.NavigationBar.anim {
@@ -37,7 +39,6 @@
     justify-content: space-between;
     align-items: center;
     margin: 0 auto;
-    width: calc(100% - 2rem);
 }
 
 .Neo.NavigationBar.float {
