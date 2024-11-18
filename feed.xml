@@ -5,7 +5,7 @@
 <link>https://0xarch.github.io/</link>
 <description></description>
 <item>
-<title>WebJS - 滚动目录实现</title>
+<title>WebJS - 页面衔接实现</title>
 <link>https://0xarch.github.io//read/2024-11-18:js:smooth-navigate.html</link>
 <guid isPermaLink="false">ID11</guid>
 <description>
@@ -13,7 +13,7 @@
 
 兼容性未测试!
 </description>
-<pubDate>Mon Nov 18 2024 01:43:15 GMT+0800 (中国标准时间)</pubDate>
+<pubDate>Mon Nov 18 2024 14:57:27 GMT+0800 (中国标准时间)</pubDate>
 </item><item>
 <title>在 USB Disk 上安装 ArchLinux 需要的 GRUB 命令</title>
 <link>https://0xarch.github.io//read/2024-11-17:linux:arch-usb-install.html</link>
