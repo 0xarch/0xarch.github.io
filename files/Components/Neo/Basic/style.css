@@ -96,11 +96,9 @@ main.withSide {
 
 .uWcon {
     opacity: 0;
-    top: 0px;
-    transform: scale(1);
+    top: 200px;
+    transform: scale(1.1);
     position: relative;
-    animation-name: general-fin;
-    animation-duration: .55s;
     transition-property: opacity, transform, top;
     transition-duration: .45s;
     transition-timing-function: ease-in-out;
@@ -108,26 +106,12 @@ main.withSide {
 
 body.main-anim-finished .uWcon {
     opacity: 1;
+    top: 0;
+    transform: scale(1);
 }
 
 body.being-replaced .uWcon {
     opacity: 0;
     transform: scale(1.1);
     top: 200px;
-}
-
-@keyframes general-fin {
-    from {
-        opacity: 0;
-        transform: scale(1.1);
-        top: 200px;
-    }
-    30% {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-        transform: scale(1);
-        top: 0px;
-    }
 }
