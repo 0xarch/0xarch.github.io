@@ -25,7 +25,7 @@
         goTo: async function (url) {
             if(url != window.location.href)
                 document.body.classList.add('being-replaced');
-            let least_timer = new Promise(resolve => setTimeout(resolve, 251));
+            let least_timer = new Promise(resolve => setTimeout(resolve, 350));
             let content = await (await fetch(url)).text();
             await least_timer;
             let newDocument = DOMParserI.parseFromString(content, 'text/html');
