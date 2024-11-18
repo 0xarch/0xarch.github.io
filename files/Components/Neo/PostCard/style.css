@@ -6,9 +6,11 @@
     max-height: 15rem;
 }
 
-:root[ismobile=true] .Neo.PostCard{
-    flex-direction: column-reverse;
-    max-height: 35rem;
+@media(max-width: 768px){
+    .Neo.PostCard{
+        flex-direction: column-reverse;
+        max-height: 35rem;
+    }
 }
 
 .Neo.PostCard>.contentBox {
@@ -34,7 +36,6 @@
 }
 
 .Neo.PostCard>.contentBox>.meta {
-    display: flex;
     color: light-dark(#00000080, #ffffff80);
     font-weight: 900;
     overflow: hidden;
@@ -52,19 +53,31 @@
     background:linear-gradient(90deg,transparent calc(100% - 1rem), var(--Ccard-bg));
 }
 
-.Neo.PostCard>.contentBox>.meta>.pubDate {
-    margin-left: 0;
+.Neo.PostCard>.contentBox>.meta>.meta-content{
+    margin: 0;
+    display: flex;
+    overflow: auto;
+    scrollbar-color: #0000 #0000;
 }
 
-.Neo.PostCard>.contentBox>.meta>:is(.tag,.category,.pubDate) {
+.Neo.PostCard>.contentBox>.meta>.meta-content>.pubDate {
+    margin-left: 0;
+
+    &>date {
+        padding: .375rem;
+    }
+}
+
+.Neo.PostCard>.contentBox>.meta>.meta-content>:is(.tag,.category,.pubDate) {
     display: flex;
     align-items: center;
 }
 
-.Neo.PostCard>.contentBox>.meta>:is(.tag,.category)>a {
+.Neo.PostCard>.contentBox>.meta>.meta-content>:is(.tag,.category)>a {
     cursor: pointer;
     display: block;
     padding: .375rem;
+    margin: 0 .125rem;
     border-radius: .375rem;
     color: light-dark(#00000080, #ffffff80);
     background-color: transparent;
@@ -72,19 +85,19 @@
                 color .25s ease-in-out;
 }
 
-.Neo.PostCard>.contentBox>.meta>:is(.tag,.category)>a:hover {
+.Neo.PostCard>.contentBox>.meta>.meta-content>:is(.tag,.category)>a:hover {
     color: var(--Cbrand);
     background-color: var(--Cbtn-plain-bg-hover);
 }
 
-.Neo.PostCard>.contentBox>.meta>:is(.tag,.category)>.hr {
+.Neo.PostCard>.contentBox>.meta>.meta-content>:is(.tag,.category)>.hr {
     display: block;
     width: 0;
     padding: 0 .15rem;
     position: relative;
 }
 
-.Neo.PostCard>.contentBox>.meta>:is(.tag,.category)>.hr::before {
+.Neo.PostCard>.contentBox>.meta>.meta-content>:is(.tag,.category)>.hr::before {
     content: '/';
     position: absolute;
     top: 0;
