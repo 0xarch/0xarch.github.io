@@ -102,7 +102,7 @@ main.withSide {
     animation-name: general-fin;
     animation-duration: .55s;
     transition-property: opacity, transform, top;
-    transition-duration: .25s;
+    transition-duration: .45s;
     transition-timing-function: ease-in-out;
 }
 
