@@ -19,13 +19,13 @@
 <link>https://0xarch.github.io//read/2024-11-18:js:useJS-1-webApi.html</link>
 <guid isPermaLink="false">ID13</guid>
 <description>这篇文章简单讲述了 WebAPI 的组成以及 DOM 节点的实用用法</description>
-<pubDate>Mon Nov 18 2024 19:49:36 GMT+0800 (中国标准时间)</pubDate>
+<pubDate>Tue Nov 19 2024 17:21:22 GMT+0800 (中国标准时间)</pubDate>
 </item><item>
 <title>扩展 Markdown 语法测试</title>
 <link>https://0xarch.github.io//read/2024-11-18:test:markdown-extended.html</link>
 <guid isPermaLink="false">ID23</guid>
-<description>使用 Fewu 1.2.4 添加的 markedExtras 功能支持更多 Markdown 语法。</description>
-<pubDate>Mon Nov 18 2024 22:02:08 GMT+0800 (中国标准时间)</pubDate>
+<description>使用 Fewu 1.2.5 添加的 markedExtras 功能支持更多 Markdown 语法。</description>
+<pubDate>Tue Nov 19 2024 17:20:12 GMT+0800 (中国标准时间)</pubDate>
 </item><item>
 <title>在 USB Disk 上安装 ArchLinux 需要的 GRUB 命令</title>
 <link>https://0xarch.github.io//read/2024-11-17:linux:arch-usb-install.html</link>
@@ -39,7 +39,7 @@
 <description>JavaScript 基础 第四篇：循环和迭代。  
 包含内容：循环控制与迭代器。
 转载总结自 MDN。</description>
-<pubDate>Sat Nov 16 2024 11:23:12 GMT+0800 (中国标准时间)</pubDate>
+<pubDate>Tue Nov 19 2024 17:12:40 GMT+0800 (中国标准时间)</pubDate>
 </item><item>
 <title>JavaScript 基础</title>
 <link>https://0xarch.github.io//read/2024-6-3:js:baseJS1-nav_and_basic.html</link>
@@ -63,7 +63,7 @@
 <description>JavaScript 基础 第二篇：面向对象概述。
 包含内容：对象和原型链。
 转载总结自 MDN。</description>
-<pubDate>Sat Nov 16 2024 11:23:12 GMT+0800 (中国标准时间)</pubDate>
+<pubDate>Tue Nov 19 2024 17:17:49 GMT+0800 (中国标准时间)</pubDate>
 </item><item>
 <title>simplus主题源码概述</title>
 <link>https://0xarch.github.io//read/2024-4-9:fewu:simplus-theme.html</link>
@@ -93,7 +93,7 @@ _Update: The GitHub page for xz has been suspended._
 <guid isPermaLink="false">ID15</guid>
 <description>收集我迄今为止安装过的 Arch Linux 包。
 此篇仅用于记录和备忘，请酌情参考。</description>
-<pubDate>Mon Nov 18 2024 19:20:15 GMT+0800 (中国标准时间)</pubDate>
+<pubDate>Tue Nov 19 2024 17:10:37 GMT+0800 (中国标准时间)</pubDate>
 </item><item>
 <title>Nexo Beta 1.0.3~1.1.0</title>
 <link>https://0xarch.github.io//read/2024-3-19:fewu:n225.html</link>

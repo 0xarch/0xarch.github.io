@@ -15,14 +15,15 @@
 
 (function (window, undefined) {
     window.___usedLocation = [window.location.href];
+    window.passedLocation = [window.location.href];
     window.onpopstate = function(){
-        if(___usedLocation.includes(window.location.href)){
-            window.Reload.goTo(window.location.href);
-        }
+        passedLocation.pop();
+        if(! passedLocation.length) return;
+        window.Reload.goTo(passedLocation[passedLocation.length-1],true);
     };
     const DOMParserI = new DOMParser();
     window.Reload = {
-        goTo: async function (url) {
+        goTo: async function (url,isBack = false) {
             if(url != window.location.href) 
                 document.body.classList.add('being-replaced');
             document.querySelector('.Neo.NavigationBar').classList.add('collapsed');
@@ -31,7 +32,8 @@
             await least_timer;
             let newDocument = DOMParserI.parseFromString(content, 'text/html');
             // set url
-            window.history.pushState('', '', url);
+            if(!isBack) passedLocation.push(url);
+            window.history[isBack ? 'replaceState' : 'pushState']('', '', url);
             !___usedLocation.includes(url) && ___usedLocation.push(url);
             // process head.
             let newTitle = newDocument.head.querySelector('title').innerHTML;
@@ -208,7 +210,7 @@ function DoOthers(){
     let ticking = false;
 
     function NavFloatToggle(scrollPos) {
-        if(scrollPos >= 240 && scrollPos > lastKnownScrollPosition) {
+        if(scrollPos >= 240) {
             NAV_ROOT.classList.add('float');
         } else {
             NAV_ROOT.classList.remove('float');
@@ -241,16 +243,14 @@ function DoOthers(){
         }
         document.querySelectorAll('#markdown_fillContent pre').forEach(element => {
             let code = element.querySelector('code');
-            if(code){
-                let con = document.createElement('div'), len = code.textContent.split("\n").length;
-                con.classList.add('line-index');
-                for(let i = 1;i<len;i++){
-                    let index_el = document.createElement('i');
-                    index_el.textContent = i;
-                    con.appendChild(index_el);
-                }
-                element.appendChild(con);
+            let con = document.createElement('div'), len = code.textContent.split("\n").length;
+            con.classList.add('line-index');
+            for(let i = 1;i<len;i++){
+                let index_el = document.createElement('i');
+                index_el.textContent = i;
+                con.appendChild(index_el);
             }
+            element.appendChild(con);
         });
     },500);
     // animation
