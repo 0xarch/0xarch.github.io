@@ -26,7 +26,10 @@
     box-sizing: border-box;
     z-index: 1100;
     width: var(--Wpage-width);
-    margin: 0 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
 }
 
 .Neo.NavigationBar.anim {
@@ -34,30 +37,44 @@
     animation-duration: .25s;
 }
 
-.Neo.NavigationBar.enough {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 0 auto;
-}
-
-.Neo.NavigationBar.float {
-    top: calc(0rem - var(--Height));
+body.focus .Neo.NavigationBar {
+    top: calc(-.5rem - var(--Height));
 }
 
 .Neo.NavigationBar>.kLogo {
-    width: fit-content;
-    display: flex;
-    align-items: center;
-    font-size: 24px;
-    padding: 0 8px;
-    font-weight: 900;
-    color: var(--Cbrand);
+width: fit-content;
+display: flex;
+align-items: center;
+padding: 0 1rem;
+font-weight: 700;
+color: var(--Cbrand);
+position: relative;
+height: 2.75rem;
 }
 
-.Neo.NavigationBar.--transparent>.kLogo {
-    background: transparent;
-    color: var(--Cbrand);
+.Neo.NavigationBar>.kLogo::before {
+content: '';
+position: absolute;
+left: 0;
+width: 100%;
+height: 100%;
+display: block;
+background-color: var(--Cbtn-plain-bg-hover);
+transform: scale(0);
+opacity: 0;
+transition: transform .25s ease-in-out, opacity .25s ease-in-out;
+z-index: -1;
+border-radius: .5rem;
+}
+
+.Neo.NavigationBar>.kLogo:hover::before{
+    transform: scale(1);
+    opacity: 1;
+}
+
+.Neo.NavigationBar>.kLogo>.home-icon{
+    font-size: 1.75rem;
+    margin-right: .5rem;
 }
 
 .Neo.NavigationBar>.kCon {
@@ -66,6 +83,7 @@
     transition: height .2s ease-in-out;
     display: flex;
     align-items: center;
+    height: var(--Height);
 }
 
 .Neo.NavigationBar>.kCon>a {
@@ -103,37 +121,52 @@
     color: var(--Cdisplay);
 }
 
-.Neo.NavigationBar.short>.toggle {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+@media(max-width: 768px){
+.Neo.NavigationBar>.toggle {
+display: flex;
+align-items: center;
+justify-content: center;
 }
 
-.Neo.NavigationBar.enough>.toggle {
-    display: none
+.Neo.NavigationBar>.kCon {
+background: var(--Cbg);
+padding: .5rem;
+margin-left: 0;
+height: 0;
+right: 1rem;
+top: calc(var(--Height) + 1rem);
+display: block;
+position: absolute;
+transition-property: height, border-radius, opacity;
+transition-duration: .25s;
+transition-timing-function: ease-in-out;
+border-radius: 1rem;
+opacity: 0;
 }
 
-.Neo.NavigationBar.short>.kCon {
-    margin-left: 0;
-    height: var(--expanded-height);
-    display: block;
+.Neo.NavigationBar>.kCon>a {
+display: block;
+height: 48px;
+text-align: center;
 }
 
-.Neo.NavigationBar.enough>.kCon {
-    height: var(--Height);
+.Neo.NavigationBar>.kLogo {
+position: absolute;
+height: 100%;
 }
 
-.Neo.NavigationBar.collapsed>.kCon {
-    height: 0
+.Neo.NavigationBar>.kLogo::before {
+height: calc(100% - 1.5rem);
+top: .75rem;
+left: 0;
 }
 
-.Neo.NavigationBar.short>.kCon>a {
-    display: block;
-    height: 48px;
-    text-align: center;
+.Neo.NavigationBar.collapsed:not(.float)>.kCon {
+height: var(--expanded-height);
+opacity: 1;
 }
-
-.Neo.NavigationBar.short>.kLogo {
-    position: absolute;
-    height: var(--Height);
+.being-replaced .Neo.NavigationBar>.kCon {
+height: 0;
+opacity: 0;
+}
 }

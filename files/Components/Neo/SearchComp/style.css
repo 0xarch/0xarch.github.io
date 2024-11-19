@@ -33,14 +33,15 @@
     padding: 0px;
     min-width: 50%;
     max-width: 90%;
-    top: 64px;
-    border-radius: 24px;
+    top: 5rem;
+    border-radius: 1rem;
     border: none;
     box-shadow: 0px 2px 80px 0px #222,inset 0px 0px 4px #8888;
     transition: min-height .25s, padding .25s, max-height .25s;
     display: block;
     overflow: hidden;
     z-index: 1199;
+    background-color: var(--Cbg);
 }
 
 .Neo.SearchComp_Panel[open] {
@@ -74,4 +75,10 @@
 .Neo.Neo.SearchComp_Panel :is(.--C,.--S):hover {
     background: var(--Cbrand);
     color: #fff;
+}
+
+.Neo.SearchComp_Panel input {
+    border: none;
+    background-color: var(--Ccard-bg);
+    border-radius: .25rem;
 }
