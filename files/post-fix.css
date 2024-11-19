@@ -1,10 +1,11 @@
-h1 { font-size:2.1em }
-h2 { font-size:1.95em }
-h3 { font-size:1.8em }
-h4 { font-size:1.65em }
-h5 { font-size:1.5em }
-h6 { font-size:1.4em }
-h1,h2,h3,h4,h5,h6 { margin: .5em 0 }
+h1 { font-size: 1.875rem; line-height: 2.25rem }
+h2 { font-size:1.5rem; margin: 2em 0 1em }
+h3 { font-size:1.25rem; margin: 1.6em 0 .6em }
+h4 { font-size:1rem; margin: 1.5em 0 .5em }
+h5 { font-size:.875rem }
+h6 { font-size:.5rem }
+h2,h3,h4 { line-height: 1.5; }
+h5,h6 { line-height:  1.3; }
 img { max-width: 100% }
 pre code, pre code.hljs{
     display: block;
@@ -13,22 +14,25 @@ pre code, pre code.hljs{
     background-color: var(--Cbg);
     color: var(--Cdisplay);
     border-radius: .5rem;
-    padding-left: 2.5rem;
     position: relative;
     font-size: 1rem;
-    line-height: 1.5rem;
+    line-height: 1.5;
+    transition-property: padding, background-color, color;
+    transition-duration: .25s;
+    transition-timing-function: ease-in-out;
+    box-sizing: border-box;
+    max-width: 100%;
+    overflow-x: auto;
 }
-pre code.hljs {
-transition-property: padding, background-color, color;
-transition-duration: .25s;
-transition-timing-function: ease-in-out;
-box-sizing: border-box;
-max-width: 100%;
-overflow-x: auto;
-padding-left: 2.5rem;
+pre {
+    position: relative;
+    padding-left: 2rem;
+    border-radius: .5rem;
+    background-color: var(--Cbg);
 }
-pre code>.line-index {
+pre>.line-index {
     color: light-dark(#0000004d,#ffffff4d);
+    background-color: var(--Cbg);
     user-select: none;
     position: absolute;
     left: .5rem;
@@ -37,8 +41,9 @@ pre code>.line-index {
     flex-direction: column;
     align-items: center;
     width: 1.5rem;
+    line-height: 1.5;
 }
-pre code>.line-index>i{
+pre>.line-index>i{
     height: 1.5rem;
     display: block;
     font-style: normal;

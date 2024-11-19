@@ -23,9 +23,10 @@
     const DOMParserI = new DOMParser();
     window.Reload = {
         goTo: async function (url) {
-            if(url != window.location.href)
+            if(url != window.location.href) 
                 document.body.classList.add('being-replaced');
-            let least_timer = new Promise(resolve => setTimeout(resolve, 350));
+            document.querySelector('.Neo.NavigationBar').classList.add('collapsed');
+            let least_timer = new Promise(resolve => setTimeout(resolve, 150));
             let content = await (await fetch(url)).text();
             await least_timer;
             let newDocument = DOMParserI.parseFromString(content, 'text/html');
@@ -237,8 +238,11 @@ function DoOthers(){
     setTimeout(()=>{
         if(window.hljs){
             hljs.highlightAll();
-            document.querySelectorAll('#markdown_fillContent pre code').forEach(element => {
-                let con = document.createElement('div'), len = element.textContent.split("\n").length;
+        }
+        document.querySelectorAll('#markdown_fillContent pre').forEach(element => {
+            let code = element.querySelector('code');
+            if(code){
+                let con = document.createElement('div'), len = code.textContent.split("\n").length;
                 con.classList.add('line-index');
                 for(let i = 1;i<len;i++){
                     let index_el = document.createElement('i');
@@ -246,8 +250,8 @@ function DoOthers(){
                     con.appendChild(index_el);
                 }
                 element.appendChild(con);
-            });
-        }
+            }
+        });
     },500);
     // animation
     document.body.classList.add('main-anim');

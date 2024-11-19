@@ -7,9 +7,12 @@
 }
 
 @media(max-width: 768px){
-    .Neo.PostCard{
+    .Neo.PostCard {
         flex-direction: column-reverse;
         max-height: 35rem;
+    }
+    .Neo.PostCard>.contentBox {
+        padding: .5rem .75rem;
     }
 }
 

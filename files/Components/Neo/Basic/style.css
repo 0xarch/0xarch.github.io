@@ -97,11 +97,11 @@ main.withSide {
 
 .uWcon {
     opacity: 0;
-    top: 200px;
+    top: 10rem;
     transform: scale(1.1);
     position: relative;
     transition-property: opacity, transform, top;
-    transition-duration: .45s;
+    transition-duration: .125s;
     transition-timing-function: ease-in-out;
 }
 
@@ -114,5 +114,5 @@ body.main-anim-finished .uWcon {
 body.being-replaced .uWcon {
     opacity: 0;
     transform: scale(1.1);
-    top: 200px;
+    top: 7rem;
 }
