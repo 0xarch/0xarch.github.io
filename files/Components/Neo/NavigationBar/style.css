@@ -19,7 +19,7 @@
     top: 0px;
     background-color: var(--Ccard-bg);
     backdrop-filter: blur(10px);
-    transition-property: height, top, color, background-color;
+    transition-property: width, height, top, color, background-color;
     transition-duration: .15s;
     transition-timing-function: cubic-bezier(.4, 0, .2, 1);
     border-radius: 0 0 1rem 1rem;

@@ -1,0 +1,66 @@
+.Neo.LabeledCard {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    gap: 1rem;
+    box-sizing: border-box;
+    position: relative;
+    max-width: 100%;
+    background-color: #0000;
+    transition: background-color .25s ease-in-out;
+    border-radius: .75rem;
+    height: 3.25rem;
+    margin: 0 1rem;
+}
+
+.Neo.LabeledCard:hover {
+    background-color: var(--Cbtn-plain-bg-hover);
+}
+
+.Neo.LabeledCard>date{
+    color: var(--Ctext-50);
+    width: 4rem;
+    text-align: right;
+}
+
+.Neo.LabeledCard>.string {
+    border: .01rem dashed light-dark(#0002,#fff2);
+    position: relative;
+    height: calc(100% + 1.725rem);
+    top: 0;
+    margin: 0 1.75rem;
+}
+
+.Neo.LabeledCard>.string::before {
+    content: '';
+    position: absolute;
+    left: -.175rem;
+    top: calc(50% - .25rem);
+    height: .35rem;
+    width: .35rem;
+    border-radius: 1rem;
+    background-color: light-dark(#666,#999);
+    transition: top .25s ease-in-out, height .25s ease-in-out, background-color .25s ease-in-out;
+}
+
+.Neo.LabeledCard:hover>.string::before {
+    height: 1rem;
+    top: calc(50% - .5rem);
+    background-color: var(--Cbtn-content);
+}
+
+.Neo.LabeledCard>.title {
+    font-weight: 900;
+    font-size: 1.1rem;
+    line-height: 1.25rem;
+    margin-right: auto;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.Neo.LabeledCard>.append {
+    display: flex;
+    color: var(--Ctext-25);
+    font-size: .875rem;
+    gap: .5rem;
+}

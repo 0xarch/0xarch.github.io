@@ -2,6 +2,7 @@ window.___KContentTable = function () {
     let toc, opened = true;
 
     const TOC = (markdown_content) => {
+        if (!markdown_content) return;
         if (!toc) return;
         let tocList = markdown_content.querySelectorAll("h1, h2, h3, h4, h5, h6");
         let liList = [];

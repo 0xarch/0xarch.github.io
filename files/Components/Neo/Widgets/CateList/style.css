@@ -1,0 +1,48 @@
+.Neo.NeoWidget.CateList {
+&>h2{
+line-height: 1.25rem;
+margin:.75rem 1rem;
+position: relative;
+&::before{
+content: '';
+background-color: var(--Cbrand);
+width: .25rem;
+height: 100%;
+left: -.75rem;
+position: absolute;
+display: block;
+border-radius: 1rem;
+}
+}
+&>.cates-container{
+display: flex;
+flex-direction: column;
+width: 100%;
+gap:.5rem;
+&>.cate{
+border-radius: .5rem;
+display: flex;
+padding:.5rem;
+align-items: center;
+color: var(--Ctext-75);
+background:transparent;
+transition:background-color .2s ease-in-out,color .2s ease-in-out;
+&:hover{
+color:var(--Cbtn-content);
+background:var(--Cbtn-regular-bg);
+}
+&::after{
+content:attr(data-count);
+color: var(--Cbtn-content);
+background-color: var(--Cbtn-regular-bg);
+display: flex;
+align-items: center;
+justify-content: center;
+width: 1.5rem;
+height: 1.5rem;
+margin-left: auto;
+border-radius: .5rem;
+}
+}
+}
+}

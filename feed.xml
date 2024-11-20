@@ -39,15 +39,7 @@
 <description>JavaScript 基础 第四篇：循环和迭代。  
 包含内容：循环控制与迭代器。
 转载总结自 MDN。</description>
-<pubDate>Tue Nov 19 2024 17:12:40 GMT+0800 (中国标准时间)</pubDate>
-</item><item>
-<title>JavaScript 基础</title>
-<link>https://0xarch.github.io//read/2024-6-3:js:baseJS1-nav_and_basic.html</link>
-<guid isPermaLink="false">ID7</guid>
-<description>本文写于2024年6月。旨在帮助新手进行简单快速的JavaScript 入门。  
-转载并总结自 MDN。  
-本篇包含：函数调用、变量声明的简易阐述。</description>
-<pubDate>Sat Nov 16 2024 11:23:12 GMT+0800 (中国标准时间)</pubDate>
+<pubDate>Wed Nov 20 2024 17:57:39 GMT+0800 (中国标准时间)</pubDate>
 </item><item>
 <title>JS基础III:条件分支</title>
 <link>https://0xarch.github.io//read/2024-6-3:js:baseJS3-branch_statement.html</link>
@@ -55,7 +47,7 @@
 <description>JavaScript 基础 第三篇：条件和分支。  
 包含内容：条件和分支。  
 转载总结自 MDN。</description>
-<pubDate>Sat Nov 16 2024 11:23:12 GMT+0800 (中国标准时间)</pubDate>
+<pubDate>Wed Nov 20 2024 17:57:32 GMT+0800 (中国标准时间)</pubDate>
 </item><item>
 <title>JS基础II:对象和原型</title>
 <link>https://0xarch.github.io//read/2024-6-3:js:baseJS2-obj_and_proto.html</link>
@@ -63,7 +55,15 @@
 <description>JavaScript 基础 第二篇：面向对象概述。
 包含内容：对象和原型链。
 转载总结自 MDN。</description>
-<pubDate>Tue Nov 19 2024 17:17:49 GMT+0800 (中国标准时间)</pubDate>
+<pubDate>Wed Nov 20 2024 17:57:27 GMT+0800 (中国标准时间)</pubDate>
+</item><item>
+<title>JavaScript 基础</title>
+<link>https://0xarch.github.io//read/2024-6-3:js:baseJS1-nav_and_basic.html</link>
+<guid isPermaLink="false">ID7</guid>
+<description>本文写于2024年6月。旨在帮助新手进行简单快速的JavaScript 入门。  
+转载并总结自 MDN。  
+本篇包含：函数调用、变量声明的简易阐述。</description>
+<pubDate>Wed Nov 20 2024 17:59:16 GMT+0800 (中国标准时间)</pubDate>
 </item><item>
 <title>simplus主题源码概述</title>
 <link>https://0xarch.github.io//read/2024-4-9:fewu:simplus-theme.html</link>
@@ -86,14 +86,14 @@
 
 _Update: The GitHub page for xz has been suspended._
 </description>
-<pubDate>Sat Nov 16 2024 11:23:12 GMT+0800 (中国标准时间)</pubDate>
+<pubDate>Wed Nov 20 2024 17:24:06 GMT+0800 (中国标准时间)</pubDate>
 </item><item>
 <title>Arch Linux 包收集</title>
 <link>https://0xarch.github.io//read/2024-3-27:linux:arch-package-collect.html</link>
 <guid isPermaLink="false">ID15</guid>
 <description>收集我迄今为止安装过的 Arch Linux 包。
 此篇仅用于记录和备忘，请酌情参考。</description>
-<pubDate>Tue Nov 19 2024 17:10:37 GMT+0800 (中国标准时间)</pubDate>
+<pubDate>Wed Nov 20 2024 17:21:24 GMT+0800 (中国标准时间)</pubDate>
 </item><item>
 <title>Nexo Beta 1.0.3~1.1.0</title>
 <link>https://0xarch.github.io//read/2024-3-19:fewu:n225.html</link>
@@ -145,14 +145,14 @@ Nexo Beta 1.0.3 (Nexo n2.2.5-1) CHANGELOG 注解 , <del>以及 1.0.4 (n2.2.5-2 ~
 </description>
 <pubDate>Sat Nov 16 2024 11:23:12 GMT+0800 (中国标准时间)</pubDate>
 </item><item>
-<title>Linux下Git配置</title>
+<title>Arch Linux 下 Git 配置</title>
 <link>https://0xarch.github.io//read/2024-2-24:linux:gitconfig.html</link>
 <guid isPermaLink="false">ID18</guid>
 <description>
 Linux 下使用 Git 和 Github 连接的基本配置，包括账户、SSH等。
 本文为 [Git 常用命令大全] 的子集。
 </description>
-<pubDate>Sat Nov 16 2024 11:23:12 GMT+0800 (中国标准时间)</pubDate>
+<pubDate>Wed Nov 20 2024 17:21:53 GMT+0800 (中国标准时间)</pubDate>
 </item><item>
 <title>原神:娜维娅理论值计算</title>
 <link>https://0xarch.github.io//read/2024-1-1:mihoyo-ys:navia.html</link>

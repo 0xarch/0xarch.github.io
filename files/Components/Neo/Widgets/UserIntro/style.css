@@ -13,6 +13,7 @@
 }
 
 .Neo.NeoWidget.UserIntro .userName {
+    line-height: 1.25;
     position: relative;
     display: block;
     text-align: center;
@@ -55,7 +56,7 @@
 .Neo.NeoWidget.UserIntro .socialLinks {
     display: flex;
     align-items: center;
-    margin: 1rem;
+    margin: 1rem 1rem 0;
     gap: 1rem;
 }
 

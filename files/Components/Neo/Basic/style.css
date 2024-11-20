@@ -11,11 +11,18 @@
     --Cbtn-plain-bg-hover: light-dark(oklch(.95 .025 var(--hue)), oklch(.3 .035 var(--hue)));
     --Cbtn-content: light-dark(oklch(.55 .12 var(--hue)), oklch(.75 .1 var(--hue)));
     --Cbtn-regular-bg: light-dark(oklch(.95 .025 var(--hue)), oklch(.33 .035 var(--hue)));
-    --Cbtn-regular-bg-hover: light-dark(oklch(.9 .05 var(--hue)), oklch(.38 .04 var(--hue)));;
+    --Cbtn-regular-bg-hover: light-dark(oklch(.9 .05 var(--hue)), oklch(.38 .04 var(--hue)));
+    --Ctext-25: light-dark(#0000004d,#ffffff4d);
+    --Ctext-50: light-dark(#0000008d,#ffffff8d);
+    --Ctext-75: light-dark(#000000bf,#ffffffbf);
+    --Ctext-100: light-darK(#000,#fff);
 }
+@media(max-width:768px){:root{--Wpage-width: 100vw}}
 @media(max-width:700px){.nomobile{display:none}}
 @media(min-width:701px){.onmobile{display:none}}
 body {
+width: 100vw;
+overflow-x: hidden;
 background: var(--Cbg);
 color: var(--Cdisplay);
 margin: 0;
@@ -56,16 +63,12 @@ hr { opacity: .5; border-bottom-width: 0px }
 .tac{text-align:center}.col{flex-direction:column}
 .jcsa{justify-content:space-around}.jcsb{justify-content:space-between}
 .intro,#intro{color:var(--secondary-color)}
-:root[ismobile=true] .nomobile{display:none}.fit{width:fit-content}
-.logo-of-theme{height:32px;width:80px;background:var(--Cbrand);color:#fff}
-.logo-of-theme::after{content:'simplus';font-size:16px}
 .clist{padding:20px}
 .clist hr{visibility:hidden}
 .meta>*{margin:4px}.less{margin:12px 0}
 .m0{margin:0}.p0{padding:0}.p8{padding:12px}
 *{-webkit-tap-highlight-color:#0000}
-.uWcon{ max-width: var(--Wcon); padding: 0 8px;
-    margin-left: auto; margin-right: auto }
+.uWcon{ max-width: var(--Wpage-width); margin-left: auto; margin-right: auto }
 .cLinks { display: flex; flex-wrap: wrap }
 .cLinks a { display: block; text-wrap: nowrap }
 .cLinks>nav { flex: 1 0 0%; padding: 8px }
@@ -81,7 +84,9 @@ a { text-decoration: none; color: var(--Cbrand) }
     unicode-bidi: isolate }
 
 @media(prefers-color-scheme:dark){.hljs{background: #232629;color:#f3f3f3}}
-
+h2.category-name,h2.archive-label{
+margin-left: 2rem;
+}
 body.not-ready {
 opacity: 0;
 }
@@ -90,7 +95,7 @@ display: flex;
 flex-direction: column-reverse;
 gap: 1rem;
 }
-.withSide>.mainCon {
+.withSide>:is(.mainCon,.sideCon) {
 display: flex;
 flex-direction: column;
 gap: 1rem;
@@ -106,6 +111,22 @@ width: calc(100% - 18.5rem);
 width: 17.5rem;
 }
 }
+@media (max-width:1024px) {
+.withSide>.sideCon{
+opacity: 1;
+top: 0;
+transform: scale(1);
+position: relative;
+transition-property: opacity, transform, top, margin;
+transition-duration: .149s;
+transition-timing-function: ease-in-out;
+}
+body:is(.being-replaced,:not(.main-anim-finished)) .withSide>.sideCon {
+opacity: 0;
+top: 5rem;
+transform: scale(1.1);
+}
+}
 .NeoWidget {
 padding: 1rem;
 border-radius: 1rem;
@@ -118,21 +139,24 @@ opacity: 0;
 .cPostCon {
 margin: 0;
 }
-.uWcon {
+.uWcon, #NEO_REPLACE {
 opacity: 0;
 top: 10rem;
 transform: scale(1.1);
 position: relative;
-transition-property: opacity, transform, top, margin;
-transition-duration: .125s;
+transition-property: max-width, height, opacity, transform, top, margin;
+transition-duration: .149s;
 transition-timing-function: ease-in-out;
 }
-body.main-anim-finished .uWcon {
+body.loaded .uWcon,
+body.main-anim-finished .uWcon:not(.no-anim),
+body.main-anim-finished #NEO_REPLACE {
 opacity: 1;
 top: 0;
 transform: scale(1);
 }
-body.being-replaced .uWcon {
+body.being-replaced .uWcon:not(.no-anim),
+body.being-replaced #NEO_REPLACE {
 opacity: 0;
 transform: scale(1.1);
 top: 7rem;

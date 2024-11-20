@@ -1,20 +1,9 @@
-(function () {
-    let _M_ = false;['Android', 'iPhone', 'Mobi', 'webOS', 'iPod', 'BlackBerry'].forEach(v => navigator.userAgent.includes(v) && (_M_ = true));
-
-    const Q = (v, s) => v.querySelector(s),
-        D = document;
-    const debug = () => D.body.setAttribute('debug', 0);
-    const mobile = () => {
-        _M_ = !_M_; D.documentElement.setAttribute('isMobile', _M_);
-    }
-    D.documentElement.setAttribute('isMobile', _M_);
-    const { documentElement: root } = document;
-    if (navigator.userAgent.includes('Android')) root.classList.add('Android');
-    window.SINGLE_REM = parseInt(window.getComputedStyle(document.documentElement).fontSize);
-})();
+((window)=>{
+window.SINGLE_REM=parseInt(window.getComputedStyle(document.documentElement).fontSize);
+globalThis.scrollToTop=()=>window.scrollTo({top:0,behavior:'smooth'});
+})(window);
 
 (function (window, undefined) {
-    window.___usedLocation = [window.location.href];
     window.passedLocation = [window.location.href];
     window.onpopstate = function(){
         passedLocation.pop();
@@ -24,20 +13,20 @@
     const DOMParserI = new DOMParser();
     window.Reload = {
         goTo: async function (url,isBack = false) {
-            // if(url != window.location.href) 
-            //     document.body.classList.add('being-replaced');
+            document.body.classList.add('being-replaced');
+            scrollToTop();
+            let NEO_REPLACE_NODE = document.querySelector('#NEO_REPLACE');
             document.querySelector('.Neo.NavigationBar').classList.remove('collapsed');
-            let least_timer = new Promise(resolve => setTimeout(resolve, 150));
+            let least_timer = new Promise(resolve => setTimeout(resolve, 200));
             let content = await (await fetch(url)).text();
             await least_timer;
             let newDocument = DOMParserI.parseFromString(content, 'text/html');
             // set url
             if(!isBack) passedLocation.push(url);
             window.history[isBack ? 'replaceState' : 'pushState']('', '', url);
-            !___usedLocation.includes(url) && ___usedLocation.push(url);
             // process head.
             let newTitle = newDocument.head.querySelector('title').innerHTML;
-            let scripts = [], styles = [], metas = [], links = [];
+            let metas = [], links = [];
             let unusedNodes = [];
             for (let childNode of newDocument.head.childNodes) {
                 if (childNode.nodeType !== 1) continue;
@@ -48,24 +37,6 @@
                             name: childNode.name,
                             content: childNode.content
                         });
-                        break;
-                    case 'STYLE':
-                        styles.push(childNode.innerHTML);
-                        break;
-                    case 'SCRIPT':
-                        if (childNode.src) {
-                            scripts.push({
-                                type: 'ref',
-                                module: childNode.type,
-                                content: childNode.getAttribute('src')
-                            });
-                        } else {
-                            scripts.push({
-                                type: 'inner',
-                                module: childNode.type,
-                                content: childNode.innerHTML
-                            });
-                        }
                         break;
                     case 'LINK':
                         links.push({
@@ -81,40 +52,11 @@
                     case 'TITLE':
                         childNode.textContent = newTitle;
                         break;
-                    case 'STYLE':
-                        for (let i = 0; i < styles.length; i++) {
-                            if (childNode.innerHTML == styles[i]) {
-                                styles.splice(i, 1);
-                                break outer;
-                            }
-                        }
-                        unusedNodes.push(childNode);
-                        break;
                     case 'LINK':
                         for (let i = 0; i < links.length; i++) {
                             if (childNode.rel == links[i].rel && childNode.href == links[i].href) {
-                                styles.splice(i, 1);
+                                links.splice(i, 1);
                                 break outer;
-                            }
-                        }
-                        unusedNodes.push(childNode);
-                        break;
-                    case 'SCRIPT':
-                        if (!childNode.src) {
-                            for (let i = 0; i < scripts.length; i++) {
-                                if (scripts[i].type !== 'inner') continue;
-                                if (childNode.type == scripts[i].module && childNode.innerHTML == scripts[i].content) {
-                                    scripts.splice(i, 1);
-                                    break outer;
-                                }
-                            }
-                        } else {
-                            for (let i = 0; i < scripts.length; i++) {
-                                if (scripts[i].type !== 'ref') continue;
-                                if (childNode.type == scripts[i].module && childNode.getAttribute('src') == scripts[i].content) {
-                                    scripts.splice(i, 1);
-                                    break outer;
-                                }
                             }
                         }
                         unusedNodes.push(childNode);
@@ -143,36 +85,25 @@
                 el.href = v.href;
                 document.head.appendChild(el);
             });
-            styles.forEach(v => {
-                let el = document.createElement('style');
-                el.innerHTML = v;
-                document.head.appendChild(el);
-            });
-            scripts.forEach(v => {
-                let el = document.createElement('script');
-                if (v.type == 'ref') {
-                    el.type = v.module;
-                    el.src = v.content;
-                } else {
-                    el.type = v.module;
-                    el.innerHTML = v.content;
-                }
-                document.head.appendChild(el);
-            });
             unusedNodes.forEach(el => el.remove());
             // process body
             document.body.classList.add('not-ready');
             document.body.classList.remove('being-replaced');
-            document.body.innerHTML = newDocument.body.innerHTML;
+            let NEW_NEO_REPLACE_NODE = newDocument.querySelector('#NEO_REPLACE');
+            if(NEO_REPLACE_NODE && NEW_NEO_REPLACE_NODE){
+                // new #NEO_REPLACE
+                NEO_REPLACE_NODE.innerHTML = NEW_NEO_REPLACE_NODE.innerHTML;
+                // NEO_REPLACE_NODE.style.setProperty('height','100%');
+            } else {
+                console.log('USING LEGACY SWITCH');
+                document.body.innerHTML = newDocument.body.innerHTML;
+            }
             document.body.classList.remove('not-ready');
             // scroll pos
             DoOthers();
-            setTimeout(()=>{
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                });
-            },0);
+            // setTimeout(()=>{
+            //     scrollToTop();
+            // },0);
         }
     };
 })(window, void 0);
@@ -181,43 +112,24 @@ function DoOthers(){
     document.body.classList.remove('main-anim-finished');
     // TOC
     (async ()=>{
-        import('../../../es/KContentTable.js');
+        await import('../../../es/KContentTable.js');
         setTimeout(()=>{
-            console.log('GENERATING TABLE');
             ___KContentTable();
         },1);
     })();
-    // (NavigationBar Before)
+    // NavigationBar
     const NAV_ROOT = document.querySelector('.Neo.NavigationBar');
     const NAV_BAR_TOGGLE = NAV_ROOT.querySelector('.toggle');
-    // const NAV_BAR_CON = NAV_ROOT.querySelector('.kCon');
-    // const NAVIGATION_LOGO_WIDTH = NAV_ROOT.querySelector('.kLogo').clientWidth;
-    // const NAVIGATION_WIDTH = NAV_BAR_CON.clientWidth;
-    // let expandedHeight = Array.from(NAV_BAR_CON.childNodes).filter(v => v.nodeName == "A" || v.nodeName == "DIV").length * 48 + 'px';
-    // NAV_BAR_CON.style.setProperty('--expanded-height', expandedHeight);
-    // const NavBarIntelliJudge = () => {
-    //     if (document.documentElement.clientWidth < NAVIGATION_WIDTH + NAVIGATION_LOGO_WIDTH + window.SINGLE_REM*4) {
-    //         NAV_ROOT.classList.add('short');
-    //         NAV_ROOT.classList.remove('collapsed', 'enough');
-    //     } else {
-    //         NAV_ROOT.classList.remove('short');
-    //         NAV_ROOT.classList.add('collapsed', 'enough');
-    //     }
-    // }
-    // NavigationBar
     NAV_BAR_TOGGLE.addEventListener('click', () => {
         NAV_ROOT.classList.toggle('collapsed');
     });
+    // Global Focus
     let lastKnownScrollPosition = 0;
     let ticking = false;
-
-    // Global Focus
     function NavFloatToggle(scrollPos) {
         if(scrollPos >= visualViewport.height / 100 * 37.75 - 5.5*SINGLE_REM) {
-            NAV_ROOT.classList.add('float');
             document.body.classList.add('focus');
         } else {
-            NAV_ROOT.classList.remove('float');
             document.body.classList.remove('focus');
         }
     }
@@ -263,7 +175,7 @@ function DoOthers(){
     setTimeout(()=>{
         document.body.classList.remove('main-anim');
         document.body.classList.add('main-anim-finished');
-    },500);
+    },350);
     // search
     const Q=(v,s)=>v.querySelector(s);
     function Search() {
@@ -306,12 +218,7 @@ function DoOthers(){
     Search();
 }
 document.addEventListener('DOMContentLoaded', () => {
-    setTimeout(()=>{
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-    },0);
+    setTimeout(scrollToTop,0);
     DoOthers();
     const NAV_ROOT = document.querySelector('.Neo.NavigationBar');
     NAV_ROOT.classList.add('anim');
@@ -320,6 +227,5 @@ document.addEventListener('DOMContentLoaded', () => {
     },500);
 })
 window.addEventListener('load',()=>{
-console.log('LOADED');
 document.body.classList.add('loaded');
 });
