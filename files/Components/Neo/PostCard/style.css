@@ -1,7 +1,4 @@
 .Neo.PostCard {
-    padding: 1rem;
-    border-radius: 1rem;
-    background-color: var(--Ccard-bg);
     display: flex;
     max-height: 15rem;
 }
@@ -137,23 +134,6 @@
     align-items: center;
     justify-content: center;
     font-weight: 400;
-}
-
-.Neo.PostCard .iconed>i.icon {
-    display: inline-flex;
-    width: 2rem;
-    height: 2rem;
-    align-items: center;
-    justify-content: center;
-    box-sizing: border-box;
-    border-radius: .5rem;
-    background-color: var(--Cbtn-regular-bg);
-    color: var(--Cbtn-content);
-}
-
-.Neo.PostCard .iconed>i.icon>svg {
-    width: 1.25rem;
-    height: 1.25rem;
 }
 
 .Neo.PostCard>.readMore {

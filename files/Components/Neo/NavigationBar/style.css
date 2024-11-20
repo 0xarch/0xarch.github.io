@@ -1,44 +1,44 @@
 @keyframes navigationbar-fin {
-    from {
-        opacity: 0;
-        top: -200px;
-    }
-    to {
-        opacity: 1;
-        top: 0px;
-    }
+from {
+    opacity: 0;
+    top: -200px;
+}
+to {
+    opacity: 1;
+    top: 0px;
+}
 }
 
 .Neo.NavigationBar {
-    padding-left: 1rem;
-    padding-right: 1rem;
-    --Height: 4.5rem;
-    color-scheme: light dark;
-    min-height: var(--Height);
-    position: sticky;
-    top: 0px;
-    background-color: var(--Ccard-bg);
-    backdrop-filter: blur(10px);
-    transition-property: width, height, top, color, background-color;
-    transition-duration: .15s;
-    transition-timing-function: cubic-bezier(.4, 0, .2, 1);
-    border-radius: 0 0 1rem 1rem;
-    box-sizing: border-box;
-    z-index: 1100;
-    width: var(--Wpage-width);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 0 auto;
+padding-left: 1rem;
+padding-right: 1rem;
+--Height: 4.5rem;
+color-scheme: light dark;
+min-height: var(--Height);
+position: sticky;
+top: 0px;
+background-color: var(--Ccard-bg);
+backdrop-filter: blur(10px);
+transition-property: width, height, top, color, background-color;
+transition-duration: .15s;
+transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+border-radius: 0 0 1rem 1rem;
+box-sizing: border-box;
+z-index: 1100;
+width: var(--Wpage-width);
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin: 0 auto;
 }
 
 .Neo.NavigationBar.anim {
-    animation-name: navigationbar-fin;
-    animation-duration: .25s;
+animation-name: navigationbar-fin;
+animation-duration: .25s;
 }
 
 body.focus .Neo.NavigationBar {
-    top: calc(-.5rem - var(--Height));
+top: calc(-.5rem - var(--Height));
 }
 
 .Neo.NavigationBar>.kLogo {
@@ -68,57 +68,58 @@ border-radius: .5rem;
 }
 
 .Neo.NavigationBar>.kLogo:hover::before{
-    transform: scale(1);
-    opacity: 1;
+transform: scale(1);
+opacity: 1;
 }
 
 .Neo.NavigationBar>.kLogo>.home-icon{
-    font-size: 1.75rem;
-    margin-right: .5rem;
+font-size: 1.75rem;
+margin-right: .5rem;
+display: flex;
 }
 
 .Neo.NavigationBar>.kCon {
-    width: fit-content;
-    overflow: hidden;
-    transition: height .2s ease-in-out;
-    display: flex;
-    align-items: center;
-    height: var(--Height);
+width: fit-content;
+overflow: hidden;
+transition: height .2s ease-in-out;
+display: flex;
+align-items: center;
+height: var(--Height);
 }
 
 .Neo.NavigationBar>.kCon>a {
-    padding: 12px 8px;
-    color: var(--Cdisplay);
-    box-sizing: border-box;
-    align-items: center;
-    position: relative;
+padding: 12px 8px;
+color: var(--Cdisplay);
+box-sizing: border-box;
+align-items: center;
+position: relative;
 }
 
 .Neo.NavigationBar>.kCon>a::after {
-    content: '';
-    position: absolute;
-    bottom: 5px;
-    top: calc(100% - 6px);
-    left: 50%;
-    right: 50%;
-    /* background: var(--Cdisplay); */
-    background: light-dark(#000, #fff);
-    transition: left .25s ease-in-out, right .25s ease-in-out;
+content: '';
+position: absolute;
+bottom: 5px;
+top: calc(100% - 6px);
+left: 50%;
+right: 50%;
+/* background: var(--Cdisplay); */
+background: light-dark(#000, #fff);
+transition: left .25s ease-in-out, right .25s ease-in-out;
 }
 
 .Neo.NavigationBar>.kCon>a:hover::after {
-    left: 6px;
-    right: 6px;
+left: 6px;
+right: 6px;
 }
 
 .Neo.NavigationBar>.toggle {
-    padding: 0px;
-    height: var(--Height);
-    width: var(--Height);
-    margin-left: auto;
-    display: none;
-    border: none;
-    color: var(--Cdisplay);
+padding: 0px;
+height: var(--Height);
+width: var(--Height);
+margin-left: auto;
+display: none;
+border: none;
+color: var(--Cdisplay);
 }
 
 @media(max-width: 768px){

@@ -1,25 +1,24 @@
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/brands.min.css");
 :root {
-    color-scheme: light dark;
-    --hue: var(--configHue, 250);
-    --Wpage-width: min(calc(100% - 2rem), 75rem);
-    --Wcon: var(--Wpage-width);
-    --Cbrand: light-dark(oklch(.7 .14 var(--hue)), oklch(.75 .14 var(--hue)));
-    --Cdisplay: light-dark(#000000bf, #ffffffbf);
-    --Cbg: light-dark(oklch(.95 .01 var(--hue)), oklch(.16 .014 var(--hue)));
-    --Ccard-bg: light-dark(white, oklch(.23 .015 var(--hue)));
-    --Cbtn-plain-bg-hover: light-dark(oklch(.95 .025 var(--hue)), oklch(.3 .035 var(--hue)));
-    --Cbtn-content: light-dark(oklch(.55 .12 var(--hue)), oklch(.75 .1 var(--hue)));
-    --Cbtn-regular-bg: light-dark(oklch(.95 .025 var(--hue)), oklch(.33 .035 var(--hue)));
-    --Cbtn-regular-bg-hover: light-dark(oklch(.9 .05 var(--hue)), oklch(.38 .04 var(--hue)));
-    --Ctext-25: light-dark(#0000004d,#ffffff4d);
-    --Ctext-50: light-dark(#0000008d,#ffffff8d);
-    --Ctext-75: light-dark(#000000bf,#ffffffbf);
-    --Ctext-100: light-darK(#000,#fff);
+color-scheme: light dark;
+--hue: var(--configHue, 250);
+--Wpage-width: min(calc(100% - 2rem), 75rem);
+--Wcon: var(--Wpage-width);
+--Cbrand: light-dark(oklch(.7 .14 var(--hue)), oklch(.75 .14 var(--hue)));
+--Cdisplay: light-dark(#000000bf, #ffffffbf);
+--Cbg: light-dark(oklch(.95 .01 var(--hue)), oklch(.16 .014 var(--hue)));
+--Ccard-bg: light-dark(white, oklch(.23 .015 var(--hue)));
+--Ccard-bg-hover: light-dark(oklch(.98 .005 var(--hue)), oklch(.3 .03 var(--hue)));
+--Cbtn-plain-bg-hover: light-dark(oklch(.95 .025 var(--hue)), oklch(.3 .035 var(--hue)));
+--Cbtn-content: light-dark(oklch(.55 .12 var(--hue)), oklch(.75 .1 var(--hue)));
+--Cbtn-regular-bg: light-dark(oklch(.95 .025 var(--hue)), oklch(.33 .035 var(--hue)));
+--Cbtn-regular-bg-hover: light-dark(oklch(.9 .05 var(--hue)), oklch(.38 .04 var(--hue)));
+--Ctext-25: light-dark(#0000004d,#ffffff4d);
+--Ctext-50: light-dark(#0000008d,#ffffff8d);
+--Ctext-75: light-dark(#000000bf,#ffffffbf);
+--Ctext-100: light-darK(#000,#fff);
 }
 @media(max-width:768px){:root{--Wpage-width: 100vw}}
-@media(max-width:700px){.nomobile{display:none}}
-@media(min-width:701px){.onmobile{display:none}}
 body {
 width: 100vw;
 overflow-x: hidden;
@@ -32,7 +31,7 @@ font-family: Roboto, sans-serif, ui-sans-serif, system-ui, sans-serif, "Apple Co
 body::before {
 content: '';
 position: absolute;
-background-image: url("https://lingxi9374.github.io/_astro/banner.DIdI7Zec_1tAjRV.webp");
+background-image: url("/files/banner.webp");
 background-repeat: no-repeat;
 background-size: cover;
 height: 46.25vh;
@@ -69,27 +68,15 @@ hr { opacity: .5; border-bottom-width: 0px }
 .m0{margin:0}.p0{padding:0}.p8{padding:12px}
 *{-webkit-tap-highlight-color:#0000}
 .uWcon{ max-width: var(--Wpage-width); margin-left: auto; margin-right: auto }
-.cLinks { display: flex; flex-wrap: wrap }
-.cLinks a { display: block; text-wrap: nowrap }
-.cLinks>nav { flex: 1 0 0%; padding: 8px }
-.cLinks h3 { text-wrap: nowrap }
 .cPostCon,.cSortCon { list-style: none; padding:0 }
 .cSortCon>a { display: inline-block }
 a { text-decoration: none; color: var(--Cbrand) }
-
-/* FIX */
-.h1 { display: block; font-size: 2em; margin-block-start: .67em;
-    margin-block-end: .67em; margin-inline-start: 0;
-    margin-inline-end: 0; font-weight: bold;
-    unicode-bidi: isolate }
 
 @media(prefers-color-scheme:dark){.hljs{background: #232629;color:#f3f3f3}}
 h2.category-name,h2.archive-label{
 margin-left: 2rem;
 }
-body.not-ready {
-opacity: 0;
-}
+body.not-ready {opacity: 0}
 main.withSide {
 display: flex;
 flex-direction: column-reverse;
@@ -127,7 +114,8 @@ top: 5rem;
 transform: scale(1.1);
 }
 }
-.NeoWidget {
+.NeoWidget,
+.Neo.PostCard {
 padding: 1rem;
 border-radius: 1rem;
 background: var(--Ccard-bg);
@@ -149,15 +137,29 @@ transition-duration: .149s;
 transition-timing-function: ease-in-out;
 }
 body.loaded .uWcon,
-body.main-anim-finished .uWcon:not(.no-anim),
-body.main-anim-finished #NEO_REPLACE {
+body.main-anim-finished :is(.uWcon:not(.no-anim),#NEO_REPLACE){
 opacity: 1;
 top: 0;
 transform: scale(1);
 }
-body.being-replaced .uWcon:not(.no-anim),
-body.being-replaced #NEO_REPLACE {
+body.being-replaced :is(.uWcon:not(.no-anim),#NEO_REPLACE) {
 opacity: 0;
 transform: scale(1.1);
 top: 7rem;
+}
+
+.iconBlock {
+display: inline-flex;
+width: 2rem;
+height: 2rem;
+align-items: center;
+justify-content: center;
+box-sizing: border-box;
+border-radius: .5rem;
+background-color: var(--Cbtn-regular-bg);
+color: var(--Cbtn-content);
+&>svg{
+width: 1.25rem;
+height: 1.25rem;
+}
 }
