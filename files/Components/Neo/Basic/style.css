@@ -1,4 +1,3 @@
-@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/brands.min.css");
 :root {
 color-scheme: light dark;
 --hue: var(--configHue, 250);
@@ -17,6 +16,7 @@ color-scheme: light dark;
 --Ctext-50: light-dark(#0000008d,#ffffff8d);
 --Ctext-75: light-dark(#000000bf,#ffffffbf);
 --Ctext-100: light-darK(#000,#fff);
+font-family: Roboto, sans-serif, system-ui;
 }
 @media(max-width:768px){:root{--Wpage-width: 100vw}}
 body {

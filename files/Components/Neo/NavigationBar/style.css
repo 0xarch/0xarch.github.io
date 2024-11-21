@@ -75,7 +75,6 @@ opacity: 1;
 .Neo.NavigationBar>.kLogo>.home-icon{
 font-size: 1.75rem;
 margin-right: .5rem;
-display: flex;
 }
 
 .Neo.NavigationBar>.kCon {

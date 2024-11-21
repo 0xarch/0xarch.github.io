@@ -29,7 +29,7 @@ globalThis.scrollToTop=()=>window.scrollTo({top:0,behavior:'smooth'});
             let metas = [], links = [];
             let unusedNodes = [];
             for (let childNode of newDocument.head.childNodes) {
-                if (childNode.nodeType !== 1) continue;
+                if (childNode.nodeType !== 1 || childNode.dataset.across) continue;
                 switch (childNode.nodeName) {
                     case 'META':
                         if (!childNode.name || !childNode.content) break;
@@ -47,7 +47,7 @@ globalThis.scrollToTop=()=>window.scrollTo({top:0,behavior:'smooth'});
                 }
             }
             for (let childNode of document.head.childNodes) {
-                if (childNode.nodeType !== 1) continue;
+                if (childNode.nodeType !== 1 || childNode.dataset.across) continue;
                 outer: switch (childNode.nodeName) {
                     case 'TITLE':
                         childNode.textContent = newTitle;
