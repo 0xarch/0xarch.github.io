@@ -165,4 +165,8 @@ color: var(--Cbtn-content)}
 transform: rotate(180deg)}}}
 @media(max-width:768px){
 .Neo.NextPage{
-flex-direction: column}}
+flex-direction: column;
+&>a{
+width: unset;
+}
+}}
