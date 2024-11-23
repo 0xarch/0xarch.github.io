@@ -187,12 +187,14 @@ height: 2rem;
 
 .Neo.PostCard.image>.readMore>.button {
 height: 100%;
+width: 100%;
+display: flex;
+justify-content: center;
 }
 
 .Neo.PostCard.image>.readMore img {
 object-fit: cover;
 object-position: center;
-min-width: 100%;
 height: 100%;
 }
 
