@@ -218,6 +218,7 @@ function DoOthers(){
     Search();
 }
 document.addEventListener('DOMContentLoaded', () => {
+    document.body.classList.add('dom-loaded');
     setTimeout(scrollToTop,0);
     DoOthers();
     const NAV_ROOT = document.querySelector('.Neo.NavigationBar');

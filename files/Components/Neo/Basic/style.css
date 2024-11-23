@@ -31,7 +31,7 @@ font-family: Roboto, sans-serif, ui-sans-serif, system-ui, sans-serif, "Apple Co
 body::before {
 content: '';
 position: absolute;
-background-image: url("/files/banner.webp");
+background-image: url("//cdn.jsdelivr.net/gh/0xarch/0xarch.github.io/files/banner.webp");
 background-repeat: no-repeat;
 background-size: cover;
 height: 46.25vh;
@@ -136,7 +136,7 @@ transition-property: max-width, height, opacity, transform, top, margin;
 transition-duration: .149s;
 transition-timing-function: ease-in-out;
 }
-body.loaded .uWcon,
+body.dom-loaded .uWcon,
 body.main-anim-finished :is(.uWcon:not(.no-anim),#NEO_REPLACE){
 opacity: 1;
 top: 0;
