@@ -220,7 +220,7 @@ function DoOthers(){
 document.addEventListener('DOMContentLoaded', () => {
     new Promise((resolve,reject)=>{
         if(document.getElementById('NEO_SIDE')){
-            fetch('/_neo/side-widgets/index.html')
+            fetch('/neo/side-widgets/index.html')
                 .then((resp)=>resp.text())
                 .then((value)=>{
                     document.getElementById('NEO_SIDE').innerHTML = value;
