@@ -218,10 +218,9 @@ function DoOthers(){
     Search();
 }
 document.addEventListener('DOMContentLoaded', () => {
-    // let { promise, resolve } = Promise.withResolvers();
     new Promise((resolve,reject)=>{
         if(document.getElementById('NEO_SIDE')){
-            fetch('/.template/side-widgets/index.html')
+            fetch('/_neo/side-widgets/index.html')
                 .then((resp)=>resp.text())
                 .then((value)=>{
                     document.getElementById('NEO_SIDE').innerHTML = value;
