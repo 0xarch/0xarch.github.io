@@ -218,14 +218,28 @@ function DoOthers(){
     Search();
 }
 document.addEventListener('DOMContentLoaded', () => {
-    document.body.classList.add('dom-loaded');
-    setTimeout(scrollToTop,0);
-    DoOthers();
-    const NAV_ROOT = document.querySelector('.Neo.NavigationBar');
-    NAV_ROOT.classList.add('anim');
-    setTimeout(()=>{
-        NAV_ROOT.classList.remove('anim')
-    },500);
+    // let { promise, resolve } = Promise.withResolvers();
+    new Promise((resolve,reject)=>{
+        if(document.getElementById('NEO_SIDE')){
+            fetch('/.template/side-widgets/index.html')
+                .then((resp)=>resp.text())
+                .then((value)=>{
+                    document.getElementById('NEO_SIDE').innerHTML = value;
+                    resolve();
+                });
+        } else {
+            resolve();
+        }
+    }).then(()=>{
+        document.body.classList.add('dom-loaded');
+        setTimeout(scrollToTop,0);
+        DoOthers();
+        const NAV_ROOT = document.querySelector('.Neo.NavigationBar');
+        NAV_ROOT.classList.add('anim');
+        setTimeout(()=>{
+            NAV_ROOT.classList.remove('anim')
+        },500);
+    });
 })
 window.addEventListener('load',()=>{
 document.body.classList.add('loaded');

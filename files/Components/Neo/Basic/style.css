@@ -139,12 +139,14 @@ position: relative;
 transition-property: max-width, height, opacity, transform, top, margin;
 transition-duration: .149s;
 transition-timing-function: ease-in-out;
+pointer-events: none;
 }
 body.dom-loaded .uWcon,
 body.main-anim-finished #NEO_REPLACE {
 opacity: 1;
 top: 0;
 transform: scale(1);
+pointer-events: unset;
 }
 body.being-replaced #NEO_REPLACE {
 opacity: 0;
