@@ -1,0 +1,149 @@
+<!DOCTYPE html ><html lang="zh"><head> <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.9.0/styles/default.min.css"/><script src="https://unpkg.com/@highlightjs/cdn-assets@11.9.0/highlight.min.js"></script><link rel="stylesheet" href="/files/post-fix.css"/><link rel="stylesheet" href="/files/admon-extra.min.css"/><meta data-across="1" name="darkreader-lock"/><link data-across="1" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/brands.min.css"/><link data-across="1" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/roboto-font@0.1.0/css/fonts.min.css"/><link data-across="1" rel="icon" href="/files/icon.svg"/><meta data-across="1" charset="utf-8"/><meta data-across="1" name="viewport" content="width:device-width,initial-scale=1.0"/><meta name="author" content="葱投"/><meta name="description" content="本文写于2024年6月。旨在帮助新手进行简单快速的JavaScript 入门。  
+转载并总结自 MDN。  
+本篇包含：函数调用、变量声明的简易阐述。"/><meta name="keywords" content="Node.js JavaScript"/><meta data-across="1" http-equiv="content-language" content="zh-CN"/><link data-id="0" data-across="1" rel="stylesheet" href="/files/Components/Neo/Basic/style.css"/><script src="/files/Components/Neo/Basic/script.js"></script><link data-id="1" data-across="1" rel="stylesheet" href="/files/Components/Neo/Footer/style.css"/><link data-id="2" data-across="1" rel="stylesheet" href="/files/Components/Neo/NavigationBar/style.css"/><link data-id="3" data-across="1" rel="stylesheet" href="/files/Components/Neo/SearchComp/style.css"/><link data-id="4" data-across="1" rel="stylesheet" href="/files/Components/Neo/Widgets/UserIntro/style.css"/><link data-id="5" data-across="1" rel="stylesheet" href="/files/Components/Neo/Widgets/CateList/style.css"/><link data-id="6" data-across="1" rel="stylesheet" href="/files/Components/Neo/Widgets/TagList/style.css"/><link data-id="7" rel="stylesheet" href="/files/Components/Neo/PageNavigator/style.css"/><link rel="stylesheet" href="/files/components/KContentTable.css"/><script src="/files/es/KContentTable.js"></script><link data-id="8" rel="stylesheet" href="/files/Components/Neo/LicenseNotice/style.css"/><title>JavaScript 基础 :: 文章</title></head><body class="colorful" OCP="OVERRIDE" style="--color1:#b23964;--color2:#ac3280"><header class="Neo NavigationBar"><a class="smooth-navigated kLogo" href="/"><div class="home-icon"><svg height="1em" viewBox="0 0 24 24"><symbol id="svg:material-symbols:home-outline-rounded"><path d="M6 19h3v-5q0-.425.288-.712T10 13h4q.425 0 .713.288T15 14v5h3v-9l-6-4.5L6 10zm-2 0v-9q0-.475.213-.9t.587-.7l6-4.5q.525-.4 1.2-.4t1.2.4l6 4.5q.375.275.588.7T20 10v9q0 .825-.588 1.413T18 21h-4q-.425 0-.712-.288T13 20v-5h-2v5q0 .425-.288.713T10 21H6q-.825 0-1.412-.587T4 19m8-6.75" fill="currentColor"></path></symbol><use xlink:href="#svg:material-symbols:home-outline-rounded"</svg></div><div class="text">葱投的博客</div></a><div class="toggle"><svg viewBox="0 0 48 48" fill="none" height="48" stroke="currentColor" stroke-width="2" stroke-linecap="round" width="48" xmlns="http://www.w3.org/2000/svg"><path d="M10,14h24M10,24h28M10,34h28"></path></svg></div><div class="kCon"><a class="smooth-navigated" href="/">首页</a><a class="smooth-navigated" href="/archive/1">归档</a><a class="smooth-navigated" href="/about/">关于</a><a class="smooth-navigated" href="/status/">状态 </a><a href="/tools/">工具</a><a href="/demos/">Demo</a><div class="Neo SearchComp"><a class="openPanel">搜索</a><div class="URL">/searchStrings.json</div></div></div><dialog class="Neo SearchComp_Panel"><div class="searchBar flex jcc"><input class="--I"/><div class="--S">搜索</div><div class="--C">×</div></div><hr/><div class="--P"></div></dialog></header><main class="uWcon withSide no-anim"><div class="sideCon" id="NEO_SIDE"></div><div class="mainCon" id="NEO_REPLACE"><div class="post-main NeoWidget"><div class="post-meta"><div class="meta-content"><div class="pubDate"><i class="iconBlock"><svg height="1em" viewBox="0 0 24 24"><symbol id="svg:material-symbols:calendar-today-outline-rounded"><path d="M5 22q-.825 0-1.412-.587T3 20V6q0-.825.588-1.412T5 4h1V3q0-.425.288-.712T7 2t.713.288T8 3v1h8V3q0-.425.288-.712T17 2t.713.288T18 3v1h1q.825 0 1.413.588T21 6v14q0 .825-.587 1.413T19 22zm0-2h14V10H5zM5 8h14V6H5zm0 0V6z" fill="currentColor"></path></symbol><use xlink:href="#svg:material-symbols:calendar-today-outline-rounded"</svg></i><date>2024-6-3</date></div><div class="category"><i class="iconBlock"><svg height="1em" viewBox="0 0 24 24"><symbol id="svg:material-symbols:book-2-outline-rounded"><path d="M6 15.325q.35-.175.725-.25T7.5 15H8V4h-.5q-.625 0-1.062.438T6 5.5zM10 15h8V4h-8zm-4 .325V4zM7.5 22q-1.45 0-2.475-1.025T4 18.5v-13q0-1.45 1.025-2.475T7.5 2H18q.825 0 1.413.587T20 4v12.525q0 .2-.162.363t-.588.362q-.35.175-.55.5t-.2.75t.2.763t.55.487t.55.413t.2.562v.25q0 .425-.288.725T19 22zm0-2h9.325q-.15-.35-.237-.712T16.5 18.5q0-.4.075-.775t.25-.725H7.5q-.65 0-1.075.438T6 18.5q0 .65.425 1.075T7.5 20" fill="currentColor"></path></symbol><use xlink:href="#svg:material-symbols:book-2-outline-rounded"</svg></i><a class="smooth-navigated" href="/category/s前端技术/1/index.html">前端技术</a></div><div class="tag"><i class="iconBlock"><svg height="1em" viewBox="0 0 24 24"><symbol id="svg:material-symbols:tag-rounded"><path d="m9 16l-.825 3.275q-.075.325-.325.525t-.6.2q-.475 0-.775-.375T6.3 18.8L7 16H4.275q-.5 0-.8-.387T3.3 14.75q.075-.35.35-.55t.625-.2H7.5l1-4H5.775q-.5 0-.8-.387T4.8 8.75q.075-.35.35-.55t.625-.2H9l.825-3.275Q9.9 4.4 10.15 4.2t.6-.2q.475 0 .775.375t.175.825L11 8h4l.825-3.275q.075-.325.325-.525t.6-.2q.475 0 .775.375t.175.825L17 8h2.725q.5 0 .8.387t.175.863q-.075.35-.35.55t-.625.2H16.5l-1 4h2.725q.5 0 .8.388t.175.862q-.075.35-.35.55t-.625.2H15l-.825 3.275q-.075.325-.325.525t-.6.2q-.475 0-.775-.375T12.3 18.8L13 16zm.5-2h4l1-4h-4z" fill="currentColor"></path></symbol><use xlink:href="#svg:material-symbols:tag-rounded"</svg></i><a class="smooth-navigated" href="/tag/sNode.js/1/index.html">Node.js</a><div class="hr"></div><a class="smooth-navigated" href="/tag/sJavaScript/1/index.html">JavaScript</a></div></div></div><article id="markdown_fillContent"><h1 id="javascript-基础">JavaScript 基础</h1><h2 id="概览和导航">概览和导航</h2><p>由于篇幅过长，JS基础将分篇上传。</p><p><a href="/read/2024/6/3/js:baseJS2-obj_and_proto">对象和原型链</a><br><a href="/read/2024/6/3/js:baseJS3-branch_statement">条件和分支</a><br><a href="/read2024/6/5/js:baseJS4-loop_and_iter">循环和迭代</a></p><p>JavaScript (简称JS/ES，或ECMA Script)， 一种脚本语言。</p><p>你需要一个解释器来运行一个 JS 脚本。</p><h2 id="注释">注释</h2><p>通过双斜杠定义行注释。</p><p>通过斜杠+星号定义块注释。</p><pre><code class="language-js">// Line Comment
+
+/*
+Block Comment
+Block line 2
+*/
+</code></pre><h3 id="jsdoc">JSDoc</h3><p>非标准拓展语法，以斜杠+双星号开头，用于标识对象。</p><pre><code class="language-js">/**
+ * This is JSDoc
+ * @param {string} arg1
+ * @param {number[]} args
+ * @returns {string}
+*/
+function markedByJSDoc(arg1,...args){
+  return &#39;2&#39;;
+}
+</code></pre><h2 id="作用域">作用域</h2><p>作用域是当前的执行上下文，值和表达式在其中“可见”或可被访问。如果一个变量或表达式不在当前的作用域中，那么它是不可用的。作用域也可以堆叠成层次结构，子作用域可以访问父作用域，反过来则不行。</p><p>JavaScript 的作用域分以下三种：</p><ul><li>全局作用域：脚本模式运行所有代码的默认作用域</li><li>模块作用域：模块模式中运行代码的作用域</li><li>函数作用域：由函数创建的作用域</li></ul><p>此外，用 let 或 const 声明的变量属于额外的作用域：</p><ul><li>块级作用域：用一对花括号（一个代码块）创建出来的作用域</li></ul><p>由于函数会创建作用域，因而在函数中定义的变量无法从该函数外部访问，也无法从其他函数内部访问。</p><h3 id="变量查找">变量查找</h3><p>JavaScript 会首先在当前作用域中查找变量，若当前作用域中没有查找到，则会进入上一个作用域并查找变量，直到到达全局作用域。</p><h4 id="暂时性死区">暂时性死区</h4><p>用 <code>let</code>、<code>const</code> 或 <code>class</code> 声明的变量(和类) 具有此特性。</p><p>暂时性死区的范围：从代码块开始到变量声明并初始化之前。</p><p>尝试访问在暂时性死区中的变量（此时未初始化）会抛出错误(<code>ReferenceError</code>)。当代码执行到变量被声明的位置时才会初始化变量。</p><p>注意：通过 <code>var</code> 声明的变量不具备此特性，若尝试在声明位置前访问，则会返回 <code>undefined</code> 而不是抛出错误。</p><p>使用“暂时性”一词是因为这个区域取决于代码执行的时间点，而不是代码编写的顺序。例如，下面的代码能够运行，是因为虽然使用 let 变量的函数写在变量声明之前，但函数是在暂时性死区外面被调用的。</p><pre><code class="language-js">{
+  // 暂时性死区始于作用域开头
+  const func = () =&gt; console.log(letVar); // 没问题
+
+  // 在暂时性死区内访问 letVar 会抛出 `ReferenceError`
+
+  let letVar = 3; // 暂时性死区结束（对 letVar 而言）
+  func(); // 在暂时性死区外调用
+}
+</code></pre><p>在暂时性死区内对 <code>let</code> 声明的变量使用 <code>typeof</code> 运算符也会抛出 <code>ReferenceError</code>：</p><pre><code class="language-js">typeof i; // ReferenceError: Cannot access &#39;i&#39; before initialization
+let i = 10;
+</code></pre><p>这与对未声明的变量和存放 <code>undefined</code> 值的变量使用 <code>typeof</code> 运算符不同：</p><pre><code class="language-js">console.log(typeof undeclaredVariable); // &quot;undefined&quot;
+</code></pre><h2 id="关键字">关键字</h2><p>以下词语属于 JS 关键字。</p><ul><li>break</li><li>case</li><li>catch</li><li>class</li><li>const</li><li>continue</li><li>debugger</li><li>default</li><li>delete</li><li>do</li><li>else</li><li>export</li><li>extends</li><li>finally</li><li>for</li><li>function</li><li>if</li><li>import</li><li>in</li><li>instanceof</li><li>new</li><li>return</li><li>super</li><li>switch</li><li>this</li><li>throw</li><li>try</li><li>typeof</li><li>var</li><li>void</li><li>while</li><li>with</li><li>yield</li><li>implements</li><li>interface</li><li>let</li><li>package</li><li>private</li><li>protected</li><li>public</li><li>static</li><li>await</li><li>enum (预定)</li></ul><p>以下字符为字面量，同样不能作为标识使用。</p><ul><li>null</li><li>true</li><li>false</li></ul><h2 id="变量">变量</h2><h3 id="变量声明和更改">变量声明和更改</h3><p>JS 中，可以使用 <code>var</code> <code>let</code> <code>const</code> 定义变量，其中使用 <code>const</code> 定义的变量不可变(对象可变)。</p><p>不推荐使用 <code>var</code> 定义变量。</p><p>实例：</p><pre><code class="language-js">var someNumber = 0;
+let foo = &#39;foo&#39;;
+const bar = &#39;bar&#39;;
+let arrayVar = [&#39;1&#39;,2,foo];
+
+foo = &#39;bar&#39;; // 修改
+someNumber = 1;
+var someNumber = 2;
+</code></pre><h3 id="重复声明">重复声明</h3><p><code>const</code> <code>let</code> 声明的变量不能被同一个作用域中的任何其他声明重复声明，包括 <code>let</code>、<code>const</code>、<code>class</code>、<code>function</code>、<code>var</code> 和 <code>import</code> 声明。</p><pre><code class="language-js">let foo = &#39;foo&#39;;
+let foo = &#39;bar&#39;; // SyntaxError: Indentifier &#39;foo&#39; has already been declared
+</code></pre><p>在函数主体中用 <code>let</code> 声明的变量不能与参数同名，在 <code>catch</code> 块中用 <code>let</code> 声明的变量不能与被 <code>catch</code> 绑定的标识符同名。</p><pre><code class="language-js">function foo(a) {
+  let a = 1; // SyntaxError: Identifier &#39;a&#39; has already been declared
+}
+try {
+} catch (e) {
+  let e; // SyntaxError: Identifier &#39;e&#39; has already been declared
+}
+</code></pre><p>尤其当你使用 <code>switch</code> 语句时需要注意此特性，参见 <a href="../../../../2024/6/3/js:baseJS3-branch_statement.md/#switch-%E4%BD%9C%E7%94%A8%E5%9F%9F">switch 作用域</a></p><h3 id="声明变量javascript-字面量">声明变量、JavaScript 字面量</h3><p>通过 JS 内置语法定义基本类型变量。</p><ol><li>字符串</li></ol><p>通过单引号或双引号定义。</p><ol start="2"><li>数组</li></ol><p>通过中括号定义。</p><ol start="3"><li>正则表达式</li></ol><p>通过斜杠定义。</p><ol start="4"><li>对象</li></ol><p>通过花括号定义。</p><ol start="5"><li>类</li></ol><p>通过 <code>new</code> 定义。</p><ol start="6"><li>布尔值</li></ol><p>通过 <code>true</code> 和 <code>false</code> 定义。</p><h4 id="实例">实例</h4><pre><code class="language-js">let str = &#39;String&#39;;
+let arr = [&#39;A&#39;,&#39;r&#39;,&#39;r&#39;,&#39;a&#39;,&#39;y&#39;,1]; // 注意：数组内元素类型可以不一致
+let regex = /^(Minecraft\*? .*?)/g;
+let obj = {
+    a: 1,
+    b: &#39;fooBar&#39;
+};
+let cls = new IntersectionObserver(); // 这个类是 Web API 的一部分，仅在 Web 环境可用。
+let boolTrue = true;
+</code></pre><h2 id="函数">函数</h2><p>一般来说，一个函数是可以通过外部代码调用的一个&quot;子程序&quot;（或在递归的情况下由内部函数调用）。像程序本身一样，一个函数由称为函数体的一系列语句组成。值可以传递给一个函数，函数将返回一个值。在 JavaScript 中，函数是头等对象，因为它们可以像任何其他对象一样具有属性和方法。它们与其他对象的区别在于函数可以被调用。简而言之，它们是 <code>Function</code> 对象。</p><h3 id="定义函数">定义函数</h3><h4 id="function">function</h4><p>标准的函数定义方式。通过此方式定义的函数具有面向对象的特性。</p><pre><code class="language-js">function someFunction(){
+    doSomething();
+}
+var someFunction2 = function(){
+    doSomething();
+}
+var someFunction3 = function functionName(){
+    doSomething();
+}
+</code></pre><h4 id="箭头函数">箭头函数</h4><p>标准的函数定义方式。通过此方式定义的函数不具有部分面向对象的特性和部分过时的API;</p><blockquote><p>此定义的函数没有 this , arguments , super 绑定。 不能用作构造函数。 不能作为生成器函数。</p></blockquote><pre><code class="language-js">const someFunction = () =&gt; { 
+    doSomething();
+}
+const someFunction2 = param =&gt; { // param: 零参数需要用 () 表示。只有一个参数时不需要括号。参数部分支持剩余参数、默认参数和解构赋值。
+    doSomething(param);
+}
+</code></pre><h4 id="new-function">new Function</h4><pre><code class="language-js">const fun = new Function(&#39;doSomething()&#39;);
+</code></pre><p>不推荐此方式。</p><h3 id="更改函数">更改函数</h3><p>通过 <code>function</code> 定义的函数或者非 <code>const</code> 关键字定义的箭头函数可以被更改，就如同变量一样。</p><h3 id="参数">参数</h3><h4 id="参数声明和使用">参数声明和使用</h4><p>在声明函数时可以定义参数的名字，并在函数中直接使用。</p><pre><code class="language-js">function someFunction(arg1,...arg2){
+    console.log(arg1,arg2);
+}
+</code></pre><h5 id="默认参数">默认参数</h5><p>函数默认参数允许在没有值或 <code>undefined</code> 被传入时使用默认形参。</p><pre><code class="language-js">function multiply(a, b = 1) {
+  return a * b;
+}
+
+console.log(multiply(5, 2));
+// Expected output: 10
+
+console.log(multiply(5));
+// Expected output: 5
+</code></pre><h5 id="剩余参数">剩余参数</h5><p>剩余参数语法允许我们将一个不定数量的参数表示为一个数组。此方法可以将函数调用时参数列表末尾所有未被捕捉的参数统合成一个数组，并可以在函数内访问。</p><pre><code class="language-js">function sum(...theArgs) {
+  let total = 0;
+  for (const arg of theArgs) {
+    total += arg;
+  }
+  return total;
+}
+
+console.log(sum(1, 2, 3));
+// Expected output: 6
+
+console.log(sum(1, 2, 3, 4));
+// Expected output: 10
+</code></pre><h5 id="解构赋值">解构赋值</h5><p>解构赋值语法是一种 JS 表达式。可以将数组中的值或对象的属性取出，赋值给其他变量。</p><pre><code class="language-js">let a, b, rest;
+[a, b] = [10, 20];
+
+console.log(a);
+// Expected output: 10
+
+console.log(b);
+// Expected output: 20
+
+[a, b, ...rest] = [10, 20, 30, 40, 50];
+
+console.log(rest);
+// Expected output: Array [30, 40, 50]
+</code></pre><h4 id="使用未声明的参数">使用未声明的参数</h4><p>通过 <code>arguments</code> 对象可以访问传入的所有参数。 <code>arguments</code> 是一个类数组，所以你可以直接用下标来访问。</p><p><strong>注意</strong> 由于剩余参数的引入，已经不建议使用此特性。</p><p><strong>注意</strong> 此特性在箭头函数中不可用。</p><h4 id="参数引用">参数引用</h4><p>调用函数时，传递给函数的值被称为函数的实参（值传递），对应位置的函数参数名叫作形参。如果实参是一个包含原始值 (数字，字符串，布尔值) 的变量，则就算函数在内部改变了对应形参的值，返回后，该实参变量的值也不会改变。如果实参是一个对象引用，则对应形参会和该实参指向同一个对象。假如函数在内部改变了对应形参的值，返回后，实参指向的对象的值也会改变。</p><pre><code class="language-js">// 示例来自 MDN
+/* 定义函数 myFunc */
+function myFunc(theObject) {
+  //实参 mycar 和形参 theObject 指向同一个对象。
+  theObject.brand = &quot;Toyota&quot;;
+}
+
+/*
+ * 定义变量 mycar;
+ * 创建并初始化一个对象;
+ * 将对象的引用赋值给变量 mycar
+ */
+var mycar = {
+  brand: &quot;Honda&quot;,
+  model: &quot;Accord&quot;,
+  year: 1998,
+};
+
+/* 弹出 &#39;Honda&#39; */
+window.alert(mycar.brand);
+
+/* 将对象引用传给函数 */
+myFunc(mycar);
+
+/*
+ * 弹出 &#39;Toyota&#39;,对象的属性已被修改。
+ */
+console.log(mycar.brand);
+</code></pre><h4 id="回调函数作为参数">回调函数作为参数</h4><p>回调函数可以作为参数的一部分传入函数，并在适当时机被执行。</p><blockquote><p>回调可以通过两种方式进行调用：同步和异步。同步回调在外部函数调用后立即调用，没有中间的异步任务；异步回调在某个稍后的时间点调用，通常是在一个异步操作完成后。</p></blockquote><p>回调函数可以直接在参数列表中定义，箭头函数同样可以作为回调函数。</p><p>JS 执行器并不关心调用回调函数时传入变量的名字。</p><pre><code class="language-js">function foo(arg1){
+    arg1(&#39;the argument&#39;);
+}
+function bar(arg1){
+    console.log(&#39;调用了预先定义的回调函数，传入参数:&#39;,arg1);
+}
+
+foo(bar);
+foo(param =&gt; {
+    console.log(&#39;调用了直接定义的回调函数，传入参数:&#39;,param)
+})
+</code></pre><h3 id="返回值">返回值</h3><p>使用 <code>return</code> 关键字可以中断函数执行并返回一个值，此值作为函数的值，因此可以直接使用 <code>a=b()</code> 这类语法。</p></article><div class="Neo LicenseNotice"><div class="title">JavaScript 基础</div><div class="announce-box"><div class="author"><span class="label">作者</span><span class="val">葱投</span></div><div class="publish"><span class="label">发布于</span><span class="val">2024-6-3</span></div><div class="license"><span class="label">许可协议</span><span class="val"><a class="h-link" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a></span></div></div><div class="background"><svg viewBox="0 0 30 30" fill="currentColor"><g><path d="M14.972 0c4.196 0 7.769 1.465 10.715 4.393A14.426 14.426 0 0128.9 9.228C29.633 11.04 30 12.964 30 15c0 2.054-.363 3.978-1.085 5.772a13.77 13.77 0 01-3.2 4.754 15.417 15.417 0 01-4.983 3.322A14.932 14.932 0 0114.973 30c-1.982 0-3.88-.38-5.692-1.14a15.087 15.087 0 01-4.875-3.293c-1.437-1.437-2.531-3.058-3.281-4.862A14.71 14.71 0 010 15c0-1.982.38-3.888 1.138-5.719a15.062 15.062 0 013.308-4.915C7.303 1.456 10.812 0 14.972 0zm.055 2.706c-3.429 0-6.313 1.196-8.652 3.589a12.896 12.896 0 00-2.72 4.031 11.814 11.814 0 00-.95 4.675c0 1.607.316 3.156.95 4.646a12.428 12.428 0 002.72 3.992 12.362 12.362 0 003.99 2.679c1.483.616 3.037.924 4.662.924 1.607 0 3.164-.312 4.675-.937a12.954 12.954 0 004.084-2.705c2.339-2.286 3.508-5.152 3.508-8.6 0-1.66-.304-3.231-.91-4.713a11.994 11.994 0 00-2.651-3.965c-2.412-2.41-5.314-3.616-8.706-3.616zm-.188 9.803l-2.01 1.045c-.215-.445-.477-.758-.79-.937-.312-.178-.602-.268-.87-.268-1.34 0-2.01.884-2.01 2.652 0 .803.17 1.446.509 1.928.34.482.84.724 1.5.724.876 0 1.492-.43 1.85-1.286l1.847.937a4.407 4.407 0 01-1.634 1.728c-.696.42-1.464.63-2.303.63-1.34 0-2.42-.41-3.242-1.233-.821-.82-1.232-1.964-1.232-3.428 0-1.428.416-2.562 1.246-3.401.83-.84 1.879-1.26 3.147-1.26 1.858 0 3.188.723 3.992 2.17zm8.652 0l-1.983 1.045c-.214-.445-.478-.758-.79-.937-.313-.178-.613-.268-.897-.268-1.34 0-2.01.884-2.01 2.652 0 .803.17 1.446.51 1.928.338.482.838.724 1.5.724.874 0 1.49-.43 1.847-1.286l1.875.937a4.606 4.606 0 01-1.66 1.728c-.696.42-1.455.63-2.277.63-1.357 0-2.441-.41-3.253-1.233-.814-.82-1.22-1.964-1.22-3.428 0-1.428.415-2.562 1.246-3.401.83-.84 1.879-1.26 3.147-1.26 1.857 0 3.18.723 3.965 2.17z" fill="currentColor"></path></g></svg></div></div></div><div class="Neo NextPage"><a class="smooth-navigated left" href="/read/2024/6/3/js:baseJS2-obj_and_proto/"><div class="arrow"><svg height="1em" viewBox="0 0 24 24"><symbol id="svg:material-symbols:chevron-right-rounded"><path d="M12.6 12L8.7 8.1q-.275-.275-.275-.7t.275-.7t.7-.275t.7.275l4.6 4.6q.15.15.213.325t.062.375t-.062.375t-.213.325l-4.6 4.6q-.275.275-.7.275t-.7-.275t-.275-.7t.275-.7z" fill="currentColor"></path></symbol><use xlink:href="#svg:material-symbols:chevron-right-rounded"</svg></div><div class="title">JS基础II:对象和原型</div></a><a class="smooth-navigated right" href="/read/2024/4/9/fewu:simplus-theme/"><div class="title">simplus主题源码概述</div><div class="arrow"><svg height="1em" viewBox="0 0 24 24"><use xlink:href="#svg:material-symbols:chevron-right-rounded"</svg></div></a></div></div></main><footer class="Neo Footer uWcon"><div class="kLinks"><nav><h3>Fewu</h3><span>Fewu Generator</span><span>1.3.0-devel</span><a href="https://github.com/0xarch/fewu">Source Code</a></nav><nav><h3>Neo</h3><span>1.0.0</span><a href="https://github.com/0xarch/fewu-theme-neo">Github</a><a href="https://github.com/0xarch/fewu-theme-simplus">Simplus</a></nav><nav><h3>Contact</h3><a href="https://matrix.to/#/#solo_esta_vez:mozilla.org">[Matrix] Moz</a><a href="https://matrix.to/#/#solo_esta_vez:fedora.im">[Matrix] Fedora</a><a href="mailto:alanqa-ops@outlook.com">Outlook</a><a href="mailto:mulzixi@gmail.com">GMail</a></nav><nav><h3>Friends</h3><a href="https://yuanshen.dev">218</a><a href="https://wangyuzhen666.github.io">Wyz666</a><a href="https://lingxi9374.github.io">泠熙</a><a href="https://genshinimpact.net">?</a></nav></div><br/><hr/><div class="kCopyr tac">2024 自豪地由 Fewu 驱动，使用 Neo 主题. 2023 - 2024 0xarch 及 Soloev, 保留所有权利. 对于所有本站发布的文章，默认使用 Creative Commons BY-NC-SA 4.0 许可.</div></footer><div class="KContentTable"><div class="kTOC"></div><br/><button class="kButton">TOC</button></div></body></html>

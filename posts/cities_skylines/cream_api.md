@@ -21,9 +21,9 @@ category: 游戏
 
 在游戏主页点击`管理`，然后移到`管理`，在弹出菜单中选择`浏览本地文件`：
 
-![](/resources/cities_skylines.cream_api.screenshots/1.png)
-![](/resources/cities_skylines.cream_api.screenshots/2.png)
-![](/resources/cities_skylines.cream_api.screenshots/3.png)
+![](cream_api/1.png)
+![](cream_api/2.png)
+![](cream_api/3.png)
 
 > Linux 需要在打开的文件管理器中依次进入 `Cities_Data/Plugins/x86_64`。
 
@@ -33,13 +33,13 @@ category: 游戏
 
 下滑，找到 `[dlc]` 小节。
 
-![](/resources/cities_skylines.cream_api.screenshots/dlc_section.png)
+![](cream_api/dlc_section.png)
 
 自介绍文段后的 `ID = Label` 列表就是我们需要修改的。其中 `Label` 是对应 DLC 的名字。
 
 找出你不想要的 DLC，在最前面加 `;` 或 `#` 将其注释。本示例关闭了 `Rail Hawk Radio` 和 `Sunny Breeze Radio`。
 
-![](/resources/cities_skylines.cream_api.screenshots/off.png)
+![](cream_api/off.png)
 
 !!! tip
 一定要用半角符号注释。如果你不确定，请复制这个 `#`。
