@@ -180,3 +180,7 @@ color: var(--Ctext-25);
 background: light-dark(#0000000d,#ffffff0d);
 }
 }
+
+#markdown_fillContent {
+    line-height: 1.75rem;
+}
