@@ -14,9 +14,9 @@ highlight: true
 
 由于篇幅过长，JS基础将分篇上传。
 
-[对象和原型链](../baseJS2-obj_and_proto)  
-[条件和分支](../baseJS3-branch_statement)  
-[循环和迭代](../baseJS4-loop_and_iter)
+[对象和原型链](baseJS2-obj_and_proto)  
+[条件和分支](baseJS3-branch_statement)  
+[循环和迭代](baseJS4-loop_and_iter)
 
 JavaScript (简称JS/ES，或ECMA Script)， 一种脚本语言。
 

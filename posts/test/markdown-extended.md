@@ -1,8 +1,8 @@
 ---
 title: 扩展 Markdown 语法测试
-date: 2024-11-18
+date: 0000-0-0
 tags: Markdown
-category: Markdown
+category: 测试
 ---
 使用 Fewu 1.2.5 添加的 markedExtras 功能支持更多 Markdown 语法。
 <!--more-->

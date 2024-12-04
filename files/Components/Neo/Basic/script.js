@@ -26,18 +26,11 @@ globalThis.scrollToTop=()=>window.scrollTo({top:0,behavior:'smooth'});
             window.history[isBack ? 'replaceState' : 'pushState']('', '', url);
             // process head.
             let newTitle = newDocument.head.querySelector('title').innerHTML;
-            let metas = [], links = [];
+            let links = [];
             let unusedNodes = [];
             for (let childNode of newDocument.head.childNodes) {
                 if (childNode.nodeType !== 1 || childNode.dataset.across) continue;
                 switch (childNode.nodeName) {
-                    case 'META':
-                        if (!childNode.name || !childNode.content) break;
-                        metas.push({
-                            name: childNode.name,
-                            content: childNode.content
-                        });
-                        break;
                     case 'LINK':
                         links.push({
                             rel: childNode.rel,
@@ -61,24 +54,8 @@ globalThis.scrollToTop=()=>window.scrollTo({top:0,behavior:'smooth'});
                         }
                         unusedNodes.push(childNode);
                         break;
-                    case 'META':
-                        if (!childNode.name || !childNode.content) break;
-                        for (let i = 0; i < metas.length; i++) {
-                            if (childNode.name == metas[i].name && childNode.content == metas[i].content) {
-                                metas.splice(i, 1);
-                                break outer;
-                            }
-                        }
-                        unusedNodes.push(childNode);
-                        break;
                 }
             }
-            metas.forEach(v => {
-                let el = document.createElement('meta');
-                el.name = v.name;
-                el.content = v.content;
-                document.head.appendChild(el);
-            });
             links.forEach(v => {
                 let el = document.createElement('link');
                 el.rel = v.rel;
@@ -89,21 +66,10 @@ globalThis.scrollToTop=()=>window.scrollTo({top:0,behavior:'smooth'});
             // process body
             document.body.classList.add('not-ready');
             document.body.classList.remove('being-replaced');
-            let NEW_NEO_REPLACE_NODE = newDocument.querySelector('#NEO_REPLACE');
-            if(NEO_REPLACE_NODE && NEW_NEO_REPLACE_NODE){
-                // new #NEO_REPLACE
-                NEO_REPLACE_NODE.innerHTML = NEW_NEO_REPLACE_NODE.innerHTML;
-                // NEO_REPLACE_NODE.style.setProperty('height','100%');
-            } else {
-                console.log('USING LEGACY SWITCH');
-                document.body.innerHTML = newDocument.body.innerHTML;
-            }
+            NEO_REPLACE_NODE.innerHTML = newDocument.querySelector('#NEO_REPLACE').innerHTML;
             document.body.classList.remove('not-ready');
             // scroll pos
             DoOthers();
-            // setTimeout(()=>{
-            //     scrollToTop();
-            // },0);
         }
     };
 })(window, void 0);

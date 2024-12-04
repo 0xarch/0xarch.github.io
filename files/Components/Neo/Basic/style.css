@@ -184,3 +184,16 @@ background: light-dark(#0000000d,#ffffff0d);
 #markdown_fillContent {
     line-height: 1.75rem;
 }
+
+table,td,th{
+border: 1px solid var(--Ctext-25);
+}
+table{
+border-collapse: collapse;
+}
+td,th{
+padding:.375rem;
+}
+th{
+background: var(--Cbtn-regular-bg);
+}
