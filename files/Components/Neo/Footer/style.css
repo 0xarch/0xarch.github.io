@@ -1,7 +1,8 @@
 .Neo.Footer { 
     color: var(--Cdisplay);
     position: relative;
-    margin-top: 64px;
+    max-width: var(--Wpage-width);
+    margin: 4rem auto 2rem;
 }
 .Neo.Footer>.kLinks { display: flex; flex-wrap: wrap }
 .Neo.Footer>.kLinks>nav { flex: 1 0 0%; padding: 8px }
@@ -13,4 +14,7 @@
     width: 70%;
     left: 15%;
     position: absolute;
+}
+.Neo.Footer>.copyright{
+    text-align: center;
 }

@@ -1,0 +1,87 @@
+<!DOCTYPE html ><html lang="zh"><head><link data-id="0" data-across="1" rel="stylesheet" href="/files/Components/Neo/Basic/style.css"/><script src="/files/Components/Neo/Basic/script.js"></script><link data-id="1" data-across="1" rel="stylesheet" href="/files/Components/Neo/Footer/style.css"/><link data-id="2" data-across="1" rel="stylesheet" href="/files/Components/Neo/NavigationBar/style.css"/><link data-id="3" data-across="1" rel="stylesheet" href="/files/Components/Neo/SearchComp/style.css"/><link data-id="4" data-across="1" rel="stylesheet" href="/files/Components/Neo/Widgets/UserIntro/style.css"/><link data-id="5" data-across="1" rel="stylesheet" href="/files/Components/Neo/Widgets/CateList/style.css"/><link data-id="6" data-across="1" rel="stylesheet" href="/files/Components/Neo/Widgets/TagList/style.css"/><link data-id="7" rel="stylesheet" href="/files/Components/Neo/PageNavigator/style.css"/><link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.9.0/styles/default.min.css"/><script src="https://unpkg.com/@highlightjs/cdn-assets@11.9.0/highlight.min.js"></script><link rel="stylesheet" href="/files/post-fix.css"/><link rel="stylesheet" href="/files/admon-extra.min.css"/><meta data-across="1" name="darkreader-lock"/><link data-across="1" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/brands.min.css"/><link data-across="1" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/roboto-font@0.1.0/css/fonts.min.css"/><link data-across="1" rel="icon" href="/files/icon.svg"/><meta data-across="1" charset="utf-8"/><meta data-across="1" name="viewport" content="width:device-width,initial-scale=1.0"/><meta name="author" content="葱投"/><meta name="description" content="[object Object]"/><meta name="keywords"/><meta data-across="1" http-equiv="content-language" content="zh-CN"/><link data-id="8" rel="stylesheet" href="/files/Components/Neo/LicenseNotice/style.css"/><title>Git 常用命令大全 :: 文章</title></head><body OCP="OVERRIDE"><header class="Neo NavigationBar"><a class="smooth-navigated kLogo" href="/"><div class="home-icon"><svg height="1em" viewBox="0 0 24 24"><symbol id="svg:material-symbols:home-outline-rounded"><path d="M6 19h3v-5q0-.425.288-.712T10 13h4q.425 0 .713.288T15 14v5h3v-9l-6-4.5L6 10zm-2 0v-9q0-.475.213-.9t.587-.7l6-4.5q.525-.4 1.2-.4t1.2.4l6 4.5q.375.275.588.7T20 10v9q0 .825-.588 1.413T18 21h-4q-.425 0-.712-.288T13 20v-5h-2v5q0 .425-.288.713T10 21H6q-.825 0-1.412-.587T4 19m8-6.75" fill="currentColor"></path></symbol><use xlink:href="#svg:material-symbols:home-outline-rounded"</svg></div><div class="text">葱投的博客</div></a><div class="toggle"><svg viewBox="0 0 48 48" fill="none" height="48" stroke="currentColor" stroke-width="2" stroke-linecap="round" width="48" xmlns="http://www.w3.org/2000/svg"><path d="M10,14h24M10,24h28M10,34h28"></path></svg></div><div class="kCon"><a class="smooth-navigated" href="/">首页</a><a class="smooth-navigated" href="/archive/1">归档</a><a class="smooth-navigated" href="/about/">关于</a><a class="smooth-navigated" href="/status/">状态 </a><a href="/tools/">工具</a><a href="/demos/">Demo</a><div class="Neo SearchComp"><a class="openPanel">搜索</a><div class="URL">/searchStrings.json</div></div></div><dialog class="Neo SearchComp_Panel"><div class="searchBar flex jcc"><input class="--I"/><div class="--S">搜索</div><div class="--C">×</div></div><hr/><div class="--P"></div></dialog></header><main class="no-anim" id="NEO_MAIN"><div class="sideCon" id="NEO_SIDE"></div><div class="mainCon" id="NEO_REPLACE"><div class="post-meta NeoWidget"><div class="post-meta"><div class="meta-content"><div class="pubDate"><i class="iconBlock"><svg height="1em" viewBox="0 0 24 24"><symbol id="svg:material-symbols:calendar-today-outline-rounded"><path d="M5 22q-.825 0-1.412-.587T3 20V6q0-.825.588-1.412T5 4h1V3q0-.425.288-.712T7 2t.713.288T8 3v1h8V3q0-.425.288-.712T17 2t.713.288T18 3v1h1q.825 0 1.413.588T21 6v14q0 .825-.587 1.413T19 22zm0-2h14V10H5zM5 8h14V6H5zm0 0V6z" fill="currentColor"></path></symbol><use xlink:href="#svg:material-symbols:calendar-today-outline-rounded"</svg></i><date>2024-3-4</date></div><div class="category"><i class="iconBlock"><svg height="1em" viewBox="0 0 24 24"><symbol id="svg:material-symbols:book-2-outline-rounded"><path d="M6 15.325q.35-.175.725-.25T7.5 15H8V4h-.5q-.625 0-1.062.438T6 5.5zM10 15h8V4h-8zm-4 .325V4zM7.5 22q-1.45 0-2.475-1.025T4 18.5v-13q0-1.45 1.025-2.475T7.5 2H18q.825 0 1.413.587T20 4v12.525q0 .2-.162.363t-.588.362q-.35.175-.55.5t-.2.75t.2.763t.55.487t.55.413t.2.562v.25q0 .425-.288.725T19 22zm0-2h9.325q-.15-.35-.237-.712T16.5 18.5q0-.4.075-.775t.25-.725H7.5q-.65 0-1.075.438T6 18.5q0 .65.425 1.075T7.5 20" fill="currentColor"></path></symbol><use xlink:href="#svg:material-symbols:book-2-outline-rounded"</svg></i><a class="smooth-navigated" href="/category/sGit/1/index.html">Git</a></div><div class="tag"><i class="iconBlock"><svg height="1em" viewBox="0 0 24 24"><symbol id="svg:material-symbols:tag-rounded"><path d="m9 16l-.825 3.275q-.075.325-.325.525t-.6.2q-.475 0-.775-.375T6.3 18.8L7 16H4.275q-.5 0-.8-.387T3.3 14.75q.075-.35.35-.55t.625-.2H7.5l1-4H5.775q-.5 0-.8-.387T4.8 8.75q.075-.35.35-.55t.625-.2H9l.825-3.275Q9.9 4.4 10.15 4.2t.6-.2q.475 0 .775.375t.175.825L11 8h4l.825-3.275q.075-.325.325-.525t.6-.2q.475 0 .775.375t.175.825L17 8h2.725q.5 0 .8.387t.175.863q-.075.35-.35.55t-.625.2H16.5l-1 4h2.725q.5 0 .8.388t.175.862q-.075.35-.35.55t-.625.2H15l-.825 3.275q-.075.325-.325.525t-.6.2q-.475 0-.775-.375T12.3 18.8L13 16zm.5-2h4l1-4h-4z" fill="currentColor"></path></symbol><use xlink:href="#svg:material-symbols:tag-rounded"</svg></i><a class="smooth-navigated" href="/tag/sGit/1/index.html">Git</a></div></div><div class="meta-content"><div class="wordCount"><i class="iconBlock plain"><svg height="1em" viewBox="0 0 24 24"><symbol id="svg:material-symbols:notes-rounded"><path d="M4 18q-.425 0-.712-.288T3 17t.288-.712T4 16h10q.425 0 .713.288T15 17t-.288.713T14 18zm0-5q-.425 0-.712-.288T3 12t.288-.712T4 11h16q.425 0 .713.288T21 12t-.288.713T20 13zm0-5q-.425 0-.712-.288T3 7t.288-.712T4 6h16q.425 0 .713.288T21 7t-.288.713T20 8z" fill="currentColor"></path></symbol><use xlink:href="#svg:material-symbols:notes-rounded"</svg></i><span>1039 字</span></div><div class="readTime"><i class="iconBlock plain"><svg height="1em" viewBox="0 0 24 24"><symbol id="svg:material-symbols:schedule-outline-rounded"><path d="M13 11.6V8q0-.425-.288-.712T12 7t-.712.288T11 8v3.975q0 .2.075.388t.225.337l3.3 3.3q.275.275.7.275T16 16t.275-.7t-.275-.7zM12 22q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22m0-2q3.325 0 5.663-2.337T20 12t-2.337-5.663T12 4T6.337 6.338T4 12t2.338 5.663T12 20" fill="currentColor"></path></symbol><use xlink:href="#svg:material-symbols:schedule-outline-rounded"</svg></i><span>5 分钟</span></div></div></div></div><div class="post-main NeoWidget"><article id="markdown_fillContent"><h1 id="git-常用命令大全">Git 常用命令大全</h1><p>原作者: Runnob DGd <a href="https://www.runoob.com/note/56524">原文</a></p><p><img src="https://www.runoob.com/wp-content/uploads/2015/02/011500266295799.jpg" alt="CheatSheet"></p><pre><code class="language-bash">git init                                                  # 初始化本地git仓库（创建新仓库）
+git config --global user.name &quot;xxx&quot;                       # 配置用户名
+git config --global user.email &quot;xxx@xxx.com&quot;              # 配置邮件
+git config --global color.ui true                         # git status等命令自动着色
+git config --global color.status auto
+git config --global color.diff auto
+git config --global color.branch auto
+git config --global color.interactive auto
+git config --global --unset http.proxy                    # remove  proxy configuration on git
+git clone git+ssh://git@192.168.53.168/VT.git             # clone远程仓库
+git status                                                # 查看当前版本状态（是否修改）
+git add xyz                                               # 添加xyz文件至index
+git add .                                                 # 增加当前子目录下所有更改过的文件至index
+git commit -m &#39;xxx&#39;                                       # 提交
+git commit --amend -m &#39;xxx&#39;                               # 合并上一次提交（用于反复修改）
+git commit -am &#39;xxx&#39;                                      # 将add和commit合为一步
+git rm xxx                                                # 删除index中的文件
+git rm -r *                                               # 递归删除
+git log                                                   # 显示提交日志
+git log -1                                                # 显示1行日志 -n为n行
+git log -5
+git log --stat                                            # 显示提交日志及相关变动文件
+git log -p -m
+git show dfb02e6e4f2f7b573337763e5c0013802e392818         # 显示某个提交的详细内容
+git show dfb02                                            # 可只用commitid的前几位
+git show HEAD                                             # 显示HEAD提交日志
+git show HEAD^                                            # 显示HEAD的父（上一个版本）的提交日志 ^^为上两个版本 ^5为上5个版本
+git tag                                                   # 显示已存在的tag
+git tag -a v2.0 -m &#39;xxx&#39;                                  # 增加v2.0的tag
+git show v2.0                                             # 显示v2.0的日志及详细内容
+git log v2.0                                              # 显示v2.0的日志
+git diff                                                  # 显示所有未添加至index的变更
+git diff --cached                                         # 显示所有已添加index但还未commit的变更
+git diff HEAD^                                            # 比较与上一个版本的差异
+git diff HEAD -- ./lib                                    # 比较与HEAD版本lib目录的差异
+git diff origin/master..master                            # 比较远程分支master上有本地分支master上没有的
+git diff origin/master..master --stat                     # 只显示差异的文件，不显示具体内容
+git remote add origin git+ssh://git@192.168.53.168/VT.git # 增加远程定义（用于push/pull/fetch）
+git branch                                                # 显示本地分支
+git branch --contains 50089                               # 显示包含提交50089的分支
+git branch -a                                             # 显示所有分支
+git branch -r                                             # 显示所有原创分支
+git branch --merged                                       # 显示所有已合并到当前分支的分支
+git branch --no-merged                                    # 显示所有未合并到当前分支的分支
+git branch -m master master_copy                          # 本地分支改名
+git checkout -b master_copy                               # 从当前分支创建新分支master_copy并检出
+git checkout -b master master_copy                        # 上面的完整版
+git checkout features/performance                         # 检出已存在的features/performance分支
+git checkout --track hotfixes/BJVEP933                    # 检出远程分支hotfixes/BJVEP933并创建本地跟踪分支
+git checkout v2.0                                         # 检出版本v2.0
+git checkout -b devel origin/develop                      # 从远程分支develop创建新本地分支devel并检出
+git checkout -- README                                    # 检出head版本的README文件（可用于修改错误回退）
+git merge origin/master                                   # 合并远程master分支至当前分支
+git cherry-pick ff44785404a8e                             # 合并提交ff44785404a8e的修改
+git push origin master                                    # 将当前分支push到远程master分支
+git push origin :hotfixes/BJVEP933                        # 删除远程仓库的hotfixes/BJVEP933分支
+git push --tags                                           # 把所有tag推送到远程仓库
+git fetch                                                 # 获取所有远程分支（不更新本地分支，另需merge）
+git fetch --prune                                         # 获取所有原创分支并清除服务器上已删掉的分支
+git pull origin master                                    # 获取远程分支master并merge到当前分支
+git mv README README2                                     # 重命名文件README为README2
+git reset --hard HEAD                                     # 将当前版本重置为HEAD（通常用于merge失败回退）
+git rebase
+git branch -d hotfixes/BJVEP933                           # 删除分支hotfixes/BJVEP933（本分支修改已合并到其他分支）
+git branch -D hotfixes/BJVEP933                           # 强制删除分支hotfixes/BJVEP933
+git ls-files                                              # 列出git index包含的文件
+git show-branch                                           # 图示当前分支历史
+git show-branch --all                                     # 图示所有分支历史
+git whatchanged                                           # 显示提交历史对应的文件修改
+git revert dfb02e6e4f2f7b573337763e5c0013802e392818       # 撤销提交dfb02e6e4f2f7b573337763e5c0013802e392818
+git ls-tree HEAD                                          # 内部命令：显示某个git对象
+git rev-parse v2.0                                        # 内部命令：显示某个ref对于的SHA1 HASH
+git reflog                                                # 显示所有提交，包括孤立节点
+git show HEAD@{5}
+git show master@{yesterday}                               # 显示master分支昨天的状态
+git log --pretty=format:&#39;%h %s&#39; --graph                   # 图示提交日志
+git show HEAD~3
+git show -s --pretty=raw 2be7fcb476
+git stash                                                 # 暂存当前修改，将所有至为HEAD状态
+git stash list                                            # 查看所有暂存
+git stash show -p stash@{0}                               # 参考第一次暂存
+git stash apply stash@{0}                                 # 应用第一次暂存
+git grep &quot;delete from&quot;                                    # 文件中搜索文本“delete from”
+git grep -e &#39;#define&#39; --and -e SORT_DIRENT
+git gc
+git fsck
+</code></pre></article><div class="Neo LicenseNotice"><div class="title">Git 常用命令大全</div><div class="announce-box"><div class="author"><span class="label">作者</span><span class="val">葱投</span></div><div class="publish"><span class="label">发布于</span><span class="val">2024-3-4</span></div><div class="license"><span class="label">许可协议</span><span class="val"><a>由原文章决定</a></span></div></div><div class="background"><svg viewBox="0 0 30 30" fill="currentColor"><g><path d="M14.972 0c4.196 0 7.769 1.465 10.715 4.393A14.426 14.426 0 0128.9 9.228C29.633 11.04 30 12.964 30 15c0 2.054-.363 3.978-1.085 5.772a13.77 13.77 0 01-3.2 4.754 15.417 15.417 0 01-4.983 3.322A14.932 14.932 0 0114.973 30c-1.982 0-3.88-.38-5.692-1.14a15.087 15.087 0 01-4.875-3.293c-1.437-1.437-2.531-3.058-3.281-4.862A14.71 14.71 0 010 15c0-1.982.38-3.888 1.138-5.719a15.062 15.062 0 013.308-4.915C7.303 1.456 10.812 0 14.972 0zm.055 2.706c-3.429 0-6.313 1.196-8.652 3.589a12.896 12.896 0 00-2.72 4.031 11.814 11.814 0 00-.95 4.675c0 1.607.316 3.156.95 4.646a12.428 12.428 0 002.72 3.992 12.362 12.362 0 003.99 2.679c1.483.616 3.037.924 4.662.924 1.607 0 3.164-.312 4.675-.937a12.954 12.954 0 004.084-2.705c2.339-2.286 3.508-5.152 3.508-8.6 0-1.66-.304-3.231-.91-4.713a11.994 11.994 0 00-2.651-3.965c-2.412-2.41-5.314-3.616-8.706-3.616zm-.188 9.803l-2.01 1.045c-.215-.445-.477-.758-.79-.937-.312-.178-.602-.268-.87-.268-1.34 0-2.01.884-2.01 2.652 0 .803.17 1.446.509 1.928.34.482.84.724 1.5.724.876 0 1.492-.43 1.85-1.286l1.847.937a4.407 4.407 0 01-1.634 1.728c-.696.42-1.464.63-2.303.63-1.34 0-2.42-.41-3.242-1.233-.821-.82-1.232-1.964-1.232-3.428 0-1.428.416-2.562 1.246-3.401.83-.84 1.879-1.26 3.147-1.26 1.858 0 3.188.723 3.992 2.17zm8.652 0l-1.983 1.045c-.214-.445-.478-.758-.79-.937-.313-.178-.613-.268-.897-.268-1.34 0-2.01.884-2.01 2.652 0 .803.17 1.446.51 1.928.338.482.838.724 1.5.724.874 0 1.49-.43 1.847-1.286l1.875.937a4.606 4.606 0 01-1.66 1.728c-.696.42-1.455.63-2.277.63-1.357 0-2.441-.41-3.253-1.233-.814-.82-1.22-1.964-1.22-3.428 0-1.428.415-2.562 1.246-3.401.83-.84 1.879-1.26 3.147-1.26 1.857 0 3.18.723 3.965 2.17z" fill="currentColor"></path></g></svg></div></div></div><div class="Neo NextPage"><a class="smooth-navigated left" href="/read/2024/3/4/js/toc/"><div class="arrow"><svg height="1em" viewBox="0 0 24 24"><symbol id="svg:material-symbols:chevron-right-rounded"><path d="M12.6 12L8.7 8.1q-.275-.275-.275-.7t.275-.7t.7-.275t.7.275l4.6 4.6q.15.15.213.325t.062.375t-.062.375t-.213.325l-4.6 4.6q-.275.275-.7.275t-.7-.275t-.275-.7t.275-.7z" fill="currentColor"></path></symbol><use xlink:href="#svg:material-symbols:chevron-right-rounded"</svg></div><div class="title">WebJS - 滚动目录实现</div></a><a class="smooth-navigated right" href="/read/2024/2/27/fewu/n210/"><div class="title">Nexo 2.1.0 发布了</div><div class="arrow"><svg height="1em" viewBox="0 0 24 24"><use xlink:href="#svg:material-symbols:chevron-right-rounded"</svg></div></a></div></div></main><footer class="Neo Footer"><div class="kLinks"><nav><h3>Fewu</h3><span>Fewu Generator</span><span>1.3.0-devel</span><a href="https://github.com/0xarch/fewu">Source Code</a></nav><nav><h3>Neo</h3><span>1.0.0</span><a href="https://github.com/0xarch/fewu-theme-neo">Github</a><a href="https://github.com/0xarch/fewu-theme-simplus">Simplus</a></nav><nav><h3>Contact</h3><a href="https://matrix.to/#/#solo_esta_vez:mozilla.org">[Matrix] Moz</a><a href="https://matrix.to/#/#solo_esta_vez:fedora.im">[Matrix] Fedora</a><a href="mailto:alanqa-ops@outlook.com">Outlook</a><a href="mailto:mulzixi@gmail.com">GMail</a></nav><nav><h3>Friends</h3><a href="https://yuanshen.dev">218</a><a href="https://wangyuzhen666.github.io">Wyz666</a><a href="https://lingxi9374.github.io">泠熙</a><a href="https://genshinimpact.net">?</a></nav></div><br/><hr/><div class="copyright">2024 自豪地由 Fewu 驱动，使用 Neo 主题. 2023 - 2024 0xarch 及 Soloev, 保留所有权利. 对于所有本站发布的文章，默认使用 Creative Commons BY-NC-SA 4.0 许可.</div></footer></body></html>

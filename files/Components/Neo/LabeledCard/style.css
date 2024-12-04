@@ -59,8 +59,10 @@
 }
 
 .Neo.LabeledCard>.append {
-    display: flex;
     color: var(--Ctext-25);
     font-size: .875rem;
     gap: .5rem;
+    &>.tag{
+        display: inline;
+    }
 }
