@@ -78,7 +78,6 @@ hr { opacity: .5; border-bottom-width: 0px }
 .cSortCon>a { display: inline-block }
 a { text-decoration: none; color: var(--Cbrand) }
 
-@media(prefers-color-scheme:dark){.hljs{background: #232629;color:#f3f3f3}}
 h2.category-name,h2.archive-label{
 margin-left: 2rem;
 }
@@ -88,7 +87,7 @@ display: flex;
 flex-direction: column-reverse;
 gap: 1rem;
 max-width: var(--Wpage-width);
-margin: calc(37.75vh - 4.5rem) 0 auto;
+margin: calc(37.75vh - 4.5rem) auto 0;
 }
 #NEO_MAIN>:is(.mainCon,.sideCon), .stickyGroup {
 display: flex;
@@ -178,6 +177,6 @@ height: 1.25rem;
 }
 &.plain{
 color: var(--Ctext-25);
-background: light-dark(#0000000d,ffffff0d);
+background: light-dark(#0000000d,#ffffff0d);
 }
 }

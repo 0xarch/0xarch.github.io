@@ -26,18 +26,16 @@
     z-index: 1;
 }
 
-.Neo.LicenseNotice>.announce-box>* {
-    display: flex;
-    flex-direction: column;
-}
-
 .Neo.LicenseNotice>.announce-box>*>.label {
     font-size: .875rem;
-    color: light-dark(#0000004d,#ffffff4d);
+    color: var(--Ctext-25);
+    display: block;
 }
 
 .Neo.LicenseNotice>.announce-box>*>.val {
     font-size: 1.25rem;
+    display: block;
+    line-height: 1.625rem;
 }
 
 
@@ -54,6 +52,9 @@
         left: 0;
         display: flex;
         align-items: center;
+    }
+    .Neo.LicenseNotice>.announce-box {
+        flex-direction: column;
     }
 }
 
