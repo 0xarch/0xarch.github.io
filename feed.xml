@@ -1,189 +1,361 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
 <channel>
-<title></title>
-<atom:link href="https://0xarch.github.io/" rel="self" type="application/rss+xml" />
-<link>https://0xarch.github.io/</link>
-<description></description>
+<title>undefined</title>
+<atom:link href="" rel="self" type="application/rss+xml" />
+<link></link>
+<description>undefined</description>
 <item>
 <title>JavaScript 中的 This</title>
-<link>https://0xarch.github.io//read/2024/12/4/js/this-in-js.html</link>
+<link>/read/2024/12/4/js/this-in-js.html</link>
 <guid isPermaLink="false">ID14</guid>
-<description>关于 JavaScript 中不同地方的 this 指向。</description>
-<pubDate>Wed Dec 04 2024 20:38:48 GMT+0800 (中国标准时间)</pubDate>
+<description>---
+title: JavaScript 中的 This
+date: 2024-12-4
+tags: JavaScript
+category: 前端技术
+---
+关于 JavaScript 中不同地方的 this 指向。</description>
+<pubDate>Fri Dec 27 2024 19:51:26 GMT+0800 (中国标准时间)</pubDate>
 </item><item>
 <title>都市天际线 DLC 补丁自定义教程</title>
-<link>https://0xarch.github.io//read/2024/12/3/cities_skylines/cream_api.html</link>
+<link>/read/2024/12/3/cities_skylines/cream_api.html</link>
 <guid isPermaLink="false">ID3</guid>
-<description>本文主要介绍如何自定义都市天际线的 CreamAPI 补丁来自定义 DLC.</description>
-<pubDate>Wed Dec 04 2024 00:34:51 GMT+0800 (中国标准时间)</pubDate>
+<description>---
+title: 都市天际线 DLC 补丁自定义教程
+date: 2024-12-3
+tags: 都市:天际线
+category: 游戏
+---
+本文主要介绍如何自定义都市天际线的 CreamAPI 补丁来自定义 DLC.</description>
+<pubDate>Fri Dec 27 2024 19:51:26 GMT+0800 (中国标准时间)</pubDate>
 </item><item>
 <title>New in new Fewu</title>
-<link>https://0xarch.github.io//read/2024/11/23/fewu/1.html</link>
+<link>/read/2024/11/23/fewu/1.html</link>
 <guid isPermaLink="false">ID4</guid>
-<description>关于我计划在 Fewu 1.3 中使用新的 fewu --new 使用方式。
+<description>---
+title: New in new Fewu
+date: 2024-11-23
+tags: Fewu
+category: Node.js
+---
+关于我计划在 Fewu 1.3 中使用新的 fewu --new 使用方式。
 </description>
-<pubDate>Thu Nov 28 2024 23:12:59 GMT+0800 (中国标准时间)</pubDate>
+<pubDate>Fri Dec 27 2024 19:51:26 GMT+0800 (中国标准时间)</pubDate>
 </item><item>
 <title>WebJS - 页面衔接实现</title>
-<link>https://0xarch.github.io//read/2024/11/18/js/smooth-navigate.html</link>
+<link>/read/2024/11/18/js/smooth-navigate.html</link>
 <guid isPermaLink="false">ID13</guid>
-<description>
+<description>---
+title: WebJS - 页面衔接实现
+date: 2024-11-18
+tags: Web JavaScript
+category: 前端技术
+highlight: true
+license: CC-BY-ND-SA
+---
+
 简单的JS无缝跳转的实现.
 
 兼容性未测试!
 </description>
-<pubDate>Thu Nov 28 2024 23:12:59 GMT+0800 (中国标准时间)</pubDate>
+<pubDate>Fri Dec 27 2024 19:51:26 GMT+0800 (中国标准时间)</pubDate>
 </item><item>
-<title>入门JS教程:WebAPI 与 DOM</title>
-<link>https://0xarch.github.io//read/2024/11/18/js/useJS-1-webApi.html</link>
+<title>入门JS教程: WebAPI 与 DOM</title>
+<link>/read/2024/11/18/js/useJS-1-webApi.html</link>
 <guid isPermaLink="false">ID16</guid>
-<description>这篇文章简单讲述了 WebAPI 的组成以及 DOM 节点的实用用法</description>
-<pubDate>Thu Nov 28 2024 23:12:59 GMT+0800 (中国标准时间)</pubDate>
+<description>---
+title: "入门JS教程: WebAPI 与 DOM"
+date: 2024-11-18
+tags: JavaScript
+category: 前端技术
+---
+这篇文章简单讲述了 WebAPI 的组成以及 DOM 节点的实用用法</description>
+<pubDate>Fri Dec 27 2024 19:51:26 GMT+0800 (中国标准时间)</pubDate>
 </item><item>
 <title>在 USB Disk 上安装 ArchLinux 需要的 GRUB 命令</title>
-<link>https://0xarch.github.io//read/2024/11/17/linux/arch-usb-install.html</link>
+<link>/read/2024/11/17/linux/arch-usb-install.html</link>
 <guid isPermaLink="false">ID19</guid>
-<description>You do know that, right?</description>
-<pubDate>Thu Nov 28 2024 23:12:59 GMT+0800 (中国标准时间)</pubDate>
+<description>---
+title: 在 USB Disk 上安装 ArchLinux 需要的 GRUB 命令
+date: 2024-11-17
+tags: ArchLinux
+category: Linux
+---
+You do know that, right?</description>
+<pubDate>Fri Dec 27 2024 19:51:26 GMT+0800 (中国标准时间)</pubDate>
 </item><item>
-<title>JS基础IV:循环和迭代</title>
-<link>https://0xarch.github.io//read/2024/6/5/js/baseJS4-loop_and_iter.html</link>
+<title>JS基础IV: 循环和迭代</title>
+<link>/read/2024/6/5/js/baseJS4-loop_and_iter.html</link>
 <guid isPermaLink="false">ID12</guid>
-<description>JavaScript 基础 第四篇：循环和迭代。  
+<description>---
+title: "JS基础IV: 循环和迭代"
+date: 2024-6-5
+tags: Node.js JavaScript
+category: 前端技术
+highlight: true
+---
+JavaScript 基础 第四篇：循环和迭代。  
 包含内容：循环控制与迭代器。
 转载总结自 MDN。</description>
-<pubDate>Thu Nov 28 2024 23:12:59 GMT+0800 (中国标准时间)</pubDate>
+<pubDate>Fri Dec 27 2024 19:51:26 GMT+0800 (中国标准时间)</pubDate>
 </item><item>
-<title>JS基础III:条件分支</title>
-<link>https://0xarch.github.io//read/2024/6/3/js/baseJS3-branch_statement.html</link>
+<title>JS基础III: 条件分支</title>
+<link>/read/2024/6/3/js/baseJS3-branch_statement.html</link>
 <guid isPermaLink="false">ID11</guid>
-<description>JavaScript 基础 第三篇：条件和分支。  
+<description>---
+title: "JS基础III: 条件分支"
+date: 2024-6-3/3
+tags: Node.js JavaScript
+category: 前端技术
+highlight: true
+---
+JavaScript 基础 第三篇：条件和分支。  
 包含内容：条件和分支。  
 转载总结自 MDN。</description>
-<pubDate>Thu Nov 28 2024 23:12:59 GMT+0800 (中国标准时间)</pubDate>
+<pubDate>Fri Dec 27 2024 19:51:26 GMT+0800 (中国标准时间)</pubDate>
 </item><item>
-<title>JS基础II:对象和原型</title>
-<link>https://0xarch.github.io//read/2024/6/3/js/baseJS2-obj_and_proto.html</link>
+<title>JS基础II: 对象和原型</title>
+<link>/read/2024/6/3/js/baseJS2-obj_and_proto.html</link>
 <guid isPermaLink="false">ID10</guid>
-<description>JavaScript 基础 第二篇：面向对象概述。
+<description>---
+title: "JS基础II: 对象和原型"
+date: 2024-6-3/2
+tags: Node.js JavaScript
+category: 前端技术
+highlight: true
+---
+JavaScript 基础 第二篇：面向对象概述。
 包含内容：对象和原型链。
 转载总结自 MDN。</description>
-<pubDate>Thu Nov 28 2024 23:12:59 GMT+0800 (中国标准时间)</pubDate>
+<pubDate>Fri Dec 27 2024 19:51:26 GMT+0800 (中国标准时间)</pubDate>
 </item><item>
 <title>JavaScript 基础</title>
-<link>https://0xarch.github.io//read/2024/6/3/js/baseJS1-nav_and_basic.html</link>
+<link>/read/2024/6/3/js/baseJS1-nav_and_basic.html</link>
 <guid isPermaLink="false">ID9</guid>
-<description>本文写于2024年6月。旨在帮助新手进行简单快速的JavaScript 入门。  
+<description>---
+title: JavaScript 基础
+date: 2024-6-3/1
+tags: Node.js JavaScript
+category: 前端技术
+highlight: true
+---
+本文写于2024年6月。旨在帮助新手进行简单快速的JavaScript 入门。  
 转载并总结自 MDN。  
 本篇包含：函数调用、变量声明的简易阐述。</description>
-<pubDate>Wed Dec 04 2024 20:04:56 GMT+0800 (中国标准时间)</pubDate>
+<pubDate>Fri Dec 27 2024 19:51:26 GMT+0800 (中国标准时间)</pubDate>
 </item><item>
 <title>simplus主题源码概述</title>
-<link>https://0xarch.github.io//read/2024/4/9/fewu/simplus-theme.html</link>
+<link>/read/2024/4/9/fewu/simplus-theme.html</link>
 <guid isPermaLink="false">ID8</guid>
-<description>Fewu 主题 simplus(PUG) 的组成以及特性解析。
+<description>---
+title: simplus主题源码概述
+date: 2024-4-9
+tags: Fewu
+category: Pug
+license: byncnd
+---
+Fewu 主题 simplus(PUG) 的组成以及特性解析。
 
 篇幅较短，大部分具体实现请查看源码。</description>
-<pubDate>Thu Nov 28 2024 23:12:59 GMT+0800 (中国标准时间)</pubDate>
+<pubDate>Fri Dec 27 2024 19:51:26 GMT+0800 (中国标准时间)</pubDate>
 </item><item>
 <title>崩铁：黄泉简评</title>
-<link>https://0xarch.github.io//read/2024/4/7/mihoyo-sr/黄泉简评.html</link>
+<link>/read/2024/4/7/mihoyo-sr/黄泉简评.html</link>
 <guid isPermaLink="false">ID22</guid>
-<description>80抽黄泉，米哈游你***</description>
-<pubDate>Thu Nov 28 2024 23:12:59 GMT+0800 (中国标准时间)</pubDate>
+<description>---
+title: 崩铁：黄泉简评
+date: 2024-4-7
+tags: miHoYo 崩坏：星穹铁道
+category: 游戏
+license: byncsa
+---
+80抽黄泉，米哈游你***</description>
+<pubDate>Fri Dec 27 2024 19:51:26 GMT+0800 (中国标准时间)</pubDate>
 </item><item>
 <title>[转载] Everything I Know About the Xz Backdoor</title>
-<link>https://0xarch.github.io//read/2024/3/29/reprint-xz-backdoor.html</link>
+<link>/read/2024/3/29/reprint-xz-backdoor.html</link>
 <guid isPermaLink="false">ID24</guid>
-<description>_Please note: This is being updated in real time. The intent is to make sense of lots of simultaneous discoveries regarding this backdoor. last updated: 10:30 PM EST_
+<description>---
+title: "[转载] Everything I Know About the Xz Backdoor"
+date: 2024-3-29
+tags: Reprint 开源软件
+category: Linux
+license: REPRINT
+highlight: true
+---
+_Please note: This is being updated in real time. The intent is to make sense of lots of simultaneous discoveries regarding this backdoor. last updated: 10:30 PM EST_
 
 _Update: The GitHub page for xz has been suspended._
 </description>
-<pubDate>Thu Nov 28 2024 23:12:59 GMT+0800 (中国标准时间)</pubDate>
+<pubDate>Fri Dec 27 2024 19:53:36 GMT+0800 (中国标准时间)</pubDate>
 </item><item>
 <title>Arch Linux 包收集</title>
-<link>https://0xarch.github.io//read/2024/3/27/linux/arch-package-collect.html</link>
+<link>/read/2024/3/27/linux/arch-package-collect.html</link>
 <guid isPermaLink="false">ID18</guid>
-<description>收集我迄今为止安装过的 Arch Linux 包。
+<description>---
+title: Arch Linux 包收集
+date: 2024-3-27
+tags: ArchLinux
+category: Linux
+license: CC-BY-SA
+head-image-url: https://www.linuxprobe.com/wp-content/uploads/2020/03/1-16.jpeg
+---
+收集我迄今为止安装过的 Arch Linux 包。
 此篇仅用于记录和备忘，请酌情参考。</description>
-<pubDate>Thu Nov 28 2024 23:12:59 GMT+0800 (中国标准时间)</pubDate>
+<pubDate>Fri Dec 27 2024 19:51:26 GMT+0800 (中国标准时间)</pubDate>
 </item><item>
 <title>Nexo Beta 1.0.3~1.1.0</title>
-<link>https://0xarch.github.io//read/2024/3/19/fewu/n225.html</link>
+<link>/read/2024/3/19/fewu/n225.html</link>
 <guid isPermaLink="false">ID7</guid>
-<description>
+<description>---
+title: Nexo Beta 1.0.3~1.1.0
+date: 2024-03-19
+category: Node.js
+tags: Node.js Fewu
+license: CC-BY-SA
+---
+
 Nexo Beta 1.0.3 (Nexo n2.2.5-1) CHANGELOG 注解 , <del>以及 1.0.4 (n2.2.5-2 ~ n2.2.6) 规划。</del>  
 由于更新巨大，Nexo直接从 1.0.4 跳到 2.3.0，主题作者请注意文档。
 </description>
-<pubDate>Thu Nov 28 2024 23:12:59 GMT+0800 (中国标准时间)</pubDate>
+<pubDate>Fri Dec 27 2024 19:51:26 GMT+0800 (中国标准时间)</pubDate>
 </item><item>
 <title>金句(2024.03.12)</title>
-<link>https://0xarch.github.io//read/2024/3/12/-gold-sentences/20240312.html</link>
+<link>/read/2024/3/12/-gold-sentences/20240312.html</link>
 <guid isPermaLink="false">ID1</guid>
-<description>
+<description>---
+title: 金句(2024.03.12)
+date: 2024-03-12
+category: 金句
+tags: 金句
+highlight: false
+license: CC-BY-SA
+---
+
 世界金句收集（2024年3月12日编），素材来源于现实或网络，不定期分裂。
 </description>
-<pubDate>Thu Nov 28 2024 23:12:59 GMT+0800 (中国标准时间)</pubDate>
+<pubDate>Fri Dec 27 2024 19:51:26 GMT+0800 (中国标准时间)</pubDate>
 </item><item>
 <title>WebJS - 滚动目录实现</title>
-<link>https://0xarch.github.io//read/2024/3/4/js/toc.html</link>
+<link>/read/2024/3/4/js/toc.html</link>
 <guid isPermaLink="false">ID15</guid>
-<description>
+<description>---
+title: WebJS - 滚动目录实现
+date: 2024-03-04
+category: 前端技术
+tags: Web JavaScript
+highlight: true
+license: CC-BY-ND-SA
+---
+
 简单的JS滚动目录(动态高亮)的实现.
 
 兼容性未测试!
 </description>
-<pubDate>Thu Nov 28 2024 23:12:59 GMT+0800 (中国标准时间)</pubDate>
+<pubDate>Fri Dec 27 2024 19:51:26 GMT+0800 (中国标准时间)</pubDate>
 </item><item>
 <title>Git 常用命令大全</title>
-<link>https://0xarch.github.io//read/2024/3/4/linux/gitcommands.html</link>
+<link>/read/2024/3/4/linux/gitcommands.html</link>
 <guid isPermaLink="false">ID20</guid>
-<description>作者没有为这篇文章写前言。  分类：Git  标签：Git</description>
-<pubDate>Thu Nov 28 2024 23:12:59 GMT+0800 (中国标准时间)</pubDate>
+<description>---
+title: Git 常用命令大全
+date: 2024-03-04
+category: Git
+tags: Git</description>
+<pubDate>Fri Dec 27 2024 19:51:26 GMT+0800 (中国标准时间)</pubDate>
 </item><item>
 <title>Nexo 2.1.0 发布了</title>
-<link>https://0xarch.github.io//read/2024/2/27/fewu/n210.html</link>
+<link>/read/2024/2/27/fewu/n210.html</link>
 <guid isPermaLink="false">ID6</guid>
-<description>
+<description>---
+title: Nexo 2.1.0 发布了
+date: 2024-02-27
+category: Node.js
+tags: Node.js Fewu
+top: false
+imageUrl: https://s11.ax1x.com/2024/02/28/pFweJzD.png
+license: CC-BY-SA
+---
+
 前前后后抽了大概3天的时间，提前把充满垃圾的2.0.x时代结束掉，开始2.1.x的新屎山时代。这篇主要是CHANGELOG
 </description>
-<pubDate>Thu Nov 28 2024 23:12:59 GMT+0800 (中国标准时间)</pubDate>
+<pubDate>Fri Dec 27 2024 19:51:26 GMT+0800 (中国标准时间)</pubDate>
 </item><item>
 <title>What is Nexo</title>
-<link>https://0xarch.github.io//read/2024/2/26/fewu/n203.html</link>
+<link>/read/2024/2/26/fewu/n203.html</link>
 <guid isPermaLink="false">ID5</guid>
-<description>
+<description>---
+title: What is Nexo
+date: 2024-02-26
+category: Node.js
+tags: Node.js Fewu
+top: false
+imageUrl: https://s11.ax1x.com/2024/02/28/pFwedeA.png
+license: CC-BY-SA
+---
+
 不知不觉 Nexo 这个小项目都跟到 2.0.3 了，时间过得是真快啊。
 这篇主要是说说 Nexo 的发展。
 </description>
-<pubDate>Thu Nov 28 2024 23:12:59 GMT+0800 (中国标准时间)</pubDate>
+<pubDate>Fri Dec 27 2024 19:51:26 GMT+0800 (中国标准时间)</pubDate>
 </item><item>
 <title>Arch Linux 下 Git 配置</title>
-<link>https://0xarch.github.io//read/2024/2/24/linux/gitconfig.html</link>
+<link>/read/2024/2/24/linux/gitconfig.html</link>
 <guid isPermaLink="false">ID21</guid>
-<description>
+<description>---
+title: Arch Linux 下 Git 配置
+date: 2024-02-24
+category: Git
+tags: ArchLinux
+top: false
+head-image-url: https://static.wixstatic.com/media/84da5a_9b561eb52739462e98be571a138b2ebe~mv2.png/v1/fill/w_1000,h_293,al_c,usm_0.66_1.00_0.01/84da5a_9b561eb52739462e98be571a138b2ebe~mv2.png
+highlight: true
+license: CC-BY-SA
+---
+
 Linux 下使用 Git 和 Github 连接的基本配置，包括账户、SSH等。
 本文为 [Git 常用命令大全] 的子集。
 </description>
-<pubDate>Thu Nov 28 2024 23:12:59 GMT+0800 (中国标准时间)</pubDate>
+<pubDate>Fri Dec 27 2024 19:51:26 GMT+0800 (中国标准时间)</pubDate>
 </item><item>
 <title>原神:娜维娅理论值计算</title>
-<link>https://0xarch.github.io//read/2024/1/1/mihoyo-ys/navia.html</link>
+<link>/read/2024/1/1/mihoyo-ys/navia.html</link>
 <guid isPermaLink="false">ID23</guid>
-<description>群里流传的娜维娅一个e1万倍率属实没绷住,那简单计算一下这个1万怎么出来的.</description>
-<pubDate>Thu Nov 28 2024 23:12:59 GMT+0800 (中国标准时间)</pubDate>
+<description>---
+title: 原神:娜维娅理论值计算
+date: 2024-01-01
+category: 游戏
+tags: 原神 miHoYo
+top: false
+head-image-url: https://patchwiki.biligame.com/images/ys/a/ad/jez0piggyfkes3s4kgqyz8ddbslrjuk.png
+license: CC-BY-ND-SA
+---
+群里流传的娜维娅一个e1万倍率属实没绷住,那简单计算一下这个1万怎么出来的.</description>
+<pubDate>Fri Dec 27 2024 19:51:26 GMT+0800 (中国标准时间)</pubDate>
 </item><item>
 <title>扩展 Markdown 语法测试</title>
-<link>https://0xarch.github.io//read/0/0/0/test/markdown-extended.html</link>
+<link>/read/0/0/0/test/markdown-extended.html</link>
 <guid isPermaLink="false">ID26</guid>
-<description>使用 Fewu 1.2.5 添加的 markedExtras 功能支持更多 Markdown 语法。</description>
-<pubDate>Wed Dec 04 2024 21:02:32 GMT+0800 (中国标准时间)</pubDate>
+<description>---
+title: 扩展 Markdown 语法测试
+date: 0000-0-0
+tags: Markdown
+category: 测试
+---
+使用 Fewu 1.2.5 添加的 markedExtras 功能支持更多 Markdown 语法。</description>
+<pubDate>Fri Dec 27 2024 19:51:26 GMT+0800 (中国标准时间)</pubDate>
 </item><item>
 <title>Markdown 表格测试</title>
-<link>https://0xarch.github.io//read/0/0/0/test/table-test.html</link>
+<link>/read/0/0/0/test/table-test.html</link>
 <guid isPermaLink="false">ID27</guid>
-<description>表格测试</description>
-<pubDate>Wed Dec 04 2024 21:02:28 GMT+0800 (中国标准时间)</pubDate>
+<description>---
+title: Markdown 表格测试
+date: 0000-0-0
+tags: Markdown
+category: 测试
+---
+表格测试</description>
+<pubDate>Fri Dec 27 2024 19:51:26 GMT+0800 (中国标准时间)</pubDate>
 </item>
 </channel>
 </rss>

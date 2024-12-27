@@ -1,5 +1,5 @@
 ---
-title: [转载] Everything I Know About the Xz Backdoor
+title: "[转载] Everything I Know About the Xz Backdoor"
 date: 2024-3-29
 tags: Reprint 开源软件
 category: Linux

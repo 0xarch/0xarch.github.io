@@ -1,5 +1,5 @@
 ---
-title: JS基础II: 对象和原型
+title: "JS基础II: 对象和原型"
 date: 2024-6-3/2
 tags: Node.js JavaScript
 category: 前端技术
