@@ -1,0 +1,7 @@
+extra/
+node_modules/
+public/
+themes/
+.directory
+.icon
+package-lock.json

@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "html-minifier": "^4.0.0",
+    "marked-admonition-extension": "^0.0.4",
+    "marked-extended-tables": "^1.0.10",
+    "marked-footnote": "^1.2.4"
+  }
+}

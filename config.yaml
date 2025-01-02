@@ -1,0 +1,26 @@
+title: Fewu
+description: ''
+author: Meteor
+language: zh-CN
+timezone: Asia/Shanghai
+url: 0xarch.github.io/blog-deploy
+root: /
+source_dir: source
+public_dir: public
+theme: N3
+excluded_files: 
+  - posts/template.md
+
+avatar: https://cdn.jsdelivr.net/gh/0xarch/0xarch.github.io/resources/avatar.webp
+home_text: 汇星的博客
+social_links:
+  Bilibili:
+    url: https://space.bilibili.com/582594431
+    fa-icon: fa-brands fa-bilibili
+  Github:
+    url: https://github.com/0xarch
+    fa-icon: fa-brands fa-github
+  Twitter: 
+    url: https://x.com/mulzionion
+    fa-icon: fa-brands fa-x-twitter
+              
