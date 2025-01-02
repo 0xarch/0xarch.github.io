@@ -23,16 +23,15 @@ date: 2024-12-04
 
 ### Fewu
 
-[![Fewu](//img.shields.io/badge/Fewu-1.2.5-3273d2)](//github.com/0xarch/fewu)
+[![Fewu](//img.shields.io/badge/Fewu-3.0.0-3273d2)](//github.com/0xarch/fewu)
 
 [Fewu](//github.com/0xarch/fewu) 是一个静态博客生成器，类似于 Hexo，但更加小巧。
 Fewu 完全开源！
-目前正在重新构建 Fewu。（这个小项目已经重构起码三次了）
+Fewu 的第三次重构已经完成。本次重构使用 TypeScript 并大幅抽象化以方便后续开发。
 
 Fewu 可以在 npm 上下载。包名为 `fewu`，可执行文件名为 `fewu`。
 
 同时，Fewu 有一些配套主题：
-* `Arch`，类 Icarus
-* `Wacal`，基于 GNOME 网页视觉元素
-* `simplus`，基于 KDE Blog
-* `Neo`，类 Fuwari
+* `Neo3`，类 Fuwari
+
+>尚有其他主题，不过由于 3.0.0 发布，这些主题均过时了
