@@ -42,7 +42,7 @@ jobs:
       - name: pull dependencies
         run: npm i
       - name: pull theme
-        run: git clone https://github.com/0xarch/fewu3-neo-theme _themes/N3
+        run: git clone https://github.com/0xarch/fewu3-neo-theme themes/N3
       - name: build
         run: fewu
       - name: --Setup Pages
