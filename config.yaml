@@ -11,6 +11,9 @@ theme: N3
 excluded_files: 
   - posts/template.md
 
+attached_languages:
+  - en-US
+  - zh-CN
 avatar: https://cdn.jsdelivr.net/gh/0xarch/0xarch.github.io/resources/avatar.webp
 home_text: 汇星的博客
 social_links:
