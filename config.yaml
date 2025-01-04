@@ -1,6 +1,6 @@
-title: Fewu
+title: 汇星的博客
 description: ''
-author: Meteor
+author: 汇星
 language: zh-CN
 timezone: Asia/Shanghai
 url: 0xarch.github.io/blog-deploy
@@ -15,7 +15,6 @@ attached_languages:
   - en-US
   - zh-CN
 avatar: https://cdn.jsdelivr.net/gh/0xarch/0xarch.github.io/resources/avatar.webp
-home_text: 汇星的博客
 social_links:
   Bilibili:
     url: https://space.bilibili.com/582594431
