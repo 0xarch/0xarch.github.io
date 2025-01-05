@@ -13,7 +13,7 @@ Briefly describe how to install Archlinux on the X86_64 device that supports UEF
 
 # Arch Linux Installation Guide
 
-!!! caution
+!!! warning READ THIS FIRST
 1. This article believes that you have a preliminary computer knowledge.
 2. This article believes that you have the ability to search and obtain knowledge through the Internet.
 3. This article believes that you have understood Archlinux.
@@ -90,7 +90,7 @@ cfdisk <path/to/disk>
 Then, use the graphic interface provided by `cfdisk` to complete partitioning.
 For `UEFI`, you need to prepare at least two partitions: ESP partition and root division.
 
-!!! caution
+!!! danger KEEP YOUR DATA
 
 For multi-system installation and data-kept installation, please pay attention to whether there are data to be reserved for the partitions preparing for operation, such as another system.
 !!!
@@ -102,7 +102,7 @@ mkfs.fat -F32 <path/to/esp>
 mkfs.ext4 <path/to/root>
 ```
 
-!!! note
+!!! info Another Filesystem?
 For filesystems such as `btrfs`, read their manuals. 
 For swap parition, use `mkswap <path/to/swap>` to format swap，use `swapon <path/to/swap>` to enable swap.
 !!!
@@ -115,7 +115,7 @@ mkdir -p /mnt/boot/efi
 mount <path/to/esp> /mnt/boot/efi
 ```
 
-!!! note
+!!! note `/mnt`
 The default installation location of this article is mapped to the `/mnt` directory of the Live environment. Usually this is fine.
 You can also use other directory, but you should pay attention to replace the corresponding position when reading below.
 !!!
@@ -129,7 +129,7 @@ Users with a slower speed of the default mirror source can be used to replace th
 ```sh
 reflector --country <Country> --sort <Sort> --protocol <Protocol> --age <UpdateTime> --save <Path>
 # Example: Use the mirror source that is used in China, uses the HTTPS protocol, and simultaneously synchronized within 48 hours, and is sorted at the rate.
-reflector --country China --sort rate --protocl https --age 48 --save /etc/pacman.d/mirrorlist
+reflector --country China --sort rate --protocol https --age 48 --save /etc/pacman.d/mirrorlist
 ```
 
 ### Basic system
@@ -250,7 +250,7 @@ Generate GRUB configuration file:
 grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
-!!! attention
+!!! tip OS Prober
 
 For multi-system users who want to start other systems in the GRUB menu, install `os-prober` and enable OS Prober in the`/etc/default/grub`.
 !!!

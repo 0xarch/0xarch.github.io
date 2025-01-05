@@ -13,7 +13,7 @@ multi_language:
 
 # Arch Linux 安装教程
 
-!!! caution
+!!! warning 看这里
 1. 本文认为你具有初步的计算机知识。
 2. 本文认为你具有通过网络搜索并获取知识的能力。
 3. 本文认为你已经了解 ArchLinux 了。
@@ -89,7 +89,7 @@ cfdisk <path/to/disk>
 
 然后，通过 `cfdisk` 提供的图形界面完成分区。对于 `UEFI` 来说，需要准备至少两个分区：ESP分区和根分区。
 
-!!! caution
+!!! danger 注意你的数据
 
 对于多系统安装、保留数据安装，请注意看好准备操作的分区是否有需要保留的数据，比如另一个系统。
 !!!
@@ -101,7 +101,7 @@ mkfs.fat -F32 <path/to/esp>
 mkfs.ext4 <path/to/root>
 ```
 
-!!! note
+!!! info 另一种文件系统？
 对于 `btrfs` 等分区格式，请阅读对应手册。
 对于需要交换分区的，使用 `mkswap <path/to/swap>` 格式化交换分区，使用 `swapon <path/to/swap>` 启用交换分区。
 !!!
@@ -114,7 +114,7 @@ mkdir -p /mnt/boot/efi
 mount <path/to/esp> /mnt/boot/efi
 ```
 
-!!! note
+!!! note `/mnt`
 本文默认安装位置映射到 Live 环境的 `/mnt` 目录。通常情况下这没什么问题。
 也可以使用其他的目录，但要注意阅读下文时替换对应的位置。
 !!!
@@ -128,7 +128,7 @@ mount <path/to/esp> /mnt/boot/efi
 ```sh
 reflector --country <Country> --sort <Sort> --protocol <Protocol> --age <UpdateTime> --save <Path>
 # 示例：使用在中国、使用 HTTPS 协议、至少在48小时内同步过的镜像源，按速率排序。
-reflector --country China --sort rate --protocl https --age 48 --save /etc/pacman.d/mirrorlist
+reflector --country China --sort rate --protocol https --age 48 --save /etc/pacman.d/mirrorlist
 ```
 
 ### 安装基本系统
@@ -249,7 +249,7 @@ grub-install <path/to/disk>
 grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
-!!! attention
+!!! tip OS Prober
 
 对于多系统用户希望在 GRUB 菜单中启动其他系统的，请安装 `os-prober` 并在 `/etc/default/grub` 中启用 OS Prober。
 !!!
