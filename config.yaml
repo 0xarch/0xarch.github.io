@@ -3,7 +3,7 @@ description: ''
 author: 汇星
 language: zh-CN
 timezone: Asia/Shanghai
-url: 0xarch.github.io/blog-deploy
+url: https://0xarch.github.io
 root: /
 source_dir: source
 public_dir: public
