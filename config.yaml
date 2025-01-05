@@ -7,7 +7,7 @@ url: 0xarch.github.io/blog-deploy
 root: /
 source_dir: source
 public_dir: public
-theme: N3
+theme: Next
 excluded_files: 
   - posts/template.md
 

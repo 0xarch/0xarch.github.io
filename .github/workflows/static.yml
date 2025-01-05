@@ -29,29 +29,29 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - name: --Checkout
+      - name: Checkout [Builtin]
         uses: actions/checkout@v4
-      - name: show environment
+      - name: List Environment
         run: ls -al .
-      - name: node.js
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 23.x
-      - name: install fewu
+      - name: Install SSG
         run: npm i -g fewu
-      - name: pull dependencies
+      - name: Pull dependencies
         run: npm i
-      - name: pull theme
-        run: git clone https://github.com/0xarch/fewu3-neo-theme themes/N3
-      - name: build
+      - name: Pull theme
+        run: git clone https://github.com/0xarch/next-theme themes/Next
+      - name: Build site
         run: fewu
-      - name: --Setup Pages
+      - name: Setup Pages [Builtin]
         uses: actions/configure-pages@v5
-      - name: --Upload artifact
+      - name: Upload artifact [Builtin]
         uses: actions/upload-pages-artifact@v3
         with:
           # Upload entire repository
           path: 'public'
-      - name: --Deploy to GitHub Pages
+      - name: Deploy to GitHub Pages [Builtin]
         id: deployment
         uses: actions/deploy-pages@v4
