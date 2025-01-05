@@ -5,8 +5,8 @@ tags: ArchLinux 教程
 category: Linux
 language: zh-CN
 multi_language:
-    zh-CN: 安装arch.md
-    en-US: install-arch.md
+    zh-CN: install-arch-zh.md
+    en-US: install-arch-en.md
 ---
 简要叙述如何在支持 UEFI 的 x86_64 设备上安装 ArchLinux。
 <!--more-->
@@ -249,7 +249,7 @@ grub-install <path/to/disk>
 grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
-!!! important
+!!! attention
 
 对于多系统用户希望在 GRUB 菜单中启动其他系统的，请安装 `os-prober` 并在 `/etc/default/grub` 中启用 OS Prober。
 !!!
