@@ -18,11 +18,11 @@ avatar: https://cdn.jsdelivr.net/gh/0xarch/0xarch.github.io/resources/avatar.web
 social_links:
   Bilibili:
     url: https://space.bilibili.com/582594431
-    fa-icon: fa-brands fa-bilibili
+    icon: fa-bilibili
   Github:
     url: https://github.com/0xarch
-    fa-icon: fa-brands fa-github
+    icon: fa-github
   Twitter: 
     url: https://x.com/mulzionion
-    fa-icon: fa-brands fa-x-twitter
+    icon: fa-x-twitter
               

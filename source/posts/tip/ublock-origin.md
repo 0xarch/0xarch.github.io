@@ -1,7 +1,7 @@
 ---
 title: uBlock Origin 注意事项
 date: 2025-01-06
-tags: 浏览器
+tags: 插件 开源软件
 category: 前端技术
 ---
 在安装 uBlock Origin 之后，我遇到了许多问题。其中大部分是 uBlock Origin 的规则太奇怪导致的。
