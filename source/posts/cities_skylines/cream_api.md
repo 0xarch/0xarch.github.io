@@ -3,17 +3,18 @@ title: 都市天际线 DLC 补丁自定义教程
 date: 2024-12-3
 tags: 都市:天际线
 category: 游戏
+image: https://cdn1.epicgames.com/6009be9994c2409099588cde6f3a5ed0/offer/EGS_CitiesSkylines_ColossalOrder_S3-2560x1440-14df106873c918591e49bd9604841e83.jpg
 ---
 本文主要介绍如何自定义都市天际线的 CreamAPI 补丁来自定义 DLC.
 <!--more-->
 
 本教程基于 QQ 群 143395035 (下简称Q群) 中打包的 DLC 补丁，即`群文件/关于DLC/Steam版天际线DLC补丁 2024.10.24.7z`。
 
-!!! warning
+!!! question EPIC?
 由于Q群和我都主要是 Steam 平台，因此本教程不面向 EPIC 版游戏。
 !!!
 
-!!! caution
+!!! warning WARNING 
 阅读前请确保你已经**正确安装**了 DLC 补丁！
 !!!
 
@@ -39,9 +40,18 @@ category: 游戏
 
 找出你不想要的 DLC，在最前面加 `;` 或 `#` 将其注释。本示例关闭了 `Rail Hawk Radio` 和 `Sunny Breeze Radio`。
 
-![](cream_api/off.png)
+```ini
+1196100 = SteamDB Unknown App 1196100 (Cities: Skylines - Cookies Linux)
+1531470 = Cities: Skylines - Content Creator Pack: Train Stations
+1531471 = Cities: Skylines - Content Creator Pack: Bridges & Piers
+# 1531472 = Cities: Skylines - Rail Hawk Radio
+# 1531473 = Cities: Skylines - Sunny Breeze Radio
+1726380 = Cities: Skylines - Airports
+1726381 = Cities: Skylines - Content Creator Pack: Vehicles of the World
+1726382 = Cities: Skylines - Content Creator Pack: Map Pack
+```
 
-!!! tip
+!!! tip 符号
 一定要用半角符号注释。如果你不确定，请复制这个 `#`。
 !!!
 

@@ -10,7 +10,7 @@ license: CC-BY-SA
 ---
 
 Linux 下使用 Git 和 Github 连接的基本配置，包括账户、SSH等。
-本文为 [Git 常用命令大全] 的子集。
+本文为 [Git 常用命令大全](./gitcommands.md) 的子集。
 
 <!--more-->
 
