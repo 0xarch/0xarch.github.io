@@ -35,8 +35,12 @@ error
 Question
 !!!
 
-!!! question Question
+!!! question QUESTION WITH CUSTOM TITLE
 Question
+!!!
+
+!!! attention
+Attention
 !!!
 
 ## GFM Alert
@@ -51,6 +55,10 @@ warning
 
 > [!warning]
 > Note
+
+!!! error Unusable
+There might be some non-standard code so that for now, the renderer cannot properly handle this.
+!!!
 
 ## Sub & Sup
 

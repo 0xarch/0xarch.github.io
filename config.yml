@@ -23,6 +23,10 @@ social_links:
     url: https://x.com/mulzionion
     icon: fa-x-twitter
 
+external:
+  source_deployers:
+    - this-module-not-exist
+
 _custom_giscus: |+
   <script src="https://giscus.app/client.js"
           data-repo="0xarch/0xarch.github.io"
