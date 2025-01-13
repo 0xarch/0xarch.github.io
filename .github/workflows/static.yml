@@ -43,6 +43,8 @@ jobs:
         run: git clone https://github.com/0xarch/next-theme themes/Next
       - name: Build site
         run: npx fewu
+      - name: Copy SMQ
+        run: cp extra/sm*.html public/
       - name: Setup Pages [Builtin]
         uses: actions/configure-pages@v5
       - name: Upload artifact [Builtin]

@@ -1,4 +1,5 @@
-extra/
+extra/demos/
+extra/tools/
 node_modules/
 public/
 themes/
