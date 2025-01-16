@@ -5,6 +5,8 @@
   "dependencies": {
     "@fortawesome/free-brands-svg-icons": "^6.7.2",
     "@material-symbols/svg-400": "^0.27.2",
+    "@material-symbols/svg-600": "^0.27.2",
+    "@material/material-color-utilities": "^0.3.0",
     "fewu-cli": "^1.0.0"
   }
 }
