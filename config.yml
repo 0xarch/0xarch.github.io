@@ -7,7 +7,7 @@ url: https://0xarch.github.io
 root: /
 source_dir: source
 public_dir: public
-theme: Next
+theme: Nexterial
 excluded_files: 
   - posts/template.md
 

@@ -40,7 +40,7 @@ jobs:
       - name: Pull dependencies
         run: npm i
       - name: Pull theme
-        run: git clone https://github.com/0xarch/next-theme themes/Next
+        run: git clone https://github.com/0xarch/nexterial-theme themes/Nexterial
       - name: Build site
         run: npx fewu
       - name: Copy SMQ
