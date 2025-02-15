@@ -40,8 +40,8 @@ jobs:
         run: 'npm install'
       - name: Build
         run: |-
-          'npx vuepress-webpack build src'
-          'touch src/.vuepress/dist/.nojekyll'
+          npx vuepress-webpack build src
+          touch src/.vuepress/dist/.nojekyll
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
