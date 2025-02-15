@@ -37,10 +37,10 @@ jobs:
           'node-version': 'latest'
           'pnpm-version': '10'
       - name: Setup node modules
-        run: 'pnpm install'
+        run: 'npm install'
       - name: Build
         run: |-
-          'pnpm docs:build'
+          'npm run docs:build'
           'touch src/.vuepress/dist/.nojekyll'
       - name: Setup Pages
         uses: actions/configure-pages@v5
