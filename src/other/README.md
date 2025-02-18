@@ -1,4 +1,7 @@
 ---
 title: 杂项
-icon: others
+icon: icon-park-solid:other
+index: false
+article: false
+timeline: false
 ---

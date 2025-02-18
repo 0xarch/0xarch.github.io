@@ -18,12 +18,12 @@ icon: fe:document
     * `Window`: 与网页有关的 API, 如 `scroll`. `Window` 同时作为 `globalThis`.  
     * `Document`: 与页面有关的 API, 如 `querySelector`.
 
-!!! note
+::: note
 对于页面的`<html>` `<head>` `<body>` 等重要元素，有如下映射：  
 `<html>`: `document.documentElement`.  
 `<head>`: `document.head`，此属性为常量.  
 `<body>`: `document.body`.  
-!!!
+:::
 
 ## DOM (文档对象模型)
 
@@ -38,9 +38,9 @@ node.querySelector(selector) // 节点选择器 (类似于 CSS)
 document.documentElement // 根节点 (:root，即<html>)
 ```
 
-!!! tip
+::: tip
 [MDN 上的基本 DOM 操作学习](https://developer.mozilla.org/zh-CN/docs/Learn/JavaScript/Client-side_web_APIs/Manipulating_documents#%E5%8A%A8%E6%89%8B%E7%BB%83%E4%B9%A0%EF%BC%9A%E5%9F%BA%E6%9C%AC%E7%9A%84_dom_%E6%93%8D%E4%BD%9C)
-!!!
+:::
 
 ### 节点对象的实用成员
 

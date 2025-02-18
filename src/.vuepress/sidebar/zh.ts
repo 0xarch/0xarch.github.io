@@ -16,6 +16,12 @@ export const zhSidebar = sidebar({
       prefix: "posts/",
       children: "structure",
     },
+    {
+      text: "杂项",
+      icon: "icon-park-solid:other",
+      prefix: "other/",
+      children: "structure",
+    },
     "intro",
     {
       text: "幻灯片",

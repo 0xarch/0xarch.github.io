@@ -261,9 +261,9 @@ const person2 = {
 
 ## 原型链
 
-!!! caution
+::: caution
 原型链是 JavaScript 中非常重要的机制，掌握了原型链踏入了 JavaScript 的大门。
-!!!
+:::
 
 原型是 JavaScript 对象相互继承特性的机制。
 

@@ -25,7 +25,7 @@ function constructor(){
 new constructor();
 ```
 
-!!! caution 箭头函数不能作为构造器
+::: caution 箭头函数不能作为构造器
 ```js
 const arrowCanNotBeConstructor = () => {
   console.log(this);
@@ -34,7 +34,7 @@ const arrowCanNotBeConstructor = () => {
 new arrowCanNotBeConstructor();
 // TypeError: arrowCanNotBeConstructor is not a constructor
 ```
-!!!
+:::
 
 ## 对象本身
 
@@ -72,9 +72,9 @@ object.logThis.call(Array.prototype);
 object.logThis.call(obj2);
 ```
 
-!!! note
+::: note
 箭头函数作为方法时，尽管通过 `call` 调用，其 `this` 依旧指向 `globalThis`。
-!!!
+:::
 
 类(`ES6`)的静态方法指向类本身，实例方法指向实例本身。
 

@@ -22,9 +22,9 @@ icon: mdi:arch
 
 URL: https://im.qq.com/linuxqq/index.shtml
 
-!!! tip
+::: tip
 Flatpak: com.qq.QQ
-!!!
+:::
 
 ### 2. 微信
 
@@ -34,9 +34,9 @@ Flatpak: com.qq.QQ
 
 URL：https://weixin.qq.com
 
-!!! tip
+::: tip
 Flatpak: com.tencent.WeChat
-!!!
+:::
 
 ### 3. 钉钉(Dingtalk)
 

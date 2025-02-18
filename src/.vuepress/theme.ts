@@ -25,14 +25,14 @@ export default hopeTheme({
       // Dingding: "https://example.com",
       // Discord: "https://example.com",
       // Dribbble: "https://example.com",
-      Email: "mailto:info@example.com",
+      Email: "mailto:alanqa-ops@outlook.com",
       // Evernote: "https://example.com",
       // Facebook: "https://example.com",
       // Flipboard: "https://example.com",
       // Gitee: "https://example.com",
-      GitHub: "https://example.com",
+      GitHub: "https://github.com/0xarch",
       // Gitlab: "https://example.com",
-      Gmail: "mailto:info@example.com",
+      Gmail: "mailto:mulzi@gmail.com",
       // Instagram: "https://example.com",
       // Lark: "https://example.com",
       // Lines: "https://example.com",
@@ -42,9 +42,9 @@ export default hopeTheme({
       // QQ: "https://example.com",
       // Qzone: "https://example.com",
       // Reddit: "https://example.com",
-      Rss: "https://example.com",
-      Steam: "https://example.com",
-      Twitter: "https/://example.com",
+      Rss: "//404",
+      // Steam: "https://example.com",
+      // Twitter: "https/://example.com",
       // Wechat: "https://example.com",
       // Weibo: "https://example.com",
       // Whatsapp: "https://example.com",
@@ -65,7 +65,7 @@ export default hopeTheme({
       // sidebar
       sidebar: zhSidebar,
 
-      footer: `Copyright 2024 - ${new Date().getFullYear()}`,
+      footer: `2024 - ${new Date().getFullYear()}。自豪地使用 VuePress 与 VuePressThemeHope 构建。`,
 
       displayFooter: true,
 
@@ -115,7 +115,7 @@ export default hopeTheme({
       // sidebar
       sidebar: enSidebar,
 
-      footer: `Copyright 2024 - ${new Date().getFullYear()}`,
+      footer: `2024 - ${new Date().getFullYear()}. Proudly uses VuePress and VuePressThemeHope`,
 
       displayFooter: true,
 

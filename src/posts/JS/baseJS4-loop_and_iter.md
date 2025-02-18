@@ -109,6 +109,6 @@ label :
 ```
 `label` 的值可以是任何的非保留字的 JavaScript 标识符， `statement` 可以是任意你想要标识的语句（块）。
 
-!!! tip
+::: tip
 label 常常被用来终止嵌套循环.
-!!!
+:::
