@@ -2,9 +2,12 @@
 title: 介绍
 icon: circle-info
 cover: /assets/images/cover3.jpg
+date: 2025-02-10
 ---
 
 这是葱投的个人博客。
+
+<!-- more -->
 
 山东省青岛市郊区人，高中生。
 JS 爱好者，喜欢做一些小项目。

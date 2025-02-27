@@ -1,11 +1,16 @@
 ---
 title: ChromeOS Linux 子系统托盘守护进程
+date: 2025-02-21
 tag:
   - Chromium
   - Linux
 category:
   - Linux
 ---
+一种基于 `notify-send` 实现的 ChromeOS(FydeOS) Linux 子系统的托盘守护。
+
+<!-- more -->
+
 ~/linux-subsystem-daemon:
 ```bash
 #!/bin/bash

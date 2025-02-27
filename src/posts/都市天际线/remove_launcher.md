@@ -7,9 +7,13 @@ category:
     - 游戏
 ---
 
+本教程教你如何跳过恼人的 Paradox Launcher。
+
 ::: warning
 本教程不面向 EPIC。
 :::
+
+<!-- more -->
 
 打开游戏目录：
 
