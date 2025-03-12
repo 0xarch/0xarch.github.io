@@ -11,7 +11,7 @@ export default hopeTheme({
     url: "https://0xarch.github.io",
   },
 
-  logo: "https://vuejs.org/logo.svg",
+  logo: "https://ptpcdn.dyas.top/upload/2025_02_22523751000014839.jpg",
 
   repo: "0xarch/0xarch.github.io",
 

@@ -20,3 +20,53 @@
 .vp-social-media {
     margin: 0;
 }
+
+.vp-sidebar {
+    scrollbar-width: none;
+}
+
+.vp-navbar {
+    backdrop-filter: saturate(135%) blur(10px);
+    box-shadow: 0px 1px 1px #12151a29;
+}
+
+.vp-breadcrumb li a {
+    color: var(--vp-c-accent);
+    font-weight: 330;
+}
+
+.vp-breadcrumb li:not(.is-active,:hover) a {
+    color: var(--vp-c-text-mute);
+}
+
+.vp-breadcrumb li.is-active a {
+    color: var(--vp-c-accent);
+}
+
+.vp-blogger-avatar {
+    object-fit: cover;
+    border-radius: 1rem;
+}
+
+.vp-nav-logo {
+    display: none;
+}
+
+.vp-article-item, .vp-page .vp-blog-info-wrapper .vp-blogger-info, .vp-page .vp-blog-infos {
+    border-radius: 1rem;
+    box-shadow: 0px 0px 1px 1px var(--vp-c-shadow);
+    transition: box-shadow var(--vp-t-transform);
+}
+
+.vp-article-cover {
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+}
+
+.vp-sidebar-link.active:not(:hover) {
+    background-color: unset;
+}
+
+.vp-sidebar-links li {
+    padding: 4px 0;
+}

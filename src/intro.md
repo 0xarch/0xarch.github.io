@@ -1,16 +1,20 @@
 ---
 title: 介绍
 icon: circle-info
-cover: /assets/images/cover3.jpg
-date: 2025-02-10
+cover: https://ptpcdn.dyas.top/upload/2025_02_22523751000014839.jpg
+date: 2025-03-12
 ---
 
-这是葱投的个人博客。
+这是 0xarch / Soloev 的个人博客。
 
 <!-- more -->
 
 山东省青岛市郊区人，高中生。
 JS 爱好者，喜欢做一些小项目。
+
+## 关于名称
+
+作者在编程时称自己为 0xarch，在摄影等活动时称 Soloev。
 
 ## 游戏
 
