@@ -1,4 +1,7 @@
 // place your custom styles here
+
+@import "./custom-style.scss";
+
 .vp-page .vp-blog-info-wrapper {
     margin-top: .5rem;
 }
@@ -50,12 +53,6 @@
 
 .vp-nav-logo {
     display: none;
-}
-
-.vp-article-item, .vp-page .vp-blog-info-wrapper .vp-blogger-info, .vp-page .vp-blog-infos {
-    border-radius: 1rem;
-    box-shadow: 0px 0px 1px 1px var(--vp-c-shadow);
-    transition: box-shadow var(--vp-t-transform);
 }
 
 .vp-article-cover {

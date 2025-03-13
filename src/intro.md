@@ -1,7 +1,7 @@
 ---
 title: 介绍
 icon: circle-info
-cover: https://ptpcdn.dyas.top/upload/2025_02_22523751000014839.jpg
+cover: assets/images/510.png
 date: 2025-03-12
 ---
 

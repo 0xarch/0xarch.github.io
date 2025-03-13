@@ -11,11 +11,11 @@ export default defineUserConfig({
       title: "博客",
       description: "0xarch 的博客",
     },
-    "/en/": {
-      lang: "en-US",
-      title: "A blog",
-      description: "0xarch's blog",
-    },
+    // "/en/": {
+    //   lang: "en-US",
+    //   title: "A blog",
+    //   description: "0xarch's blog",
+    // },
   },
 
   theme,
