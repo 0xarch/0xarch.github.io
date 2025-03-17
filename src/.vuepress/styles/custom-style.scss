@@ -1,3 +1,7 @@
+.vp-site-name {
+    margin-right: 1rem;
+}
+
 @property --cs-bgColorWidth {
     syntax: '<percentage>';
     inherits: false;
@@ -39,6 +43,12 @@
     position: relative;
 }
 
-.vp-article-title::after {
+.vp-article-title::after, .vp-nav-item > .auto-link::before {
     height: .05rem;
+}
+
+span.page-category-item.clickable {
+    position: relative;
+    border-radius: 1.5rem;
+    padding: 0 .5rem;
 }

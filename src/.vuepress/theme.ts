@@ -131,6 +131,15 @@ export default hopeTheme({
     },
   },
 
+  // pure: true,
+  focus: false,
+
+  navbarLayout: {
+    start: ["Brand", "Links"],
+    center: [],
+    end: ["Language", "Repo", "Outlook", "Search"],
+  },
+
   encrypt: {
     config: {
       "/demo/encrypt.html": {
@@ -219,6 +228,7 @@ export default hopeTheme({
 
   plugins: {
     blog: true,
+    copyright: true,
 
     // Install @waline/client before enabling it
     // Note: This is for testing ONLY!

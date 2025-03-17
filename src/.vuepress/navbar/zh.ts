@@ -6,11 +6,30 @@ export const zhNavbar = navbar([
     link: "/",
     // icon: "home"
   },
+  // {
+  //   text: "博文",
+  //   // icon: "creative",
+  //   link: "/posts/",
+  // },
   {
-    text: "博文",
-    // icon: "creative",
-    link: "/posts/",
+    text: "文章",
+    prefix: "posts/",
+    link: "posts/",
   },
+  {
+    text: "公交",
+    prefix: "青岛公交/",
+    link: "青岛公交/",
+  },
+  {
+    text: "杂项",
+    prefix: "other/",
+    link: "other/",
+  },
+  {
+    text: "关于",
+    link: "intro"
+  }
   // "/article/",
   // {
   //   "text": "标签",
