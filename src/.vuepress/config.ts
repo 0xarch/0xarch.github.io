@@ -5,6 +5,8 @@ import theme from "./theme.js";
 export default defineUserConfig({
   base: "/",
 
+  "lang": "zh-CN",
+
   locales: {
     "/": {
       lang: "zh-CN",

@@ -1,12 +1,11 @@
 ---
 home: true
 layout: BlogHome
-icon: house
 title: 博客主页
 heroImage: https://theme-hope-assets.vuejs.press/logo.svg
 heroText: 汇星的博客
 heroFullScreen: true
-tagline: No Sub(n,n,17) !
+tagline: 汇为烈火，散为繁星
 # projects:
 #   - icon: folder-open
 #     name: 项目名称

@@ -1,5 +1,5 @@
 ---
-title: "入门JS教程: WebAPI 与 DOM"
+title: "入门JS教程：WebAPI 与 DOM"
 date: 2024-11-18
 tag:
   - JavaScript

@@ -1,5 +1,5 @@
 ---
-title: "JS基础IV: 循环和迭代"
+title: "JS基础(4)：循环和迭代"
 date: 2024-06-05
 tag:
   - Node.js
