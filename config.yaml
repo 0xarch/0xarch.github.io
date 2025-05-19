@@ -1,0 +1,31 @@
+title: 0xarch 的博客
+description: 
+author: 0xarch
+language: zh-CN
+timezone: Asia/Shanghai
+url: https://0xarch.github.io
+root: /
+source_dir: source
+public_dir: public
+theme: "@fewu-swg/fewu-theme-next"
+excluded_files: 
+  - posts/template.md
+  - posts/guide/guide.zh-CN.md
+  - posts/guide/guide.en-US.md
+_custom_giscus: |
+  <script src="https://giscus.app/client.js"
+          data-repo="0xarch/0xarch.github.io"
+          data-repo-id="R_kgDOJlXk8A"
+          data-category="Announcements"
+          data-category-id="DIC_kwDOJlXk8M4Cl1VA"
+          data-mapping="pathname"
+          data-strict="1"
+          data-reactions-enabled="1"
+          data-emit-metadata="0"
+          data-input-position="top"
+          data-theme="preferred_color_scheme"
+          data-lang="zh-CN"
+          data-loading="lazy"
+          crossorigin="anonymous"
+          async>
+  </script>
