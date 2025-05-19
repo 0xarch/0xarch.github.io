@@ -37,18 +37,18 @@ jobs:
           'node-version': 'latest'
           'pnpm-version': '10'
       - name: Setup node modules
-        run: 'npm install'
+        run: 'pnpm install'
       - name: Build
         run: |-
-          npx vuepress-webpack build src
-          touch src/.vuepress/dist/.nojekyll
+          npx fewu
+          touch public/.nojekyll
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           # Upload entire repository
-          path: 'src/.vuepress/dist'
+          path: 'public'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
