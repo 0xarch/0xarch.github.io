@@ -35,9 +35,8 @@ jobs:
         uses: actions/setup-node@v4
         with:
           'node-version': 'latest'
-          'pnpm-version': '10'
       - name: Setup node modules
-        run: 'pnpm install'
+        run: 'npm install'
       - name: Build
         run: |-
           npx fewu
