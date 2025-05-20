@@ -40,7 +40,7 @@ jobs:
       - name: Clone upstream theme
         run: |-
           cd node_modules/@fewu-swg
-          rm fewu-theme-next -r
+          rm fewu-theme-next -rf
           git clone git@github.com:fewu-swg/fewu-theme-next
           cd ../../
       - name: Build
