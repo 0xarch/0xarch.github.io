@@ -6,7 +6,7 @@ tags:
   - JavaScript
 category:
   - 前端技术
-order: 1
+order: 99
 highlight: true
 icon: simple-icons:javascript
 ---

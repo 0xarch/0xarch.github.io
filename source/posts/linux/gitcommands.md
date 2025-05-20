@@ -4,7 +4,7 @@ date: 2024-03-04
 tag:
     - Git
 category:
-    - Linux
+    - Code Snippets
 highlight: true
 license: REPRINT
 icon: bi:git
