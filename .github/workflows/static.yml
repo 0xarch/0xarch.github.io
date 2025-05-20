@@ -31,12 +31,18 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Download vuepress
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           'node-version': 'latest'
       - name: Setup node modules
         run: 'npm install'
+      - name: Clone upstream theme
+        run: |-
+          cd node_modules/@fewu-swg
+          rm fewu-theme-next
+          git clone git@github.com:fewu-swg/fewu-theme-next
+          cd ../../
       - name: Build
         run: |-
           npx fewu
