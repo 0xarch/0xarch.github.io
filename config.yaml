@@ -14,6 +14,18 @@ excluded_files:
   - posts/template.md
   - posts/guide/guide.zh-CN.md
   - posts/guide/guide.en-US.md
+plugin_configs:
+  fewu-plugin-basic-improvement:
+    rss:
+      enabled: true
+    sitemap:
+      enabled: true
+      type: xml
+    extra-files:
+      enabled: true
+      from: ./extra
+      files:
+        - smq.html
 _custom_giscus: |
   <script src="https://giscus.app/client.js"
           data-repo="0xarch/0xarch.github.io"
