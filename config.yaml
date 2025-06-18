@@ -8,7 +8,7 @@ note: |-
 author: 0xarch
 language: zh-CN
 timezone: Asia/Shanghai
-url: https://0xarch.github.io
+url: 0xarch.github.io
 root: /
 source_dir: source
 public_dir: public
