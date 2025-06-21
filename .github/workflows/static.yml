@@ -35,17 +35,19 @@ jobs:
         uses: actions/setup-node@v4
         with:
           'node-version': 'latest'
+      - name: Setup pnpm
+        uses: actions/setup-pnpm
       - name: Setup node modules
-        run: 'npm install'
-      - name: Clone upstream theme
-        run: |-
-          cd node_modules/@fewu-swg
-          rm fewu-theme-next -rf
-          git clone https://github.com/fewu-swg/fewu-theme-next
-          cd ../../
+        run: 'pnpm install'
+      # - name: Clone upstream theme
+      #   run: |-
+      #     cd node_modules/@fewu-swg
+      #     rm fewu-theme-next -rf
+      #     git clone https://github.com/fewu-swg/fewu-theme-next
+      #     cd ../../
       - name: Build
         run: |-
-          npx fewu
+          pnpm fewu
           touch public/.nojekyll
       - name: Setup Pages
         uses: actions/configure-pages@v5
