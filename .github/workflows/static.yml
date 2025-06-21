@@ -36,7 +36,7 @@ jobs:
         with:
           'node-version': 'latest'
       - name: Setup pnpm
-        uses: actions/setup-pnpm
+        uses: pnpm/action-setup@v4.1.0
       - name: Setup node modules
         run: 'pnpm install'
       # - name: Clone upstream theme
