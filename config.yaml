@@ -17,6 +17,8 @@ excluded_files:
   - posts/template.md
   - posts/guide/guide.zh-CN.md
   - posts/guide/guide.en-US.md
+additional_navs:
+  About: /posts/about.md
 plugin_configs:
   fewu-plugin-basic-improvement:
     rss:
