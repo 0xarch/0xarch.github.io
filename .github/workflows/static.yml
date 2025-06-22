@@ -48,17 +48,9 @@ jobs:
       - name: Build
         run: |-
           pnpm fewu
-          touch public/.nojekyll
       - name: Setup misc files
         run: |-
-          echo ${{ secrets.INDEXNOWKEY }} > public/${{ secrets.INDEXNOWKEY }}.txt
-      - name: Setup IndexNow
-        uses: bojieyang/indexnow-action@v2
-        with:
-          # The location of your sitemap must start with http(s). 
-          # Currently, XML Sitemap, Sitemap index, RSS and Atom formats are supported.
-          sitemap-location: 'https://0xarch.github.io/sitemap.xml' 
-          key: ${{ secrets.INDEXNOWKEY }} # The key you get from IndexNow.
+          touch public/.nojekyll
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
