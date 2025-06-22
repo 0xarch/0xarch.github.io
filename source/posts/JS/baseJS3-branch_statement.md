@@ -61,11 +61,12 @@ console.log(testNum(-5));
 
 ### 注意
 
-不要将原始布尔值的`true`和`false`与`Boolean`对象的真或假混淆。任何一个值，只要它不是 `undefined`、`null`、 `0`、`NaN`或空字符串（""），那么无论是任何对象，即使是值为假的 `Boolean` 对象，在条件语句中都为真。
+不要将原始布尔值的`true`和`false`与`Boolean`对象的真或假混淆，也不要将`Boolean`与`Boolean`对象的构造函数混淆。任何一个值，只要它不是 `undefined`、`null`、 `0`、`NaN`或空字符串（`""`），那么无论是任何对象，即使是值为假的 `Boolean` 对象，在条件语句中都为真。
 
 ```js
-var b = new Boolean(false);
-if (b) //表达式的值为 true
+var b = new Boolean(false); // 真
+
+var f = Boolean(false); // 假
 ```
 
 建议不要在条件表达式中单纯的使用赋值运算，因为粗看下赋值运算的代码很容易让人误认为是等性比较。  

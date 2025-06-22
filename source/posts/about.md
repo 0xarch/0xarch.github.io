@@ -14,7 +14,7 @@ JS 爱好者，喜欢做一些小项目。
 
 ## 关于名称
 
-作者在编程时称自己为 0xarch，在摄影等活动时称 Soloev。
+0xarch 或 Soloev, 随机使用, 正在考虑统一名字.
 
 ## 游戏
 
@@ -43,4 +43,4 @@ Fewu 可以在 npm 上下载。包名为 `fewu-cli`，可执行文件名为 `few
 * `Arch`，类 Icarus，废弃。
 * `Wacal`，基于 GNOME 网页视觉元素，废弃。
 * `simplus`，基于 KDE Blog，废弃。
-* `Neo`，类 Fuwari。此主题具有与最新版 Fewu 最好的兼容性。
+* [`NEXT`](//github.com/fewu-swg/fewu-theme-next)(`Neo`)，类 Fuwari。此主题具有与最新版 Fewu 最好的兼容性。
