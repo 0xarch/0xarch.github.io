@@ -8,7 +8,7 @@
     "dependencies": {
         "@fewu-swg/fewu-plugin-basic-improvement": "^1.0.4",
         "@fewu-swg/fewu-renderer-markdown": "^1.3.0",
-        "@fewu-swg/fewu-theme-next": "^1.1.4",
+        "@fewu-swg/fewu-theme-next": "^1.1.5",
         "fewu-cli": "^1.0.12"
     }
 }
