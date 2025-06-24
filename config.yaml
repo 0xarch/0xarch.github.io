@@ -19,6 +19,10 @@ excluded_files:
   - posts/guide/guide.en-US.md
 additional_navs:
   About: /posts/about.md
+social_links:
+  Github:
+    url: https://github.com/0xarch
+    icon: fa-github
 plugin_configs:
   fewu-plugin-basic-improvement:
     rss:
