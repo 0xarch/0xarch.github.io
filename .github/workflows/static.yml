@@ -56,6 +56,8 @@ jobs:
       - name: Setup misc files
         run: |-
           touch public/.nojekyll
+          touch public/${{ secrets.GOOGLEVERIF }}.html
+          echo "google-site-verification: ${{ secrets.GOOGLEVERIF }}.html" > public/${{ secrets.GOOGLEVERIF }}.html
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
