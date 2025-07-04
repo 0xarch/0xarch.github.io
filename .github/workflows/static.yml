@@ -46,6 +46,7 @@ jobs:
         run: 'pnpm install'
       - name: Clone upstream theme
         run: |-
+          mkdir themes
           cd themes
           git clone https://github.com/0xarch/nexterial-theme
           cd nexterial-theme
