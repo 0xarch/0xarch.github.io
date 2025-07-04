@@ -44,12 +44,13 @@ jobs:
         uses: pnpm/action-setup@v4.1.0
       - name: Setup node modules
         run: 'pnpm install'
-      # - name: Clone upstream theme
-      #   run: |-
-      #     cd node_modules/@fewu-swg
-      #     rm fewu-theme-next -rf
-      #     git clone https://github.com/fewu-swg/fewu-theme-next
-      #     cd ../../
+      - name: Clone upstream theme
+        run: |-
+          cd themes
+          git clone https://github.com/0xarch/nexterial-theme
+          cd nexterial-theme
+          pnpm install
+          cd ../../
       - name: Build
         run: |-
           pnpm fewu
