@@ -69,19 +69,18 @@ jobs:
           touch docs/.vuepress/dist/${{ secrets.GOOGLEVERIF }}.html
           echo "google-site-verification: ${{ secrets.GOOGLEVERIF }}.html" > docs/.vuepress/dist/${{ secrets.GOOGLEVERIF }}.html
 
-      - name: Deploy document
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          branch: gh-pages
-          folder: docs/.vuepress/dist
-
-      # - name: Setup Pages
-      #   uses: actions/configure-pages@v5
-      # - name: Upload artifact
-      #   uses: actions/upload-pages-artifact@v3
+      # - name: Deploy document
+      #   uses: JamesIves/github-pages-deploy-action@v4
       #   with:
-      #     # Upload entire repository
-      #     path: 'public'
-      # - name: Deploy to GitHub Pages
-      #   id: deployment
-      #   uses: actions/deploy-pages@v4
+      #     branch: gh-pages
+      #     folder: docs/.vuepress/dist
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: 'docs/.vuepress/dist'
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
