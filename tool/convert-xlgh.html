@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convert xlgh</title>
+</head>
+
+<body>
+    <small><a href="index.html">Back</a></small>
+    <h1>Converter</h1>
+    <h2>This tool converts Qingdao Chengyun Holding's bullshit webpage to markdown.</h2>
+    <h3>Input</h3>
+    <textarea name="" id="~RAW"></textarea>
+    <button id="~TRIG">Convert!</button>
+    <h3>Output</h3>
+    <textarea name="" id="~CONVERTED"></textarea>
+    <script>
+        const rawTextarea = document.getElementById('~RAW');
+        const outputTextarea = document.getElementById('~CONVERTED');
+        const trigger = document.getElementById('~TRIG');
+        trigger.onclick = () => {
+            outputTextarea.value = convert(rawTextarea.value);
+        }
+
+        function findIndexFor(array, target, after = 0) {
+            let i = after;
+            for (; i < array.length; i++) {
+                if ((typeof target.test === 'function') ? target.test(array[i]) : array[i] === target) {
+                    return i;
+                }
+            }
+            return -1;
+        }
+
+        function getIterator(array, i = 0) {
+            return () => array[i++];
+        }
+
+        function quotaToSub(v) {
+            let result = ``;
+            if (v.includes('（')) {
+                let quota_start_index = findIndexFor(v, '（');
+                let quota_end_index = findIndexFor(v, '）', quota_start_index);
+                let quota_content = v.slice(quota_start_index + 1, quota_end_index);
+                result += v.slice(0, quota_start_index);
+                result += `<sub>${quota_content}</sub>`;
+            } else {
+                result += v;
+            };
+            return result;
+        }
+
+        function convert(rawtext = '') {
+            let result = '\n';
+            let lines = rawtext.split('\n');
+
+            let shit_end_index = findIndexFor(lines, '');
+            let start_line_index = findIndexFor(lines, "线路调整具体方案：", shit_end_index);
+            let actual_start_index = findIndexFor(lines, '', start_line_index) + 1;
+            let intro_end_index = findIndexFor(lines, '', actual_start_index + 1);
+
+            let point_start_index = findIndexFor(lines, /(一、主副站调整)/, intro_end_index) + 1;
+            let route_start_index = findIndexFor(lines, /(二、调整后线路走向)/, point_start_index) + 1;
+            let stop_start_index = findIndexFor(lines, /(三、调整后站点)/, route_start_index) + 1;
+            let depart_start_index = findIndexFor(lines, /(四、调整后首末车时间)/, stop_start_index) + 1;
+            let misc_start_index = findIndexFor(lines, /(五、其他事宜)/, depart_start_index) + 1;
+            let map_start_index = findIndexFor(lines, /(六、调整后线路走向图)/, misc_start_index) + 1;
+            let table_start_index = findIndexFor(lines, /(首末站)/, map_start_index);
+            let actual_table_start_index = table_start_index + 5;
+
+            result += lines.slice(actual_start_index, intro_end_index).join('\n').replace('方案具体如下：', '');
+
+            result += '\n\n<!-- more -->\n\n';
+
+            result += lines.slice(0, shit_end_index).join('');
+
+            result += '\n\n[官网投票]( )';
+
+            result += '\n\n## 主副站\n\n';
+
+            result += lines.slice(point_start_index, route_start_index - 1).join('') + '\n\n';
+
+            result += '## 线路走向\n\n';
+
+            result += lines.slice(route_start_index, stop_start_index - 1).join('') + '\n\n';
+
+            result += '## 站点设置\n\n';
+
+            // resolve
+
+            let added_stop_index = findIndexFor(lines, /(双向增设站：)/, stop_start_index);
+            let cancelled_stop_index = findIndexFor(lines, /(双向取消站：)/, stop_start_index);
+
+            if (added_stop_index !== -1) {
+                result += '### 增设站\n\n';
+
+                let actual_added = lines[added_stop_index].replace('双向取消站：', '').replace(/。$/, '').split('、').map(v => `* ${quotaToSub(v)}`)
+
+                result += actual_added.join('\n') + '\n\n';
+            }
+
+
+            if (cancelled_stop_index !== -1) {
+                result += '### 取消站\n\n';
+
+                let actual_cancelled = lines[cancelled_stop_index].replace('双向取消站：', '').replace(/。$/, '').split('、').map(v => `* ${quotaToSub(v)}`);
+
+                result += actual_cancelled.join('\n') + '\n\n';
+            }
+
+            // result += lines.slice(stop_start_index, depart_start_index - 1).join('') + '\n\n';
+
+            result += '## 运营时间\n\n';
+
+            result += lines.slice(depart_start_index, misc_start_index - 1).join('') + '\n\n';
+
+            result += '## 其他事宜\n\n';
+
+            result += lines.slice(misc_start_index, map_start_index - 1).join('') + '\n\n';
+
+            result += '## 线路图\n\n';
+
+            result += '[路线路调整]( )\n\n';
+
+            const q = getIterator(lines, actual_table_start_index);
+            result += '|      |首末站|线路长度|运营时间|配车数|\n';
+            result += '|------|------|-------|--------|-----|\n';
+            result += `|调整前|${q()}|${q()}|${q()}|${q()}|\n`;
+            result += `|${q()}|${q()}|${q()}|${q()}|${q()}|\n`;
+
+            result += '\n';
+            return result;
+        }
+    </script>
+</body>
+
+</html>

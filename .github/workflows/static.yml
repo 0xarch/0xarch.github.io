@@ -5,11 +5,11 @@ on:
   # Runs on pushes targeting the default branch
   push:
     branches: ["master"]
-    paths:
-      - config.yaml
-      - package.json
-      - source/**
-      - extra/**
+    # paths:
+    #   - config.yaml
+    #   - package.json
+    #   - source/**
+    #   - extra/**
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -36,37 +36,53 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          'node-version': 'latest'
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v4.1.0
+          node-version: 22
+          cache: pnpm
+
       - name: Setup node modules
-        run: 'pnpm install'
-      - name: Clone upstream theme
-        run: |-
-          mkdir themes
-          cd themes
-          git clone https://github.com/0xarch/nexterial-theme
-          cd nexterial-theme
-          pnpm install
-          cd ../../
+        run: pnpm install --frozen-lockfile
+
+      # - name: Clone upstream theme
+      #   run: |-
+      #     mkdir themes
+      #     cd themes
+      #     git clone https://github.com/0xarch/nexterial-theme
+      #     cd nexterial-theme
+      #     pnpm install
+      #     cd ../../
+
       - name: Build
+        env:
+          NODE_OPTIONS: --max_old_space_size=8192
         run: |-
-          pnpm fewu
+          pnpm run docs:build
+
       - name: Setup misc files
         run: |-
-          touch public/.nojekyll
-          touch public/${{ secrets.GOOGLEVERIF }}.html
-          echo "google-site-verification: ${{ secrets.GOOGLEVERIF }}.html" > public/${{ secrets.GOOGLEVERIF }}.html
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+          touch docs/.vuepress/dist/.nojekyll
+          touch docs/.vuepress/dist/${{ secrets.GOOGLEVERIF }}.html
+          echo "google-site-verification: ${{ secrets.GOOGLEVERIF }}.html" > docs/.vuepress/dist/${{ secrets.GOOGLEVERIF }}.html
+
+      - name: Deploy document
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
-          # Upload entire repository
-          path: 'public'
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+          branch: gh-pages
+          folder: docs/.vuepress/dist
+
+      # - name: Setup Pages
+      #   uses: actions/configure-pages@v5
+      # - name: Upload artifact
+      #   uses: actions/upload-pages-artifact@v3
+      #   with:
+      #     # Upload entire repository
+      #     path: 'public'
+      # - name: Deploy to GitHub Pages
+      #   id: deployment
+      #   uses: actions/deploy-pages@v4

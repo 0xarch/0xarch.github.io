@@ -1,15 +1,33 @@
 {
     "name": "0xarch-blog",
-    "description": "A project of fewu with theme next",
+    "description": "My personal blog website",
     "version": "2.0.0",
     "license": "GPL-2.0-only",
     "type": "module",
     "packageManager": "pnpm@10.4.0+sha512.6b849d0787d97f8f4e1f03a9b8ff8f038e79e153d6f11ae539ae7c435ff9e796df6a862c991502695c7f9e8fac8aeafc1ac5a8dab47e36148d183832d886dd52",
-    "dependencies": {
-        "@fewu-swg/fewu-deployer-sass": "^1.0.2",
-        "@fewu-swg/fewu-plugin-basic-improvement": "^1.1.0",
-        "@fewu-swg/fewu-renderer-markdown": "^1.4.0",
-        "@fewu-swg/fewu-renderer-pug": "^1.2.0",
-        "fewu-cli": "^1.0.12"
+    "pnpm": {
+        "onlyBuiltDependencies": [
+            "@parcel/watcher",
+            "esbuild"
+        ]
+    },
+    "engines": {
+        "node": "^20.6.0 || >=22.0.0"
+    },
+    "scripts": {
+        "docs:dev": "vuepress dev docs",
+        "docs:dev-clean": "vuepress dev docs --clean-cache --clean-temp",
+        "docs:build": "vuepress build docs --clean-cache --clean-temp",
+        "docs:preview": "http-server docs/.vuepress/dist",
+        "vp-update": "pnpm dlx vp-update"
+    },
+    "devDependencies": {
+        "@vuepress/bundler-vite": "2.0.0-rc.24",
+        "@vuepress/shiki-twoslash": "2.0.0-rc.112",
+        "http-server": "^14.1.1",
+        "typescript": "^5.9.2",
+        "vue": "^3.5.18",
+        "vuepress": "2.0.0-rc.24",
+        "vuepress-theme-plume": "1.0.0-rc.159"
     }
 }
