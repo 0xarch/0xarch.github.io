@@ -5,8 +5,8 @@ tags:
   - Linux
 category:
   - Code Snippets
-createTime: 2025/08/02 12:10:14
-permalink: /article/c8pl90oa/
+date: 2025-11-05T07:32:48.806Z
+permalink: /article/WbMWTZnC4gCJLbh5/
 ---
 一种基于 `notify-send` 实现的 ChromeOS(FydeOS) Linux 子系统的托盘守护。
 
