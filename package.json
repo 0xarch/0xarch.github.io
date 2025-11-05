@@ -21,14 +21,10 @@
         "docs:preview": "http-server docs/.vuepress/dist",
         "vp-update": "pnpm dlx vp-update"
     },
-    "devDependencies": {
-        "@vuepress/bundler-vite": "2.0.0-rc.24",
-        "@vuepress/shiki-twoslash": "2.0.0-rc.112",
-        "http-server": "^14.1.1",
-        "sass-embedded": "^1.89.2",
-        "typescript": "^5.9.2",
-        "vue": "^3.5.18",
-        "vuepress": "2.0.0-rc.24",
-        "vuepress-theme-plume": "1.0.0-rc.159"
+    "dependencies": {
+        "@fewu-swg/fewu-plugin-basic-improvement": "^1.1.0",
+        "@fewu-swg/fewu-renderer-markdown": "^1.4.0",
+        "@fewu-swg/fewu-theme-next": "^1.2.8",
+        "fewu-cli": "^1.0.12"
     }
 }

@@ -12,15 +12,13 @@ url: https://0xarch.github.io
 root: /
 source_dir: source
 public_dir: public
-theme: "nexterial-theme"
+theme: "@fewu-swg/fewu-theme-next"
 excluded_files: 
-  - posts/template.md
-  - posts/guide/guide.zh-CN.md
-  - posts/guide/guide.en-US.md
+  - posts\template.md
+  - posts\guide\guide.zh-CN.md
+  - posts\guide\guide.en-US.md
 additional_navs:
-  About:
-    icon: material-symbols:artist,rounded
-    url: /posts/about.md
+  About: /article/FZNPAGaQQ0UXmZdz/
 social_links:
   Github:
     url: https://github.com/0xarch

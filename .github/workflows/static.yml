@@ -61,13 +61,13 @@ jobs:
         env:
           NODE_OPTIONS: --max_old_space_size=8192
         run: |-
-          pnpm run docs:build
+          pnpm fewu
 
       - name: Setup misc files
         run: |-
-          touch docs/.vuepress/dist/.nojekyll
-          touch docs/.vuepress/dist/${{ secrets.GOOGLEVERIF }}.html
-          echo "google-site-verification: ${{ secrets.GOOGLEVERIF }}.html" > docs/.vuepress/dist/${{ secrets.GOOGLEVERIF }}.html
+          touch public/.nojekyll
+          touch public/${{ secrets.GOOGLEVERIF }}.html
+          echo "google-site-verification: ${{ secrets.GOOGLEVERIF }}.html" > public/${{ secrets.GOOGLEVERIF }}.html
 
       # - name: Deploy document
       #   uses: JamesIves/github-pages-deploy-action@v4
@@ -80,7 +80,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: 'docs/.vuepress/dist'
+          path: 'public'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
