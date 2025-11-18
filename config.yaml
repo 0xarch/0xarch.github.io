@@ -23,6 +23,9 @@ social_links:
   Github:
     url: https://github.com/0xarch
     icon: fa-github
+  Bilibili:
+    url: https://space.bilibili.com/582594431
+    icon: fa-bilibili
 plugin_configs:
   fewu-plugin-basic-improvement:
     rss:
