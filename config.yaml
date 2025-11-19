@@ -29,6 +29,8 @@ excluded_files:
   - posts\template.md
   - posts\guide\guide.zh-CN.md
   - posts\guide\guide.en-US.md
+footer_content: |
+  © 2019-2025 0xarch & Soloev. All Rights Reserved. / <a href="/feed.xml">RSS</a> / <a href="/sitemap.xml">Sitemap</a>
 social_links:
   GitHub:
     url: https://github.com/0xarch
