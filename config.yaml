@@ -22,9 +22,9 @@ theme_next:
       url: https://github.com/0xarch/
       title: GitHub
   banner:
-    url: https://webstatic.mihoyo.com/upload/op-public/2022/04/27/f735b165fde7065224db246e817baf5e_7146177856182195094.png
-    credit: MiHoYo
-    credit_url: https://sr.mihoyo.com/
+    url: /banner.jpg
+    credit: 0xarch
+    credit_url: https://github.com/0xarch
 excluded_files: 
   - posts\template.md
   - posts\guide\guide.zh-CN.md
@@ -51,6 +51,7 @@ plugin_configs:
       files:
         - smq.html
         - robots.txt
+        - banner.jpg
 _custom_giscus: |
   <script src="https://giscus.app/client.js"
           data-repo="0xarch/0xarch.github.io"
