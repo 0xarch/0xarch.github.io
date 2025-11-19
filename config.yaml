@@ -13,14 +13,24 @@ root: /
 source_dir: source
 public_dir: public
 theme: "@fewu-swg/fewu-theme-next"
+theme_next:
+  accent_color: 295
+  additional_navs:
+    About: /article/FZNPAGaQQ0UXmZdz/
+    GitHub:
+      isExternal: true
+      url: https://github.com/0xarch/
+      title: GitHub
+  banner:
+    url: https://webstatic.mihoyo.com/upload/op-public/2022/04/27/f735b165fde7065224db246e817baf5e_7146177856182195094.png
+    credit: MiHoYo
+    credit_url: https://sr.mihoyo.com/
 excluded_files: 
   - posts\template.md
   - posts\guide\guide.zh-CN.md
   - posts\guide\guide.en-US.md
-additional_navs:
-  About: /article/FZNPAGaQQ0UXmZdz/
 social_links:
-  Github:
+  GitHub:
     url: https://github.com/0xarch
     icon: fa-github
   Bilibili:
