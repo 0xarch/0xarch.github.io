@@ -12,7 +12,7 @@ url: https://0xarch.github.io
 root: /
 source_dir: source
 public_dir: public
-theme: "@fewu-swg/fewu-theme-next"
+theme: "fewu-theme-next"
 theme_next:
   accent_color: 295
   additional_navs:
