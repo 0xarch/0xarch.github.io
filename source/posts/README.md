@@ -12,6 +12,10 @@ hidden: true
 山东省青岛市郊区人，高中生。
 JS 爱好者，喜欢做一些小项目。
 
+## 关于名称
+
+这俩名随便怎么叫
+
 ## 游戏
 
 [![](//img.shields.io/badge/崩坏：星穹铁道-星穹列车-e1b066)](https://sr.mihoyo.com)  
