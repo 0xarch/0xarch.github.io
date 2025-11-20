@@ -4,8 +4,8 @@ category:
   - Code Snippets
 tags:
   - Linux
-createTime: 2025/08/02 12:10:14
-permalink: /article/q3lwh1nd/
+date: 2025/08/02 12:10:14
+permalink: /article/OLD_q3lwh1nd/
 ---
 You do know that, right?
 

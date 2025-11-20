@@ -1,11 +1,9 @@
 ---
-title: Object This
+title: JS特性：this
 date: 2024-12-04T00:00:00.000Z
 tags:
   - JavaScript
 star: true
-icon: file-icons:self
-createTime: 2025/08/02 12:10:14
 permalink: /note.js/u4qdco2f/
 ---
 关于 JavaScript 中不同地方的 this 指向。

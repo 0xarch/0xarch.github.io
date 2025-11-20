@@ -1,12 +1,10 @@
 ---
-title: 入门JS教程：WebAPI 与 DOM
+title: JS入门：WebAPI 与 DOM
 date: 2024-11-18T00:00:00.000Z
 tags:
   - JavaScript
 category:
   - 前端技术
-icon: fe:document
-createTime: 2025/08/02 12:10:14
 permalink: /note.js/3inmxu1p/
 ---
 这篇文章简单讲述了 WebAPI 的组成以及 DOM 节点的实用用法。

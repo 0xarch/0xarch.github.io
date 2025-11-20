@@ -5,9 +5,8 @@ tags:
 category:
   - Linux
 license: CC-BY-SA
-icon: mdi:arch
-createTime: 2025/08/02 12:10:14
-permalink: /article/eu28wg94/
+date: 2025/08/02 12:10:14
+permalink: /article/OLD_eu28wg94/
 ---
 收集我迄今为止安装过的 Arch Linux 包。
 此篇仅用于记录和备忘，请酌情参考。

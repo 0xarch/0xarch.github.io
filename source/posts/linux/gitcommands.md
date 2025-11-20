@@ -6,10 +6,9 @@ category:
   - Code Snippets
 highlight: true
 license: REPRINT
-icon: bi:git
 image: https://www.runoob.com/wp-content/uploads/2015/02/011500266295799.jpg
-createTime: 2025/08/02 12:10:14
-permalink: /article/lvfvwsjb/
+date: 2025/08/02 12:10:14
+permalink: /article/OLD_lvfvwsjb/
 ---
 原作者: Runnob DGd，本文仅作备忘使用。
 

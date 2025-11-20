@@ -7,8 +7,6 @@ category:
   - Code Snippets
 highlight: true
 license: CC-BY-ND-SA
-icon: grommet-icons:navigate
-createTime: 2025/08/02 12:10:14
 permalink: /note.js/b6i56u4d/
 ---
 简单的JS无缝跳转的实现.

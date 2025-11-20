@@ -6,9 +6,8 @@ category:
   - Code Snippets
 highlight: true
 license: CC-BY-SA
-icon: teenyicons:git-outline
-createTime: 2025/08/02 12:10:14
-permalink: /article/by9jkcye/
+date: 2025/08/02 12:10:14
+permalink: /article/OLD_by9jkcye/
 ---
 Linux 下使用 Git 和 Github 连接的基本配置，包括账户、SSH等。
 本文为 [Git 常用命令大全] 的子集。
