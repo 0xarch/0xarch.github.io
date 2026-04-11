@@ -45,9 +45,9 @@ permalink: /article/x3yv9mms/
 start Cities.exe
 ```
 
-::: tip
+!!! tip
 将鼠标移到上方文本块后将提供**复制**按钮(在原来右侧`bat`文字下方)，可直接复制粘贴。下文同。
-:::
+!!!
 
 ![](remove_launcher/command.png)
 

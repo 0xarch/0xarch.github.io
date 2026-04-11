@@ -4,7 +4,7 @@ tags:
   - ArchLinux
 category:
   - Linux
-license: CC-BY-SA
+license: CC-BY-SA 4.0
 date: 2025/08/02 12:10:14
 permalink: /article/OLD_eu28wg94/
 ---
@@ -23,9 +23,9 @@ permalink: /article/OLD_eu28wg94/
 
 URL: https://im.qq.com/linuxqq/index.shtml
 
-::: tip
+!!! tip
 Flatpak: com.qq.QQ
-:::
+!!!
 
 ### 2. 微信
 
@@ -35,9 +35,9 @@ Flatpak: com.qq.QQ
 
 URL：https://weixin.qq.com
 
-::: tip
+!!! tip
 Flatpak: com.tencent.WeChat
-:::
+!!!
 
 ### 3. 钉钉(Dingtalk)
 

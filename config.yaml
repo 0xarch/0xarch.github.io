@@ -6,6 +6,7 @@ note: |-
   I could be myself out there. Bullying, reckless, totally selfish. Doing the things that makes me me.
   If you ain't who you are, then who the fuck are you?
 author: 0xarch
+avatar: /avatar.png
 language: zh-CN
 timezone: Asia/Shanghai
 url: https://0xarch.github.io
@@ -16,7 +17,7 @@ theme: "fewu-theme-next"
 theme_next:
   accent_color: 295
   additional_navs:
-    About: /article/FZNPAGaQQ0UXmZdz/
+    About: /README/
     GitHub:
       isExternal: true
       url: https://github.com/0xarch/
@@ -30,7 +31,7 @@ excluded_files:
   - posts\guide\guide.zh-CN.md
   - posts\guide\guide.en-US.md
 footer_content: |
-  © 2019-2025 0xarch & Soloev. All Rights Reserved. / <a href="/feed.xml">RSS</a> / <a href="/sitemap.xml">Sitemap</a>
+  © 2019-2026 0xarch & Soloev. All Rights Reserved. / <a href="/feed.xml">RSS</a> / <a href="/sitemap.xml">Sitemap</a>
 social_links:
   GitHub:
     url: https://github.com/0xarch
@@ -52,6 +53,7 @@ plugin_configs:
         - smq.html
         - robots.txt
         - banner.jpg
+        - avatar.png
 _custom_giscus: |
   <script src="https://giscus.app/client.js"
           data-repo="0xarch/0xarch.github.io"
