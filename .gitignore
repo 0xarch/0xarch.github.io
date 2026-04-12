@@ -4,3 +4,4 @@ docs/.vuepress/.temp
 docs/.vuepress/dist
 pnpm-lock.yaml
 themes
+public
