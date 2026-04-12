@@ -15,7 +15,7 @@ source_dir: source
 public_dir: public
 theme: "fewu-theme-next"
 theme_next:
-  accent_color: 295
+  accent_color: 135
   additional_navs:
     About: /README/
     GitHub:
