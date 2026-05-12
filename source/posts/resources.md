@@ -1,6 +1,7 @@
 ---
 date: 2025-11-18T09:36:23.081Z
-permalink: /navarticles/resources/
+permalink: /links/resources/
+permalink:notitle: true
 title: 资源
 tags: []
 category: []

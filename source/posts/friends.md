@@ -1,6 +1,6 @@
 ---
 date: 2025-11-18T09:36:23.081Z
-permalink: /navarticles/friends/
+permalink: /links/friends/
 title: 友链
 tags: []
 category: []

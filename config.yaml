@@ -18,6 +18,7 @@ theme_next:
   accent_color: 135
   additional_navs:
     About: /README/
+    资源: /links/resources/
     GitHub:
       isExternal: true
       url: https://github.com/0xarch/
