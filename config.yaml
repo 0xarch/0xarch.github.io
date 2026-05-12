@@ -26,6 +26,7 @@ theme_next:
     url: /banner.jpg
     credit: 0xarch
     credit_url: https://github.com/0xarch
+  title_in_path: true
 excluded_files: 
   - posts\template.md
   - posts\guide\guide.zh-CN.md

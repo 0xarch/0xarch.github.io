@@ -8,7 +8,8 @@ highlight: true
 license: REPRINT
 image: https://www.runoob.com/wp-content/uploads/2015/02/011500266295799.jpg
 date: 2025/08/02 12:10:14
-permalink: /article/OLD_lvfvwsjb/
+permalink: /article/olvfvwsjb/
+hidden: true
 ---
 原作者: Runnob DGd，本文仅作备忘使用。
 

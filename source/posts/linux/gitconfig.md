@@ -7,7 +7,8 @@ category:
 highlight: true
 license: CC-BY-SA
 date: 2025/08/02 12:10:14
-permalink: /article/OLD_by9jkcye/
+permalink: /article/oby9jkcye/
+hidden: true
 ---
 Linux 下使用 Git 和 Github 连接的基本配置，包括账户、SSH等。
 本文为 [Git 常用命令大全] 的子集。

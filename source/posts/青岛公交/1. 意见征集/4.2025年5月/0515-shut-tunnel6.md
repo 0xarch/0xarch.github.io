@@ -1,7 +1,7 @@
 ---
 title: √停运隧道6路
 date: 2025/05/15 12:10:14
-permalink: /article/OLD_js6knan4/
+permalink: /article/ojs6knan4/
 disable_comment: true
 hidden: true
 ---
