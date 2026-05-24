@@ -4,9 +4,9 @@ description: |-
   This is the blog website of 0xarch from GitHub, see https://github.com/0xarch/0xarch.github.io for the source code.
 note: |-
   I could be myself out there. Bullying, reckless, totally selfish. Doing the things that makes me me.
-  If you ain't who you are, then who the fuck are you?
+  If you ain't who you are, then who the LUCK are you?
 author: 0xarch
-avatar: /avatar.png
+avatar: /avatar.webp
 language: zh-CN
 timezone: Asia/Shanghai
 url: https://0xarch.github.io
@@ -24,7 +24,7 @@ theme_next:
       url: https://github.com/0xarch/
       title: GitHub
   banner:
-    url: /banner.jpg
+    url: /banner.webp
     credit: 0xarch
     credit_url: https://github.com/0xarch
   title_in_path: true
@@ -54,8 +54,8 @@ plugin_configs:
       files:
         - smq.html
         - robots.txt
-        - banner.jpg
-        - avatar.png
+        - banner.webp
+        - avatar.webp
 _custom_giscus: |
   <script src="https://giscus.app/client.js"
           data-repo="0xarch/0xarch.github.io"
