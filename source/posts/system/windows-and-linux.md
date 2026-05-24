@@ -21,14 +21,14 @@ category:
 *   Windows 的图形界面底层有较多逻辑冲突，但使用简单。Linux 的图形界面体验统一优秀，但如果你想要构建自己的工作流，需要花点时间配置。
 *   Windows 的适配软件数量是压倒性的优势，但 Linux 的软件适配也正在逐步提升，且具有 Wine (包括 Proton) 可以运行大部分未适配的软件。
 *   部分软件即使未适配 Linux, 其在 Linux 上通过兼容层运行反而比 Windows 上的性能/体验更好 (如 GTAV)。
-*   Windows 的底层通常具有更活跃的错误表现（如在作者的笔记本上会不定时自动重启），Linux 虽然开源活跃，但同样具有漏洞（如近期的Dirty Frag, Copy Fail, Fragensia) 但比 Windows 少，且修补及时。
+*   Windows 的底层通常具有更活跃的错误表现（如在作者的笔记本上会不定时自动重启），Linux 虽然开源活跃，但同样具有漏洞（如近期的`Dirty Frag`, `Copy Fail`, `Fragensia`) 但比 Windows 少，且修补及时。
 *   NVIDIA 系在 Windows 上有更好的表现，在 Linux 上表现极差。 _So, NVIDIA, F**k you —— Linus Torvalds_
 !!!
 
 就 Windows 与 Linux 的各自的优点对比来看，作者更倾向于将 Linux 作为主要系统，而 Windows 仅在部分场景（如游戏等）使用。
 以下是作者推荐（同时正在使用）的系统环境：
 
-* Windows: 使用 Windows 11 专业版，注意保持系统更新，**注意：安装时若使用 ATLAS OS 调整工具，尽管获得了(名义上)更好的性能，但可能会导致 Windows 的部分功能(包括启动)缺失**
+* Windows: 使用 Windows 11 专业版，注意保持系统更新，**注意：安装时若使用 `ATLAS OS` 调整工具，尽管获得了(名义上)更好的性能，但可能会导致 Windows 的部分功能(包括启动)缺失**
 
 * Linux: 使用 Arch Linux, 使用 `Hyprland` 搭配 end_4 的 [Hyprland配置](https://github.com/end-4/dots-hyprland) 作为桌面环境
 
@@ -38,7 +38,7 @@ category:
 
 ### Windows
 
-* 使用占用较小且检测相对精准的火绒替代 `Windows Defender`，避免扫盘和误杀
+* 使用占用较小且检测相对精准的`火绒`替代 `Windows Defender`，避免扫盘和误杀
 
 * 考虑移除部分系统预装软件，以及关闭具有很多问题的动画效果
 
@@ -48,10 +48,10 @@ category:
 
 * 关闭小组件、屏幕键盘等（如果不需要或内存吃紧的话）
 
-* 关闭虚拟机平台、WSL等虚拟化功能。相比而言 `QEMU`/`KVM` 具有和 `Hyper-V` 相近的定位和更好的性能
+* 若将 Linux 作为主力机，考虑关闭虚拟机平台、WSL等虚拟化功能。相比而言 `QEMU`/`KVM` 具有和 `Hyper-V` 相近的定位和更好的性能
 
 * 将搜索索引设置为“增强”以启用自定义筛选，然后在筛选中排除所有硬盘分区来阻止索引。
-> 相比于直接关闭索引，该方法在最大程度减小影响的同时避免了"启用索引"持续占用搜索面板
+> 相比于直接关闭索引，该方法在最大程度减小影响的同时避免了 <i>配色前卫</i> 的"启用 Windows 索引"持续占用搜索面板
 
 ### Linux
 
@@ -63,22 +63,23 @@ category:
 
 * 考虑安装 `Wine` 来尽量减少切换系统的次数，提升效率
 
-* 始终使用 `Fcitx 5` 作为输入法。相比 GNOME 的 `IBus` 而言，其在跨桌面（包括 GNOME ）使用上具有更好的兼容性，且相比 GNOME 的 `IBus` 更加兼容 GNOME 软件。
+* 始终使用 `Fcitx 5` 作为输入法。相比 GNOME 的 `IBus` 而言，其在跨桌面（包括 GNOME ）使用上具有更好的兼容性，且相比 GNOME 的 `IBus` 更加兼容 GNOME 自家的软件。
+> `IBus` 的兼容问题是因为其切换输入法的方式是弹出一个**强制聚焦的窗口**，而这在本身就有<i>较多可改进空间</i>的 `GTK4` 上会触发诸如输入框失焦、光标复位等特性
 
 ## 软件
 
 作者使用的以下软件都已适配 Linux, 可从软件源或 `Flathub` 下载:
 
-* 钉钉: 官网, `AUR`
-* QQ: 官网(`.deb`, `.rpm`), `AUR`, `Flathub`
-* 微信: 官网(`.deb`, `.rpm`), `AUR`, `Flathub`
-* Steam: 几乎所有渠道
+* `钉钉`: 官网, `AUR`
+* `QQ`: 官网(`.deb`, `.rpm`), `AUR`, `Flathub`
+* `微信`: 官网(`.deb`, `.rpm`), `AUR`, `Flathub`
+* `Steam`: 几乎所有渠道
 * 部分 Steam 游戏: 相当多的游戏都已经适配了 Linux
-* HMCL 及 Minecraft: 原生支持 Linux
-* Microsoft VS Code: 官网, `AUR`, `Flathub`
+* `HMCL` 及 `Minecraft`: 原生支持 Linux
+* `Microsoft VS Code`: 官网, `AUR`, `Flathub`
 * `Ubuntu`: 官网(ISO)。尽管 `Ubuntu` 是发行版，但基于其设计理念和 Canonical 的奇特操作，应当作为(商业)软件考量
 > 这并不代表你必须忽略 `Ubuntu` 使用其他发行版。`Ubuntu` 在广告宣发和劝退用户两方面上仍然是遥遥领先的发行版。如果你刚入门，我推荐你使用 `EndeavourOS`(基于 ArchLinux) 或 `Fedora` 。
-> 这也不代表 RedHat 是更好的公司，但就目前来看，其在商业化和社区之间尚且取得了_动态_平衡。
+> 这也不代表 RedHat 是更好的公司，但就目前来看，其在商业化和社区之间尚且取得了<i>动态</i>平衡。
 
 以下软件在 Linux 上的体验可能更好：
 
@@ -90,16 +91,17 @@ category:
 
 * 部分 Steam 游戏: 如 GTAV, 戴森球计划 等
 * 部分老软件： CnC Tools, XCC Mixer 等
-* MagicaVoxel: 可通过 `AUR` 下载
-* 基于 `DTA Client` 的游戏（如心灵终结）: 取决于是否为环境安装了 dxvk 支持，按需使用 OpenGL 客户端或 DirectX 客户端
+* `MagicaVoxel`: 可通过 `AUR` 下载
+* 基于 `DTA Client` 的游戏（如心灵终结）: 取决于是否为环境安装了 `dxvk` 支持，按需使用 `OpenGL 客户端` 或 `DirectX 客户端`
 * `FA2SP HDM Edition`: 整体完备，可能在保存文件时出现假失败，但实际上数据被保存了
+> 注意，以上结论并未使用 NVIDIA 设备验证。由于其驱动程序在 Linux 上较为<i>独特</i>，可能出现意想不到的效果
 
 部分作者使用的软件/游玩的游戏尚未支持 Linux:
 
-* 原神（国服）
-* 崩坏：星穹铁道（国服)
-* 惠普 1136 型打印机驱动程序
-* AMD 控制面板
+* `原神（国服）`
+* `崩坏：星穹铁道（国服)`
+* `惠普 1136 型打印机驱动程序`
+* `AMD 控制面板`
 
 ## 特调
 
@@ -107,7 +109,7 @@ category:
 而后者需要配置一些虚拟内存才能流畅游玩，综合考虑后将都市天际线安装在 Windows 上
 （即使其有 Linux 版本），如此可以节约部分磁盘空间。
 
-由于使用脚本等方式(包括 ATLAS OS)移除 `Windows Defender` 本体（以及删除其他不让删除的软件）的行为时常会
+由于使用脚本等方式(包括 `ATLAS OS`)移除 `Windows Defender` 本体（以及删除其他不让删除的软件）的行为时常会
 导致 Windows 抽风，因此需要选择牺牲部分空间来保留**癫痫治疗药物**。
 
 由于微软先进的战略体系，直接使用激活脚本来激活 Windows 是极度安全的，作者的账号下面已经挂了几十个转正的 Windows 了。
