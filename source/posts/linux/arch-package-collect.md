@@ -2,8 +2,9 @@
 title: Arch Linux 包收集
 tags:
   - ArchLinux
-category:
   - Linux
+category:
+  - 操作系统
 license: CC-BY-SA 4.0
 date: 2025/08/02 12:10:14
 permalink: /article/oeu28wg94/

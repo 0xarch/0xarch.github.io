@@ -4,8 +4,10 @@ permalink: /article/dIYMJBBNNHBakCWF/
 title: 第30天 Linux Mint ：跑路
 tags: 
     - Linux
+    - Linux Mint
+    - ArchLinux
 category:
-    - Linux 日用
+    - 操作系统
 ---
 
 由于实在无法忍受 Windows 11 充斥的石山问题，以及我笔记本在 Windows 下存在的偶现死机，遂决定切换至 Linux Mint ... 吗？
@@ -25,12 +27,14 @@ Arch Linux 已经提供了 `archinstall` 这个工具以支持用户便捷地安
 
 本文在 Arch Linux 上使用 Neovim + Neovide + LazyVim 进行写作。
 
+以下是对前文中部分段落的批注和修正：
+
 > 不得不说 Debian 系打包权重就是高，各种第三方软件基本都会为 Debian 打一个（几个）包，
 > 省去了 AUR 有时抽风以及本地编译耗费的较长时间，某些源代码托管在 GitHub,OpenCode 
 > 等平台的项目更是在没有安装好代理前寸步难行。这一点 Linux Mint 
 > 作为一个新手发行版是非常好的优点。
 
-这段结论依然是正确的， AUR 在没有代理的情况下就是寸步难行。
+这段结论依然是正确的， AUR 在没有代理的情况下就是寸步难行。当然， archlinuxcn 源预先编译的软件包可以解燃眉之急。
 
 > Cinnamon 桌面是 Linux Mint 一大吸引人的点，尽管已经 2026 年了 Mint 还在 X11 
 > 上（也许 Linux Mint 23 会改善这一点），但考虑到基于 Ubuntu 24.04 LTS

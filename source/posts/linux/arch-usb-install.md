@@ -2,7 +2,9 @@
 title: Arch Linux 特殊平台处理一览
 category:
   - Code Snippets
+  - 操作系统
 tags:
+  - ArchLinux
   - Linux
 date: 2026/05/12 12:10:14
 permalink: /article/oq3lwh1nd/

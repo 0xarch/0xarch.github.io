@@ -6,7 +6,7 @@ tags:
     - Linux
     - Linux Mint
 category:
-    - Linux 日用
+    - 操作系统
 ---
 
 由于实在无法忍受 Windows 11 充斥的石山问题，以及我笔记本在 Windows 下存在的偶现死机，遂决定切换至 Linux Mint。
