@@ -9,23 +9,12 @@
         "onlyBuiltDependencies": [
             "@parcel/watcher",
             "esbuild"
-        ],
-        "overrides": {
-            "@fewu-swg/fewu": "link:../fewu-swg/fewu"
-        }
+        ]
     },
     "engines": {
         "node": "^20.6.0 || >=22.0.0"
     },
-    "scripts": {
-        "docs:dev": "vuepress dev docs",
-        "docs:dev-clean": "vuepress dev docs --clean-cache --clean-temp",
-        "docs:build": "vuepress build docs --clean-cache --clean-temp",
-        "docs:preview": "http-server docs/.vuepress/dist",
-        "vp-update": "pnpm dlx vp-update"
-    },
     "dependencies": {
-        "@fewu-swg/fewu": "link:../fewu-swg/fewu",
         "@fewu-swg/fewu-plugin-basic-improvement": "^1.1.0",
         "@fewu-swg/fewu-renderer-markdown": "^1.4.0",
         "@fewu-swg/fewu-theme-next": "^1.2.19",
