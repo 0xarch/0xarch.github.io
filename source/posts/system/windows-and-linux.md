@@ -38,7 +38,9 @@ category:
 
 ### Windows
 
-* 使用更轻量且检测更精准的火绒替代 `Windows Defender`，并考虑移除部分系统预装软件
+* 使用占用较小且检测相对精准的火绒替代 `Windows Defender`，避免扫盘和误杀
+
+* 考虑移除部分系统预装软件，以及关闭具有很多问题的动画效果
 
 * 在高级设置中应用最佳性能预设，然后将字体平滑和UI元素改进回退至启用状态
 
@@ -47,6 +49,9 @@ category:
 * 关闭小组件、屏幕键盘等（如果不需要或内存吃紧的话）
 
 * 关闭虚拟机平台、WSL等虚拟化功能。相比而言 `QEMU`/`KVM` 具有和 `Hyper-V` 相近的定位和更好的性能
+
+* 将搜索索引设置为“增强”以启用自定义筛选，然后在筛选中排除所有硬盘分区来阻止索引。
+> 相比于直接关闭索引，该方法在最大程度减小影响的同时避免了"启用索引"持续占用搜索面板
 
 ### Linux
 
@@ -58,7 +63,7 @@ category:
 
 * 考虑安装 `Wine` 来尽量减少切换系统的次数，提升效率
 
-* 使用 `Fcitx 5` 作为输入法。相比 `IBus` 而言，其在跨桌面上具有更好的兼容性，且相比 `IBus` 更加兼容 GNOME 软件。
+* 始终使用 `Fcitx 5` 作为输入法。相比 GNOME 的 `IBus` 而言，其在跨桌面（包括 GNOME ）使用上具有更好的兼容性，且相比 GNOME 的 `IBus` 更加兼容 GNOME 软件。
 
 ## 软件
 
@@ -70,13 +75,14 @@ category:
 * Steam: 几乎所有渠道
 * 部分 Steam 游戏: 相当多的游戏都已经适配了 Linux
 * HMCL 及 Minecraft: 原生支持 Linux
+* Microsoft VS Code: 官网, `AUR`, `Flathub`
 * `Ubuntu`: 官网(ISO)。尽管 `Ubuntu` 是发行版，但基于其设计理念和 Canonical 的奇特操作，应当作为(商业)软件考量
-> 这并不代表你必须忽略 `Ubuntu` 使用其他发行版。`Ubuntu` 在广告宣发和劝退用户两方面上仍然是遥遥领先的发行版。如果你刚入门，我推荐你使用 `Fedora` 。
-> 这也不代表 RedHat 是更好的公司，但就目前来看，其在商业化和社区之间尚且取得了平衡。
+> 这并不代表你必须忽略 `Ubuntu` 使用其他发行版。`Ubuntu` 在广告宣发和劝退用户两方面上仍然是遥遥领先的发行版。如果你刚入门，我推荐你使用 `EndeavourOS`(基于 ArchLinux) 或 `Fedora` 。
+> 这也不代表 RedHat 是更好的公司，但就目前来看，其在商业化和社区之间尚且取得了_动态_平衡。
 
 以下软件在 Linux 上的体验可能更好：
 
-* `Outlook`: 尽管是 Microsoft 产品且未提供 Linux 版本，通过 `Chromium` 的 Web-App 模式启动的 `Outlook` 性能**远超 Windows 下**使用 `Edge WebView2` 构建的伪桌面程序
+* `Outlook`: _尽管是 Microsoft 产品且未提供 Linux 版本，_通过 `Chromium` 的 Web-App 模式启动的 `Outlook` 性能**远超 Windows 下**使用 `Edge WebView2` 构建的_伪桌面程序_。
 * `Microsoft To Do`: 同 `Outlook`
 * `Microsoft VS Code`: 适当调整启动参数以适配 Wayland 后，性能较 Windows 表现更好
 
@@ -85,8 +91,8 @@ category:
 * 部分 Steam 游戏: 如 GTAV, 戴森球计划 等
 * 部分老软件： CnC Tools, XCC Mixer 等
 * MagicaVoxel: 可通过 `AUR` 下载
-* 基于 DTA Client 的游戏（如心灵终结）: 取决于是否为环境安装了 dxvk 支持，按需使用 OpenGL 客户端或 DirectX 客户端
-* FA2SP: 整体完备，可能在保存文件时出现假失败，但实际上数据被保存了
+* 基于 `DTA Client` 的游戏（如心灵终结）: 取决于是否为环境安装了 dxvk 支持，按需使用 OpenGL 客户端或 DirectX 客户端
+* `FA2SP HDM Edition`: 整体完备，可能在保存文件时出现假失败，但实际上数据被保存了
 
 部分作者使用的软件/游玩的游戏尚未支持 Linux:
 
@@ -108,7 +114,7 @@ category:
 
 由于 `Microsoft Edge` (以及其上游的 `Chromium`) 的 PWA 实现在 Linux 上对桌面规范的实现还有相当问题，
 推荐直接使用参数传递 URL 的方式启动 Web-App 模式，通常会比 PWA 体验更好。
-> 此外 `Microsoft Edge` 的 PWA 实现在 `Chromium` 基础上添加了额外的可能存在逻辑问题的代码，即使是 Windows 上也有相当多的 Bug ，
+> 此外 `Microsoft Edge` 的 PWA 实现在 `Chromium` 基础上添加了额外的可能存在逻辑问题的代码，即使是 Windows 上也有相当多的 Bug （例如将默认软件安装位置设置为C:外的分区会导致PWA应用的图标消失），
 > 不推荐使用。且 `Microsoft Edge` 还被发现自身实现的密码管理器在任意软件都可以访问的内存中明文存储密码。
 > 如果有足够的存储空间，更推荐在 Windows 上使用 `Chromium` 代替预装的 `Microsoft Edge` 。
 
