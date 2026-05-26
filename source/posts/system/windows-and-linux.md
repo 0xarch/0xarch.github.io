@@ -68,8 +68,8 @@ category:
 
 * 始终使用 `Fcitx5` 作为输入法。相比 GNOME 的 `IBus` 而言，其在跨桌面（包括 GNOME ）使用上具有更好的兼容性，且相比 GNOME 的 `IBus` 更加兼容 GNOME 自家的软件。
   > `IBus` 的兼容问题是因为其切换输入法的方式是弹出一个**强制聚焦的窗口**，而这在本身就有<i>较多可改进空间</i>的 `GTK4` 上会触发诸如输入框失焦、光标复位等特性
-  > 虽然 `Fcitx5` 在 Hyprland 上仍有诸如 GTK 应用弹窗错位等问题，考虑到<i>某基金会近期资金短缺</i>，这更像是 GTK 自身未修复的缺陷。
 
+  > 虽然 `Fcitx5` 在 Hyprland 上仍有诸如 GTK 应用弹窗错位等问题，考虑到<i>某基金会近期资金短缺</i>，这更像是 GTK 自身未修复的缺陷。  
   > 而 `IBus` 在 Hyprland 上则更加跳跃：其在 GTK 应用中虽然位置正常，但窗口撕裂、绘制残缺且存在闪烁， Qt 应用更是直接忽略（即使你设置了 `QT_IM_MODULE` 和
   > `QT_IM_MODULES` ），其在 Hyprland 中更像是运行在 XWayland 里的古董。
 
@@ -91,7 +91,7 @@ category:
 
 以下软件在 Linux 上的体验可能更好：
 
-* `Outlook`: _尽管是 Microsoft 产品且未提供 Linux 版本，_通过 `Chromium` 的 Web-App 模式启动的 `Outlook` 性能**远超 Windows 下**使用 `Edge WebView2` 构建的_伪桌面程序_。
+* `Outlook`: _尽管是 Microsoft 产品且未提供 Linux 版本，_ 通过 `Chromium` 的 Web-App 模式启动的 `Outlook` 性能**远超 Windows 下**使用 `Edge WebView2` 构建的_伪桌面程序_。
 * `Microsoft To Do`: 同 `Outlook`
 * `Microsoft VS Code`: 适当调整启动参数以适配 Wayland 后，性能较 Windows 表现更好
 
@@ -103,7 +103,7 @@ category:
 * 基于 `DTA Client` 的游戏（如心灵终结）: 取决于是否为环境安装了 `dxvk` 支持，按需使用 `OpenGL 客户端` 或 `DirectX 客户端`
 * `FA2SP HDM Edition`: 整体完备，可能在保存文件时出现假失败，但实际上数据被保存了
 
-> 注意，以上结论并未使用 NVIDIA 设备验证。<i>由于其驱动程序在 Linux 上较为独特，</i>可能出现意想不到的效果
+> 注意，以上结论并未使用 NVIDIA 设备验证。<i>由于其专有驱动程序在 Linux 上较为独特，</i>可能出现意想不到的效果
 
 部分作者使用的软件/游玩的游戏尚未支持 Linux:
 
@@ -137,7 +137,7 @@ category:
 
 当然，这并不是说你应该使用 _豆包AI_ 来分析该文章，其独特的语言风格和大小较为严格的上下文（相比 DeepSeek 等）
 可能让你误解内容，甚至导致**实操时破坏系统**。
-当然 _DeepSeek_ 也不遑多让，比如通常情况下其会漏看或主动忽略它认为无关紧要的东西，如果他没有让你 **_RTFM_** ，那就证实了这一点。
+当然 _DeepSeek_ 也不遑多让，比如通常情况下其会漏看或主动忽略它认为无关紧要或<i>不能讨好用户</i>的东西，如果他没有让你 **_RTFM_** ，那就证实了这一点。
 
 [^0]: 如 [31431](https://www.cve.org/CVERecord?id=CVE-2026-31431), [43284](https://www.cve.org/CVERecord?id=CVE-2026-43284), [43500](https://www.cve.org/CVERecord?id=CVE-2026-43500), [46300](https://www.cve.org/CVERecord?id=CVE-2026-46300)
 [^1]: _So, NVIDIA, F**k you —— Linus Torvalds_ , 你可以在该转载的 [Bilibili 视频](https://www.bilibili.com/video/BV1YF41177V6/) 中观看, 或该 [Bilibili 视频](https://www.bilibili.com/video/BV1NB4y1R7bC/) 记录了该讲座的全程
