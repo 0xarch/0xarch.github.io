@@ -25,7 +25,7 @@ category:
 *   Windows 的适配软件数量是压倒性的优势，但 Linux 的软件适配也正在逐步提升，且具有 Wine (包括 Proton) 可以运行大部分未适配的软件。
 *   部分软件即使未适配 Linux, 其在 Linux 上通过兼容层运行反而比 Windows 上的性能/体验更好 (如 GTAV)。
 *   Windows 的底层通常具有更强的存在感（如在作者的笔记本上会不定时自动重启），Linux 虽然开源活跃，但同样具有漏洞[^0]但比 Windows 少，且修补及时。
-*   NVIDIA 系在 Windows 上有更好的表现，在 Linux 上表现极差。[^1]
+*   NVIDIA 系在 Windows 上有更好的表现，在 Linux 上表现极差。[^nvidia-thing]
 !!!
 
 就 Windows 与 Linux 的各自的优点对比来看，作者更倾向于将 Linux 作为主要系统，而 Windows 仅在部分场景（如游戏等）使用。
@@ -54,7 +54,7 @@ category:
 * 若将 Linux 作为主力机，考虑关闭虚拟机平台、WSL等虚拟化功能。相比而言 `QEMU`/`KVM` 具有和 `Hyper-V` 相近的定位和更好的性能
 
 * 将搜索索引设置为“增强”以启用自定义筛选，然后在筛选中排除所有硬盘分区来阻止索引。
-  > 相比于直接关闭索引，该方法在最大程度减小影响的同时避免了 <i>配色前卫</i> 的"启用 Windows 索引"的<i>温馨提示</i>持续占用搜索面板
+  > 相比于直接关闭索引，该方法在最大程度减小影响的同时避免了 <i style='text-shadow: 0 0 .05rem black'><i style='color: red'>配</i><i style='color: green'>色</i><i style='color: blue'>前</i><i style='color: gold'>卫</i></i> 的"启用 Windows 索引"的<i>温馨提示</i>持续占用搜索面板
 
 ### Linux
 
@@ -69,7 +69,7 @@ category:
 * 始终使用 `Fcitx5` 作为输入法。相比 GNOME 的 `IBus` 而言，其在跨桌面（包括 GNOME ）使用上具有更好的兼容性，且相比 GNOME 的 `IBus` 更加兼容 GNOME 自家的软件。
   > `IBus` 的兼容问题是因为其切换输入法的方式是弹出一个**强制聚焦的窗口**，而这在本身就有<i>较多可改进空间</i>的 `GTK4` 上会触发诸如输入框失焦、光标复位等特性
 
-  > 虽然 `Fcitx5` 在 Hyprland 上仍有诸如 GTK 应用弹窗错位等问题，考虑到<i>某基金会近期资金短缺</i>，这更像是 GTK 自身未修复的缺陷。  
+  > 虽然 `Fcitx5` 在 Hyprland 上仍有诸如 GTK 应用弹窗错位等问题，考虑到<i>某基金会近期资金短缺</i>[^gnome-donate]，这更像是 GTK 自身未修复的缺陷。  
   > 而 `IBus` 在 Hyprland 上则更加跳跃：其在 GTK 应用中虽然位置正常，但窗口撕裂、绘制残缺且存在闪烁， Qt 应用更是直接忽略（即使你设置了 `QT_IM_MODULE` 和
   > `QT_IM_MODULES` ），其在 Hyprland 中更像是运行在 XWayland 里的古董。
 
@@ -80,18 +80,18 @@ category:
 * `钉钉`: 官网, `AUR`
 * `QQ`: 官网(`.deb`, `.rpm`), `AUR`, `Flathub`
 * `微信`: 官网(`.deb`, `.rpm`), `AUR`, `Flathub`
-* `Steam`: 几乎所有渠道
+* `Steam`: 几乎所有渠道[^steam]
 * 部分 Steam 游戏: 相当多的游戏都已经适配了 Linux
 * `HMCL` 及 `Minecraft`: 原生支持 Linux
 * `Microsoft VS Code`: 官网, `AUR`, `Flathub`
 * `Ubuntu`: 官网(ISO)
   > 尽管 `Ubuntu` 是发行版，但基于其后现代的设计理念和 Canonical 的战略操作，应当作为(商业)软件考量。  
-  > 当然这并不代表你必须忽略 `Ubuntu` 使用其他发行版。`Ubuntu` 在<i>广告宣发和劝退用户</i>两方面上仍然是遥遥领先的发行版。如果你刚入门，我推荐你使用 `EndeavourOS`(基于 ArchLinux) 或 `Fedora` 。
+  > 当然这并不代表你必须忽略 `Ubuntu` 使用其他发行版。`Ubuntu` 在<i>广告宣发和劝退用户</i>[^ubuntu]两方面上仍然是遥遥领先的发行版。如果你刚入门，我推荐你使用 `EndeavourOS`(基于 ArchLinux) 或 `Fedora` 。
   > 这也不代表 RedHat 是更好的公司，但就目前来看，其在商业化和社区之间尚且取得了<i>动态</i>平衡。
 
 以下软件在 Linux 上的体验可能更好：
 
-* `Outlook`: _尽管是 Microsoft 产品且未提供 Linux 版本，_ 通过 `Chromium` 的 Web-App 模式启动的 `Outlook` 性能**远超 Windows 下**使用 `Edge WebView2` 构建的_伪桌面程序_。
+* `Outlook`: _尽管是 Microsoft 产品且未提供 Linux 版本，_ 通过 `Chromium` 的 Web-App 模式启动的 `Outlook` 性能**远超 Windows 下**使用 `Edge WebView2` 构建的**伪**[^ms-webview]桌面程序。
 * `Microsoft To Do`: 同 `Outlook`
 * `Microsoft VS Code`: 适当调整启动参数以适配 Wayland 后，性能较 Windows 表现更好
 
@@ -140,6 +140,10 @@ category:
 当然 _DeepSeek_ 也不遑多让，比如通常情况下其会漏看或主动忽略它认为无关紧要或<i>不能讨好用户</i>的东西，如果他没有让你 **_RTFM_** ，那就证实了这一点。
 
 [^0]: 如 [31431](https://www.cve.org/CVERecord?id=CVE-2026-31431), [43284](https://www.cve.org/CVERecord?id=CVE-2026-43284), [43500](https://www.cve.org/CVERecord?id=CVE-2026-43500), [46300](https://www.cve.org/CVERecord?id=CVE-2026-46300)
-[^1]: _So, NVIDIA, F**k you —— Linus Torvalds_ , 你可以在该转载的 [Bilibili 视频](https://www.bilibili.com/video/BV1YF41177V6/) 中观看, 或该 [Bilibili 视频](https://www.bilibili.com/video/BV1NB4y1R7bC/) 记录了该讲座的全程
+[^nvidia-thing]: _So, NVIDIA, F**k you —— Linus Torvalds_ , 你可以在该转载的 [Bilibili 视频](https://www.bilibili.com/video/BV1YF41177V6/) 中观看, 或该 [Bilibili 视频](https://www.bilibili.com/video/BV1NB4y1R7bC/) 记录了该讲座的全程
 [^2]: [Microsoft Q&A](https://learn.microsoft.com/zh-cn/answers/questions/2394517/win11-edge-pwa?forum=microsoftedge-all&referrer=answers&page=0#answers)
 [^3]: [xsgbbx 的文章](https://zhuanlan.zhihu.com/p/2034988592154588391)
+[^steam]: ArchLinux 的 `multilib` 仓库已经包含了 Steam 安装程序， Debian 等也在仓库内存储了该包，你也可以通过 Flathub 上的 `com.valvesoftware.Steam` 安装
+[^ubuntu]: [Ubuntu 邮件列表](https://lists.ubuntu.com/archives/foundations-bugs/2025-May/538403.html)
+[^gnome-donate]: [Zorin Forum 帖子](https://forum.zorin.com/t/gnome-49-introduces-donation-request-notification/54035)
+[^ms-webview]: [XNA Developers](https://www.xda-developers.com/microsoft-is-turning-windows-apps-into-websites/?post=3e7e-47ff-8417ca68f073#thread-posts)
