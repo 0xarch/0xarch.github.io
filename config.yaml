@@ -18,11 +18,15 @@ theme_next:
   accent_color: 195
   additional_navs:
     About: /README/
-    资源: /links/resources/
+    # 资源: /links/resources/
     GitHub:
       isExternal: true
       url: https://github.com/0xarch/
       title: GitHub
+    Netlify:
+      isExternal: true
+      url: https://0ah.netlify.app
+      title: Netlify(CDN)
   banner:
     url: /banner.webp
     credit: 0xarch
