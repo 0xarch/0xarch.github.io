@@ -41,7 +41,7 @@ category:
 
 ### Windows
 
-* 使用占用较小且检测相对精准的`火绒`替代 `Windows Defender`，避免扫盘和误杀
+* 使用占用较小且检测相对精准的`火绒`替代 `Windows Defender`，避免扫盘和误杀[^defender]
 
 * 考虑移除部分系统预装软件，以及关闭具有很多问题的动画效果
 
@@ -66,13 +66,63 @@ category:
 
 * 考虑安装 `Wine` 来尽量减少切换系统的次数，提升效率
 
-* 始终使用 `Fcitx5` 作为输入法。相比 GNOME 的 `IBus` 而言，其在跨桌面（包括 GNOME ）使用上具有更好的兼容性，且相比 GNOME 的 `IBus` 更加兼容 GNOME 自家的软件。
+* [始终使用 `Fcitx5` 作为输入法](#fcitx5-简明配置)。相比 GNOME 的 `IBus` 而言，其在跨桌面（包括 GNOME ）使用上具有更好的兼容性，且相比 GNOME 的 `IBus` 更加兼容 GNOME 自家的软件。
   > `IBus` 的兼容问题是因为其切换输入法的方式是弹出一个**强制聚焦的窗口**，而这在本身就有<i>较多可改进空间</i>的 `GTK4` 上会触发诸如输入框失焦、光标复位等特性
 
   > 虽然 `Fcitx5` 在 Hyprland 上仍有诸如 GTK 应用弹窗错位等问题，考虑到<i>某基金会近期资金短缺</i>[^gnome-donate]，这更像是 GTK 自身未修复的缺陷。也许他们
   > 应该问问<i>另一个基金会</i>为什么可以完善地维护知名大型桌面。
   > 而 `IBus` 在 Hyprland 上则更加跳跃：其在 GTK 应用中虽然位置正常，但窗口撕裂、绘制残缺且存在闪烁， Qt 应用更是直接忽略（即使你设置了 `QT_IM_MODULE` 和
   > `QT_IM_MODULES` ），其在 Hyprland 中更像是运行在 XWayland 里的古董。
+
+### Wine 简明配置
+
+该小节以作者在主力机器上配置 Wine 使用的方法为基准，可能不适用于所有环境。
+
+1.  安装 Wine:
+    ```sh
+    sudo pacman -S wine wine-gecko wine-mono winetricks
+    ```
+
+2.  配置：
+    1.  启动 `Winetricks`
+    2.  选择默认的容器
+    3.  安装所有字体，或只安装 CJK 字体
+    4.  安装 `dxvk` 和 `d3dx11_43`
+        > 假如你在安装 `dvxk` 时遇到错误，可以尝试安装名字符合 `dxvkXXXX` 的锁定版本
+    ```
+    ```
+
+### Fcitx5 简明配置
+
+该小节以作者在主力机器上配置 Fcitx5 使用的方法为基准，可能不适用于所有环境。
+
+1.  安装 Fcitx5:
+    ```sh
+    sudo pacman -S fcitx5-im fcitx5-rime
+    ```
+
+2.  设置环境变量：在 Hyprland 配置中添加：
+    ```lua
+    hl.env("QT_IM_MODULE", "fcitx")
+    hl.env("QT_IM_MODULES", "fcitx")
+    hl.env("XMODIFIERS", "@im=fcitx")
+    ```
+    > 通常不必为全局 GTK 程序设置 `GTK_IM_MODULE`，其值应当为空或`wayland`，GTK 程序会请求窗口管理器来获取输入法。
+
+3.  设置启动：在 Hyprland 配置中添加：
+    ```lua
+    hl.on("hyprland.start", function()
+	    hl.exec_cmd("fcitx5 -d")
+	  end);
+    ```
+
+4.  重新启动 Hyprland 或运行 `fcitx5 -d`，然后在任意程序中尝试输入，输入法应当已经被启动
+    > 这是因为 Hyprland 会自动重载环境变量（这不包括已经启动的程序）
+
+5.  打开 `Fcitx 5 配置` 应用程序，可以进行适当调整
+
+6.  额外的，由于 Fcitx5 的输入法切换实现非标准快捷键注册，你可以使用 [我 GitHub 仓库内的脚本](https://github.com/0xarch/desktop-exp)，具体是 `bin/fcitx5-switch`，在 Hyprland 中将其注册为 SUPER+SPACE (默认)，并可选的取消 Fcitx5 自身的快捷键监听（实际上，在注册之后该监听已经失效了，取不取消无所谓）。
+    > 原理：Hyprland 会优先独占自身注册的快捷键，并防止快捷键被传入到应用程序，但 Fcitx5 不会保证独占，这会导致诸如切换输入法同时也打开应用菜单之类的问题。通过一次脚本桥接可以解决该问题。
 
 ## 软件
 
@@ -104,7 +154,7 @@ category:
 * 基于 `DTA Client` 的游戏（如心灵终结）: 取决于是否为环境安装了 `dxvk` 支持，按需使用 `OpenGL` 客户端 或 `DirectX` 客户端
 * FA2SP HDM Edition: 整体完备，可能在保存文件时出现假失败，但实际上数据被保存了
 
-> 注意，以上结论并未使用 NVIDIA 设备验证。<i>由于其专有驱动程序在 Linux 上较为独特，</i>可能出现意想不到的效果
+> 注意，以上结论并未使用 NVIDIA 设备验证。<i>由于其专有驱动程序在 Linux 上较为独特，</i> 可能出现意想不到的效果
 
 部分作者使用的软件/游玩的游戏尚未支持 Linux:
 
@@ -118,7 +168,7 @@ category:
 由于作者游玩的游戏中有这么一组：原神，崩铁，都市天际线，前两者虽然在版本更新时仅下载增量包，但由于其更新内容较多也会占用较大的临时空间，
 而后者需要配置一些虚拟内存才能流畅游玩，综合考虑后将都市天际线安装在 Windows 上
 （即使其有 Linux 版本），如此可以节约部分磁盘空间。
-> 当然，某公司开发的意图和原神掰手腕的游戏不仅往启动器里塞450张帧模拟视频，包体大小和性能优化也排在舆论公关优先级之后（特别是某雪豹、逃兵将军和鸣式之母），暂且忽略。
+> 当然，_某公司开发的意图和原神掰手腕的游戏_ 不仅往启动器里塞450张静态图片来模拟视频， 包体大小和性能优化也排在舆论公关优先级之后（特别是某雪豹、逃兵将军和鸣式之母），暂且忽略。
 
 由于使用脚本等方式(包括 `ATLAS OS`)移除 `Windows Defender` 本体（以及删除其他不让删除的软件）的行为时常会
 导致 Windows 抽风，因此需要选择牺牲部分空间来保留**癫痫治疗药物**。
@@ -148,4 +198,5 @@ category:
 [^steam]: ArchLinux 的 `multilib` 仓库已经包含了 Steam 安装程序， Debian 等也在仓库内存储了该包，你也可以通过 Flathub 上的 `com.valvesoftware.Steam` 安装
 [^ubuntu]: 该 [Ubuntu 邮件列表](https://lists.ubuntu.com/archives/foundations-bugs/2025-May/538403.html) 包含了关于打广告的问题。强推 Snapcraft 文章较多不一一列举
 [^gnome-donate]: [Zorin Forum 帖子](https://forum.zorin.com/t/gnome-49-introduces-donation-request-notification/54035)
+[^defender]: Micorsoft Windows Defender 的识别机制很大一部分是判断程序签名。因此哪怕是完全无毒的程序也可能被认为是病毒
 [^ms-webview]: [XNA Developers](https://www.xda-developers.com/microsoft-is-turning-windows-apps-into-websites/?post=3e7e-47ff-8417ca68f073#thread-posts)
