@@ -31,7 +31,7 @@ category:
 就 Windows 与 Linux 的各自的优点对比来看，作者更倾向于将 Linux 作为主要系统，而 Windows 仅在部分场景（如游戏等）使用。
 以下是作者推荐（同时正在使用）的系统环境：
 
-* Windows: 使用 Windows 11 专业版，注意保持系统更新，**注意：安装时若使用 `ATLAS OS` 调整工具，尽管获得了(名义上)更好的性能，但可能会导致 Windows 的部分功能(包括启动)缺失**
+* Windows: 使用 Windows 11 专业版，注意保持系统更新
 
 * Linux: 使用 Arch Linux, 使用 `Hyprland` 搭配 end_4 的 [Hyprland配置](https://github.com/end-4/dots-hyprland) 作为桌面环境
 
@@ -55,6 +55,8 @@ category:
 
 * 将搜索索引设置为“增强”以启用自定义筛选，然后在筛选中排除所有硬盘分区来阻止索引。
   > 相比于直接关闭索引，该方法在最大程度减小影响的同时避免了 <i style='text-shadow: 0 0 .05rem black'><i style='color: red'>配</i><i style='color: green'>色</i><i style='color: blue'>前</i><i style='color: gold'>卫</i></i> 的"启用 Windows 索引"的<i>温馨提示</i>持续占用搜索面板
+
+* **注意：安装时请谨慎使用 `ATLAS OS` 调整工具。尽管获得了(名义上)更好的性能，但可能会导致 Windows 的部分功能(包括核心功能)缺失**
 
 ### Linux
 
@@ -121,7 +123,7 @@ category:
 
 5.  打开 `Fcitx 5 配置` 应用程序，可以进行适当调整
 
-6.  额外的，由于 Fcitx5 的输入法切换实现非标准快捷键注册，你可以使用 [我 GitHub 仓库内的脚本](https://github.com/0xarch/desktop-exp)，具体是 `bin/fcitx5-switch`，在 Hyprland 中将其注册为 SUPER+SPACE (默认)，并可选的取消 Fcitx5 自身的快捷键监听（实际上，在注册之后该监听已经失效了，取不取消无所谓）。
+6.  额外的，由于 Fcitx5 的输入法切换实现非标准快捷键注册，你可以使用 [作者的 GitHub 仓库内的脚本](https://github.com/0xarch/desktop-exp)，具体是 `bin/fcitx5-switch`，在 Hyprland 中将其注册为 SUPER+SPACE (默认)，并可选的取消 Fcitx5 自身的快捷键监听（实际上，在注册之后该监听已经失效了，取不取消无所谓）。
     > 原理：Hyprland 会优先独占自身注册的快捷键，并防止快捷键被传入到应用程序，但 Fcitx5 不会保证独占，这会导致诸如切换输入法同时也打开应用菜单之类的问题。通过一次脚本桥接可以解决该问题。
 
 ## 软件
@@ -154,7 +156,7 @@ category:
 * 基于 `DTA Client` 的游戏（如心灵终结）: 取决于是否为环境安装了 `dxvk` 支持，按需使用 `OpenGL` 客户端 或 `DirectX` 客户端
 * FA2SP HDM Edition: 整体完备，可能在保存文件时出现假失败，但实际上数据被保存了
 
-> 注意，以上结论并未使用 NVIDIA 设备验证。<i>由于其专有驱动程序在 Linux 上较为独特，</i> 可能出现意想不到的效果
+> 注意，以上结论并未使用先进 NVIDIA 设备验证。<i>由于其专有驱动程序在 Linux 上较为独特，</i> 可能出现意想不到的效果。作者的备用机使用 NVIDIA * 960 显卡，目前在 Wine 部分没有观测到问题。
 
 部分作者使用的软件/游玩的游戏尚未支持 Linux:
 
@@ -168,7 +170,7 @@ category:
 由于作者游玩的游戏中有这么一组：原神，崩铁，都市天际线，前两者虽然在版本更新时仅下载增量包，但由于其更新内容较多也会占用较大的临时空间，
 而后者需要配置一些虚拟内存才能流畅游玩，综合考虑后将都市天际线安装在 Windows 上
 （即使其有 Linux 版本），如此可以节约部分磁盘空间。
-> 当然，_某公司开发的意图和原神掰手腕的游戏_ 不仅往启动器里塞450张静态图片来模拟视频， 包体大小和性能优化也排在舆论公关优先级之后（特别是某雪豹、逃兵将军和鸣式之母），暂且忽略。
+> _某公司开发的意图和原神掰手腕的游戏_ 不仅往启动器里塞450张静态图片来模拟视频， 包体大小和性能优化也排在舆论公关优先级之后（特别是某雪豹、逃兵将军和鸣式之母），暂且忽略。
 
 由于使用脚本等方式(包括 `ATLAS OS`)移除 `Windows Defender` 本体（以及删除其他不让删除的软件）的行为时常会
 导致 Windows 抽风，因此需要选择牺牲部分空间来保留**癫痫治疗药物**。
@@ -180,7 +182,7 @@ category:
 > 此外 `Microsoft Edge` 的 PWA 实现可能在 `Chromium` 基础上添加了额外的可能存在逻辑问题的代码，即使是 Windows 上也有相当多的 Bug （例如将默认软件安装位置设置为C:外的分区会导致PWA应用的图标消失）[^2]，不推荐使用。
 > 如果有足够的存储空间，更推荐在 Windows 上使用 `Chromium` 代替预装的 `Microsoft Edge` 。
 
-当然， Windows 也并不是一无是处，比如其**先进的安全实现系统**保证了微软可以(宣称)保证 `Microsoft Edge` 自身实现的密码管理器在任意软件都可以访问的内存中明文存储密码的做法是非常安全的。[^3]
+不过 Windows 也并不是一无是处，比如其**先进的安全实现系统**保证了微软可以(宣称)保证 `Microsoft Edge` 自身实现的密码管理器在任意软件都可以访问的内存中明文存储密码的做法是非常安全的。[^3]
 
 ## 尾缀
 
@@ -189,14 +191,14 @@ category:
 
 当然，这并不是说你应该使用 _豆包AI_ 来分析该文章，其独特的语言风格和大小较为严格的上下文（相比 DeepSeek 等）
 可能让你误解内容，甚至导致**实操时破坏系统**。
-当然 _DeepSeek_ 也不遑多让，比如通常情况下其会漏看或忽略<i>它认为无关紧要或不能讨好用户</i>的东西，尤其是看网页只看文本。
+_DeepSeek_ 也不遑多让，比如通常情况下其会漏看或忽略<i>它认为无关紧要或不能讨好用户</i>的东西，尤其是看网页只看文本而无法获取整个HTML结构。
 
 [^0]: 如 [31431](https://www.cve.org/CVERecord?id=CVE-2026-31431), [43284](https://www.cve.org/CVERecord?id=CVE-2026-43284), [43500](https://www.cve.org/CVERecord?id=CVE-2026-43500), [46300](https://www.cve.org/CVERecord?id=CVE-2026-46300)
-[^nvidia-thing]: _So, NVIDIA, F**k you —— Linus Torvalds_ , 你可以在该转载的 [Bilibili 视频](https://www.bilibili.com/video/BV1YF41177V6/) 中观看, 或该 [Bilibili 视频](https://www.bilibili.com/video/BV1NB4y1R7bC/) 记录了该讲座的全程
+[^nvidia-thing]: _So, NVIDIA, F**k you —— Linus Torvalds_ , 你可以在该转载的 [Bilibili 视频](https://www.bilibili.com/video/BV1YF41177V6/) 中观看该片段, 或该 [Bilibili 视频](https://www.bilibili.com/video/BV1NB4y1R7bC/) 记录了该讲座的全程
 [^2]: 该 [Microsoft Q&A](https://learn.microsoft.com/zh-cn/answers/questions/2394517/win11-edge-pwa?forum=microsoftedge-all&referrer=answers&page=0#answers) 中的回复解释了原因
 [^3]: [xsgbbx 的文章](https://zhuanlan.zhihu.com/p/2034988592154588391)
 [^steam]: ArchLinux 的 `multilib` 仓库已经包含了 Steam 安装程序， Debian 等也在仓库内存储了该包，你也可以通过 Flathub 上的 `com.valvesoftware.Steam` 安装
-[^ubuntu]: 该 [Ubuntu 邮件列表](https://lists.ubuntu.com/archives/foundations-bugs/2025-May/538403.html) 包含了关于打广告的问题。强推 Snapcraft 文章较多不一一列举
+[^ubuntu]: 该 [Ubuntu 邮件列表](https://lists.ubuntu.com/archives/foundations-bugs/2025-May/538403.html) 包含了关于打广告的问题。强推 Snapcraft 文章较多，不一一列举
 [^gnome-donate]: [Zorin Forum 帖子](https://forum.zorin.com/t/gnome-49-introduces-donation-request-notification/54035)
 [^defender]: Micorsoft Windows Defender 的识别机制很大一部分是判断程序签名。因此哪怕是完全无毒的程序也可能被认为是病毒
-[^ms-webview]: [XNA Developers](https://www.xda-developers.com/microsoft-is-turning-windows-apps-into-websites/?post=3e7e-47ff-8417ca68f073#thread-posts)
+[^ms-webview]: [XNA Developers 推文](https://www.xda-developers.com/microsoft-is-turning-windows-apps-into-websites/?post=3e7e-47ff-8417ca68f073#thread-posts)
