@@ -6,7 +6,6 @@ tags:
 category:
   - Code Snippets
 highlight: true
-license: CC-BY-ND-SA
 permalink: /note.js/b6i56u4d/
 ---
 简单的JS无缝跳转的实现.

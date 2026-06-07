@@ -3,6 +3,7 @@ title: JS特性：this
 date: 2024-12-04T00:00:00.000Z
 tags:
   - JavaScript
+license: CC-BY-NC-SA 4.0
 star: true
 permalink: /note.js/u4qdco2f/
 ---

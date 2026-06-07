@@ -6,7 +6,6 @@ tags:
 category:
   - Code Snippets
 highlight: true
-license: CC-BY-ND-SA
 permalink: /note.js/8uid1g18/
 ---
 简单的JS滚动目录(动态高亮)的实现.

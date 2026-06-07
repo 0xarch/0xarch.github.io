@@ -14,6 +14,8 @@ root: /
 source_dir: source
 public_dir: public
 theme: "fewu-theme-next"
+license:
+  type: private
 theme_next:
   accent_color: 195
   additional_navs:

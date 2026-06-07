@@ -5,7 +5,7 @@ tag:
 category:
   - Code Snippets
 highlight: true
-license: CC-BY-SA
+license: CC-BY-NC-SA 4.0
 date: 2025/08/02 12:10:14
 permalink: /article/oby9jkcye/
 hidden: true

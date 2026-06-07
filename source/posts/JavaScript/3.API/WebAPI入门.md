@@ -5,6 +5,7 @@ tags:
   - JavaScript
 category:
   - 前端技术
+license: CC-BY-NC-SA 4.0
 permalink: /note.js/3inmxu1p/
 ---
 这篇文章简单讲述了 WebAPI 的组成以及 DOM 节点的实用用法。

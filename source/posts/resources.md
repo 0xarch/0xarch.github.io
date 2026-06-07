@@ -17,3 +17,4 @@ disable_adjacent: true
 
 [F.E.W.U.](https://github.com/fewu-swg/fewu/)
 
+[矿石精炼器](https://space.bilibili.com/4435845)
