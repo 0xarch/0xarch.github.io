@@ -4,10 +4,16 @@ permalink: /article/BAaJAZyN1uTSPtfT/
 title: Atomic Arch 攻击影响概览
 tags: []
 category: []
+hidden: true
 license: cc by nc sa 4.0
 ---
 
 <!--more-->
+
+本次攻击事件已基本结束。
+> npm 上的 `atomic-lockfile` 包已经被替换为不包含恶意文件的占位符版本。
+
+该文章已被设为隐藏文章。您只可能从已保存的URL处访问该文章。
 
 以下是所有受影响的包（根据[邮件列表](https://lists.archlinux.org/archives/list/aur-general@lists.archlinux.org/thread/FGXPCB3ZVCJIV7FX323SBAX2JHYB7ZS4/)）：
 
