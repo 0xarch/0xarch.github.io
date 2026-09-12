@@ -1,0 +1,11 @@
+# ngwg configuration
+title: 0xarch's Site
+description: The shelter
+baseurl: /
+theme: pacific
+themes:
+  pacific: https://github.com/Ngwgers/Ngwg-default-theme
+source_dir: source
+public_dir: public
+plugins:
+  seo: https://github.com/Ngwgers/Ngwg-ext-seo

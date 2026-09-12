@@ -17,7 +17,7 @@
     "dependencies": {
         "@fewu-swg/fewu-plugin-basic-improvement": "^1.1.0",
         "@fewu-swg/fewu-renderer-markdown": "^1.4.0",
-        "@fewu-swg/fewu-theme-next": "^1.2.19",
-        "fewu-cli": "^1.0.12"
+        "@fewu-swg/fewu-theme-next": "^1.2.20",
+        "fewu-cli": "^1.0.13"
     }
 }

@@ -25,10 +25,10 @@ theme_next:
       isExternal: true
       url: https://github.com/0xarch/
       title: GitHub
-    Netlify:
+    Keep Android Open:
       isExternal: true
-      url: https://0ah.netlify.app
-      title: Netlify(CDN)
+      url: https://keepandroidopen.org/
+      title: Keep Android Open
   banner:
     url: /banner.webp
     credit: 0xarch
@@ -40,6 +40,7 @@ excluded_files:
   - posts\guide\guide.en-US.md
 footer_content: |
   © 2019-2026 0xarch & Soloev. All Rights Reserved. / <a href="/feed.xml">RSS</a> / <a href="/sitemap.xml">Sitemap</a>
+  <script src="https://keepandroidopen.org/banner.js?size=mini&hidebutton=off&animation=off"></script>
 social_links:
   GitHub:
     url: https://github.com/0xarch

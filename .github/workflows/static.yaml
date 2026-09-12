@@ -1,0 +1,75 @@
+# Ngwg GitHub Pages 部署工作流
+#
+# 用法：将本文件复制到你的站点仓库的 .github/workflows/generate-website.yaml，
+# 在仓库 Settings → Pages 中把 Source 设为 "GitHub Actions" 即可。
+# 之后每次 push 到 main（或手动触发）都会在干净的 Runner 上全新安装 Ngwg 并构建。
+#
+# 工作流做的事：
+#   1. 安装 fish 与 bun（git 在 Runner 上已预装）
+#   2. 浅克隆 Ngwg-cli 到工作区之外（避免 CLI 仓库文件混入站点源文件）
+#   3. 在站点仓库根目录运行 ngwg.fish build
+#      —— Ngwg-core、默认主题与插件由 bootstrap 在构建时自动 git clone 到
+#         <root>/.ngwg/，无需预先安装；本工作流不做缓存，保证每次都是干净安装
+#   4. 将 public/ 上传并部署到 GitHub Pages
+#
+# 可按需修改：触发分支、NGWG_CLI_REPO / NGWG_CLI_REF（换成 fork 或固定版本）、
+# build 步骤前追加 bun install（仅当你的插件需要 npm 依赖时）。
+
+name: Generate Website
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# 同一时间只保留一次 Pages 部署，新排队等待、不打断进行中的部署
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+env:
+  NGWG_CLI_REPO: https://github.com/Ngwgers/Ngwg-cli
+  NGWG_CLI_REF: main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install fish
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends fish
+
+      - name: Setup bun
+        uses: oven-sh/setup-bun@v2
+
+      - name: Download Ngwg-cli
+        run: |
+          git clone --depth 1 --branch "$NGWG_CLI_REF" "$NGWG_CLI_REPO" "$RUNNER_TEMP/ngwg-cli"
+
+      - name: Build site
+        run: fish "$RUNNER_TEMP/ngwg-cli/bin/ngwg.fish" build
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: public
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
