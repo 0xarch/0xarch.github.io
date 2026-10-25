@@ -60,7 +60,9 @@ jobs:
           git clone --depth 1 --branch "$NGWG_CLI_REF" "$NGWG_CLI_REPO" "$RUNNER_TEMP/ngwg-cli"
 
       - name: Build site
-        run: fish "$RUNNER_TEMP/ngwg-cli/bin/ngwg.fish" build
+        run: |
+          fish "$RUNNER_TEMP/ngwg-cli/bin/ngwg.fish" update
+          fish "$RUNNER_TEMP/ngwg-cli/bin/ngwg.fish" build
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
