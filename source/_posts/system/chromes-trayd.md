@@ -1,8 +1,7 @@
 ---
 title: ChromeOS Linux 子系统托盘守护进程
 tags:
-  - Chromium
-  - Linux
+  - ChromeOS
 category:
   - Code Snippets
 date: 2025-11-05T07:32:48.806Z

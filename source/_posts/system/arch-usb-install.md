@@ -2,9 +2,8 @@
 title: Arch Linux 特殊平台安装笔记
 category:
   - Code Snippets
-  - 操作系统
 tags:
-  - ArchLinux
+  - archlinux
   - Linux
 date: 2026/05/12 12:10:14
 permalink: /article/oq3lwh1nd/
@@ -52,4 +51,5 @@ passwd %USER%
 ```sh
 wsl --set-default archlinux
 ```
-```
+
+需注意，通常需要从 WSL 启用 systemd ，在此作备忘。

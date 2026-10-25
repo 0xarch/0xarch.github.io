@@ -2,10 +2,96 @@
 title: 0xarch's Site
 description: The shelter
 baseurl: /
-theme: pacific
+theme:
+  firefly:
+    themeColor:
+      defaultMode: system
+      hue: 200
+    navbar:
+      mode: dynamic
+      menuAlign: left
+      logo:
+        light: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPgoJPHBhdGggZD0iTTAgMGgyNHYyNEgweiIgZmlsbD0ibm9uZSIgLz4KCTxwYXRoIGZpbGw9ImN1cnJlbnRDb2xvciIgZD0iTTYgMTloM3YtNXEwLS40MjUuMjg4LS43MTJUMTAgMTNoNHEuNDI1IDAgLjcxMy4yODhUMTUgMTR2NWgzdi05bC02LTQuNUw2IDEwem0tMiAwdi05cTAtLjQ3NS4yMTMtLjl0LjU4Ny0uN2w2LTQuNXEuNTI1LS40IDEuMi0uNHQxLjIuNGw2IDQuNXEuMzc1LjI3NS41ODguN1QyMCAxMHY5cTAgLjgyNS0uNTg4IDEuNDEzVDE4IDIxaC00cS0uNDI1IDAtLjcxMi0uMjg4VDEzIDIwdi01aC0ydjVxMCAuNDI1LS4yODguNzEzVDEwIDIxSDZxLS44MjUgMC0xLjQxMi0uNTg3VDQgMTltOC02Ljc1IiAvPgo8L3N2Zz4K'
+        dark: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPgoJPHBhdGggZD0iTTAgMGgyNHYyNEgweiIgZmlsbD0ibm9uZSIgLz4KCTxwYXRoIGZpbGw9IiNmZmYiIGQ9Ik02IDE5aDN2LTVxMC0uNDI1LjI4OC0uNzEyVDEwIDEzaDRxLjQyNSAwIC43MTMuMjg4VDE1IDE0djVoM3YtOWwtNi00LjVMNiAxMHptLTIgMHYtOXEwLS40NzUuMjEzLS45dC41ODctLjdsNi00LjVxLjUyNS0uNCAxLjItLjR0MS4yLjRsNiA0LjVxLjM3NS4yNzUuNTg4LjdUMjAgMTB2OXEwIC44MjUtLjU4OCAxLjQxM1QxOCAyMWgtNHEtLjQyNSAwLS43MTItLjI4OFQxMyAyMHYtNWgtMnY1cTAgLjQyNS0uMjg4LjcxM1QxMCAyMUg2cS0uODI1IDAtMS40MTItLjU4N1Q0IDE5bTgtNi43NSIgLz4KPC9zdmc+Cg=='
+    banner:
+      mode: banner
+      homeText:
+        enable: true
+        typewriter:
+          enable: true
+          speed: 125
+          deleteSpeed: 175
+        title: "0xarch's Site"
+        titleSize: 1rem
+        subtitle:
+          - No Mountain Too High, No Ocean Too Deep
+          - Graciously, I Come Onto Earth
+          - Last MADMAN Standing
+          - I Hate Violence But, If This Is The Only Way
+          - Stand, And Die Like A MAN
+          - A Marvelous Design
+        links: []
+      desktop:
+        - /extra/banner.webp
+      mobile:
+        - /extra/banner.webp
+    sidebar:
+      enable: true
+      position: both
+      hideOnPostPage: false
+      left: [profile, categories, tags]
+      right: [toc, stats, announcement, recent]
+    announcement:
+      enable: true
+      title: 公告
+      content: 本博客已经迁移至 Ngwg .
+      link:
+        enable: true
+        text: 了解 Ngwg
+        url: https://github.com/Ngwgers/Ngwg-cli
+        external: true
+    profile:
+      name: 0xarch
+      bio: "Weird little guy"
+      avatar: "/extra/avatar.webp"
+      links:
+        - name: GitHub
+          icon: github
+          url: "https://github.com/0xarch/"
+        - name: Codeberg
+          icon: codeberg
+          url: "https://codeberg.org/0xarch/"
+        - name: RSS
+          icon: rss
+          url: "/rss.xml"
+    siteStats:
+      enable: true
+      startDate: "2024-03-04"
+    postList:
+      stats:
+        published: true
+        words: true
+        reading: true
+    license:
+      enable: true
+    search:
+      enable: true
+      limit: 12
+    recent:
+      enable: true
 themes:
+  firefly: https://github.com/0xarch/firefly-theme
   pacific: https://github.com/Ngwgers/Ngwg-default-theme
 source_dir: source
 public_dir: public
 plugins:
   seo: https://github.com/Ngwgers/Ngwg-ext-seo
+  files:
+    option:
+      chunk_size: 500
+      segment_threshold: 1000
+  feature:
+    option:
+      copy_files:
+        - extra
+        - BingSiteAuth.xml

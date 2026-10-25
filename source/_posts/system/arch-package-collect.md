@@ -1,7 +1,7 @@
 ---
 title: Arch Linux 包收集
 tags:
-  - ArchLinux
+  - archlinux
   - Linux
 category:
   - 操作系统
