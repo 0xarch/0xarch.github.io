@@ -334,6 +334,24 @@ eco@EC-xx ~/P/KAMUCL (main)> ls native -1
 
 显然这是 AI 根据一个不知道哪来的模板（甚至是英文模板）进行的稀便生成并且三口人先生可能根本没看过甚至不知道自己的项目里有这么一滩稀便。
 
+### 为什么不直接让 AI 写机器码
+
+如果纵览全部代码你就会发现整个狗屎堆充斥着各种大小不一的羊屎蛋[^overall-1]，这说明三口人先生使用的 Agent 可能远没有 Claude 那么聪明只能因为他甚至不会在发布时进行格式化。
+
+然后思考代码目录结构你就会发现这个三口人先生连目录都不会看因为他的低能 Agent 能把一个 `src` 拆成三个目录而三口人先生完全没有感觉。
+
+然后正当作者疑惑为什么代码里包含这么多 `pcl` `PCL` 难道是想和 `Plain Craft Launcher` [^pcl2] 杂交但是没有任何注释能解释这一点时，作者突然发现！`FEATURE_AUDIT.md` 里面正是使用瓜皮龙猫[^meloong]的 PCL 官方版和 PCL 社区版进行功能大对决。
+
+然后作者把 `FEATURE_AUDIT.md` 翻到最底下惊奇地发现这个东西进行功能对战还没完成的时候就被永久暂停了。也许这位试图挽救仓库的 Agent 的轮奸[^agent-iter]时限[^rate-limit]到了。
+
+[^overall-1]: 羊屎蛋：此处代指代码文件。大小不一指各个文件之间的编码规范、代码风格均不相同。
+
+[^pcl2]: PCL：指 [Plain Craft Launcher 启动器](https://meloong.com/PCL)。
+
+[^meloong]: 瓜皮龙猫：指 PCL 启动器的官方作者龙腾猫跃和他的[瓜皮龙工作室](https://meloong.com/)。
+
+[^rate-limit]: 轮奸时限：指 Coding Plan 的单位时间额度限制。
+
 ### MIT
 
 最后查看许可证时作者原本不抱期望但这个项目竟然使用 [MIT 许可证](https://www.wikiwand.com/en/MIT_License)！这导致作者的睾丸被吓爆一颗。[^balls]
@@ -361,3 +379,5 @@ eco@EC-xx ~/P/KAMUCL (main)> ls native -1
 * **忘记取关卡慕SAMA的人** ： 非常抱歉，因为您实际上不属于狂热追随者，这仅是因为一个疏忽造成的。如果您感到被冒犯，请允许作者向您致歉，您实际上不包含在上文所批判的主体的范围内。
 
 * **Forbric** ： 精品大狗屎。关于 Forbric 的技术含量、 Forbric 的实际表现可以查看 Forbric 仓库的 Issue#24 、 Issue#39 、 Issue#59 。
+
+最后一点是你可以去阅读[作者让 AI 写的比 KAMUCL 精品一万倍的精品小狗屎 Ngwg](https://0xarch.codeberg.page/posts/fewu/yet-again/) 。作者的其他项目不是 AI 写的所以不在此处丢人现眼。
