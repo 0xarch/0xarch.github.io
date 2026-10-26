@@ -86,7 +86,7 @@ GLM-5.3-Flash 仅用了大约 3000万 Token 就把 Ngwg 的所有项目都搓了
 >   抛开作者想要钻石最后变成狗屎这一点并从 Forbric 代码库里单拎出几个文件来看代码质量是极高的，毕竟写出这种代码的大概率是被允许脱离原生家庭[^claude]的 Claude ；
 >   作者非常想知道到底是什么提示词可以让 Claude 写出如此高级的代码然后把高级代码组合到一起就会[退化](https://www.wikiwand.com/en/Devolution) 成一坨美味大狗屎。[^24]
 >   个人观点：如果 Forbric 作者再不自己补习知识而是只靠 Claude 力大砖飞，起码要再消耗
->   阿伏伽德罗常数个 Token 才能达到预期效果的 99%。[^59]
+>   阿伏伽德罗数个 Token 才能达到预期效果的 99%。[^59]
 
 </details>
 
@@ -127,9 +127,9 @@ Ngwg 毫无疑问是非常迅速的。
 在作者的工作机器上使用默认主题部署含有约 40 篇文章的网站耗时仅 0.5s，
 对比 Fewu 3.7 需要近 10s 来说，这无疑超越了作者先前制作的任何一个 SSG 。
 
-[^claude]: 脱离原生家庭：是对大模型 Claude 的前沿水平与其母公司 Anthropic 的傻逼行径反差极大的讽刺性表达。由于 Anthropic 涉及事件过多，诸如报假警、虚空指控中国模型、[https://baike.baidu.com/item/%E5%B7%B4%E6%8B%BF%E9%A9%AC%E9%A1%B9%E7%9B%AE/67770563](焚书扫描)、间谍行为、对中歧视等，谨以“傻逼”总结。
+[^claude]: 脱离原生家庭：是对大模型 Claude 的前沿水平与其母公司 Anthropic 的傻逼行径反差极大的讽刺性表达。由于 Anthropic 涉及事件过多，诸如报假警、虚空指控中国模型、[焚书扫描](https://baike.baidu.com/item/%E5%B7%B4%E6%8B%BF%E9%A9%AC%E9%A1%B9%E7%9B%AE/67770563)、间谍行为、对中歧视等，谨以“傻逼”总结。
 
-[^59]: [Issue#59](https://github.com/Ray-T-r/Minecraft-Forbric-mod-loader/issues/59) 是这个观点更直接的表达，但由于 Issue#59 的作者比较偏激，在此不展开。
+[^59]: [Issue#59](https://github.com/Ray-T-r/Minecraft-Forbric-mod-loader/issues/59) 是这个观点更直接的表达，但由于 Issue#59 的作者的笔法比较直接，在此不展开。
 
 [^24]: 关于 Forbric 的具体实现水平，可以参考 [Issue#24](https://github.com/Ray-T-r/Minecraft-Forbric-mod-loader/issues/24)，发起者用 AI 审查了仓库代码。简单来说，审查结果表明 Forbric 的代码质量高，且实现有很多可学习之处。不过这并不能改变 Forbric 的作者看上去除了给 Claude 充钱之外没有参与其中一分一毫哪怕是点开代码看一眼的事实。当然，不排除其实是 Forbric 的作者大发慈悲掏自己的钱让 Claude 喷吐知识然后发广告大力宣传来让其他社区人士审查以此达到把 Claude 知识库蒸馏到社区里的目的。
 
