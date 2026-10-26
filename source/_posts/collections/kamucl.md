@@ -136,7 +136,7 @@ console.log('Cross-platform distribution is built by each native platform; macOS
 
 [^llm]: 溜溜梅：原文章中出现的名词。由于 LLM 是溜溜梅（Liu-Liu-Mei）的首字母，因此被用作对大语言模型的指代。 
 
-另外根据勇士先生的表达和一些被删除的文本可以发现这个三口人作者甚至不会使用 [互联网](https://www.wikiwand.com/en/Internet) 于是它直接把自己伪装成 Prism Launcher 来实现认证功能。下文为引用的勇士先生的部分文本。此处的文本依照原授权模式( CC-BY 4.0)展示。[^vscode]
+另外根据勇士先生的表达和一些[神奇的类型定义](#ClientID)可以发现这个三口人作者甚至不会使用 [互联网](https://www.wikiwand.com/en/Internet) 于是它直接把自己伪装成 Prism Launcher 来实现认证功能。下文为引用的勇士先生的部分文本。此处的文本依照原授权模式( CC-BY 4.0)展示。[^vscode]
 
 > 最令人[蒙古](https://zh.wikipedia.org/wiki/%E8%92%99%E5%8F%A4%E5%9B%BD)的是虽然项目自身是一个他妈的[Electron](https://www.electronjs.org/)编写的狗屎，并且文件高达100MiB甚至90MiB，并且包含完整的[Blink、V8、Skia、Angle](https://cubk.cn/.org/chromium-projects/)意味着可以渲染世界上任何一个能在前端渲染的东西比如[Microsoft](https://zh.wikipedia.org/zh-hans/%E5%BE%AE%E8%BD%AF)[Vs](https://zh.wikipedia.org/zh-hans/%E4%B8%96%E7%95%8C%E5%A4%A7%E6%88%B0)[code](https://zh.wikipedia.org/wiki/%E4%BB%A3%E7%A0%81)甚至是[Firefox](https://developer.puter.com/labs/firefox-wasm/)，但是作者及其高级的大脑还是决定给登录做成了你需要手动打开外置浏览器因为他不仅不会利用程序内的浏览器来渲染，甚至都不会自动帮你拉起一下浏览器，
 > 
@@ -153,6 +153,8 @@ console.log('Cross-platform distribution is built by each native platform; macOS
 ## 使用显微镜观察狗屎
 
 下面这一坨是作者在休息之后再次查看美味狗屎源代码之后发现的恶臭狗屎列表。
+
+### Verifyyyyyyyy
 
 脚本目录里有一个专门的脚本用来验证三口人先生的标志是否被正确使用了，还有另外十数个脚本专门用来验证某个狗屎功能正常工作。没有任何一个[大脑](https://zh.wikipedia.org/zh-hans/%E5%A4%A7%E8%84%91)正常的人类开发者会把这些东西写在脚本里而不是测试里。
 
@@ -230,6 +232,7 @@ verify-workbench-1054.cjs
 
 </details>
 
+### ClientID
 
 作者在试图用 `find` 查找涉及 ClientID 的文件时惊奇地发现没有任何文件名里和认证/登录/正版/Mojang等关键词扯上关系。
 然后作者再次尝试用 `ripgrep` 终于恍然大悟因为这个三口人作者显然不知道它的 AI 把这个东西写到了类型定义里：
@@ -245,6 +248,8 @@ src/main/core/settings.ts
 ```
 > funniest ai slop ever
 
+### 跨平台原生
+
 然后作者发现有一个几乎从来不会在什么跨平台应用尤其是使用电子平台的项目里出现的 `native` 目录，并带着浓厚的好奇心进行了列出文件：
 
 ```plain
@@ -256,6 +261,8 @@ eco@EC-xx ~/P/KAMUCL (main)> ls native -1
 ```
 
 很显然这个三口人先生也许可能压根真的不知道有 Linux Gamers 这个群体或者连 Linux 都没听过毕竟很显然他给 AI 的许愿清单里面只包含 Windows 和 macOS 。
+
+### 我不知道项目在干什么！
 
 然后作者又发现这个项目里面还有一个 `CURRENT_STATUS.md` 。也许可以借此了解三口人先生对项目的了解情况。
 
@@ -316,6 +323,8 @@ eco@EC-xx ~/P/KAMUCL (main)> ls native -1
 </details>
 
 显然这是 AI 根据一个不知道哪来的模板进行的生成并且三口人先生可能根本没看过。
+
+### MIT
 
 最后查看许可证时作者原本不抱期望但这个项目竟然使用 [MIT 许可证](https://www.wikiwand.com/en/MIT_License)！这导致作者的睾丸被吓爆一颗。[^balls]
 
