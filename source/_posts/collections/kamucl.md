@@ -26,24 +26,23 @@ author: 0xarch
 
 * 如果您对粪便过敏，请勿阅读此文章的上半部分。
 
-* 非常抱歉，您至少需要中国高中毕业学历或更高学历或同等学历才能充分理解本文章。若您不具备足以获得学历的所有知识，可能会在阅读过程中感到疑惑。
+* 非常抱歉，您至少需要[中国高中毕业学历](https://baike.baidu.com/item/%E4%B8%AD%E5%9B%BD%E5%9B%BD%E6%B0%91%E6%95%99%E8%82%B2%E5%AD%A6%E5%8E%86/64825441)或更高学历或同等学历才能充分理解本文章。若您不具备足以获得学历的所有知识，可能会在阅读过程中感到疑惑。
 
 **您已经被充分警告过了**。下面是正文。
 
 ## 狗屎状态
 
-不知道 KAMUCL 是什么东西的读者可以直接观看[这个](https://www.bilibili.com/video/BV11nHZ68EVs)不知道是什么物种的[三口人作者](https://space.bilibili.com/9596327)[^three-mouth]制作的视频。
-对于作者而言这个 KAMUCL 的社区地位堪比超级AI大狗屎 [Forbric](https://github.com/Ray-T-r/Minecraft-Forbric-mod-loader) 。
+如果读者不知道 KAMUCL 是什么东西可以先观看[这个](https://www.bilibili.com/video/BV11nHZ68EVs)不知道是什么[物种](https://www.wikiwand.com/en/Species)的[三口人作者](https://space.bilibili.com/9596327)[^three-mouth]制作的视频。
+对于作者而言这个 KAMUCL 的社区地位堪比超级 AI 大狗屎 [Forbric](https://github.com/Ray-T-r/Minecraft-Forbric-mod-loader) 。
 
 由于这个三口人不知道为什么把仓库删了[^repo-del]所以我不能引用包含美味小狗屎源代码的 GitHub 仓库。
-值得一提的是[这个仓库](https://github.com/YUN-SAN3/KAMUCL)看起来包含了跑路前的所有源代码，
-不过由于这个仓库的托管人看起来是个全新机器人账号[^robot0]唯一一个 commit 还导致 [Actions](https://github.com/actions) 爆炸了所以作者不对这个仓库的可用性抱有任何期望。
+值得一提的是[这个仓库](https://github.com/YUN-SAN3/KAMUCL)看起来包含了跑路前的所有源代码，不过由于这个仓库的托管人看起来是个全新机器人账号[^robot0]唯一一个 commit 还导致 [Actions](https://github.com/actions) 爆炸了所以作者不对这个仓库的可用性抱有任何期望。
 
 [^repo-del]: 也许是在被社区广泛批评后原作者的 GitHub 账号 kamubaba-i 删除了或私有化了原来的仓库，现在原地址无法访问。
 
 [^three-mouth]: 三口人：指作者“卡慕SAMA”。该创作者曾使用一个长着三张嘴的恶俗P图作为头像并广为流传。
 
-[^robot0]: 机器人账号：指该账号除了 KAMUCL 仓库之外只有一个 `YUN-SAN3.github.io` 仓库并且里面放的是一个不知名小众组织的官网。
+[^robot0]: 机器人账号：指[该账号](https://github.com/YUN-SAN3/)除了 KAMUCL 仓库之外只有一个 `YUN-SAN3.github.io` 仓库并且里面放的是一个[不知名小众组织的官网](https://YUN-SAN3.github.io)。
 
 ## 发现基础狗屎问题
 
@@ -51,9 +50,9 @@ author: 0xarch
 
 [^slogan]: 原文如此。作者相信任何一个[人类](https://www.wikiwand.com/en/Human)都不会在[一个以作品质量为核心准则的圈子](https://github.com/community)里给自己的 README 加上犹如屎上雕花的`✦`符号。
 
-读到这个项目的 README 的第 1 个普朗克时间[^plc]作者就充分意识到这是一个许愿式编程[^wish-coding]的项目并且作者完全没有触碰过任何开源项目因为他的 README 读起来就像一滩被 AI 拉出来然后又被 AI 反反复复打磨插花的稀便。而且作为一个使用了[电子平台](//github.com/electron/electron)的狗屎项目竟然连 Linux[^linux] 都不支持。
+读到这个项目的 README 的第 1 个普朗克时间[^plc]作者就充分意识到这是一个许愿式编程[^wish-coding]项目并且作者完全没有触碰过任何[开源项目](https://www.wikiwand.com/en/Open_source)哪怕是阅读其他项目的 README 因为他的 README 读起来就像一滩被 AI 拉出来然后又被 AI 反反复复打磨插花的稀便。而且作为一个使用了[电子平台](//github.com/electron/electron)的项目竟然连 Linux[^linux] 都不支持。
 
-[^wish-coding]: 许愿式编程：即 Wish Coding 。开发者（通常没有任何知识基础）将自己的愿景告诉 AI 然后由 AI 自己搞定从架构到底层的所有内容。通常开发者也压根不会审阅 AI 代码因为他们没有能力这么做。
+[^wish-coding]: 许愿式编程：即 Wish Coding 。开发者（通常没有任何知识基础）将自己的愿景告诉 AI ，由 AI 自己搞定从架构到底层的所有内容。通常开发者也不会审阅 AI 代码因为他们没有能力这么做。
 
 [^linux]: [Linux](https://www.wikiwand.com/en/Linux)：本文指 Linux 发行版或 GNU/Linux 发行版。
 
@@ -71,14 +70,18 @@ console.log('Cross-platform distribution is built by each native platform; macOS
 
 >原文如此，作者没有进行什么混淆或断章取义之类的。
 
-也许只有睾丸只有一颗的男性兽交爱好者[^furry]会在一个即将被大众审阅的项目里塞这么一坨不明所以的[高尔夫代码](https://www.wikiwand.com/en/Code_golf)。
-所以很明显这个项目的作者压根没有和任何代码打过交道而是订阅了 Claude Max 然后力大砖飞开始循环迭代模式[^ref-claude]等到跑完打开产物录几个视频就认为自己是启动器界的[马斯克](https://www.wikiwand.com/en/Elon_Musk)。
+也许只有[睾丸](https://www.wikiwand.com/en/Testicle)只有一颗的男性兽交爱好者[^furry]会在一个即将被大众审阅的项目里塞这么一坨不明所以的[高尔夫代码](https://www.wikiwand.com/en/Code_golf)。
+所以很明显这个项目的作者压根没有和任何代码打过交道而是订阅了 Claude Max 然后力大砖飞开始循环迭代模式[^ref-claude]等到跑完打开产物录几个视频就认为自己是启动器界的马斯克[^elon-musk]。
 
-另外不难发现这个所谓的脚本只是让命令从 Shell 进入 NodeJS 然后又进入 Shell 。而且这个文件以及所有脚本文件甚至是 [CommonJS](https://baike.baidu.com/item/CommonJS/1206163) 并且值得注意的是这是 2026 年的项目。
+另外不难发现这个所谓的脚本只是让命令从 Shell 进入 NodeJS 然后又进入 Shell 。而且这个文件以及所有脚本文件甚至是 [CommonJS](https://baike.baidu.com/item/CommonJS/1206163) 并且值得注意的是这是 2026 年的项目而不是 2016 年[^esm]。
 
-[^furry]: 兽交爱好者：指有[恋兽癖](https://baike.baidu.com/item/%E6%81%8B%E5%85%BD%E7%99%96/10283237)的人。[兽迷(Furry)](https://baike.baidu.com/item/%E5%85%BD%E8%BF%B7/6249797)不在此列。
+[^furry]: 兽交爱好者：指有[恋兽癖](https://baike.baidu.com/item/%E6%81%8B%E5%85%BD%E7%99%96/10283237)的人。[兽迷(Furry/Furries)](https://baike.baidu.com/item/%E5%85%BD%E8%BF%B7/6249797)不在此列。
 
 [^ref-claude]: 订阅了 Claude Max 然后力大砖飞开始循环迭代模式：该比喻出自[该评估 Forbric 加载器的文章](https://cubk.cn/articles/evaluate-forbric)。Forbric 作者曾经非常自豪地宣布自己购买了 Claude Max 20x 并宣布所有没有买 Claude 却评价它的项目的人是傻逼。
+
+[^elon-musk]: 马斯克：指[伊隆·马斯克]((https://www.wikiwand.com/en/Elon_Musk))。此处用于嘲讽三口人先生对项目完全不了解，毕竟马斯克作为世界前列人物还经常实地探访产线。
+
+[^esm]: ESModule 标准于 2015 年加入 JavaScript 规范。
 
 ## 观赏狗屎提示词
 
@@ -102,25 +105,27 @@ console.log('Cross-platform distribution is built by each native platform; macOS
 ```
 > 原文件如此。
 
-是的，上面就是这个许愿式编程的核心部分的所有内容。非常难以想象一个也许是塞入了一百个功能的超级启动器的核心提示词是怎么交付产品。
+是的，上面就是这个许愿式编程的核心部分的所有内容。非常难以想象一个也许是塞入了一百个功能的超级启动器的核心提示词只写了一个怎么交付产品。
 
-很显然也许是作者从来没接触过什么 AI 编程于是让 AI 自己给自己写提示词然后 AI 琢磨半天发现作者压根没提出任何有技术含量需求只能含泪憋出几句废话来装作它听懂了。
+也许是作者从来没接触过什么[编程](https://www.wikiwand.com/en/Computer_programming)也不知道自己需要什么或者患有[失语症](https://www.wikiwand.com/en/Aphasia)于是让 AI 自己给自己写提示词然后 AI 琢磨半天发现作者压根没提出任何有技术含量需求只能含泪憋出几句废话来装作它听懂了。
 
-另外这个提示词里面那个仓库已经非常神奇的[消失了](#狗屎状态)所以实际上 AI 拿到这个 `AGENTS.md` 的第一步检查仓库就无法完成。这意味着实际上 `AGENTS.md` 的有效提示词字符数是 `0` 。也许是 AI 突然想通了于是大发慈悲的删除了仓库以防止更多的普罗大众吃到新鲜美味的狗屎。
+另外这个提示词里面那个仓库已经非常神奇的[消失了](#狗屎状态)所以实际上 AI 拿到这个 `AGENTS.md` 的第一步也就是检查仓库状态就无法完成。这意味着实际上 `AGENTS.md` 的有效提示词字符数是 `0` 因为 AI 什么都做不了。也许是 AI 突然想通了于是大发慈悲的删除了仓库以防止更多的普罗大众吃到新鲜美味的狗屎。
+
+>实际上确实是什么都做不了因为如果你看过删库前的 releases 你就会发现版本号完全是一大坨狗屎的排列组合并且和里面写的这个百进制版本号一点关系没有纯粹是三口人想到什么就写什么。
 
 ## 拆解狗屎大仓库
 
 作者在尝试把这个仓库克隆到本地的时候发现流量正在飞速流逝于是迅速切断了传输，然后打开在线仓库查看问题。
 然后发现问题是这个文档目录里面全都是 AI 自己跑测试截的图。[^sc-fix]
-很显然作者连自己打开半成品看一眼的耐心都没有而是想办法让 Claude 玩 《我的手艺》[^minecraft]。
+很显然三口人先生连自己打开半成品看一眼的耐心都没有而是想办法让 Claude 玩 《我的手艺》[^minecraft]。
 
 [^sc-fix]: 截止至文章更新时，唯一能访问的仓库已经不包含这些狗屎中的大部分。镜像仓库的大小（`git clone` 后）为 52.7MiB 。
 
 [^minecraft]: 《我的手艺》：是对沙盒游戏 Minecraft 的非官方直译。出自[该评估 Forbric 加载器的文章](https://cubk.cn/articles/evaluate-forbric)。
 
-然后是作者在历经千辛万苦下载的仓库里审阅代码的过程中发现代码中 99% 的组成部分都是彩蛋功能，甚至有专门为彩蛋写的 3D<sup>e</sup> 高级界面。
+然后是作者在历经千辛万苦下载的仓库里审阅代码的过程中发现代码中 90% 的组成部分都是彩蛋功能，甚至有专门为彩蛋写的 3<sup>e</sup>D 高级界面。
 
-这个狗屎项目的源代码中真正用来干发射[^launch]游戏功能的代码可能只占着整个代码库大小的 1% 然后作者可能花费了阿伏伽德罗数[^avoc]个 Token 让各种 Agent 轮奸[^agent-iter]仓库才制作出来这么一坨惊天大屎。
+这个狗屎项目的源代码中真正用来干发射[^launch]游戏功能的代码可能只占着整个代码库大小的 10% 然后作者可能花费了阿伏伽德罗数[^avoc]个 Token 让各种 Agent 轮奸[^agent-iter]仓库才制作出来这么一坨包着彩蛋的惊天大屎。
 
 [^launch]: 发射：对“启动”的原词“launch”的偏差翻译。
 
@@ -130,13 +135,15 @@ console.log('Cross-platform distribution is built by each native platform; macOS
 
 ## 鉴赏大狗屎界面
 
-然后作者尝试运行时才想起来这个傻逼三口人可能根本没想到有人会在 Linux 上运行精品狗屎于是[拒绝为 Linux 编译](#发现基础狗屎问题)而作者也不想手动破坏这坨精美的插花作品于是只能引用[另一位敢于以身试毒的勇士](https://cubk.cn)的[使用体验](https://cubk.cn/articles/evaluate-kamucl)来表述作者的意思。读者可以直接点击那个`使用体验`链接然后欣赏 KAMUCL 的惊天大狗屎 UI 。
+然后作者尝试运行时才想起来三口人先生根本没想到有人会在 Linux 上运行精品狗屎而[拒绝为 Linux 编译](#发现基础狗屎问题)而作者也不想手动破坏这坨精美的插花作品[^modify]于是只能引用[另一位敢于以身试毒的勇士](https://cubk.cn)的[使用体验](https://cubk.cn/articles/evaluate-kamucl)来表述作者的意思。读者可以直接点击那个`使用体验`链接然后欣赏 KAMUCL 的惊天大狗屎 UI 。
 
-虽然作者不能亲身品鉴但在看到勇士先生[^mr-courage]的文章图片的第1个普朗克时间[^plc]作者就充分发现这个发射器的 UI 设计完全是 AI 设计。整个发射器看起来充斥着诡异的基佬紫配色还有一个<span style="font-size: 150%; text-wrap: nowrap">超级大大大按钮</span>放在首页告诉你这个软件可以发射游戏。然后左侧看起来是一个试图模仿 [流体微小软件设计](https://fluent2.microsoft.design/) 的经典 AI 侧栏，右下角还贴心地列出了睁眼瞎名单[^testers]。
+[^modify]: 手动破坏这坨精美的插花作品：指修改构建脚本。精美的插花作品：指 KAMUCL 。
+
+虽然作者不能亲身品鉴但在看到勇士先生[^mr-courage]的文章图片的第1个普朗克时间[^plc]作者就充分发现这个发射器的 UI 是典型的 AI 完全主导因为整个发射器看起来充斥着诡异的<span style="color: #755DBB">基佬紫</span>配色还有一个超级<span style="font-size: 150%; text-wrap: nowrap">大</span>按钮放在首页告诉你这个软件可以发射游戏。然后左侧看起来是一个试图模仿 [流体微小软件设计](https://fluent2.microsoft.design/) 的经典 AI 侧栏，右下角还贴心地列出了睁眼瞎名单[^testers]。
 
 [^mr-courage]: 即前文提到的 [另一位敢于以身试毒的勇士](https://cubk.cn) 。下文同。
 
-[^testers]: 软件中展示的是测试者名单。不过显然这个漏洞满天飞的发射器根本没有被人测试过或者测试者也只是找了几个 Harness 客户端打开 Computer Use 让 AI 审查然后跑去[撸管](https://www.wikihow.com/Masturbate)。在此谨以“睁眼瞎”做总结。
+[^testers]: 软件中展示的是测试者名单。不过显然这个漏洞满天飞的发射器根本没有被人[测试](https://www.wikiwand.com/en/articles/Test_first)过或者测试者也只是找了几个 [Harness](https://www.wikiwand.com/en/Agent_harness) 客户端打开 Computer Use 让 AI 自己玩《我的手艺》。在此谨以“睁眼瞎”做总结。
 
 然后来引用一下勇士先生的部分文本。此处的文本依照原授权模式(CC-BY 4.0)展示。[^llm]
 
@@ -144,13 +151,15 @@ console.log('Cross-platform distribution is built by each native platform; macOS
 
 [^llm]: 溜溜梅：勇士先生的原文章中出现的名词。由于 LLM 是溜溜梅（Liu-Liu-Mei）的首字母，且[溜溜梅公司的股票代码正是 LLM 导致溜溜梅公司股票莫名疯涨](https://finance.sina.com.cn/roll/2026-06-15/doc-inicnuhr8240786.shtml)。后来溜溜梅便被用作对大语言模型的指代。 
 
-另外根据勇士先生的表达和一些[神奇的类型定义](#ClientID)可以发现这个三口人作者甚至不会使用 [互联网](https://www.wikiwand.com/en/Internet) 于是它直接把自己伪装[^prism-id]成 Prism Launcher 来实现认证功能。下文为引用的勇士先生的部分文本。此处的文本依照原授权模式(CC-BY 4.0)展示。[^vscode]
+另外根据勇士先生的表达和一些[神奇的类型定义](#ClientID)可以发现这个三口人甚至不会使用 [互联网](https://www.wikiwand.com/en/Internet) 于是它直接把自己伪装[^prism-id]成 Prism Launcher 来实现认证功能。下文为引用的勇士先生的部分文本。此处的文本依照原授权模式(CC-BY 4.0)展示。[^chromium][^vscode]
 
 > 最令人[蒙古](https://zh.wikipedia.org/wiki/%E8%92%99%E5%8F%A4%E5%9B%BD)的是虽然项目自身是一个他妈的[Electron](https://www.electronjs.org/)编写的狗屎，并且文件高达100MiB甚至90MiB，并且包含完整的[Blink、V8、Skia、Angle](https://cubk.cn/.org/chromium-projects/)意味着可以渲染世界上任何一个能在前端渲染的东西比如[Microsoft](https://zh.wikipedia.org/zh-hans/%E5%BE%AE%E8%BD%AF)[Vs](https://zh.wikipedia.org/zh-hans/%E4%B8%96%E7%95%8C%E5%A4%A7%E6%88%B0)[code](https://zh.wikipedia.org/wiki/%E4%BB%A3%E7%A0%81)甚至是[Firefox](https://developer.puter.com/labs/firefox-wasm/)，但是作者及其高级的大脑还是决定给登录做成了你需要手动打开外置浏览器因为他不仅不会利用程序内的浏览器来渲染，甚至都不会自动帮你拉起一下浏览器，
 > 
 > 甚至作者都懒得自己去[申请一个ClientID](https://learn.microsoft.com/en-us/answers/questions/5956554/how-to-create-a-client-id-and-client-secret-for-ap)直接窃取了[Prism Launcher](https://prismlauncher.org/)的ClientID。
 
 [^prism-id]: 伪装：含蓄表达。实际上 KAMUCL 直接窃取了 Prism Launcher 的 ClientID 。
+
+[^chromium]: Blink、V8、Skia、Angle：是 Chromium 项目的组成部分。勇士先生可能不小心把链接打错了，实际上应该是 <https://www.chromium.org/chromium-projects/> 。
 
 [^vscode]: MicrosoftVscode: 指 [Microsoft VS Code](https://code.visualstudio.com/) 。因社区中某些~~小傻逼们~~低龄人士~~压根没接触过IDE然后~~类比于`Plant vs Zombie`于是把`Microsoft VS Code`翻译为`微软大战代码`于是产生此说法。
 
@@ -242,6 +251,8 @@ verify-workbench-1054.cjs
 
 </details>
 
+> funniest ai slop ever
+
 ### ClientID
 
 作者在试图用 `find` 查找涉及 ClientID 的文件时惊奇地发现没有任何文件名里和认证/登录/正版/Mojang等关键词扯上关系。
@@ -256,7 +267,8 @@ src/main/core/settings.ts
 18:  DEFAULT_MS_CLIENT_ID,
 56:    msClientId: DEFAULT_MS_CLIENT_ID,
 ```
-> funniest ai slop ever
+
+很显然当时担任[神偷奶爸](https://www.wikiwand.com/en/Despicable_Me)的 AI 并没有智能到可以在三口人先生不告知可以新增[文件](https://www.wikiwand.com/en/Computer_file)的情况下新增文件于是只能憋屈地把偷来的 ClientID 写在这个类型定义里。
 
 ### 跨平台原生
 
@@ -270,7 +282,7 @@ eco@EC-xx ~/P/KAMUCL (main)> ls native -1
 󰌛 WindowMaterial.cs
 ```
 
-很显然这个三口人先生也许可能压根真的不知道有 Linux Gamers 这个群体或者连 Linux 都没听过毕竟很显然他给 AI 的许愿清单里面只包含 Windows 和 macOS 。
+这再次证明了三口人先生也许可能压根真的不知道有 Linux Gamers 这个群体或者连 [Linux](https://kernel.org)[^linux] 都没听过毕竟这个目录可以精准地证明他给 AI 的许愿清单里面只包含 Windows 和 macOS 。
 
 ### 我不知道项目在干什么！
 
@@ -334,15 +346,19 @@ eco@EC-xx ~/P/KAMUCL (main)> ls native -1
 
 显然这是 AI 根据一个不知道哪来的模板（甚至是英文模板）进行的稀便生成并且三口人先生可能根本没看过甚至不知道自己的项目里有这么一滩稀便。
 
-### 为什么不直接让 AI 写机器码
+至于为什么叫做稀便不仅仅是因为这个东西到处充斥着风味人类文本[^human-flavored]更是因为上面标榜的什么 629 个测试全通过仅有什么什么不达标完全是[胡扯](https://www.wikiwand.com/en/Bullshit)因为[下面](#为什么不直接写机器码)提到的 `FEATURE_AUDIT.md` 里面记录的东西和这个 `CURRENT_STATUS.md` 完全对不上。
 
-如果纵览全部代码你就会发现整个狗屎堆充斥着各种大小不一的羊屎蛋[^overall-1]，这说明三口人先生使用的 Agent 可能远没有 Claude 那么聪明只能因为他甚至不会在发布时进行格式化。
+最后你可以注意到这个三口人甚至使用的是香港时区。有 114.514% 的几率它正在使用代理。
 
-然后思考代码目录结构你就会发现这个三口人先生连目录都不会看因为他的低能 Agent 能把一个 `src` 拆成三个目录而三口人先生完全没有感觉。
+[^human-flavored]: 风味人类文本：指 AI 试图模仿人类风格失败而生成的文本，这些文本仍然有明显的 AI 生成特征。
 
-然后正当作者疑惑为什么代码里包含这么多 `pcl` `PCL` 难道是想和 `Plain Craft Launcher` [^pcl2] 杂交但是没有任何注释能解释这一点时，作者突然发现！`FEATURE_AUDIT.md` 里面正是使用瓜皮龙猫[^meloong]的 PCL 官方版和 PCL 社区版进行功能大对决。
+### 为什么不直接写机器码
 
-然后作者把 `FEATURE_AUDIT.md` 翻到最底下惊奇地发现这个东西进行功能对战还没完成的时候就被永久暂停了。也许这位试图挽救仓库的 Agent 的轮奸[^agent-iter]时限[^rate-limit]到了。
+如果纵览全部代码你就会发现整个狗屎堆充斥着各种大小不一的羊屎蛋[^overall-1]，这说明三口人先生使用的 Agent 可能远没有 Claude 那么聪明只能因为他甚至不会在发布时进行[格式化](https://www.wikiwand.com/en/Programming_style)。
+
+然后思考代码目录结构你就会发现这个三口人先生连目录都不会看因为他的低能 Agent 能把一个 `src` 拆成三个目录而三口人先生完全没有感觉到这一点因为他不知道代码结构。
+
+然后正当作者疑惑为什么代码里包含这么多 `pcl` `PCL` 难道是想和 `Plain Craft Launcher` [^pcl2] [杂交](https://www.wikiwand.com/en/Hybrid_(biology))但是没有任何注释能解释这一点时，作者突然发现 `FEATURE_AUDIT.md` 里面正是使用瓜皮龙猫[^meloong]的 PCL 官方版和 PCL 社区版与这个狗屎进行功能大对决！但是 `FEATURE_AUDIT.md` 翻到最底下惊奇地发现这个功能对战还没决出胜负的时候就被永久暂停了。也许这位试图挽救仓库的 Agent 的轮奸[^agent-iter]时限[^rate-limit]到了。
 
 [^overall-1]: 羊屎蛋：此处代指代码文件。大小不一指各个文件之间的编码规范、代码风格均不相同。
 
@@ -352,15 +368,43 @@ eco@EC-xx ~/P/KAMUCL (main)> ls native -1
 
 [^rate-limit]: 轮奸时限：指 Coding Plan 的单位时间额度限制。
 
-### MIT
+### 力量的许可
 
 最后查看许可证时作者原本不抱期望但这个项目竟然使用 [MIT 许可证](https://www.wikiwand.com/en/MIT_License)！这导致作者的睾丸被吓爆一颗。[^balls]
 
-可能三口人先生期待有什么其他社区大能可以接受这个项目给它擦屁股但显然不会因为这个项目里没有任何一个字节是人类能够阅读的。或者三口人先生根本不知道什么许可证毕竟它是阴唇网站[^blbl]大大大博主，所以 AI 为了上传到 GitHub 自己挑了一个许可证。
+可能三口人先生期待有什么其他社区大佬或者买了 Claude Max 20x 的傻逼[^raytr]可以接盘这个项目并给它擦屁股但显然不会因为这个项目里没有任何一个[字节](https://www.wikiwand.com/en/Byte)是人类能够阅读的。或者三口人先生根本不知道什么许可证更不知道有哪些许可证毕竟它是阴唇网站[^blbl]大大大博主而不是程序员，所以它直接让 AI 自己挑了一个许可证。
+
+然后这个挑选许可证的 AI 也是一个狗屎小模型因为他选择了一个 MIT 许可证看上去完全不知道这个狗屎项目里面引用了 [GPLv3](https://www.gnu.org/licenses/gpl-3.0.en.html) 所以必须使用 [GPLv3](https://www.gnu.org/licenses/gpl-3.0.en.html) 发布。所以实际上三口人先生的作为已经构成违法因为 GPLv3 许可证有法律效力[^gplv3-law]并且他的香蕉 AI 显然没有能力也没有义务为它承担法律责任。
+
+>根据实际检查，`licenses` 目录下共有 16 张许可证其中有 2 张分别为 GPLv3 和 LGPLv3 。其余为 MIT (-like) 许可。
+>```plain
+>eco@EC-xx ~/P/KAMUCL (main)> ls -1 licenses/
+> adm-zip.txt
+> GPL-3.0.txt
+> iarna-toml.txt
+> koffi.txt
+> LGPL-3.0.txt
+> minecraft-data.txt
+> skinview-utils.txt
+> skinview3d.txt
+> three.txt
+> undici.txt
+> vue-reactivity.txt
+> vue-runtime-core.txt
+> vue-runtime-dom.txt
+> vue-shared.txt
+> vue.txt
+> ws.txt
+>```
+>
 
 然后作者现在必须[睡觉](https://www.wikiwand.com/simple/Sleep)[^sleep]来减轻这个美味狗屎项目对作者的人类[神经系统](https://www.wikiwand.com/en/Nervous_system)造成的冲击。
 
+[^raytr]: 买了 Claude Max 20x 的傻逼：指 [Forbric](https://github.com/Ray-T-r/Minecraft-Forbric-mod-loader) 的作者 [Ray-T-r](https://github.com/Ray-T-r)。Ray-T-r 曾以自己购买了 [Claude Max 20x](https://claude.com/pricing) 为出发点抨击没有购买 Claude Max 20x 的人。
+
 [^balls]: 睾丸被吓爆一颗：出自[该评估 Forbric 加载器的文章](https://cubk.cn/articles/evaluate-forbric)。
+
+[^gplv3-law]: GPLv3 许可证的法律效力：相关案例见 [罗盒案](https://www.ccct.net.cn/html/bqzx/2026/0312/6624.html)。
 
 [^sleep]: 睡觉：是具有[神经](https://www.wikiwand.com/en/Neuron)的生物的生理活动的一部分。睡觉的起源可追溯到[刺胞动物门](https://www.wikiwand.com/en/Cnidaria)。当然由于三口人或者 AI 或者三口人的狂热追随者看上去都不是具有神经的生物所以他们不需要睡觉。
 
@@ -368,11 +412,11 @@ eco@EC-xx ~/P/KAMUCL (main)> ls native -1
 
 本节内容是需要特别说明的，因为上文中对 KAMUCL 这一精品狗屎的论述不可避免的在误伤了某些本不应该被如此对待的主体或者放过了某些需要被如此对待的主体。下面是主体列表。
 
-* **XMCL** ： [XMCL](https://xmcl.app/zh/) 是同样基于 Electron 的自由的 Minecraft 启动器。其出现时间远比 AI 编程大潮要早。也正因如此 XMCL 没有变成一个狗屎项目。尽管相对原生开发的启动器比如 HMCL 来说其各项指标都没有突出优势，但这些问题的主要原因是他是一个 Electron 项目。
+* **XMCL** ： [XMCL](https://xmcl.app/zh/) 是同样基于 Electron 的自由的 Minecraft 启动器。其出现时间远比 AI 编程大潮要早 (2017)。也正因如此 XMCL 没有变成一个狗屎项目。尽管相对原生开发的启动器比如 HMCL 来说其各项指标都没有突出优势，但这些问题的主要原因是他是一个 Electron 项目。
 
 * **Claude** ： Claude 作为目前 AI 领域前沿的闭源模型，其智力程度相当高（至少超出了三口人先生[^three-mouth]）。作者认为 Claude 能写出这样一份精品狗屎是三口人先生实在不知道应该怎么描述他想要的东西。
 
-* **测试人员** ： 抛开本精品狗屎项目的睁眼瞎测试者来说，测试人员是非常辛苦且高尚的，毕竟大部分时间他们都要面对一份狗屎哪怕不是那么精品。如果您感到被冒犯，请允许作者向您致歉，您实际上不包含在上文所批判的主体的范围内。
+* **测试人员** ： 抛开本精品狗屎项目的睁眼瞎测试者[^testers]来说，测试人员是非常辛苦且高尚的，毕竟大部分时间他们都要面对一份狗屎哪怕不是那么精品。如果您感到被冒犯，请允许作者向您致歉，您实际上不包含在上文所批判的主体的范围内。
 
 * **Agentic Coding** ： Agentic Coding 是 AI 开发的当前最佳答案。开发者担任架构师的职责，负责指挥 AI 进行构建、修改、测试等。而 Wish Coding 不过是一群[提示词小子](https://undercodetesting.com/from-script-kiddie-to-prompt-kiddie-how-ai-is-democratizing-cyber-threats-and-what-you-must-do-now-video/)自以为是的表演。
 
