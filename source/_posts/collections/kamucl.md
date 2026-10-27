@@ -398,6 +398,95 @@ eco@EC-xx ~/P/KAMUCL (main)> ls native -1
 >```
 >
 
+然后作者打开了一个叫 `THIRD_PARTY_NOTICES.md` 的文章然后我操！你都用 AI 写了你的 AI 怎么连`代码块`都不会加？整个文件完全是一大滩平铺在屏幕上的磷脂双分子层。
+
+然后作者终于找到了这个项目里面为什么有 GPLv3/LGPLv3 因为他使用了 VoxLink:
+
+```md
+
+## VoxLink protocol integration — LGPL-3.0-only
+
+Upstream: https://github.com/AUGUHDAR/VoxLink
+Revisions: 6b11d930fe4fe568dacc8c47fa0e46e08fa4b110 (original protocol replacement),
+721c7fae05851971996e49a3ad0e595d5aa9a053 (launcher-integration contract / 1.1.7 behaviors),
+924845e897d8fb36dca2474ade30e675278559d0 (1.0.94 strict punching policy audit),
+c475faa98cca16d4a2eeef4422c862c36091e1fc (1.1.6 standard TURN, tickets and 1.1.9 behavior audit).
+Authors: AUGUHDAR / VoxLink contributors.
+
+The adaptations of PunchAuth.java and TurnRelayClient.java are in
+src/main/core/voxlink/punchAuth.ts and turn.ts. The replacement protocol runtime
+in rudp.ts, punch.ts, session.ts and engine.ts uses the licensed Java
+ReliableUdpTransport, SignalingClient, SignalingWsTransport and ConnectionManager
+protocols. The 1.0.91 adaptations additionally include modsync.ts, modsyncService.ts,
+tcpPunch.ts, turnTcp.ts and connectionLog.ts, based on the Java modsync package,
+TcpHolePuncher, P2PBridge, TurnTcpChannel, PunchProfile/PunchTuner and LogUploadManager.
+The 1.0.94 port additionally includes punchProfiles.ts, punchPolicy.ts, punchRounds.ts
+and the StunProbe sequential sampling/resend portions of stun.ts. Unmodified Java
+parameter fixtures under tests/fixtures/voxlink-924845e retain the same LGPL license.
+The 1.1.6 changes additionally adapt StdTurnClient, TURN background/standby flows,
+TicketClient and NatLabels in stdTurn.ts, turnRelay.ts, turnBackground.ts, tickets.ts
+and src/shared/voxlinkNat.ts. Updated unmodified parameter fixtures are in
+tests/fixtures/voxlink-c475faa9. The authoritative integration contract is
+docs/launcher-integration.md at revision c475faa9.
+These files are distributed under LGPL-3.0-only. Node lifecycle,
+cancellation, HTTP fallback and UI reporting are KAMUCL changes.
+The former app-desktop Go adaptations have been replaced; the Java license does
+not establish authorization for that historical Go source.
+
+Full terms: licenses/LGPL-3.0.txt and licenses/GPL-3.0.txt. Users may modify and
+rebuild these portions and recombine them with the application. KAMUCL imposes no
+restriction on reverse engineering for debugging such modifications.
+Build instructions: docs/CORRESPONDING_SOURCE.md.
+
+```
+
+然后本来作者都打算关闭了突然发现里面蹦出来一个`The user`为什么声明里面有需要特指用户的内容？很显然这是负责写声明的 AI 一不小心把自己的思考过程喷射到声明里了：
+
+```md
+
+## Seven-character illustrations
+
+The user supplied front/back character references. KAMUCL's transparent 2D
+illustrations were generated from those references; capes were removed and
+backs were completed. Derived animation layers are included in source. Character
+and trademark rights remain with their respective holders; no affiliation is implied.
+
+Vue/runtime packages, Three.js, @iarna/toml, adm-zip, koffi and undici:
+complete license texts are retained in licenses/ and dependency packages.
+Electron/Chromium notices remain alongside the executable in LICENSE and
+LICENSES.chromium.html. Compile-only bridge dependencies are not embedded.
+
+```
+
+### 我操，Linux
+
+本来由于这个精品狗屎[连 Linux 打包都没做](#发现基础狗屎问题)作者以为这个项目和 Linux 没有半毛钱关系但是实际上 `ripgrep` 一下就会发现：
+
+```plain
+tests/launch-reliability.test.ts
+29:    const native = { libraries: [{ name: 'g:a:2', natives: { windows: 'natives-windows', linux: 'natives-windows', osx: 'natives-windows' }, downloads: { artifact: { path: 'a.jar', url: 'https://example.invalid/a' }, classifiers: { 'natives-windows': { path: 'native.jar', url: 'https://example.invalid/n' } } } }] }
+
+tests/java-scan.test.ts
+16:  assert.equal(javaHomeExecutable('java.home = /opt/jdk-21', 'linux'), '/opt/jdk-21/bin/java')
+
+tests/game-exit-1064.test.ts
+30:  assert.equal(observe(shutdown).classify(-8, false, 'linux'), 'abnormal')
+
+src/main/core/javaSources.ts
+4:export interface JavaTarget { major: number; os: 'windows' | 'mac' | 'linux'; arch: 'x64' | 'aarch64' }
+
+src/main/core/java.ts
+946:  return provisionJava({ major: need, os: IS_WIN ? 'windows' : IS_MAC ? 'mac' : 'linux', arch }, read, async pkg => {
+
+src/main/core/versions.ts
+65:  os?: { name?: 'windows' | 'linux' | 'osx'; arch?: 'x86' }
+143:/** 当前平台对应的 MC rules os 名（win32→windows / darwin→osx / linux→linux） */
+144:export const OS_NAME: 'windows' | 'osx' | 'linux' =
+145:  process.platform === 'win32' ? 'windows' : process.platform === 'darwin' ? 'osx' : 'linux'
+```
+
+我操你这不是知道 Linux 吗。不过很显然这应该是后来接手狗屎的 AI 不知道三口人先生当初只说要支持 Windows 和 macOS ，所以查看了一下发现这个项目是[电子平台](https://github.com/electron/electron)构建的于是在 1 Token 的思考长度内就知道应该进行 Linux 适配。
+
 然后作者现在必须[睡觉](https://www.wikiwand.com/simple/Sleep)[^sleep]来减轻这个美味狗屎项目对作者的人类[神经系统](https://www.wikiwand.com/en/Nervous_system)造成的冲击。
 
 [^raytr]: 买了 Claude Max 20x 的傻逼：指 [Forbric](https://github.com/Ray-T-r/Minecraft-Forbric-mod-loader) 的作者 [Ray-T-r](https://github.com/Ray-T-r)。Ray-T-r 曾以自己购买了 [Claude Max 20x](https://claude.com/pricing) 为出发点抨击没有购买 Claude Max 20x 的人。
