@@ -79,7 +79,7 @@ console.log('Cross-platform distribution is built by each native platform; macOS
 
 [^furry]: 兽交爱好者：指有[恋兽癖](https://baike.baidu.com/item/%E6%81%8B%E5%85%BD%E7%99%96/10283237)的人。[兽迷(Furry/Furries)](https://baike.baidu.com/item/%E5%85%BD%E8%BF%B7/6249797)不在此列。
 
-[^ref-claude]: 订阅了 Claude Max 然后力大砖飞开始循环迭代模式：该比喻出自[该评估 Forbric 加载器的文章](https://cubk.cn/articles/evaluate-forbric)。Forbric 作者曾经非常自豪地宣布自己购买了 Claude Max 20x 并宣布所有没有买 Claude 却评价它的项目的人是傻逼。
+[^ref-claude]: 订阅了 Claude Max 然后力大砖飞开始循环迭代模式：该比喻出自[该评估 Forbric 加载器的文章](https://cubk.cn/articles/evaluate-forbric)。
 
 [^elon-musk]: 马斯克：指[伊隆·马斯克]((https://www.wikiwand.com/en/Elon_Musk))。此处用于嘲讽三口人先生对项目完全不了解，毕竟马斯克作为世界前列人物还经常实地探访产线。
 
