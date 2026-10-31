@@ -26,11 +26,11 @@ GNOME 最近十年的演进中完全复刻了这套逻辑。GNOME 与 VSCode 的
 
 ## 设计固化
 
-[Stop Theming My App](https://stopthemingmy.app/) 是理解 GNOME 品牌化转向的关键文本。
+[Stop Theming My App](https://stopthemingmy.app/) 是理解 GNOME 品牌化转向的关键。
 
 公开信明确主张：应用应当运行在它们被设计和测试过的上游样式表、图标和字体之下，而不应被发行版或用户的主题所改变。
 
-libadwaita 的引入使得 GTK4 应用的外观变得难以从外部主题化，这就是他们做 libadwaita 的原因，你没法再改变 GTK4 应用的外观和感觉了。
+libadwaita 的引入使得 GTK4 应用的外观变得难以从外部主题化，这就是他们做 libadwaita 的原因，你没法再改变应用的外观和感觉了。
 
 Linux Mint 开发者为此专门 soft-fork 了 libadwaita 并推出 libAdapta 来恢复主题支持。
 
@@ -61,19 +61,36 @@ GNOME Crosswords 本身被描述为“实际上是两个应用”，一个是填
 这就是为什么 GNOME Circle 看上去有一大堆生态应用但实际上没什么用的原因。
 相比于 KDE 的生态，GNOME 生态中单个应用的含水量平均高达 90% 。
 
-如果以[ GNOME 自己标榜的地位](#附-gnome-官网都说了些什么)来看， GNOME 的这种原子应用的设计理念在绝大多数工作场景下都不适用。下面以最简单、基础的写代码举例。
+如果以[ GNOME 自己标榜的地位](#附-gnome-官网都说了些什么)来看， GNOME 的这种原子应用的设计理念在绝大多数工作场景下都不适用。
 
-GNOME Text Editor 是 GNOME 官方推出的文本编辑器。这个编辑器里最超出预期功能的部分可能是分页功能，除此之外的功能全都是以“我是一个文本编辑器”的理念来实现的。
+GNOME Circle 中的大部分软件都非常*精准*地遵守了这些准则，比如：
 
-Kate 是 KDE 的多功能文本编辑器。Kate 实际上已经近乎于一个完整的 IDE ，内置了诸如终端、工作区、Git 管理、LSP 等功能。另外值得注意的是 Kate 的启动速度比 GNOME Text Editor 快得多。
+* Bibliotecta 可以阅读 GNOME 文档
+* Binary 可以转换数字进制
+* Bustle 可以查看 D-Bus 活动
+* Lorem 可以生成乱数假文
+* Webfont Builder 可以创建 `@font-face`
 
-这意味着绝大部分工作实际上都可以在一个 Kate 内完成。而在 GNOME ，你可能需要:
-1. 使用 GNOME Text Editor 编辑文件
-2. 打开一个 [Ptyxis](https://flathub.org/zh-Hans/apps/app.devsuite.Ptyxis) 终端进行代码验证
-2. 使用 [Commit](https://apps.gnome.org/zh-CN/Commit/) 编写 Commit
-3. 使用 [gitg](https://flathub.org/zh-Hans/apps/org.gnome.gitg) 进行提交
+加上几个 GNOME 官方应用：
 
-当然你也可以直接使用 GNOME 官方推出的超级 IDE [GNOME Builder](https://apps.gnome.org/zh-CN/Builder/) 。相信我，你不会想要打开它第二次。
+* D-Spy 可以分析 D-Bus 连接
+* Manuals 可以阅读本地文档
+
+也许在大部分情况下这些功能都会被打包放进一个比如叫 Dev Toolbox 的应用而不是开发者用到的时候先在应用网格里翻找一下还要记得哪个名字哪个图标的应用是干什么的。
+
+当然你也可以直接使用 GNOME 官方推出的超级 IDE [GNOME Builder](https://apps.gnome.org/zh-CN/Builder/) 或者类似的产品来一步到位地工作。
+
+不过 Libadwaita 显然和 Builder 之类巨无霸天生不合因为 Libadwaita 几乎完全没有高密度控件，此时下拉菜单就变成了：
+
+<div style="display: flex; gap: .5rem; flex-wrap: wrap">
+
+![承受了生命不可承受之重的运行按钮的下拉菜单](./asset/gnome-builder.png)
+
+![承受了生命不可承受之重的运行按钮的下拉菜单](./asset/gnome-builder-2.png)
+
+</div>
+
+*承受了生命不可承受之重的运行按钮的下拉菜单*
 
 > 那相对于 VSCode 呢？
 
@@ -134,11 +151,11 @@ GNOME 长期不提供稳定的扩展 API，扩展通过 monkey-patch 直接修�
 
 > 如果你不太能想到这种修改方式的难度可以类比于一边开车一边换轮胎。
 
-于是 Omakase 变成了单向的：设计者端上菜品，社区既不能改菜单，也很难稳定地给厨房递一张新菜谱。更通俗的来说这就是独裁统治。
+于是 Omakase 变成了单向的：设计者端上菜品，社区既不能改菜单，也很难稳定地给厨房递一张新菜谱。极端的来说这就是独裁统治。
 
 VSCode 证明了一个平台可以靠极简核心和外部扩展获得巨大成功，但它的扩展接口是**受控的、文档化的、有市场规则的**；
 GNOME 吸取了“核心极简、功能外置”的果实，却在扩展治理上长期停留在非正式的、依赖志愿者善意的状态。
-两者共享同一套平台 IDE 的政治经济学，但 VSCode 至少为扩展开发者提供了一个可预期的交易结构，而 GNOME 把社区置于一种既被需要又被管理的尴尬位置：
+两者共享同一套平台 IDE 的政治经济学，但 VSCode 至少为扩展开发者提供了一个可预期的交易结构，而 GNOME 把社区置于一种既被需要又被管理的尴尬位置。
 
 如果以 API 的角度看 GNOME ，那么实际上 GNOME 一直都是发布候选版本。
 
