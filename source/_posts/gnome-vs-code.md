@@ -4,7 +4,7 @@ date: "2026-10-31"
 tags:
   - "Linux"
 categories:
-  - "分类"
+  - "随笔"
 ---
 The Only IDE you need - GNOME.
 
