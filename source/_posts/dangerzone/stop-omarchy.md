@@ -23,9 +23,9 @@ Omarchy 项目背后有一份名为Omarchy 教义(更通俗的说，“信条”
 
 这不是隐喻，也不是夸张。当一份技术项目的官方文件包含了法西斯主义的核心要素时，我们有理由将其视为法西斯主义在开源社区中的公开宣示。
 
-## 1800 万美元的法西斯主义融资
+## 2300 万美元的法西斯主义融资
 
-Omarchy 的背后是 DHH 创立的 Omacom 基金会。这个非营利组织已经筹集了超过 1800 万美元的认捐资金。资助者名单读起来像是硅谷权力精英的花名册：Shopify、Stripe、Dell、Cloudflare、Block、Dropbox、Coinbase 的 CEO，以及 1Password 和 DigitalOcean 等公司。DigitalOcean 承诺每年提供 100 万美元，持续三年；1Password 承诺 30 万美元。
+Omarchy 的背后是 DHH 创立的 Omacom 基金会。这个非营利组织已经筹集了超过 2300 万美元的认捐资金。资助者名单读起来像是硅谷权力精英的花名册：Shopify、Stripe、Dell、Cloudflare、Block、Dropbox、Coinbase 的 CEO，以及 1Password 和 DigitalOcean 等公司。DigitalOcean 承诺每年提供 100 万美元，持续三年；1Password 承诺 30 万美元。
 
 没有任何其他 Linux 或自由开源软件项目获得过这种规模的资金。正如 StopOmarchy 所指出的：“你应该对此感到怀疑，而不是庆祝。你被欺骗了，正在为那些根本不在乎你的百万富翁辩护。”
 

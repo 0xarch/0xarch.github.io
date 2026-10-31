@@ -9,12 +9,12 @@ disable_adjacent: true
 
 <!--more-->
 
-## 近况
+## 简况
 
-本账号于 2026-07-15 将新增代码托管于 Codeberg。 Ngwg 仍托管于 GitHub。
+新增代码托管于 Codeberg。 Ngwg 托管于 GitHub。
 
-本人于近期将主力机器更换为了 Arch Linux, 使用 GNOME 作为图形界面。尽管 GNOME 曾经不尽人意，但目前仍然是一个较好的选择。
-正在尝试使用 Neovide 与 ZCode 代替 VSCode。
+主力机：Arch Linux + Umbriel
+
 > 使用 Arch Linux 是因为其良好的社区氛围与简单的包管理。但与此同时也许注意 AUR 参差不齐甚至可能含有病毒的现况。对此，大部分不在软件源中的软件包都被使用 Flatpak 安装。Flatpak 与 GNOME 合作的很好。  
 >先前我曾使用 Hyprland + Hyperway 作为图形界面，但由于最近赞助 Hyprland 的 Omacom 基金会的大总统 DHH 的一系列争议较大的行为，其社区波动可能极大，需要考虑避免。  
 > 就目前而言，其实使用 Arch Linux 还是 Fedora 或 Debian 并无多大区别。但需要区别开的是 Ubuntu，只有其主动为用户提供了可以完全移除 Snap 的选项后才能考虑。
