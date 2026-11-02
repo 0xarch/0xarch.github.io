@@ -130,11 +130,17 @@ VSCode 团队被描述为刻意选择一个非常节制而平衡的定位：编�
 
 另外 Linus Torvalds 曾因为设计原因专门批评过 GNOME 3 然后从 GNOME 2 直接换成了 Xfce 而不是 GNOME 3 ：
 
-> “我想要回我理智的界面。 我还没遇到过任何喜欢 GNOME 3 这个糟糕的烂摊子的人。”
+> "While you are at it, could you also fork gnome, and support a gnome-2 environment?"
 > 
-> “在 GNOME 3 中，开发者显然认为在桌面上做真正的工作“太复杂”了，并决定让它变得非常恼人。”
+> "I want my sane interfaces back. I have yet to meet anybody who likes the unholy mess that is gnome-3."
 > 
-> “我正在使用 Xfce。 我认为它比 GNOME 2 差一点，但比 GNOME 3 好太多了。 真的。”
+> "It's not that I have rendering problems with gnome3 (although I do have those too). It's that the user experience of Gnome3 even without rendering problems is unacceptable."
+> 
+> "Why can't I have shortcuts on my desktop? Why can't I have the expose functionality? Wobbly windows? Why does anybody sane think that it's a good idea to have that 'go to the crazy "activities"' menu mode?"
+>
+> "(Xfce is) a huge step up from gnome3. Really."
+
+这个批评一直到现在 GNOME 已经出到版本 51 依旧是有效的，因为如果你把 GNOME 3 和 GNOME 51 放在一起对比并忽略时代导致的控件风格差异之类的，他们的 UI/UX 是完全相同的。
 
 在设计上，GNOME 和 VSCode 的方向是一致的：界面是工作区而不是仪表盘或者调色盘。托盘所代表的持续状态感知、工作区中所有应用的同时在场，这些都被视为对当前任务的干扰。桌面和 IDE 在这里共享同一种注意力经济学。
 
@@ -182,6 +188,8 @@ GNOME 的困境在于，它在采纳 Omakase 姿态的同时，未能为被它�
 但后果是每次 GNOME 版本更新都会大面积破坏扩展，维护一套长期可用的扩展被形容为“不可持续”。
 扩展开发者感到被低估和利用，而核心团队与用户反馈之间的沟通又被批评为“轻蔑且缺乏回应”。
 
+另外 GNOME 那套依靠 GObject Introspection 进行的全语言胶水式整合在实现上也有相当程度的落差。连 Java 都没有想过要把所有语言大一统更别提 GNOME 自己还在造新的高高级语言 Vala [^vala]。
+
 > 如果你不太能想到这种修改方式的难度可以类比于一边开车一边换轮胎、一边跑步一边睡觉、一边打游戏一边学习。
 
 于是 Omakase 变成了单向的：GNOME 把产品端给社区，社区既不能改菜单，也很难稳定地给厨房递一张新菜谱。极端的来说这就是独裁统治。
@@ -205,10 +213,10 @@ VSCode 至少为扩展开发者提供了一个可预期的交易结构，而 GNO
 VSCode 则把语言智能、调试、测试、版本控制界面等附加功能全部外包给语言服务器和扩展，核心只保留编辑器和协议。
 
 如果你把 GNOME 当成一个 IDE ，那它还算过关。如果你把 GNOME 当成一个桌面环境，那它是毫无疑问的烂。
-毕竟 GNOME 里唯一一个还算说得过去的跨应用衔接就是剪切板。
-而且你要是想要什么剪切板管理或者历史记录的话，那对不起，快滚去用扩展吧！
+毕竟 GNOME 里唯一一个还算说得过去的跨应用衔接就是剪切板因为剪切板支持是 Wayland 协议的一部分。
+而且你要是想要什么剪切板管理或者历史记录的话，那对不起，**快滚去用扩展吧！**
 
-两者都把自身定位为一个**运行时容器**，而不是一个完成了的集成环境。
+两者都把自身定位为一个**运行时容器**而不是一个完成了的集成环境。
 
 当桌面环境开始用 IDE 的方式治理自己的边界——定义什么属于核心、什么必须外挂、外挂必须遵循什么标准——它就在设计政治的意义上，成了 VSCode 的同构体。它们争夺的不是同一批功能而是同一种身份。
 
@@ -237,3 +245,5 @@ VSCode 则把语言智能、调试、测试、版本控制界面等附加功能�
 这句话的后半句是真的。前半句则取决于发行版。当然绝大多数预装桌面环境包括KDE的发行版都恨不得把桌面环境生态里的所有应用都塞进去就好像甲方觉得应用不够大于是乙方往里塞猫和老鼠一样。
 
 当然实际上如果你是开发者那么还有一个“参与贡献”不过实际上可能没有任何人类会主动参与贡献。详情见 [社区边缘化](#社区边缘化)。
+
+[^vala]: 高高级语言 Vala：Vala 在实现上是由 Vala 编译器先转换成高级语言 C 然后进行编译。所以 Vala 本质上是 C 语言的超级语法糖。
