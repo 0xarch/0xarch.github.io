@@ -104,13 +104,15 @@ B站机器人尤为令人厌恶因为他们可以发送视频。然后这些视�
 
 也许你听过[ ChatGPT 有一代非常喜欢在生成的文本里加入哥布林小精灵浣熊食人魔之类的奇幻诡异词语](https://www.cnet.com/tech/services-and-software/openai-chatgpt-goblins-gremlins-problem-fix-news/)，这是因为训练内容污染导致的。
 
-如果你对技术内容不太了解可以用一个来结果上类似的概念比如[遗传漂变](https://www.wikiwand.com/en/Genetic_drift)来类比这类现象。
+如果你对技术内容不太了解可以用一个结果上类似的概念比如[遗传漂变](https://www.wikiwand.com/en/Genetic_drift)来类比这类现象。
 
-虽然互联网内容的基数很大但机器人生产数字泔水的速度也相当快，然后还要注意垃圾内容过滤器因为他们通常无法识别那些看起来很牛逼的AI生成文本，
-然后AI厂商就会使用这些被AI反刍过一遍的内容再次去训练AI。
+虽然互联网内容的基数很大但机器人生产数字泔水的速度也相当快就比如2025年互联网有一半多的新文章是数字泔水，
+然后还要注意目前垃圾内容过滤器（包括传统的和基于大模型的）通常都无法识别那些看起来很牛逼但毫无价值的数字泔水，
+然后AI厂商就会使用这些没有被过滤器发现的被AI反刍过一遍的内容再次去训练AI，就像有人做爱喜欢[把阴茎在肛门和嘴里来回插拔](https://www.wikiwand.com/de/articles/Ass_To_Mouth)（注意这会导致感染患病）。
 
-最终的结果就是随着数字泔水一代代叠加和AI不断训练最终训练出来的大模型的智力可能压根不如一头[牛](https://www.wikiwand.com/en/Cattle)。
-就好像是AI感染了赛博[朊病毒](https://www.wikiwand.com/en/Prion)。
+最终的结果就是随着数字泔水一代代叠加和AI不断反刍，
+最终训练出来的大模型的智力可能压根不如一头[牛](https://www.wikiwand.com/en/Cattle)
+就好像是AI感染了[朊病毒](https://www.wikiwand.com/en/Prion)一样。实际上这个现象叫做[模型崩溃](https://www.wikiwand.com/en/Model_collapse)。
 
 然后那些可能是由于[生物学母本](https://www.wikiwand.com/en/Parent)分娩时没有把大脑完整保留导致智力低下的机器人账号爱好者还会抨击为什么AI模型智力下降这么严重。哈哈。
 
