@@ -88,8 +88,8 @@ plugins:
   seo: https://github.com/Ngwgers/Ngwg-ext-seo
   files:
     option:
-      chunk_size: 1000
-      segment_threshold: 3000
+      chunk_size: 1200
+      segment_threshold: 3600
   feature:
     option:
       copy_files:
