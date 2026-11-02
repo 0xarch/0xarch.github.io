@@ -112,7 +112,7 @@ B站机器人尤为令人厌恶因为他们可以发送视频。然后这些视�
 
 本节描述的内容需要技术理解。如果你对技术内容不太了解可以用一个结果上类似的概念比如[遗传漂变](https://www.wikiwand.com/en/Genetic_drift)来类比这类现象。
 
-也许你听过[ ChatGPT 有一代产品非常喜欢在生成的文本里加入哥布林小精灵浣熊食人魔之类的奇幻诡异词语](https://www.cnet.com/tech/services-and-software/openai-chatgpt-goblins-gremlins-problem-fix-news/)，这是因为训练内容污染导致的。
+也许你听过[ ChatGPT 有一代产品非常喜欢在生成的文本里加入哥布林小精灵浣熊食人魔之类的奇幻诡异词语](https://www.cnet.com/tech/services-and-software/openai-chatgpt-goblins-gremlins-problem-fix-news/)，这是因为训练内容污染引起权重偏差导致的。
 
 虽然互联网内容的基数很大但机器人生产数字泔水的速度也相当快就比如2025年互联网有一半多的新文章是风味人类文本，而这些风味人类文本中的99%都是数字泔水，
 然后还要注意目前垃圾内容过滤器（包括传统的和基于大模型的）通常都无法识别那些看起来很牛逼但毫无价值的数字泔水，
