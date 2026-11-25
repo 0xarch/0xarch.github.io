@@ -1,0 +1,1 @@
+A live-server-like tool (e.g. five-server) is required to use these tools. You'll need to open a server with tool/ as root path.
