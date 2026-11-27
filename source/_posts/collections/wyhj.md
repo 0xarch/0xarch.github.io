@@ -156,4 +156,5 @@ AI 赋予了每个人产出代码的机会，但产出代码并不能让每个�
 
 不难发现黄烤鸭先生除了督促自己的[主脑](https://aiwiki.ai)进行一些在界面上添加按钮的操作使得一些网页红警的追随者可以更便捷的在他们唯一的电子设备上游玩[大粪](https://ra2web.com)以外对红警社区没有任何正向贡献。
 
-不过考虑到黄烤鸭先生已经把自己的母亲献祭用以维持生命活性，这些批评可能也无可厚非。
+不过考虑到黄烤鸭先生已经[把自己的母亲献祭](https://www.bilibili.com/video/BV1cNUQYGEFr/)用以[维持生命活性](https://www.bilibili.com/video/BV1QTyizJEUr/)，这些批评可能也无可厚非。
+但考虑到黄烤鸭先生除了献祭自己的母亲外还发布过[多个](https://www.bilibili.com/video/BV1kt421h7xZ/)据称是因开发网页红警导致[被其母亲殴打](https://www.bilibili.com/video/BV1Fh9EBWECK/)的视频，如果黄烤鸭先生需要法律援助，作者非常乐意不提供支持。
