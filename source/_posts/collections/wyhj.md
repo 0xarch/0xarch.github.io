@@ -94,7 +94,7 @@ GPT 找到的历史证据，`2247335`（2025-05-17，主线祖先）的 `PROJECT
 
 ## 靖屎五柱
 
-关于为什么 <wangerhuoda.com> <youlidefuchou.com> <gongheguozhihui.com> <ra2web.com> <chronodivide.cn> 实际上是同一个服务这一点笔者懒得论述。如果你不知道可以把黄烤鸭操。！了问它。
+关于为什么 <https://wangerhuoda.com/> <https://youlidefuchou.com/> <https://gongheguozhihui.com/> <https://ra2web.com/> <https://chronodivide.cn/> 实际上是同一个服务这一点笔者懒得论述。如果你不知道可以把黄烤鸭操。！了问它。
 
 本文只考虑其中的两个极具误导性的进行拆解。
 
@@ -115,15 +115,15 @@ GPT 找到的历史证据，`2247335`（2025-05-17，主线祖先）的 `PROJECT
 
 通过一些完全合法且可复现的浏览器操作，我们可以将游玩[大粪](https://game.ra2web.com)时获取的数据保存到本地。然后通过一些简单的脚本将这些资源与《红色警戒2》原版分发的资源进行比对，于是我们得到了：
 
-| 重抓容器 / 条目 ID | 大小 | 重抓文件绝对偏移 | ra2.mix 绝对偏移 | 结果 |
-| --- | ---: | ---: | ---: | --- |
-| build-gen.mix / 0d4eb59e | 1,548,912 | 1,928,526 | 47,166,598 | 字节与 SHA 相同 |
-| build-gen.mix / 5b2c294c | 1,445,584 | 25,730,534 | 251,178,738 | 字节与 SHA 相同 |
-| build-gen.mix / 28eeb521 | 1,403,792 | 5,815,070 | 51,053,158 | 字节与 SHA 相同 |
-| build-gen.mix / e444b5bf | 1,143,456 | 4,671,614 | 48,810,118 | 字节与 SHA 相同 |
-| build-gen.mix / 2a3c5aa4 | 1,125,912 | 7,317,918 | 52,556,006 | 字节与 SHA 相同 |
-| isotemp.mix / a081107a | 1,113,248 | 8,348,718 | 97,385,282 | 字节与 SHA 相同 |
-| build-gen.mix / 03579aa6 | 1,089,864 | 8,526,638 | 53,764,742 | 字节与 SHA 相同 |
+| 重抓容器 / 条目 ID | 大小 | 重抓文件绝对偏移 | ra2.mix 绝对偏移 | 相同 |
+| --- | ---: | -----: | -----: | ---: |
+| build-gen.mix / 0d4eb59e | 1,548,912 | 1,928,526 | 47,166,598 | ✔️ |
+| build-gen.mix / 5b2c294c | 1,445,584 | 25,730,534 | 251,178,738 | ✔️ |
+| build-gen.mix / 28eeb521 | 1,403,792 | 5,815,070 | 51,053,158 | ✔️ |
+| build-gen.mix / e444b5bf | 1,143,456 | 4,671,614 | 48,810,118 | ✔️ |
+| build-gen.mix / 2a3c5aa4 | 1,125,912 | 7,317,918 | 52,556,006 | ✔️ |
+| isotemp.mix / a081107a | 1,113,248 | 8,348,718 | 97,385,282 | ✔️ |
+| build-gen.mix / 03579aa6 | 1,089,864 | 8,526,638 | 53,764,742 | ✔️ |
 
 | 线上用途 | 与原版相同载荷数 | 相同字节数 |
 | --- | ---: | ---: |
@@ -135,21 +135,19 @@ GPT 找到的历史证据，`2247335`（2025-05-17，主线祖先）的 `PROJECT
 
 上述数据仅为进行了一次温带地图盟军遭遇战场景获得。
 
-> 
-"王二火大" 是一个非盈利的粉丝项目，与 Electronic Arts Inc.(EA) 没有任何关联。
+> "王二火大" 是一个非盈利的粉丝项目，与 Electronic Arts Inc.(EA) 没有任何关联。
 <div align="right">——《王二火大》免责声明</div>
 
 笔者知识太过于浅陋以至于无法得知《王二火大》免责声明中的 EA 到底指的是什么公司，毕竟看起来肯定不是收购了《红色警戒2》制作组的 Electronic Arts Inc. 公司。
 
-
 ### 对是不对的
 
-<chronodivide.cn> 不仅介绍 ChronoDivide，而且把 RA2WEB 称作是所谓的“官方中文版”；先不提这个“官方中文版”到底是不是官方，RA2WEB 上都已经公开声明合作中止并换用其他引擎。
+<https://chronodivide.cn/> 不仅介绍 ChronoDivide，而且把 RA2WEB 称作是所谓的“官方中文版”；先不提这个“官方中文版”到底是不是官方，RA2WEB 上都已经公开声明合作中止并换用其他引擎，两个网页实际上连措辞都没有统一。当然不排除是黄烤鸭先生把这个网站忘了。
 
-[ChronoDivide 官网](https://chronodivide.com) 公开页没有提供对 <chronodivide.cn> 或 <ra2web.com> 的具体授权证明，这些网页本身也没有。
-因此这个“官方中文版”实际上没有任何证据可以支撑其在任何意义下的成立。
+[ChronoDivide 官网](https://chronodivide.com) 公开页没有提供对 <https://chronodivide.cn/> 或 <https://ra2web.com/> 的具体授权证明，这些网页本身也没有。
+因此这个“官方中文版”没有任何证据可以支撑其在任何意义下的成立。
 
-以及某个[大粪总站](https://wangerhuoda.com)中的“Chronodivide友情链接“实际上指向的也是 `https://chronodivide.cn` 而不是`www.chronodivide.com` ，笔者暂且认为黄烤鸭是 ext4 因为它可能是严格区分大小写。
+另：某个[大粪总站](https://wangerhuoda.com)中的“Chronodivide友情链接“实际上指向的也是 `https://chronodivide.cn` 而不是`www.chronodivide.com` ，笔者暂且认为黄烤鸭是 ext4 因为它可能是严格区分大小写。
 
 ## 总结
 
