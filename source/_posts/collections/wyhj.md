@@ -32,7 +32,7 @@ AI 赋予了每个人产出代码的机会，但产出代码并不能让每个�
 ### 左右睾丸互搏
 
 抽查 `git log` 的时候还偶然发现该仓库的提交 `b2f8353` 为桥上陆军、桥下海军、运输艇跨层添加目标模式等逻辑然后 `0b7c4fa` 又移除 `TargetBridgeMode`、`getBridgeFor`、`usesGroundLayerUnderBridge` 等结构。
-然后这部分对应的当前测试 `src/test/sim/MoveTaskParity.test.ts:8`–`:56` 主要的测试内容竟然是通过字符串存不存在与正则断言确保这些结构被移除而不是实际运行桥上桥下的移动案例然后观测试验结果。难道这个测试脚本观测时会导致坍缩？
+然后这部分对应的当前测试 `src/test/sim/MoveTaskParity.test.ts:8~56` 主要的测试内容竟然是通过字符串存不存在与正则断言确保这些结构被移除而不是实际运行桥上桥下的移动案例然后观测试验结果。难道这个测试脚本观测时会导致坍缩？
 
 于是就有了
 
@@ -51,9 +51,9 @@ AI 赋予了每个人产出代码的机会，但产出代码并不能让每个�
 > 本项目原则上不涉及对《红色警戒2》官方分发版本的逆向、反编译或者代码抄袭，亦坚决拒绝直接声称使用AI工具对《红色警戒2》项目进行逆向、反编译转录而生成的代码合入...
 <div align="right">—— README.md</div>
 
-不难发现黄烤鸭先生是装糊涂的高手因为其写的是不逆向《红色警戒2》而不是不逆向 Chronodivide 。
+不难发现黄烤鸭先生是装糊涂的高手因为其写的是不逆向《红色警戒2》而不是不逆向 Chronodivide 。下面是 GPT 找到的历史证据。
 
-GPT 找到的历史证据，`2247335`（2025-05-17，主线祖先）的 `PROJECT_CONTEXT_SUMMARY.md`：
+`2247335`（2025-05-17，主线祖先）的 `PROJECT_CONTEXT_SUMMARY.md`：
 
 - 第 1 行标题 `Project Context Summary (RA2Web React Decompile)`。
 - 第 7 行：`The primary objective is to reverse-engineer an existing JavaScript project ... into a modern React application using Vite and TypeScript.`
@@ -70,6 +70,8 @@ GPT 找到的历史证据，`2247335`（2025-05-17，主线祖先）的 `PROJECT
 > The Chrono Divide copyright holder has not licensed Chrono Divide-derived material contained in this repository.
 >
 > Such material is not licensed under GPL-3.0 or any other open-source license.
+
+看上去分叉项目是有原因的。
 
 ### 站中间操两边
 
@@ -147,7 +149,7 @@ GPT 找到的历史证据，`2247335`（2025-05-17，主线祖先）的 `PROJECT
 [ChronoDivide 官网](https://chronodivide.com) 公开页没有提供对 <https://chronodivide.cn/> 或 <https://ra2web.com/> 的具体授权证明，这些网页本身也没有。
 因此这个“官方中文版”没有任何证据可以支撑其在任何意义下的成立。
 
-另：某个[大粪总站](https://wangerhuoda.com)中的“Chronodivide友情链接“实际上指向的也是 `https://chronodivide.cn` 而不是`www.chronodivide.com` ，笔者暂且认为黄烤鸭是 ext4 因为它可能是严格区分大小写。
+另：某个[大粪总站](https://wangerhuoda.com)中的“Chronodivide友情链接“实际上指向的也是 <https://chronodivide.cn/> 而不是 <https://chronodivide.com/> ，笔者暂且认为黄烤鸭是 ext4 因为它可能是严格区分大小写。
 
 ## 总结
 
